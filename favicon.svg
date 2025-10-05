@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <style>
+      .s{stroke:#0f2a3a;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;fill:none}
+      .dot{fill:#0f2a3a}
+    </style>
+  </defs>
+  <rect width="64" height="64" rx="12" ry="12" fill="#ffffff"/>
+  <!-- stylized branch -->
+  <path class="s" d="M32 52 L32 12"/>
+  <path class="s" d="M32 28 L18 20"/>
+  <path class="s" d="M32 36 L46 28"/>
+  <path class="s" d="M32 44 L22 38"/>
+  <!-- terminal buds -->
+  <circle class="dot" cx="18" cy="20" r="3"/>
+  <circle class="dot" cx="46" cy="28" r="3"/>
+  <circle class="dot" cx="22" cy="38" r="3"/>
+  <circle class="dot" cx="32" cy="12" r="3"/>
+</svg>
