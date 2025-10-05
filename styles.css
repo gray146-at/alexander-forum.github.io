@@ -1,67 +1,123 @@
+/* Alexander Forum – styles.css
+   Clean, quiet, publication-like styling that matches the dark-navy logo.
+   Works on GitHub Pages without external font requests.
+*/
 
 :root{
-  --bg: #0f1117;
-  --fg: #e6e6e6;
-  --muted: #b9c0c7;
-  --card: #151923;
-  --stroke: #2a3140;
-  --accent: #5aa9e6;
-}
-
-@media (prefers-color-scheme: light){
-  :root{
-    --bg: #f6f7fb;
-    --fg: #0e1116;
-    --muted: #4b5563;
-    --card: #ffffff;
-    --stroke: #e5e7eb;
-    --accent: #1f6feb;
-  }
+  --af-navy:#0f2a3a;       /* primary (logo) */
+  --af-navy-600:#1c3c4f;   /* hover */
+  --af-ink:#121416;        /* body text */
+  --af-muted:#5a6a74;      /* secondary text */
+  --af-bg:#f7f8fa;         /* soft page bg */
+  --af-card:#ffffff;       /* card bg */
+  --af-border:#e6eaee;     /* subtle border */
 }
 
 *{box-sizing:border-box}
-html,body{height:100%}
-body{
+
+html,body{
   margin:0;
-  font-family:'Palatino Linotype', Palatino, 'Times New Roman', serif;
-  background: radial-gradient(1200px 600px at 10% -10%, rgba(90,169,230,0.18), transparent 60%),
-              radial-gradient(1200px 600px at 110% 10%, rgba(31,111,235,0.15), transparent 60%),
-              var(--bg);
-  color:var(--fg);
+  padding:0;
+  background:var(--af-bg);
+  color:var(--af-ink);
+  font-family: "Georgia","Palatino Linotype","Times New Roman", serif;
   line-height:1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.wrap{min-height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:48px 16px;}
-.card{
-  width:min(720px, 92vw);
-  background:var(--card);
-  border:1px solid var(--stroke);
-  border-radius:22px;
-  padding:36px 28px 28px;
-  text-align:center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+.wrap{
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 3.5rem 1.25rem;
 }
+
+.card{
+  background: var(--af-card);
+  border: 1px solid var(--af-border);
+  border-radius: 14px;
+  padding: 2.25rem 2rem;
+  box-shadow: 0 8px 20px rgba(15,42,58,0.06);
+}
+
 .logo{
   display:block;
-  margin:0 auto 14px;
-  border-radius:28px;
-  border:1px solid var(--stroke);
-  background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0));
-  padding:14px;
+  margin: 0 auto 1rem;
+  width: 140px;
+  height: auto;
 }
-h1{font-size:clamp(28px, 4vw, 36px); margin:8px 0 0;}
-.tag{margin:4px 0 14px; color:var(--muted); letter-spacing:0.03em}
-.lead{font-size:clamp(16px, 2.6vw, 18px); margin:0 auto 18px; max-width:58ch}
-.contact{margin-top:6px}
+
+h1{
+  margin: .25rem 0 0;
+  text-align:center;
+  font-size: 2.1rem;
+  letter-spacing:.01em;
+  font-weight: 700;
+  color: var(--af-navy);
+}
+
+.tag{
+  margin: .25rem 0 2rem;
+  text-align:center;
+  font-style: italic;
+  color: var(--af-muted);
+}
+
+.lead{
+  font-size: 1.125rem;
+  color: var(--af-ink);
+  margin-bottom: 1.125rem;
+}
+
+p{
+  margin: 0 0 1rem 0;
+}
+
+strong{font-weight:700;color:var(--af-navy)}
+
+em{font-style: italic}
+
+.contact{
+  margin-top: 1.5rem;
+  display:flex;
+  justify-content:center;
+}
+
 .btn{
   display:inline-block;
-  padding:10px 16px;
-  border-radius:999px;
-  border:1px solid var(--stroke);
-  background:linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+  background: var(--af-navy);
+  color:#fff;
   text-decoration:none;
-  color:var(--fg);
+  padding:.7rem 1.2rem;
+  border-radius:8px;
   font-weight:600;
+  letter-spacing:.02em;
+  transition: background .2s ease, transform .06s ease;
+  border: 1px solid rgba(0,0,0,0.04);
 }
-.btn:hover{transform:translateY(-1px); box-shadow:0 6px 18px rgba(0,0,0,0.18)}
-.foot{margin-top:20px; color:var(--muted); font-size:14px; text-align:center}
+
+.btn:hover{ background: var(--af-navy-600) }
+.btn:active{ transform: translateY(1px) }
+
+.foot{
+  text-align:center;
+  color: var(--af-muted);
+  font-size: .95rem;
+  margin-top: 1.25rem;
+  padding: 1.25rem .5rem 0;
+}
+
+/* Small screens */
+@media (max-width:600px){
+  .wrap{ padding: 2.25rem .9rem }
+  .card{ padding: 1.6rem 1.1rem }
+  .logo{ width: 112px }
+  h1{ font-size: 1.75rem }
+  .lead{ font-size: 1.05rem }
+}
+
+/* Accessibility tweaks */
+a:focus, .btn:focus{
+  outline: 3px solid rgba(15,42,58,.35);
+  outline-offset: 2px;
+}
