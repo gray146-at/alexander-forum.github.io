@@ -1,16 +1,13 @@
-/* Alexander Forum – styles.css
-   Clean, quiet, publication-like styling that matches the dark-navy logo.
-   Works on GitHub Pages without external font requests.
-*/
+/* Alexander Forum – styles.css */
 
 :root{
-  --af-navy:#0f2a3a;       /* primary (logo) */
-  --af-navy-600:#1c3c4f;   /* hover */
-  --af-ink:#121416;        /* body text */
-  --af-muted:#5a6a74;      /* secondary text */
-  --af-bg:#f7f8fa;         /* soft page bg */
-  --af-card:#ffffff;       /* card bg */
-  --af-border:#e6eaee;     /* subtle border */
+  --af-navy:#0f2a3a;
+  --af-navy-600:#1c3c4f;
+  --af-ink:#121416;
+  --af-muted:#5a6a74;
+  --af-bg:#f7f8fa;
+  --af-card:#ffffff;
+  --af-border:#e6eaee;
 }
 
 *{box-sizing:border-box}
@@ -20,107 +17,100 @@ html,body{
   padding:0;
   background:var(--af-bg);
   color:var(--af-ink);
-  font-family: "Georgia","Palatino Linotype","Times New Roman", serif;
+  font-family:"Georgia","Palatino Linotype","Times New Roman",serif;
   line-height:1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
 .wrap{
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 3.5rem 1.25rem;
+  max-width:880px;
+  margin:0 auto;
+  padding:3.5rem 1.25rem;
 }
 
 .card{
-  background: var(--af-card);
-  border: 1px solid var(--af-border);
-  border-radius: 14px;
-  padding: 2.25rem 2rem;
-  box-shadow: 0 8px 20px rgba(15,42,58,0.06);
+  background:var(--af-card);
+  border:1px solid var(--af-border);
+  border-radius:14px;
+  padding:2.25rem 2rem;
+  box-shadow:0 8px 20px rgba(15,42,58,0.06);
 }
 
 .logo{
   display:block;
-  margin: 0 auto 1.25rem;
-  width: 300px;   /* z.B. 280–320px am Desktop */
-  height: auto;
-}
-@media (max-width:600px){
-  .logo{ width: 190px; }
+  margin:0 auto 1.25rem;
+  width:300px;      /* Desktop */
+  max-width:100%;   /* Sicherheitsnetz */
+  height:auto;
 }
 
 h1{
-  margin: .25rem 0 0;
+  margin:.25rem 0 0;
   text-align:center;
-  font-size: 2.1rem;
+  font-size:2.1rem;
   letter-spacing:.01em;
-  font-weight: 700;
-  color: var(--af-navy);
+  font-weight:700;
+  color:var(--af-navy);
 }
 
 .tag{
-  margin: .25rem 0 2rem;
+  margin:.25rem 0 2rem;
   text-align:center;
-  font-style: italic;
-  color: var(--af-muted);
+  font-style:italic;
+  color:var(--af-muted);
 }
 
 .lead{
-  font-size: 1.125rem;
-  color: var(--af-ink);
-  margin-bottom: 1.125rem;
+  font-size:1.125rem;
+  color:var(--af-ink);
+  margin-bottom:1.125rem;
 }
 
-p{
-  margin: 0 0 1rem 0;
-}
-
-strong{font-weight:700;color:var(--af-navy)}
-
-em{font-style: italic}
+p{ margin:0 0 1rem 0 }
+strong{ font-weight:700; color:var(--af-navy) }
+em{ font-style:italic }
 
 .contact{
-  margin-top: 1.5rem;
+  margin-top:1.5rem;
   display:flex;
   justify-content:center;
 }
 
 .btn{
   display:inline-block;
-  background: var(--af-navy);
+  background:var(--af-navy);
   color:#fff;
   text-decoration:none;
   padding:.7rem 1.2rem;
   border-radius:8px;
   font-weight:600;
   letter-spacing:.02em;
-  transition: background .2s ease, transform .06s ease;
-  border: 1px solid rgba(0,0,0,0.04);
+  transition:background .2s ease, transform .06s ease;
+  border:1px solid rgba(0,0,0,0.04);
 }
-
-.btn:hover{ background: var(--af-navy-600) }
-.btn:active{ transform: translateY(1px) }
+.btn:hover{ background:var(--af-navy-600) }
+.btn:active{ transform:translateY(1px) }
 
 .foot{
   text-align:center;
-  color: var(--af-muted);
-  font-size: .95rem;
-  margin-top: 1.25rem;
-  padding: 1.25rem .5rem 0;
+  color:var(--af-muted);
+  font-size:.95rem;
+  margin-top:1.25rem;
+  padding:1.25rem .5rem 0;
 }
 
-/* Small screens */
+/* === EIN einheitlicher Mobile-Block === */
 @media (max-width:600px){
-  .wrap{ padding: 2.25rem .9rem }
-  .card{ padding: 1.6rem 1.1rem }
-  .logo{ width: 112px }
-  h1{ font-size: 1.75rem }
-  .lead{ font-size: 1.05rem }
+  .wrap{ padding:2.25rem .9rem }
+  .card{ padding:1.6rem 1.1rem }
+  .logo{ width:190px }        /* größer als die 112px vorher */
+  h1{ font-size:1.75rem }
+  .lead{ font-size:1.05rem }
 }
 
-/* Accessibility tweaks */
+/* Accessibility */
 a:focus, .btn:focus{
-  outline: 3px solid rgba(15,42,58,.35);
-  outline-offset: 2px;
+  outline:3px solid rgba(15,42,58,.35);
+  outline-offset:2px;
 }
