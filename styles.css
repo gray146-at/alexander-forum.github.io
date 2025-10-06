@@ -39,8 +39,8 @@ html,body{
 
 .logo{
   display:block;
-  margin:0 auto 1rem;
-  width:330px;      /* Desktop */
+  margin:0 auto 0.9rem;
+  width:450px;      /* Desktop */
   max-width:100%;   /* Sicherheitsnetz */
   height:auto;
 }
