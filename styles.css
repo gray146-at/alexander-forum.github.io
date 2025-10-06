@@ -42,9 +42,12 @@ html,body{
 
 .logo{
   display:block;
-  margin: 0 auto 1rem;
-  width: 140px;
+  margin: 0 auto 1.25rem;
+  width: 300px;   /* z.B. 280–320px am Desktop */
   height: auto;
+}
+@media (max-width:600px){
+  .logo{ width: 190px; }
 }
 
 h1{
