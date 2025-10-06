@@ -40,8 +40,8 @@ html,body{
 .logo{
   display:block;
   margin:0 auto 0.9rem;
-  width:450px;      /* Desktop */
-  max-width:100%;   /* Sicherheitsnetz */
+  width:450px;        /* Desktop */
+  max-width:100%;
   height:auto;
 }
 
@@ -100,24 +100,23 @@ em{ font-style:italic }
   padding:1.25rem .5rem 0;
 }
 
-/* === EIN einheitlicher Mobile-Block === */
+/* === Mobile (≤600px) – einheitlich und schlank === */
 @media (max-width:600px){
   .wrap{ padding:2.25rem .9rem }
   .card{ padding:1.6rem 1.1rem }
-  .logo{ width:240px }        /* größer als die 112px vorher */
+  .logo{ width:240px }
   h1{ font-size:1.75rem }
   .lead{ font-size:1.05rem }
 }
-/* === Blocksatz nur für Fließtext im Card-Bereich === */
-.card p {
-  text-align: justify;
-  text-justify: inter-word;
-}
 
-/* Auf mobilen Geräten lieber Flattext, besser lesbar */
-@media (max-width: 700px) {
-  .card p {
-    text-align: left;
+/* === Desktop (≥700px): Blocksatz nur für Fließtext in .card, .tag bleibt zentriert === */
+@media (min-width:700px){
+  .card p:not(.tag){
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
   }
 }
 
