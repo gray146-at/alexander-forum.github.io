@@ -108,6 +108,18 @@ em{ font-style:italic }
   h1{ font-size:1.75rem }
   .lead{ font-size:1.05rem }
 }
+/* === Blocksatz nur für Fließtext im Card-Bereich === */
+.card p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Auf mobilen Geräten lieber Flattext, besser lesbar */
+@media (max-width: 700px) {
+  .card p {
+    text-align: left;
+  }
+}
 
 /* Accessibility */
 a:focus, .btn:focus{
