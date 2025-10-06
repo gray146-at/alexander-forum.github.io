@@ -104,7 +104,7 @@ em{ font-style:italic }
 @media (max-width:600px){
   .wrap{ padding:2.25rem .9rem }
   .card{ padding:1.6rem 1.1rem }
-  .logo{ width:190px }        /* größer als die 112px vorher */
+  .logo{ width:240px }        /* größer als die 112px vorher */
   h1{ font-size:1.75rem }
   .lead{ font-size:1.05rem }
 }
