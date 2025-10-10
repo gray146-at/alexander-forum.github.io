@@ -1,16 +1,68 @@
-RewriteEngine On
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PDF-Viewer | Alexander Forum</title>
+  <meta name="robots" content="noindex,follow">
+  <meta name="theme-color" content="#0f2a3a">
+  <style>
+    :root{ --navy:#0f2a3a; --ink:#121416; --bg:#f7f8fa; --border:#e6eaee; }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:#fff;color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+    .bar{display:flex;gap:.5rem;align-items:center;justify-content:space-between;padding:.5rem .75rem;border-bottom:1px solid var(--border);background:var(--bg)}
+    .left{display:flex;gap:.5rem;align-items:center}
+    .brand{font-weight:700;color:var(--navy);font-size:1rem;margin-left:.25rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:60vw}
+    .btn{display:inline-block;text-decoration:none;border:1px solid var(--border);padding:.45rem .7rem;border-radius:8px;min-height:40px;line-height:1;color:var(--navy);background:#fff}
+    .btn.primary{background:var(--navy);color:#fff;border-color:rgba(0,0,0,.06)}
+    .btn:hover{background:#f0f3f5}.btn.primary:hover{background:#1c3c4f}
+    .frame{width:100%;height:calc(100vh - 57px);border:0;display:block;background:#fff}
+    @media (max-width:600px){ .brand{display:none} .frame{height:calc(100vh - 54px)} }
+  </style>
+</head>
+<body>
+  <div class="bar" role="navigation" aria-label="PDF-Viewer Navigation">
+    <div class="left">
+      <a class="btn" href="javascript:history.length>1?history.back():'/'" aria-label="Zurück">← Zurück</a>
+      <span class="brand" id="brand">Alexander Forum · PDF</span>
+    </div>
+    <div class="right">
+      <a class="btn primary" id="dl" download>PDF herunterladen</a>
+    </div>
+  </div>
 
-# Opt-Out: ?dl=1 liefert PDF direkt
-RewriteCond %{QUERY_STRING} (^|&)dl=1(&|$)
-RewriteRule ^ - [L]
+  <iframe class="frame" id="frame" title="PDF-Ansicht"></iframe>
 
-# Alle PDFs → Viewer mit ?file=
-RewriteCond %{REQUEST_URI} \.pdf$ [NC]
-RewriteRule ^viewer/index\.html$ - [L]  # Viewer selbst nicht umleiten
-RewriteRule ^ /viewer/index.html?file=%{REQUEST_URI} [R=302,L]
-
-# PDFs inline
-<FilesMatch "\.pdf$">
-  ForceType application/pdf
-  Header set Content-Disposition "inline"
-</FilesMatch>
+  <script>
+    (function(){
+      const p = new URLSearchParams(location.search);
+      const raw = p.get('file') || '';
+      const title = p.get('title') || '';
+      let file = '';
+      try{
+        if(raw.startsWith('/')) file = raw;
+        else if(!raw.startsWith('http')) file = '/' + raw.replace(/^\.?\//,'');
+        else {
+          const u = new URL(raw, location.origin);
+          if(u.origin === location.origin) file = u.pathname + u.search + u.hash;
+        }
+      }catch(e){}
+      if(!file || !file.endsWith('.pdf')){
+        document.getElementById('brand').textContent = 'Datei nicht gefunden oder ungültig.';
+        return;
+      }
+      if(title){
+        document.title = title + ' | Alexander Forum';
+        document.getElementById('brand').textContent = title;
+      }else{
+        document.getElementById('brand').textContent = 'Alexander Forum · ' + (file.split('/').pop() || 'PDF');
+      }
+      const url = file + (file.includes('#') ? '' : '#page=1&zoom=page-width');
+      document.getElementById('frame').src = url;
+      const dl = document.getElementById('dl');
+      dl.href = file;
+      dl.setAttribute('aria-label','PDF herunterladen: ' + (title || file));
+    })();
+  </script>
+</body>
+</html>
