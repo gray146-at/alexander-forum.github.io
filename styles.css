@@ -210,3 +210,95 @@ blockquote{
   .card{ border:none; box-shadow:none; }
   body{ background:#fff; color:#000; }
 }
+
+/* === Contrast & readability enhancements === */
+
+/* 1) Standard-Links klar(er) machen – auch in Bullets/Downloads */
+a{
+  color: var(--af-navy);
+  text-decoration: underline;
+  text-underline-offset: .15em;
+  text-decoration-thickness: .08em;
+}
+a:hover{
+  text-decoration-thickness: .12em;
+}
+
+/* Links in der Top-Navi dezenter, aber mit besserem Kontrast */
+.mini-nav a{
+  color: var(--af-ink);                 /* statt var(--af-muted) → besserer Kontrast */
+  text-decoration: none;                /* Navi ohne Unterstreichung */
+}
+.mini-nav a:hover{
+  background: rgba(15,42,58,.08);
+  color: var(--af-navy);
+}
+
+/* 2) Downloads: Links gut erkennbar, auch in Textlisten */
+.bullets a{
+  color: var(--af-navy);
+  text-decoration: underline;
+  text-underline-offset: .14em;
+}
+.bullets a:hover{
+  background: rgba(15,42,58,.06);
+}
+
+/* 3) Buttons: Kontrast + Klarheit (hell/dunkel) */
+.btn{
+  background: var(--af-navy);
+  color: #fff;
+  font-weight: 700;                     /* etwas kräftiger */
+  letter-spacing: .01em;
+  border: 1px solid rgba(0,0,0,.06);
+}
+.btn:hover{ background: var(--af-navy-600) }
+.btn:active{ transform: translateY(1px) }
+
+/* Sekundärbutton: klarer Rand + helleres Hover */
+.btn-secondary{
+  background: #fff;
+  color: var(--af-navy);
+  border: 1px solid #cfd8df;            /* dunkler als var(--af-border) → klarer Kontrast */
+}
+.btn-secondary:hover{
+  background: #eaf0f4;                  /* statt #f0f3f5, mehr Kontrast zum Text */
+}
+
+/* 4) Mini-Nav: leichte Vergrößerung für Lesbarkeit */
+.mini-nav{ font-size: 1rem; }
+
+/* 5) Fokus-Markierung etwas kräftiger (Tastaturzugänglichkeit) */
+a:focus, .btn:focus, .mini-nav a:focus{
+  outline: 3px solid rgba(15,42,58,.6);
+  outline-offset: 3px;
+}
+
+/* 6) Dark mode: klare Kontraste für Buttons & Links */
+@media (prefers-color-scheme: dark){
+  /* Primär-Button: helle Fläche + dunkle Schrift → kontraststark */
+  .btn{
+    background: #c1d9e6;                /* heller als --af-navy in Dark-Mode */
+    color: #0c1115;                      /* dunkle Schrift */
+  }
+  .btn:hover{ background: #d3e4ee; }
+
+  /* Sekundär-Button: transparente Fläche mit klarer Schrift und Rand */
+  .btn-secondary{
+    background: transparent;
+    color: var(--af-ink);
+    border: 1px solid var(--af-muted);
+  }
+  .btn-secondary:hover{
+    background: #182029;
+  }
+
+  /* Links: immer gut lesbar */
+  a, .bullets a, .mini-nav a{
+    color: #e8edf2;
+  }
+  .mini-nav a:hover{
+    color: #cfe3ee;
+    background: rgba(156,195,218,.18);
+  }
+}
