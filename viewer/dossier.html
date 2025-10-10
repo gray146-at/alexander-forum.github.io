@@ -1,1 +1,60 @@
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Resilienz-Dossier – Online-Ansicht | Alexander Forum</title>
+  <meta name="robots" content="noindex,follow">
+  <meta name="theme-color" content="#0f2a3a">
+  <style>
+    :root{
+      --navy:#0f2a3a; --ink:#121416; --bg:#f7f8fa; --border:#e6eaee;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:#fff;color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+    .bar{
+      display:flex;gap:.5rem;align-items:center;justify-content:space-between;
+      padding:.5rem .75rem;border-bottom:1px solid var(--border);background:var(--bg);
+    }
+    .left{display:flex;gap:.5rem;align-items:center}
+    .brand{font-weight:700;color:var(--navy);font-size:1rem;margin-left:.25rem}
+    .btn{
+      display:inline-block;text-decoration:none;border:1px solid var(--border);
+      padding:.45rem .7rem;border-radius:8px;min-height:40px;line-height:1;color:var(--navy);background:#fff;
+    }
+    .btn.primary{background:var(--navy);color:#fff;border-color:rgba(0,0,0,.06)}
+    .btn:hover{background:#f0f3f5}
+    .btn.primary:hover{background:#1c3c4f}
+    .frame{
+      width:100%;height:calc(100vh - 57px); /* 57px ≈ Höhe der Topbar */
+      border:0; display:block;
+      background:#fff;
+    }
+    @media (max-width:600px){
+      .brand{display:none}
+      .frame{height:calc(100vh - 54px)}
+    }
+  </style>
+</head>
+<body>
+  <div class="bar" role="navigation" aria-label="PDF-Viewer Navigation">
+    <div class="left">
+      <a class="btn" href="/" aria-label="Zur Startseite">← Zurück</a>
+      <span class="brand">Alexander Forum · Resilienz-Dossier</span>
+    </div>
+    <div class="right">
+      <a class="btn primary" href="/downloads/AF_Resilienz_Grundlagendossier_PUBLIC_v1.1.pdf" download>
+        PDF herunterladen
+      </a>
+    </div>
+  </div>
+
+  <!-- Browser-Viewer im iFrame (einheitlich, ohne Fremd-Dienste) -->
+  <iframe
+    class="frame"
+    title="Resilienz-Dossier – Online-Ansicht (PDF)"
+    src="/downloads/AF_Resilienz_Grundlagendossier_PUBLIC_v1.1.pdf#page=1&zoom=page-width">
+  </iframe>
+</body>
+</html>
