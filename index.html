@@ -10,7 +10,7 @@
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#0f2a3a">
 
-  <!-- Description (ohne "Forschung") -->
+  <!-- Description -->
   <meta name="description" content="Unabhängiger Think & Do Tank in Wien – Analyse, Einordnung und Praxis für gesellschaftliche und individuelle Resilienz.">
 
   <!-- Open Graph -->
@@ -30,6 +30,7 @@
   <!-- Icons & manifest -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#0f2a3a">
   <link rel="manifest" href="site.webmanifest">
 
   <!-- hreflang -->
@@ -37,10 +38,27 @@
   <link rel="alternate" href="https://alexander.forum/en/" hreflang="en">
   <link rel="alternate" href="https://alexander.forum/" hreflang="x-default">
 
+  <!-- Alternate PDFs for crawlers (DE & EN) -->
+  <link rel="alternate" type="application/pdf" href="/Alexander-Forum_Positionspapier_2025.pdf" hreflang="de" title="Positionspapier 2025 (PDF)">
+  <link rel="alternate" type="application/pdf" href="/Alexander-Forum_Mission_Statement_EN.pdf" hreflang="en" title="Mission Statement 2025 (PDF)">
+
   <!-- Performance -->
   <link rel="preload" as="image" href="AF-Logo-final.svg">
 
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Schema.org (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Alexander Forum für Reflexion & Resilienz",
+    "url": "https://alexander.forum/",
+    "logo": "https://alexander.forum/AF-Logo-final.svg",
+    "email": "mailto:kontakt@alexanderforum.org",
+    "sameAs": []
+  }
+  </script>
 </head>
 <body>
   <header class="site-head" aria-label="Alexander Forum">
@@ -49,7 +67,7 @@
       <a href="#themen">Themen</a>
       <a href="#arbeitsweise">Arbeitsweise</a>
       <a href="#kontakt">Kontakt</a>
-      <a href="AF-OnePager.pdf">1-Pager</a>
+      <a href="#downloads">Downloads</a>
       <a class="lang" href="/en/" hreflang="en" aria-label="Switch to English">EN</a>
     </nav>
   </header>
@@ -119,7 +137,9 @@
 
       <div class="cta-row">
         <a class="btn" href="mailto:kontakt@alexanderforum.org?subject=Anfrage%20Erstgespr%C3%A4ch">Termin anfragen</a>
-        <a class="btn btn-secondary" href="AF-OnePager.pdf">1-Pager (PDF)</a>
+        <a class="btn btn-secondary" href="/Alexander-Forum_Positionspapier_2025.pdf" target="_blank" rel="noopener">
+          Positionspapier 2025 (PDF)
+        </a>
       </div>
 
       <h2 id="kontakt">Kontakt</h2>
@@ -127,6 +147,13 @@
       <div class="contact">
         <a class="btn" href="mailto:kontakt@alexanderforum.org">kontakt@alexanderforum.org</a>
       </div>
+
+      <!-- Downloads -->
+      <h2 id="downloads">Downloads</h2>
+      <ul class="bullets">
+        <li><a href="/Alexander-Forum_Positionspapier_2025.pdf" target="_blank" rel="noopener">Positionspapier 2025 (PDF, DE)</a></li>
+        <li><a href="/Alexander-Forum_Mission_Statement_EN.pdf" target="_blank" rel="noopener">Mission Statement 2025 (PDF, EN)</a></li>
+      </ul>
     </section>
 
     <footer class="foot">
