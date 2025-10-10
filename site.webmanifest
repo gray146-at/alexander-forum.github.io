@@ -1,0 +1,11 @@
+{
+  "name": "Alexander Forum",
+  "short_name": "AForum",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "background_color": "#f7f8fa",
+  "theme_color": "#0f2a3a",
+  "icons": [
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
