@@ -402,3 +402,41 @@ a:focus, .btn:focus, .mini-nav a:focus{
   }
   #resilienz-dossier .downloads{ display: none !important; }
 }
+
+/* === Infobox / Hinweis-Kasten ======================================= */
+.infobox{
+  position: relative;
+  margin: 1rem 0 1.1rem;
+  padding: .85rem 1rem .9rem 1rem;
+  border: 1px solid var(--af-border);
+  border-left-width: 4px;
+  border-left-color: var(--af-navy);
+  border-radius: 10px;
+  background: rgba(15,42,58,.04);
+}
+.infobox h4{
+  margin: 0 0 .4rem;
+  font-size: 1.05rem;
+  color: var(--af-navy);
+}
+.infobox p{ margin: 0 0 .35rem }
+.infobox .small{
+  color: var(--af-muted);
+  font-size: .95rem;
+}
+
+/* Varianten */
+.infobox.success{ border-left-color: #2f855a; background: rgba(47,133,90,.06); }
+.infobox.warn{    border-left-color: #b7791f; background: rgba(183,121,31,.06); }
+.infobox.note{    border-left-color: #3182ce; background: rgba(49,130,206,.06); }
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark){
+  .infobox{
+    background: rgba(156,195,218,.1);
+    border-color: #2a3640;
+  }
+  .infobox.success{ background: rgba(47,133,90,.12); }
+  .infobox.warn{    background: rgba(183,121,31,.12); }
+  .infobox.note{    background: rgba(49,130,206,.12); }
+}
