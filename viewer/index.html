@@ -1,0 +1,16 @@
+RewriteEngine On
+
+# Opt-Out: ?dl=1 liefert PDF direkt
+RewriteCond %{QUERY_STRING} (^|&)dl=1(&|$)
+RewriteRule ^ - [L]
+
+# Alle PDFs → Viewer mit ?file=
+RewriteCond %{REQUEST_URI} \.pdf$ [NC]
+RewriteRule ^viewer/index\.html$ - [L]  # Viewer selbst nicht umleiten
+RewriteRule ^ /viewer/index.html?file=%{REQUEST_URI} [R=302,L]
+
+# PDFs inline
+<FilesMatch "\.pdf$">
+  ForceType application/pdf
+  Header set Content-Disposition "inline"
+</FilesMatch>
