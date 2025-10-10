@@ -302,3 +302,103 @@ a:focus, .btn:focus, .mini-nav a:focus{
     background: rgba(156,195,218,.18);
   }
 }
+
+/* === Resilienz-Dossier: Ergänzungen ================================== */
+
+/* Section-Rahmen & Abstände */
+#resilienz-dossier{
+  margin-top: 2rem;
+  padding-top: .25rem;
+}
+#resilienz-dossier header .meta{
+  color: var(--af-muted);
+  font-size: .95rem;
+  margin-top: .25rem;
+}
+#resilienz-dossier .teaser{
+  margin: .75rem 0 1rem;
+  line-height: 1.7;
+}
+
+/* Keypoints: echte Spiegelstriche im Content, keine Browser-Bullets */
+#resilienz-dossier .keypoints{
+  margin: .35rem 0 1rem 0;
+  padding-left: 0;            /* kein Einzug; Strich ist Teil des Textes */
+  list-style: none;
+}
+#resilienz-dossier .keypoints li{
+  margin: .25rem 0;
+  text-indent: 0;             /* kein Hanging-Indent nötig, da "– " im Text */
+}
+
+/* Download-Buttons untereinander sauber anordnen */
+#resilienz-dossier .downloads{
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+  margin: .85rem 0 .35rem;
+}
+
+/* Lizenzzeile dezenter */
+#resilienz-dossier .license{
+  color: var(--af-muted);
+  font-size: .95rem;
+  margin-top: .15rem;
+}
+
+/* ====== Quellen / Endnoten ====== */
+#resilienz-quellen{
+  margin-top: 1.4rem;
+}
+#resilienz-quellen h3{
+  margin: 1.1rem 0 .6rem;
+  font-size: clamp(1.05rem, 1rem + .4vw, 1.25rem);
+  color: var(--af-navy);
+}
+#resilienz-quellen .references{
+  margin: .25rem 0 0 0;
+  padding-left: 1.2rem;          /* Dezimal-Liste */
+  counter-reset: ref;
+}
+#resilienz-quellen .references li{
+  margin: .5rem 0;
+  padding-left: .1rem;
+  line-height: 1.65;
+  word-break: break-word;        /* lange DOIs/URLs umbrechen */
+  overflow-wrap: anywhere;
+}
+#resilienz-quellen .references em{
+  font-style: italic;
+}
+#resilienz-quellen .references a{
+  text-decoration: underline;
+  text-underline-offset: .14em;
+  text-decoration-thickness: .08em;
+}
+#resilienz-quellen .references a:hover{
+  background: rgba(15,42,58,.06);
+}
+
+/* Responsiv feinjustieren */
+@media (max-width: 600px){
+  #resilienz-dossier .downloads{ gap: .5rem }
+  #resilienz-quellen .references li{ margin: .45rem 0 }
+}
+
+/* Dark Mode-Anpassungen */
+@media (prefers-color-scheme: dark){
+  #resilienz-quellen .references a:hover{
+    background: rgba(156,195,218,.18);
+  }
+  #resilienz-dossier .license{ color: var(--af-muted) }
+}
+
+/* Print: Quellen als „drucktauglich“ mit sichtbaren URLs ausgeben,
+   Buttons/Navi ausblenden übernimmt dein bestehendes @media print bereits */
+@media print{
+  #resilienz-quellen .references a::after{
+    content: " (" attr(href) ")";
+    font-size: 90%;
+  }
+  #resilienz-dossier .downloads{ display: none !important; }
+}
