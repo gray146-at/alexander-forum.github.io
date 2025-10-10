@@ -61,6 +61,8 @@
   </script>
 </head>
 <body>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+
   <header class="site-head" aria-label="Alexander Forum">
     <nav class="mini-nav" aria-label="Sektionen">
       <a href="#auftrag">Auftrag</a>
@@ -73,8 +75,8 @@
     </nav>
   </header>
 
-  <main class="wrap">
-    <section class="card">
+  <main id="main" class="wrap">
+    <section class="card stack stack--md">
       <img class="logo"
            src="AF-Logo-final.svg"
            alt="Alexander Forum – Baum-Signet"
@@ -143,15 +145,8 @@
         </a>
       </div>
 
-
-        <div class="infobox note" role="note" aria-label="Hinweis">
-          <h4>Warum Resilienz im Titel?</h4>
-          <p>Resilienz ist für uns ein <strong>Gestaltungsprinzip</strong>: Bedingungen schaffen, unter denen Menschen
-             und Gemeinschaften nicht nur durchhalten, sondern <em>gedeihen</em>.</p>
-          </div>
-      
       <!-- ===================== RESILIENZ-DOSSIER ===================== -->
-      <section id="resilienz-dossier" aria-label="Grundlagendossier Resilienz">
+      <section id="resilienz-dossier" class="stack stack--md" aria-label="Grundlagendossier Resilienz">
         <header>
           <h2>Grundlagendossier: Resilienz – Interdisziplinäre Analyse und Zukunftskompetenz</h2>
           <p class="meta">
@@ -166,6 +161,12 @@
           von Neuroplastizität bis Community-Resilienz – inklusive Digital-Resilienz als neuer Kulturtechnik.
         </p>
 
+        <div class="infobox note" role="note" aria-label="Hinweis">
+          <h4>Warum Resilienz im Titel?</h4>
+          <p>Resilienz ist für uns ein <strong>Gestaltungsprinzip</strong>: Bedingungen schaffen, unter denen Menschen
+             und Gemeinschaften nicht nur durchhalten, sondern <em>gedeihen</em>.</p>
+        </div>
+
         <ul class="keypoints">
           <li>– Dynamisches Konzept: Resilienz ist erlern- und gestaltbar.</li>
           <li>– Biopsychosozial: Person × Umwelt – Schutzfaktoren können Risiken überkompensieren.</li>
@@ -174,7 +175,7 @@
         </ul>
 
         <div class="downloads">
-          <a class="btn btn-primary" href="/downloads/AF_Resilienz_Grundlagendossier_PUBLIC_v1.1.pdf" download>
+          <a class="btn" href="/downloads/AF_Resilienz_Grundlagendossier_PUBLIC_v1.1.pdf" download>
             PDF herunterladen
           </a>
         </div>
@@ -182,12 +183,14 @@
         <p class="license">
           Zitierfähig, mit zahlreichen Quellenhinweisen. Lizenz: CC BY-NC 4.0 (nicht-kommerziell).
         </p>
-
-      
-      
-      
       </section>
       <!-- =================== /RESILIENZ-DOSSIER =================== -->
+
+      <h2 id="kontakt">Kontakt</h2>
+      <p>Schreiben Sie uns für Kooperationen, Briefings oder Veranstaltungen:</p>
+      <div class="contact">
+        <a class="btn" href="mailto:kontakt@alexanderforum.org">kontakt@alexanderforum.org</a>
+      </div>
 
       <!-- Downloads -->
       <h2 id="downloads">Downloads</h2>
