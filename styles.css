@@ -8,6 +8,17 @@
   --af-bg:#f7f8fa;
   --af-card:#ffffff;
   --af-border:#e6eaee;
+
+  /* Spacing scale (4/8px-basierend) */
+  --space-0: 0;
+  --space-1: .25rem;   /* 4px */
+  --space-2: .5rem;    /* 8px */
+  --space-3: .75rem;   /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.5rem;   /* 24px */
+  --space-6: 2rem;     /* 32px */
+  --space-7: 2.5rem;   /* 40px */
+  --space-8: 3rem;     /* 48px */
 }
 
 *{ box-sizing:border-box }
@@ -23,27 +34,36 @@ html,body{
   -moz-osx-font-smoothing:grayscale;
 }
 
+/* Skip-Link (A11y) */
+.skip{
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip:focus{
+  position:static; width:auto; height:auto; display:inline-block;
+  background:#fff; border:2px solid var(--af-navy); padding:.3rem .5rem; border-radius:6px; margin:.5rem;
+}
+
 /* --- Header / mini nav --- */
 .site-head{
   max-width:980px;
   margin:0 auto;
-  padding:0.75rem 1rem 0;
+  padding:.75rem 1rem 0;
 }
 .mini-nav{
   display:flex;
-  gap:.9rem;
+  gap: var(--space-3);
   flex-wrap:wrap;
   align-items:center;
   justify-content:flex-end;
-  font-size:.95rem;
+  font-size:1rem; /* etwas größer für Lesbarkeit */
 }
 .mini-nav a{
   text-decoration:none;
-  color:var(--af-muted);
+  color:var(--af-ink); /* besserer Kontrast */
   padding:.25rem .4rem;
   border-radius:6px;
 }
-.mini-nav a:hover{ background:rgba(15,42,58,.06); color:var(--af-navy) }
+.mini-nav a:hover{ background:rgba(15,42,58,.08); color:var(--af-navy) }
 .mini-nav .lang{
   font-weight:600;
   color:var(--af-navy);
@@ -83,7 +103,7 @@ h1{
   color:var(--af-navy);
 }
 h2{
-  margin:1.6rem 0 .6rem;
+  margin: var(--space-6) 0 var(--space-3);
   font-size:clamp(1.15rem, 1rem + .8vw, 1.4rem);
   color:var(--af-navy);
 }
@@ -96,9 +116,9 @@ h2{
 .lead{
   font-size:clamp(1.05rem, .95rem + .5vw, 1.175rem);
   color:var(--af-ink);
-  margin-bottom:1.05rem;
+  margin-bottom:var(--space-3);
 }
-p{ margin:0 0 1.05rem }
+p{ margin:0 0 var(--space-3) }
 strong{ font-weight:700; color:var(--af-navy) }
 em{ font-style:italic }
 
@@ -123,14 +143,14 @@ em{ font-style:italic }
 /* CTA-Reihe */
 .cta-row{
   display:flex;
-  gap:.6rem;
+  gap: var(--space-3);
   flex-wrap:wrap;
-  margin:1.1rem 0 0.75rem;
+  margin: var(--space-4) 0 var(--space-3);
 }
 
 /* Kontakt/Buttons */
 .contact{
-  margin-top:1.1rem;
+  margin-top: var(--space-4);
   display:flex;
   justify-content:center;
 }
@@ -142,10 +162,10 @@ em{ font-style:italic }
   text-decoration:none;
   padding:.72rem 1.1rem;
   border-radius:8px;
-  font-weight:600;
-  letter-spacing:.02em;
+  font-weight:700;
+  letter-spacing:.01em;
   transition:background .2s ease, transform .06s ease, box-shadow .2s ease;
-  border:1px solid rgba(0,0,0,0.04);
+  border:1px solid rgba(0,0,0,0.06);
   min-height:44px; /* Touch-Zielfläche */
 }
 .btn:hover{ background:var(--af-navy-600) }
@@ -153,10 +173,10 @@ em{ font-style:italic }
 .btn-secondary{
   background:#fff;
   color:var(--af-navy);
-  border:1px solid var(--af-border);
+  border:1px solid #cfd8df;            /* klarer Kontrast */
 }
 .btn-secondary:hover{
-  background:#f0f3f5;
+  background:#eaf0f4;
 }
 
 .foot{
@@ -175,7 +195,7 @@ em{ font-style:italic }
 
 /* Accessibility */
 a:focus, .btn:focus, .mini-nav a:focus{
-  outline:3px solid rgba(15,42,58,.5);
+  outline:3px solid rgba(15,42,58,.6);
   outline-offset:3px;
 }
 
@@ -200,8 +220,16 @@ blockquote{
     --af-navy-600:#c1d9e6;
   }
   .card{ box-shadow:none; }
-  .btn-secondary{ background:transparent; color:#e8edf2; }
-  .btn-secondary:hover{ background:#182029; }
+  .btn{
+    background:#c1d9e6; color:#0c1115;
+  }
+  .btn:hover{ background:#d3e4ee }
+  .btn-secondary{
+    background:transparent; color:var(--af-ink); border:1px solid var(--af-muted);
+  }
+  .btn-secondary:hover{ background:#182029 }
+  a, .bullets a, .mini-nav a{ color:#e8edf2 }
+  .mini-nav a:hover{ color:#cfe3ee; background:rgba(156,195,218,.18) }
 }
 
 /* Print – 1-Pager ohne Button/Fuß */
@@ -212,102 +240,25 @@ blockquote{
 }
 
 /* === Contrast & readability enhancements === */
-
-/* 1) Standard-Links klar(er) machen – auch in Bullets/Downloads */
 a{
   color: var(--af-navy);
   text-decoration: underline;
   text-underline-offset: .15em;
   text-decoration-thickness: .08em;
 }
-a:hover{
-  text-decoration-thickness: .12em;
-}
-
-/* Links in der Top-Navi dezenter, aber mit besserem Kontrast */
-.mini-nav a{
-  color: var(--af-ink);                 /* statt var(--af-muted) → besserer Kontrast */
-  text-decoration: none;                /* Navi ohne Unterstreichung */
-}
-.mini-nav a:hover{
-  background: rgba(15,42,58,.08);
-  color: var(--af-navy);
-}
-
-/* 2) Downloads: Links gut erkennbar, auch in Textlisten */
+a:hover{ text-decoration-thickness: .12em; }
 .bullets a{
   color: var(--af-navy);
   text-decoration: underline;
   text-underline-offset: .14em;
 }
-.bullets a:hover{
-  background: rgba(15,42,58,.06);
-}
-
-/* 3) Buttons: Kontrast + Klarheit (hell/dunkel) */
-.btn{
-  background: var(--af-navy);
-  color: #fff;
-  font-weight: 700;                     /* etwas kräftiger */
-  letter-spacing: .01em;
-  border: 1px solid rgba(0,0,0,.06);
-}
-.btn:hover{ background: var(--af-navy-600) }
-.btn:active{ transform: translateY(1px) }
-
-/* Sekundärbutton: klarer Rand + helleres Hover */
-.btn-secondary{
-  background: #fff;
-  color: var(--af-navy);
-  border: 1px solid #cfd8df;            /* dunkler als var(--af-border) → klarer Kontrast */
-}
-.btn-secondary:hover{
-  background: #eaf0f4;                  /* statt #f0f3f5, mehr Kontrast zum Text */
-}
-
-/* 4) Mini-Nav: leichte Vergrößerung für Lesbarkeit */
-.mini-nav{ font-size: 1rem; }
-
-/* 5) Fokus-Markierung etwas kräftiger (Tastaturzugänglichkeit) */
-a:focus, .btn:focus, .mini-nav a:focus{
-  outline: 3px solid rgba(15,42,58,.6);
-  outline-offset: 3px;
-}
-
-/* 6) Dark mode: klare Kontraste für Buttons & Links */
-@media (prefers-color-scheme: dark){
-  /* Primär-Button: helle Fläche + dunkle Schrift → kontraststark */
-  .btn{
-    background: #c1d9e6;                /* heller als --af-navy in Dark-Mode */
-    color: #0c1115;                      /* dunkle Schrift */
-  }
-  .btn:hover{ background: #d3e4ee; }
-
-  /* Sekundär-Button: transparente Fläche mit klarer Schrift und Rand */
-  .btn-secondary{
-    background: transparent;
-    color: var(--af-ink);
-    border: 1px solid var(--af-muted);
-  }
-  .btn-secondary:hover{
-    background: #182029;
-  }
-
-  /* Links: immer gut lesbar */
-  a, .bullets a, .mini-nav a{
-    color: #e8edf2;
-  }
-  .mini-nav a:hover{
-    color: #cfe3ee;
-    background: rgba(156,195,218,.18);
-  }
-}
+.bullets a:hover{ background: rgba(15,42,58,.06); }
 
 /* === Resilienz-Dossier: Ergänzungen ================================== */
 
 /* Section-Rahmen & Abstände */
 #resilienz-dossier{
-  margin-top: 2rem;
+  margin-top: var(--space-6);
   padding-top: .25rem;
 }
 #resilienz-dossier header .meta{
@@ -331,82 +282,25 @@ a:focus, .btn:focus, .mini-nav a:focus{
   text-indent: 0;             /* kein Hanging-Indent nötig, da "– " im Text */
 }
 
-/* Download-Buttons untereinander sauber anordnen */
+/* Download-Buttons */
 #resilienz-dossier .downloads{
   display: flex;
-  gap: .6rem;
+  gap: var(--space-3);
   flex-wrap: wrap;
   margin: .85rem 0 .35rem;
 }
 
-/* Lizenzzeile dezenter */
+/* Lizenzzeile */
 #resilienz-dossier .license{
   color: var(--af-muted);
   font-size: .95rem;
   margin-top: .15rem;
 }
 
-/* ====== Quellen / Endnoten ====== */
-#resilienz-quellen{
-  margin-top: 1.4rem;
-}
-#resilienz-quellen h3{
-  margin: 1.1rem 0 .6rem;
-  font-size: clamp(1.05rem, 1rem + .4vw, 1.25rem);
-  color: var(--af-navy);
-}
-#resilienz-quellen .references{
-  margin: .25rem 0 0 0;
-  padding-left: 1.2rem;          /* Dezimal-Liste */
-  counter-reset: ref;
-}
-#resilienz-quellen .references li{
-  margin: .5rem 0;
-  padding-left: .1rem;
-  line-height: 1.65;
-  word-break: break-word;        /* lange DOIs/URLs umbrechen */
-  overflow-wrap: anywhere;
-}
-#resilienz-quellen .references em{
-  font-style: italic;
-}
-#resilienz-quellen .references a{
-  text-decoration: underline;
-  text-underline-offset: .14em;
-  text-decoration-thickness: .08em;
-}
-#resilienz-quellen .references a:hover{
-  background: rgba(15,42,58,.06);
-}
-
-/* Responsiv feinjustieren */
-@media (max-width: 600px){
-  #resilienz-dossier .downloads{ gap: .5rem }
-  #resilienz-quellen .references li{ margin: .45rem 0 }
-}
-
-/* Dark Mode-Anpassungen */
-@media (prefers-color-scheme: dark){
-  #resilienz-quellen .references a:hover{
-    background: rgba(156,195,218,.18);
-  }
-  #resilienz-dossier .license{ color: var(--af-muted) }
-}
-
-/* Print: Quellen als „drucktauglich“ mit sichtbaren URLs ausgeben,
-   Buttons/Navi ausblenden übernimmt dein bestehendes @media print bereits */
-@media print{
-  #resilienz-quellen .references a::after{
-    content: " (" attr(href) ")";
-    font-size: 90%;
-  }
-  #resilienz-dossier .downloads{ display: none !important; }
-}
-
 /* === Infobox / Hinweis-Kasten ======================================= */
 .infobox{
   position: relative;
-  margin: 1rem 0 1.1rem;
+  margin: var(--space-5) 0;
   padding: .85rem 1rem .9rem 1rem;
   border: 1px solid var(--af-border);
   border-left-width: 4px;
@@ -420,23 +314,40 @@ a:focus, .btn:focus, .mini-nav a:focus{
   color: var(--af-navy);
 }
 .infobox p{ margin: 0 0 .35rem }
-.infobox .small{
-  color: var(--af-muted);
-  font-size: .95rem;
-}
+.infobox .small{ color: var(--af-muted); font-size: .95rem; }
 
 /* Varianten */
-.infobox.success{ border-left-color: #2f855a; background: rgba(47,133,90,.06); }
-.infobox.warn{    border-left-color: #b7791f; background: rgba(183,121,31,.06); }
-.infobox.note{    border-left-color: #3182ce; background: rgba(49,130,206,.06); }
+.infobox.success{ border-left-color:#2f855a; background:rgba(47,133,90,.06) }
+.infobox.warn{    border-left-color:#b7791f; background:rgba(183,121,31,.06) }
+.infobox.note{    border-left-color:#3182ce; background:rgba(49,130,206,.06) }
 
 /* Dark Mode */
 @media (prefers-color-scheme: dark){
-  .infobox{
-    background: rgba(156,195,218,.1);
-    border-color: #2a3640;
-  }
-  .infobox.success{ background: rgba(47,133,90,.12); }
-  .infobox.warn{    background: rgba(183,121,31,.12); }
-  .infobox.note{    background: rgba(49,130,206,.12); }
+  .infobox{ background:rgba(156,195,218,.1); border-color:#2a3640 }
+  .infobox.success{ background:rgba(47,133,90,.12) }
+  .infobox.warn{    background:rgba(183,121,31,.12) }
+  .infobox.note{    background:rgba(49,130,206,.12) }
 }
+
+/* === Stack/Flow-System (automatische Vertikalabstände) ============== */
+.stack > * + *{ margin-top: var(--flow-space, var(--space-4)) }
+.stack--sm{ --flow-space: var(--space-3) }   /* 12px */
+.stack--md{ --flow-space: var(--space-5) }   /* 24px */
+.stack--lg{ --flow-space: var(--space-6) }   /* 32px */
+
+/* === Margin-Utilities (bei Bedarf) ================================== */
+.mt-0{ margin-top: var(--space-0) }
+.mt-1{ margin-top: var(--space-1) }
+.mt-2{ margin-top: var(--space-2) }
+.mt-3{ margin-top: var(--space-3) }
+.mt-4{ margin-top: var(--space-4) }
+.mt-5{ margin-top: var(--space-5) }
+.mt-6{ margin-top: var(--space-6) }
+.mb-0{ margin-bottom: var(--space-0) }
+.mb-1{ margin-bottom: var(--space-1) }
+.mb-2{ margin-bottom: var(--space-2) }
+.mb-3{ margin-bottom: var(--space-3) }
+.mb-4{ margin-bottom: var(--space-4) }
+.mb-5{ margin-bottom: var(--space-5) }
+.mb-6{ margin-bottom: var(--space-6) }
+.mx-auto{ margin-left:auto; margin-right:auto }
