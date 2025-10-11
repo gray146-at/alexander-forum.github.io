@@ -532,6 +532,14 @@ em{ font-style:italic }
 }
 .lektionen li{ margin:.15rem 0 }
 
+/* English version */
+.lessons{
+  margin:.25rem 0 .75rem;
+  padding-left: 1.1rem;
+  font-size:.95rem;
+}
+.lessons li{ margin:.15rem 0 }
+
 /* === MODAL OVERLAY === */
 .modal-overlay{
   display:none;
