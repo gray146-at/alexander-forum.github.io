@@ -1,11 +1,46 @@
 {
-  "name": "Alexander Forum",
-  "short_name": "AForum",
+  "name": "Alexander Forum für Reflexion & Resilienz",
+  "short_name": "Alexander Forum",
+  "description": "Unabhängiger Think & Do Tank in Wien für gesellschaftliche Resilienz und Zukunftsgestaltung.",
   "start_url": "/",
-  "display": "minimal-ui",
+  "display": "standalone",
   "background_color": "#f7f8fa",
   "theme_color": "#0f2a3a",
+  "orientation": "portrait-primary",
+  "lang": "de-AT",
+  "dir": "ltr",
   "icons": [
-    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["education", "research", "social"],
+  "screenshots": [
+    {
+      "src": "/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
   ]
 }
