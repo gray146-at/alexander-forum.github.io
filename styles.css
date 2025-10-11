@@ -352,23 +352,78 @@ a:hover{ text-decoration-thickness: .12em; }
 .mb-6{ margin-bottom: var(--space-6) }
 .mx-auto{ margin-left:auto; margin-right:auto }
 
-/* === Alexander Inspirations ========================================= */
+/* === Namensvorbilder – visuelles Upgrade ================================= */
+
 .inspirations-grid{
   display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap:1rem;
-  margin-top:1rem;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 1.25rem;
+  margin-top: .75rem;
 }
+
 .inspiration-card{
   border:1px solid var(--af-border);
-  border-radius:12px;
-  padding:1rem;
+  border-radius:14px;
   background:var(--af-card);
-  display:flex;
-  flex-direction:column;
-  gap:.5rem;
+  overflow:hidden;
+  box-shadow:0 8px 16px rgba(15,42,58,.05);
+  transition: transform .12s ease, box-shadow .2s ease, border-color .2s ease;
+  display:flex; flex-direction:column;
 }
-.inspiration-card img{ width:100%; height:auto; border-radius:8px; object-fit:cover }
-.inspiration-card .tagline{ color:var(--af-navy-600); font-weight:700; margin:.25rem 0 }
-.inspiration-card .keylessons{ margin:.5rem 0 0; padding-left:1.05rem }
-.deepdive{ margin:2rem 0; padding:1rem; border-left:4px solid var(--af-navy); background:rgba(15,42,58,0.03); border-radius:8px }
+.inspiration-card:hover{
+  transform: translateY(-2px);
+  box-shadow:0 14px 26px rgba(15,42,58,.08);
+  border-color: #cfd8df;
+}
+
+.inspiration-card .cover{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  background: #e8edf2;
+}
+
+.inspiration-card .body{
+  padding: 1rem 1.1rem 1.15rem;
+}
+.inspiration-card h3{
+  margin: .15rem 0 .1rem;
+  font-size: 1.05rem;
+  color: var(--af-navy);
+}
+.inspiration-card .tagline{
+  margin: .1rem 0 .5rem;
+  color: var(--af-navy-600);
+  font-weight:700;
+}
+.inspiration-card .short{
+  margin: 0 0 .6rem;
+}
+
+.lektionen{
+  margin:.25rem 0 .75rem;
+  padding-left: 1.1rem;
+}
+.lektionen li{ margin:.15rem 0 }
+
+.deepdive{
+  margin: 2rem 0;
+  padding: 1rem 1rem 1.1rem;
+  border-left: 4px solid var(--af-navy);
+  background: rgba(15,42,58,.03);
+  border-radius:8px;
+}
+.deepdive h4{
+  margin: .6rem 0 .25rem;
+  font-size:1.02rem;
+  color: var(--af-navy-600);
+}
+
+/* Dark mode – Karten */
+@media (prefers-color-scheme: dark){
+  .inspiration-card{ box-shadow:none; border-color:#2a3640; }
+  .inspiration-card:hover{ border-color:#3a4a59; }
+  .deepdive{ background: rgba(156,195,218,.1); border-color:#2a3640; }
+}
