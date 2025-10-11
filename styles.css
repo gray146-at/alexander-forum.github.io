@@ -1,4 +1,4 @@
-/* Alexander Forum – styles.css (Clean Edition with Modal & Grid Fixes) */
+/* Alexander Forum – styles.css (Clean Edition with Modal, Grid & Dropdown) */
 
 :root{
   --af-navy:#0f2a3a;
@@ -68,7 +68,7 @@ html,body{
   justify-content:flex-end;
   font-size:1rem;
 }
-.mini-nav a{
+.mini-nav > a{
   text-decoration:none;
   color:var(--af-ink);
   padding:.25rem .4rem;
@@ -76,12 +76,12 @@ html,body{
   transition: all .2s ease;
   position: relative;
 }
-.mini-nav a:hover{ background:rgba(15,42,58,.08); color:var(--af-navy) }
-.mini-nav a.active{
+.mini-nav > a:hover{ background:rgba(15,42,58,.08); color:var(--af-navy) }
+.mini-nav > a.active{
   color:var(--af-navy);
   font-weight:600;
 }
-.mini-nav a.active::after{
+.mini-nav > a.active::after{
   content: '';
   position: absolute;
   bottom: 0;
@@ -95,6 +95,105 @@ html,body{
   font-weight:600;
   color:var(--af-navy);
   border:1px solid var(--af-border);
+}
+
+/* === Dropdown Navigation === */
+.nav-dropdown{
+  position: relative;
+}
+
+.nav-dropdown-toggle{
+  background: transparent;
+  border: none;
+  color: var(--af-ink);
+  font-family: inherit;
+  font-size: 1rem;
+  padding: .25rem .4rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all .2s ease;
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+}
+
+.nav-dropdown-toggle:hover{
+  background: rgba(15,42,58,.08);
+  color: var(--af-navy);
+}
+
+.dropdown-arrow{
+  font-size: .85em;
+  transition: transform .2s ease;
+}
+
+.nav-dropdown-toggle[aria-expanded="true"] .dropdown-arrow{
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu{
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: .25rem;
+  background: var(--af-card);
+  border: 1px solid var(--af-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(15,42,58,0.12);
+  min-width: 180px;
+  overflow: hidden;
+  z-index: 200;
+}
+
+.nav-dropdown-menu.active{
+  display: block;
+  animation: dropdownFadeIn .2s ease-out;
+}
+
+@keyframes dropdownFadeIn{
+  from{ opacity: 0; transform: translateY(-8px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+
+.nav-dropdown-menu a{
+  display: block;
+  padding: .6rem 1rem;
+  color: var(--af-ink);
+  text-decoration: none;
+  transition: background .15s ease;
+  border-bottom: 1px solid var(--af-border);
+}
+
+.nav-dropdown-menu a:last-child{
+  border-bottom: none;
+}
+
+.nav-dropdown-menu a:hover{
+  background: rgba(15,42,58,.06);
+  color: var(--af-navy);
+}
+
+.nav-dropdown-menu a.active{
+  background: rgba(15,42,58,.1);
+  color: var(--af-navy);
+  font-weight: 600;
+}
+
+/* Mobile: Dropdown wird zu Stack */
+@media (max-width: 768px){
+  .nav-dropdown-menu{
+    position: static;
+    box-shadow: none;
+    border: none;
+    margin-top: 0;
+    background: transparent;
+  }
+  
+  .nav-dropdown-menu a{
+    padding-left: 1.5rem;
+    font-size: .95rem;
+  }
 }
 
 /* === Layout === */
@@ -494,7 +593,7 @@ em{ font-style:italic }
 }
 
 /* === Accessibility === */
-a:focus, .btn:focus, .mini-nav a:focus{
+a:focus, .btn:focus, .mini-nav a:focus, .nav-dropdown-toggle:focus{
   outline:3px solid rgba(15,42,58,.6);
   outline-offset:3px;
 }
@@ -597,8 +696,15 @@ blockquote{
     background:transparent; color:var(--af-ink); border:1px solid var(--af-muted);
   }
   .btn-secondary:hover{ background:#182029 }
-  a, .bullets a, .mini-nav a{ color:#e8edf2 }
-  .mini-nav a:hover{ color:#cfe3ee; background:rgba(156,195,218,.18) }
+  a, .bullets a, .mini-nav a, .mini-nav .nav-dropdown-toggle{ color:#e8edf2 }
+  .mini-nav > a:hover, .nav-dropdown-toggle:hover{ color:#cfe3ee; background:rgba(156,195,218,.18) }
+  .nav-dropdown-menu{
+    background: #0f1419;
+    border-color: #2a3640;
+  }
+  .nav-dropdown-menu a:hover{
+    background: rgba(156,195,218,.12);
+  }
   .infobox{ background:rgba(156,195,218,.1); border-color:#2a3640 }
   .infobox.success{ background:rgba(47,133,90,.12) }
   .infobox.warn{    background:rgba(183,121,31,.12) }
