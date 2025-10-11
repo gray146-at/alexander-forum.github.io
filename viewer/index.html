@@ -23,7 +23,7 @@
 <body>
   <div class="bar" role="navigation" aria-label="PDF-Viewer Navigation">
     <div class="left">
-      <a class="btn" href="javascript:history.length>1?history.back():'/'" aria-label="Zurück">← Zurück</a>
+      <a class="btn" id="backBtn" href="/">← Zurück</a>
       <span class="brand" id="brand">Alexander Forum · PDF</span>
     </div>
     <div class="right">
@@ -36,8 +36,11 @@
   <script>
     (function(){
       const p = new URLSearchParams(location.search);
-      const raw = p.get('file') || '';
-      const title = p.get('title') || '';
+      const raw   = p.get('file')   || '';
+      const title = p.get('title')  || '';
+      const ret   = p.get('return') || ''; // optionaler Rücksprung
+
+      // Datei nur gleiche Domain/relativ zulassen
       let file = '';
       try{
         if(raw.startsWith('/')) file = raw;
@@ -47,21 +50,49 @@
           if(u.origin === location.origin) file = u.pathname + u.search + u.hash;
         }
       }catch(e){}
+
+      // Titel setzen
+      const brand = document.getElementById('brand');
       if(!file || !file.endsWith('.pdf')){
-        document.getElementById('brand').textContent = 'Datei nicht gefunden oder ungültig.';
+        brand.textContent = 'Datei nicht gefunden oder ungültig.';
         return;
       }
       if(title){
         document.title = title + ' | Alexander Forum';
-        document.getElementById('brand').textContent = title;
+        brand.textContent = title;
       }else{
-        document.getElementById('brand').textContent = 'Alexander Forum · ' + (file.split('/').pop() || 'PDF');
+        brand.textContent = 'Alexander Forum · ' + (file.split('/').pop() || 'PDF');
       }
+
+      // Iframe & Download
       const url = file + (file.includes('#') ? '' : '#page=1&zoom=page-width');
       document.getElementById('frame').src = url;
       const dl = document.getElementById('dl');
       dl.href = file;
       dl.setAttribute('aria-label','PDF herunterladen: ' + (title || file));
+
+      // Zurück-Button-Logik:
+      // 1) Wenn echte History vorhanden: history.back()
+      // 2) sonst: zu return=... (falls gesetzt und same-origin)
+      // 3) sonst: zur Startseite (DE: '/'; EN-Seite verlinkt return=/en/#downloads)
+      const backBtn = document.getElementById('backBtn');
+      function sameOrigin(url){
+        try{ return new URL(url, location.origin).origin === location.origin; }catch(e){ return false; }
+      }
+      const defaultReturn = '/#downloads';
+      let fallback = defaultReturn;
+      if(ret && sameOrigin(ret)) fallback = new URL(ret, location.origin).pathname + new URL(ret, location.origin).hash;
+
+      backBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        if(history.length > 1) history.back();
+        else location.href = fallback;
+      });
+
+      // Label anpassen, wenn kein Verlauf existiert
+      if(history.length <= 1){
+        backBtn.textContent = '← Zur Startseite';
+      }
     })();
   </script>
 </body>
