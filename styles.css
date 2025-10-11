@@ -351,3 +351,24 @@ a:hover{ text-decoration-thickness: .12em; }
 .mb-5{ margin-bottom: var(--space-5) }
 .mb-6{ margin-bottom: var(--space-6) }
 .mx-auto{ margin-left:auto; margin-right:auto }
+
+/* === Alexander Inspirations ========================================= */
+.inspirations-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap:1rem;
+  margin-top:1rem;
+}
+.inspiration-card{
+  border:1px solid var(--af-border);
+  border-radius:12px;
+  padding:1rem;
+  background:var(--af-card);
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+}
+.inspiration-card img{ width:100%; height:auto; border-radius:8px; object-fit:cover }
+.inspiration-card .tagline{ color:var(--af-navy-600); font-weight:700; margin:.25rem 0 }
+.inspiration-card .keylessons{ margin:.5rem 0 0; padding-left:1.05rem }
+.deepdive{ margin:2rem 0; padding:1rem; border-left:4px solid var(--af-navy); background:rgba(15,42,58,0.03); border-radius:8px }
