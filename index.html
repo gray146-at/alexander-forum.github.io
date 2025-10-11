@@ -1,4 +1,664 @@
-<script>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alexander Forum für Reflexion & Resilienz | Think & Do Tank Wien</title>
+  <link rel="canonical" href="https://alexander.forum/">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#0f2a3a">
+  <meta name="description" content="Unabhängiger Think & Do Tank in Wien. Für gesellschaftliche Resilienz, tiefere Reflexion und kluge Zukunftsgestaltung.">
+  
+  <style>
+    :root{
+      --af-navy:#0f2a3a;
+      --af-navy-600:#1c3c4f;
+      --af-ink:#121416;
+      --af-muted:#4a5861;
+      --af-bg:#f7f8fa;
+      --af-card:#ffffff;
+      --af-border:#e6eaee;
+      --space-2: .5rem;
+      --space-3: .75rem;
+      --space-4: 1rem;
+      --space-5: 1.5rem;
+      --space-6: 2rem;
+      --space-7: 2.5rem;
+    }
+
+    *{ box-sizing:border-box }
+
+    html,body{
+      margin:0; padding:0;
+      background:var(--af-bg);
+      color:var(--af-ink);
+      font-family:"Georgia","Palatino Linotype","Times New Roman",serif;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .skip{ position:absolute; left:-9999px; }
+    .skip:focus{ position:static; background:#fff; border:2px solid var(--af-navy); padding:.3rem .5rem; }
+
+    .site-head{
+      position:sticky; top:0; z-index:100;
+      max-width:980px; margin:0 auto; padding:.75rem 1rem;
+      background:var(--af-bg);
+      border-bottom:1px solid transparent;
+      transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    .site-head.scrolled{
+      border-bottom-color:var(--af-border);
+      box-shadow:0 2px 8px rgba(15,42,58,0.06);
+    }
+    .mini-nav{
+      display:flex; gap:var(--space-3); flex-wrap:wrap;
+      align-items:center; justify-content:flex-end; font-size:1rem;
+    }
+    .mini-nav a{
+      text-decoration:none; color:var(--af-ink);
+      padding:.25rem .4rem; border-radius:6px;
+    }
+    .mini-nav a:hover{ background:rgba(15,42,58,.08); color:var(--af-navy) }
+    .mini-nav .lang{
+      font-weight:600; color:var(--af-navy);
+      border:1px solid var(--af-border);
+    }
+
+    .wrap{
+      max-width:880px; margin:0 auto;
+      padding:2.75rem 1.25rem 3.5rem;
+    }
+
+    .card{
+      background:var(--af-card);
+      border:1px solid var(--af-border);
+      border-radius:14px;
+      padding:2.25rem 2rem;
+      box-shadow:0 8px 20px rgba(15,42,58,0.06);
+    }
+
+    .logo{
+      display:block; margin:0 auto .9rem;
+      width:min(450px,100%); height:auto;
+    }
+
+    h1{
+      margin:.25rem 0 0; text-align:center;
+      font-size:clamp(1.75rem, 1.2rem + 2vw, 2.3rem);
+      letter-spacing:.01em; font-weight:700; color:var(--af-navy);
+    }
+    h2{
+      margin:var(--space-6) 0 var(--space-3);
+      font-size:clamp(1.15rem, 1rem + .8vw, 1.4rem);
+      color:var(--af-navy);
+    }
+    h3{
+      margin:var(--space-4) 0 var(--space-2);
+      font-size:clamp(1.05rem, .95rem + .5vw, 1.2rem);
+      color:var(--af-navy);
+    }
+    h4{
+      margin:var(--space-3) 0 var(--space-2);
+      font-size:1.05rem; color:var(--af-navy-600);
+    }
+    h5{
+      margin:var(--space-3) 0 var(--space-2);
+      font-size:1rem; font-weight:700; color:var(--af-navy);
+    }
+
+    .tag{
+      margin:.25rem 0 .5rem; text-align:center;
+      font-style:italic; color:var(--af-muted); font-size:.95rem;
+    }
+    .subclaim{
+      margin:.5rem auto 1.5rem; text-align:center; max-width:620px;
+      font-size:clamp(1.05rem, .95rem + .4vw, 1.15rem);
+      line-height:1.5; color:var(--af-navy); font-weight:500;
+    }
+    .lead{
+      font-size:clamp(1.05rem, .95rem + .5vw, 1.175rem);
+      color:var(--af-ink); margin-bottom:var(--space-3);
+    }
+    p{ margin:0 0 var(--space-3) }
+    strong{ font-weight:700; color:var(--af-navy) }
+
+    .bullets{
+      margin:.25rem 0 1rem 0; padding-left:1.1rem;
+    }
+    .bullets li{ margin:.25rem 0 }
+
+    .cta-row{
+      display:flex; gap:var(--space-3); flex-wrap:wrap;
+      margin:var(--space-4) 0 var(--space-3);
+    }
+
+    .contact{
+      margin-top:var(--space-4);
+      display:flex; justify-content:center;
+    }
+
+    .btn{
+      display:inline-block;
+      background:var(--af-navy); color:#fff;
+      text-decoration:none;
+      padding:.72rem 1.1rem; border-radius:8px;
+      font-weight:700; letter-spacing:.01em;
+      transition:background .2s ease, transform .06s ease;
+      border:1px solid rgba(0,0,0,0.06);
+      min-height:44px; cursor:pointer;
+      font-family:inherit; font-size:1rem; line-height:1.4;
+    }
+    .btn:hover{ background:var(--af-navy-600) }
+    .btn:active{ transform:translateY(1px) }
+    .btn-secondary{
+      background:#fff; color:var(--af-navy);
+      border:1px solid #cfd8df;
+    }
+    .btn-secondary:hover{ background:#eaf0f4 }
+
+    .foot{
+      text-align:center; color:var(--af-muted);
+      font-size:.95rem; margin-top:1.25rem;
+      padding:1.25rem .5rem 0;
+    }
+
+    .dossier-card{
+      background:var(--af-card);
+      border:1px solid var(--af-border);
+      border-radius:14px;
+      padding:2rem 2rem 2.25rem;
+      margin:var(--space-7) 0;
+      box-shadow:0 8px 20px rgba(15,42,58,0.06);
+      position:relative;
+    }
+    .dossier-card::before{
+      content:''; position:absolute;
+      top:0; left:0; right:0; height:4px;
+      background:linear-gradient(90deg, var(--af-navy) 0%, var(--af-navy-600) 100%);
+      border-radius:14px 14px 0 0;
+    }
+    .dossier-card .meta{
+      color:var(--af-muted); font-size:.95rem; margin-top:.25rem;
+    }
+    .dossier-card .teaser{
+      margin:.75rem 0 1rem; line-height:1.7;
+    }
+    .dossier-card .keypoints{
+      margin:.35rem 0 1rem 0; padding-left:0; list-style:none;
+    }
+    .dossier-card .keypoints li{ margin:.25rem 0 }
+    .dossier-card .license{
+      color:var(--af-muted); font-size:.95rem; margin-top:.15rem;
+    }
+
+    .infobox{
+      position:relative; margin:var(--space-5) 0;
+      padding:.85rem 1rem .9rem 1rem;
+      border:1px solid var(--af-border);
+      border-left-width:4px; border-left-color:var(--af-navy);
+      border-radius:10px; background:rgba(15,42,58,.04);
+    }
+    .infobox h4{
+      margin:0 0 .4rem; font-size:1.05rem; color:var(--af-navy);
+    }
+    .infobox p{ margin:0 0 .35rem }
+
+    /* === NAMENSVORBILDER GRID === */
+    .inspirations-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.25rem;
+      margin-top:.75rem;
+    }
+
+    /* HERO Card (Alexander der Große) – full width */
+    .inspiration-card.hero{
+      grid-column:1 / -1;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1.5rem;
+      align-items:center;
+    }
+    .inspiration-card.hero .cover{
+      aspect-ratio:4/3;
+      height:100%;
+      object-fit:cover;
+    }
+    .inspiration-card.hero .body{
+      padding:1.5rem 2rem;
+    }
+
+    .inspiration-card{
+      border:1px solid var(--af-border);
+      border-radius:14px;
+      background:var(--af-card);
+      overflow:hidden;
+      box-shadow:0 8px 16px rgba(15,42,58,.05);
+      transition:transform .12s ease, box-shadow .2s ease, border-color .2s ease;
+      display:flex;
+      flex-direction:column;
+    }
+    .inspiration-card:hover{
+      transform:translateY(-2px);
+      box-shadow:0 14px 26px rgba(15,42,58,.08);
+      border-color:#cfd8df;
+    }
+
+    .inspiration-card .cover{
+      display:block; width:100%; height:auto;
+      aspect-ratio:16/9; object-fit:cover;
+      background:#e8edf2;
+    }
+
+    .cover-placeholder{
+      display:flex; align-items:center; justify-content:center;
+      width:100%; height:auto; aspect-ratio:16/9;
+      background:linear-gradient(135deg, var(--af-navy) 0%, var(--af-navy-600) 100%);
+      color:#fff; font-size:4rem; font-weight:700;
+      position:relative; overflow:hidden;
+    }
+
+    .inspiration-card .body{
+      padding:1rem 1.1rem 1.15rem;
+      flex-grow:1;
+      display:flex;
+      flex-direction:column;
+    }
+    .inspiration-card h3{
+      margin:.15rem 0 .1rem;
+      font-size:1.05rem;
+      color:var(--af-navy);
+    }
+    .inspiration-card .tagline{
+      margin:.1rem 0 .5rem;
+      color:var(--af-navy-600);
+      font-weight:700;
+      font-size:.95rem;
+    }
+    .inspiration-card .short{
+      margin:0 0 .6rem;
+      flex-grow:1;
+    }
+
+    .lektionen{
+      margin:.25rem 0 .75rem;
+      padding-left:1.1rem;
+      font-size:.95rem;
+    }
+    .lektionen li{ margin:.15rem 0 }
+
+    /* === MODAL OVERLAY === */
+    .modal-overlay{
+      display:none;
+      position:fixed;
+      top:0; left:0; right:0; bottom:0;
+      background:rgba(12,17,21,0.85);
+      z-index:9999;
+      padding:2rem 1rem;
+      overflow-y:auto;
+      align-items:center;
+      justify-content:center;
+    }
+    .modal-overlay.active{
+      display:flex;
+    }
+    .modal-content{
+      position:relative;
+      background:var(--af-card);
+      border:1px solid var(--af-border);
+      border-radius:14px;
+      max-width:700px;
+      width:100%;
+      padding:2rem 2.5rem 2.25rem;
+      box-shadow:0 20px 60px rgba(15,42,58,0.4);
+      animation:modalFadeIn .3s ease-out;
+    }
+    @keyframes modalFadeIn{
+      from{ opacity:0; transform:translateY(-20px) }
+      to{ opacity:1; transform:translateY(0) }
+    }
+    .modal-close{
+      position:absolute;
+      top:1rem; right:1rem;
+      background:transparent;
+      border:none;
+      font-size:2rem;
+      line-height:1;
+      cursor:pointer;
+      color:var(--af-muted);
+      transition:color .2s ease;
+      padding:.25rem .5rem;
+    }
+    .modal-close:hover{
+      color:var(--af-navy);
+    }
+    #modal-body h3{
+      margin-top:0;
+      color:var(--af-navy);
+    }
+    #modal-body h5{
+      margin-top:1rem;
+      color:var(--af-navy);
+    }
+    #modal-body ul{
+      padding-left:1.2rem;
+    }
+    #modal-body ul li{
+      margin:.3rem 0;
+    }
+
+    @media (max-width:768px){
+      .inspiration-card.hero{
+        grid-template-columns:1fr;
+      }
+      .inspiration-card.hero .cover{
+        aspect-ratio:16/9;
+      }
+      .modal-content{
+        padding:1.5rem 1.25rem;
+      }
+    }
+
+    @media (max-width:600px){
+      .wrap{ padding:2rem .9rem 2.5rem }
+      .card{ padding:1.6rem 1.1rem }
+      .inspirations-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-head" aria-label="Alexander Forum">
+    <nav class="mini-nav" aria-label="Sektionen">
+      <a href="#auftrag">Auftrag</a>
+      <a href="#themen">Themen</a>
+      <a href="#arbeitsweise">Arbeitsweise</a>
+      <a href="#resilienz-dossier">Resilienz-Dossier</a>
+      <a href="#namensvorbilder">Namensvorbilder</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="#downloads">Downloads</a>
+      <a class="lang" href="/en/" hreflang="en" aria-label="Switch to English">EN</a>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="card">
+      <img class="logo" src="AF-Logo-final.svg" alt="Alexander Forum – Baum-Signet" width="450" height="120">
+
+      <h1>ALEXANDER FORUM</h1>
+      <p class="tag">für Reflexion &amp; Resilienz</p>
+      <p class="subclaim">Für gesellschaftliche Resilienz, tiefere Reflexion und kluge Zukunftsgestaltung.</p>
+
+      <h2 id="auftrag">Unser Auftrag</h2>
+      <p class="lead">
+        Das <strong>Alexander Forum für Reflexion &amp; Resilienz</strong> ist ein unabhängiger, gemeinnütziger
+        <em>Think&nbsp;&amp;&nbsp;Do&nbsp;Tank</em> mit Sitz in Wien.
+        Wir verbinden gesellschaftliche Beobachtung, strategisches Denken und praktische Erfahrung,
+        um neue Perspektiven auf Wandel, Krisen und Zusammenhalt zu eröffnen.
+      </p>
+      <p>
+        <strong>Resilienz</strong> verstehen wir als gemeinsame Aufgabe von Politik, Wissenschaft, Kultur und Gesellschaft.
+        Gesellschaftliche und persönliche Krisen sind miteinander verwoben:
+        Wer unter Druck steht, kann weniger beitragen – und ungelöste Spannungen schwächen das Ganze.
+      </p>
+
+      <h2 id="themen">Themenfelder</h2>
+      <p>
+        Unser Ansatz ist <strong>interdisziplinär</strong> – von Klima und Konflikten
+        über Technologie und Sicherheit bis zu Psychologie und Medizin.
+        Wir arbeiten offen, benennen Unsicherheiten transparent und veröffentlichen Analysen,
+        Einordnungen und Reports, die Orientierung geben, Versäumnisse sichtbar machen und Lösungen anregen.
+      </p>
+      <ul class="bullets">
+        <li><strong>Resilienz &amp; gesellschaftliche Belastungsproben</strong><br>Zwischen Anpassung, Erschöpfung und Neuanfang.</li>
+        <li><strong>Information &amp; Vertrauen</strong><br>Kommunikation, Angst, Polarisierung und Verantwortung im digitalen Zeitalter.</li>
+        <li><strong>Technologie &amp; Risiko</strong><br>Wie Fortschritt Stabilität und Sicherheit verändert.</li>
+        <li><strong>Identität &amp; Zusammenhalt</strong><br>Zugehörigkeit, Trauma und die Frage, was eine Gemeinschaft trägt.</li>
+      </ul>
+
+      <h2 id="arbeitsweise">Arbeitsweise</h2>
+      <p>
+        Wir fördern <strong>Reflexion statt Reizüberflutung</strong> und einen Dialog,
+        der Widersprüche aushält und verschiedene Perspektiven ernst nimmt.
+        Das Forum lädt zum Diskurs ein und sucht nach Wegen,
+        wie konstruktives Denken zu gemeinsamem Handeln werden kann.
+      </p>
+      <p>
+        Unsere Arbeit bleibt praxisnah – in Analysen und Synthesen,
+        in <strong>Briefings</strong> für Organisationen und in <strong>Workshops</strong>, die Austausch ermöglichen
+        und Resilienz als gemeinsame Haltung stärken.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn" href="mailto:kontakt@alexanderforum.org?subject=Anfrage%20Erstgespräch">Termin anfragen</a>
+        <a class="btn btn-secondary" href="/viewer/index.html?file=/Alexander-Forum_Positionspapier_2025.pdf&title=Positionspapier%202025">Positionspapier 2025 ansehen</a>
+      </div>
+
+      <!-- ===================== RESILIENZ-DOSSIER ===================== -->
+      <section id="resilienz-dossier" class="dossier-card" aria-label="Grundlagendossier Resilienz">
+        <header>
+          <h2>Grundlagendossier: Resilienz – Interdisziplinäre Analyse und Zukunftskompetenz</h2>
+          <p class="meta">Alexander Forum für Reflexion &amp; Resilienz (Wien) · 10. Oktober 2025 · Version 1.1</p>
+        </header>
+
+        <p class="teaser">
+          Resilienz ist die Fähigkeit, Krisen zu bewältigen und an ihnen zu wachsen – biologisch, psychologisch,
+          sozial und systemisch gedacht. Das Dossier erklärt, warum Resilienz unser Namensbestandteil ist und
+          wie sie praktisch gefördert werden kann: von kindlicher Bindung bis Organisationskultur,
+          von Neuroplastizität bis Community-Resilienz – inklusive Digital-Resilienz als neuer Kulturtechnik.
+        </p>
+
+        <div class="infobox note" role="note" aria-label="Hinweis">
+          <h4>Warum Resilienz im Titel?</h4>
+          <p>Resilienz ist für uns ein <strong>Gestaltungsprinzip</strong>: Bedingungen schaffen, unter denen Menschen
+             und Gemeinschaften nicht nur durchhalten, sondern <em>gedeihen</em>.</p>
+        </div>
+
+        <ul class="keypoints">
+          <li>– Dynamisches Konzept: Resilienz ist erlern- und gestaltbar.</li>
+          <li>– Biopsychosozial: Person × Umwelt – Schutzfaktoren können Risiken überkompensieren.</li>
+          <li>– Praxisnah: Übungen, organisationaler Transfer, Community- und Systemresilienz.</li>
+          <li>– Digital: Informationsüberlastung, sozialer Vergleich &amp; „Digital Resilience Literacy".</li>
+        </ul>
+
+        <div class="cta-row">
+          <a class="btn" href="/resilienz/">Zum vollständigen Dossier</a>
+        </div>
+
+        <p class="license">Zitierfähig, mit zahlreichen Quellenhinweisen. Lizenz: CC BY-NC 4.0 (nicht-kommerziell).</p>
+      </section>
+
+      <!-- ===================== NAMENSVORBILDER ===================== -->
+      <section id="namensvorbilder" aria-label="Unsere alexandrinischen Namensvorbilder">
+        <header>
+          <h2>Unsere alexandrinischen Namensvorbilder</h2>
+          <p class="teaser">
+            Der Name „Alexander" ist bei uns Programm – als Haltung, nicht als Personenkult.
+            Die hier versammelten Persönlichkeiten – Männer und Frauen mit „Alexander"-Bezug – zeigen
+            verschiedene Facetten von Resilienz und Reflexion: systemisches Denken, Innovationsfreude,
+            moralische Standhaftigkeit, institutionelle Stabilität und persönliche Erkundungslust.
+          </p>
+        </header>
+
+        <div class="inspirations-grid" role="list" aria-label="Grid der Namensvorbilder">
+          
+          <!-- HERO CARD: Alexander der Große (full-width oben) -->
+          <article class="inspiration-card hero" role="listitem">
+            <img class="cover" src="/img/alexander-great.jpg" alt="Alexander der Große – Pompeji-Mosaik (ca. 100 v.Chr.)" width="800" height="600" loading="eager">
+            <div class="body">
+              <h3>Alexander der Große</h3>
+              <p class="tagline">Strategie &amp; Anpassungsfähigkeit</p>
+              <p class="short">
+                Feldherr und Staatsgründer mit enormer Wirkung – und Ambivalenzen.
+                Seine Kampagnen verbreiteten Wissen und Vernetzung, waren aber auch gewaltsam.
+                Lehre: Führung in Unsicherheit braucht Tempo und Übersetzung – jedoch immer mit Ethik-Checks.
+              </p>
+              <ul class="lektionen">
+                <li>Entscheiden unter Unsicherheit</li>
+                <li>Kulturelle Übersetzungsarbeit</li>
+                <li>Macht reflektieren, Schäden begrenzen</li>
+              </ul>
+              <button class="btn" data-target="alexander-great-detail">Mehr erfahren</button>
+            </div>
+          </article>
+
+          <!-- Karte: Hypatia von Alexandria -->
+          <article class="inspiration-card" role="listitem">
+            <img class="cover" src="/img/hypatia.jpg" alt="Hypatia von Alexandria" width="640" height="360" loading="lazy">
+            <div class="body">
+              <h3>Hypatia von Alexandria</h3>
+              <p class="tagline">Bildung als Leuchtturm</p>
+              <p class="short">
+                Philosophin, Mathematikerin und Lehrerin im spätantiken Alexandria.
+                Hypatia steht für die Idee, dass Bildung und Wissensvermittlung
+                kulturelle Resilienz stiften: kritisches Denken, Dialogfähigkeit
+                und die Weitergabe von Handwerk der Vernunft – auch unter Druck.
+              </p>
+              <ul class="lektionen">
+                <li>Bildung als kulturelles Immunsystem</li>
+                <li>Räume für Kritik stabilisieren Gemeinschaften</li>
+                <li>Wissen überdauert kurzfristige Stürme</li>
+              </ul>
+              <button class="btn" data-target="hypatia-detail">Mehr erfahren</button>
+            </div>
+          </article>
+
+          <!-- Karte: Alexandra David-Néel -->
+          <article class="inspiration-card" role="listitem">
+            <img class="cover" src="/img/david-neel.jpg" alt="Alexandra David-Néel in tibetischer Kleidung" width="640" height="360" loading="lazy">
+            <div class="body">
+              <h3>Alexandra David-Néel</h3>
+              <p class="tagline">Mut an den Rändern</p>
+              <p class="short">
+                Reisende, Autorin, Tibetforscherin. Sie überschritt Grenzen – geografisch,
+                kulturell, gesellschaftlich – und verband Abenteuerlust mit innerer Disziplin.
+                Ihr Lebensweg zeigt: Resilienz entsteht, wenn Neugier, Selbstführung und Respekt
+                vor dem Fremden zusammenkommen.
+              </p>
+              <ul class="lektionen">
+                <li>Exploration stärkt Selbstwirksamkeit</li>
+                <li>Innere Ordnung in unsicheren Umfeldern</li>
+                <li>Kulturelle Sensibilität als Ressource</li>
+              </ul>
+              <button class="btn" data-target="david-neel-detail">Mehr erfahren</button>
+            </div>
+          </article>
+
+          <!-- Karte: Alexandra Kollontai -->
+          <article class="inspiration-card" role="listitem">
+            <img class="cover" src="/img/kollontai.jpg" alt="Alexandra Kollontai" width="640" height="360" loading="lazy">
+            <div class="body">
+              <h3>Alexandra Kollontai</h3>
+              <p class="tagline">Solidarität gestalten</p>
+              <p class="short">
+                Politikerin, Feministin, Diplomatin – eine der ersten Frauen in hohen Staatsämtern.
+                Kollontai kämpfte für soziale Absicherung, Frauenrechte und institutionelle Reformen.
+                Sie steht für die Einsicht: Kollektive Resilienz wächst, wenn Strukturen Fairness ermöglichen.
+              </p>
+              <ul class="lektionen">
+                <li>Resilienz braucht Institutionen &amp; Netze</li>
+                <li>Gerechtigkeit ist Prävention</li>
+                <li>Hartnäckigkeit gegen Widerstände</li>
+              </ul>
+              <button class="btn" data-target="kollontai-detail">Mehr erfahren</button>
+            </div>
+          </article>
+
+          <!-- Karte: Alexander Solschenizyn -->
+          <article class="inspiration-card" role="listitem">
+            <img class="cover" src="/img/solschenizyn.jpg" alt="Alexander Solschenizyn" width="640" height="360" loading="lazy">
+            <div class="body">
+              <h3>Alexander Solschenizyn</h3>
+              <p class="tagline">Wahrheit als Widerstand</p>
+              <p class="short">
+                Lagerüberlebender und Autor, dessen Werk Zeugenschaft, Sinn und Verantwortung in den Mittelpunkt rückt.
+                Er erinnert daran: Psychische Widerstandskraft nach Trauma braucht Wahrhaftigkeit – persönlich wie gesellschaftlich.
+              </p>
+              <ul class="lektionen">
+                <li>Erinnerung schützt vor Wiederholung</li>
+                <li>Sinnorientierung stabilisiert</li>
+                <li>Zeugenschaft schafft Kultur der Verantwortung</li>
+              </ul>
+              <button class="btn" data-target="solschenizyn-detail">Mehr erfahren</button>
+            </div>
+          </article>
+
+          <!-- Karte: Alexander Fleming -->
+          <article class="inspiration-card" role="listitem">
+            <img class="cover" src="/img/fleming.jpg" alt="Alexander Fleming in seinem Labor" width="640" height="360" loading="lazy">
+            <div class="body">
+              <h3>Alexander Fleming</h3>
+              <p class="tagline">Fehler als Fundgrube</p>
+              <p class="short">
+                Entdecker des Penicillins. Seine Offenheit für das Unerwartete – und eine verunreinigte Petrischale –
+                wurde zum medizinischen Durchbruch. Resilienz heißt hier: Fehlerkultur, Beobachtungsschärfe, schnelle Translation.
+              </p>
+              <ul class="lektionen">
+                <li>Serendipität produktiv machen</li>
+                <li>Fehlerfreundliche Forschungskultur</li>
+                <li>Verbindung von Labor &amp; Praxis</li>
+              </ul>
+              <button class="btn" data-target="fleming-detail">Mehr erfahren</button>
+            </div>
+          </article>
+
+          <!-- Karte: Alexander von Humboldt -->
+          <article class="inspiration-card" role="listitem">
+            <img class="cover" src="/img/humboldt.jpg" alt="Alexander von Humboldt" width="640" height="360" loading="lazy">
+            <div class="body">
+              <h3>Alexander von Humboldt</h3>
+              <p class="tagline">Vernetzung sichtbar machen</p>
+              <p class="short">
+                Naturforscher und Systemdenker. Er verknüpfte Ökologie, Klima, Daten und Kultur – lokal beobachtet,
+                global verstanden. Seine Lehre: Resilienz beginnt mit dem Sehen von Wechselwirkungen und Langfristhorizonten.
+              </p>
+              <ul class="lektionen">
+                <li>Systemverständnis als Basis</li>
+                <li>Interdisziplinarität erhöht Anpassungsfähigkeit</li>
+                <li>Langfrist denken, kurz handeln</li>
+              </ul>
+              <button class="btn" data-target="humboldt-detail">Mehr erfahren</button>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- MODAL für Details -->
+        <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+          <div class="modal-content">
+            <button class="modal-close" aria-label="Schließen">&times;</button>
+            <div id="modal-body">
+              <!-- Content wird per JS hier eingefügt -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <h2 id="kontakt">Kontakt</h2>
+      <p>Schreiben Sie uns für Kooperationen, Briefings oder Veranstaltungen:</p>
+      <div class="contact">
+        <a class="btn" href="mailto:kontakt@alexanderforum.org">kontakt@alexanderforum.org</a>
+      </div>
+
+      <h2 id="downloads">Downloads</h2>
+      <ul class="bullets">
+        <li><a href="/viewer/index.html?file=/Alexander-Forum_Positionspapier_2025.pdf&title=Positionspapier%202025&return=/#downloads">Positionspapier 2025 – Online-Ansicht</a></li>
+        <li><a href="/viewer/index.html?file=/Alexander-Forum_Mission_Statement_EN.pdf&title=Mission%20Statement%202025&return=/#downloads">Mission Statement 2025 – Online-Ansicht (EN)</a></li>
+        <li><a href="/viewer/index.html?file=/downloads/AF_Resilienz_Grundlagendossier_PUBLIC_v1.1.pdf&title=Resilienz%20Grundlagendossier&return=/#downloads">Grundlagendossier Resilienz – PDF-Ansicht</a></li>
+      </ul>
+
+    </section>
+
+    <footer class="foot">
+      <p>© 2025 Alexander Forum für Reflexion &amp; Resilienz. Alle Rechte vorbehalten.</p>
+    </footer>
+  </main>
+
+  <script>
     // Modal-System für Namensvorbilder
     document.addEventListener('DOMContentLoaded', function() {
       const modal = document.getElementById('modal');
@@ -101,7 +761,7 @@
       };
       
       // Alle Buttons finden
-      const buttons = document.querySelectorAll('.btn-accordion');
+      const buttons = document.querySelectorAll('.btn[data-target]');
       
       buttons.forEach(button => {
         button.addEventListener('click', function() {
@@ -113,7 +773,7 @@
             modalBody.innerHTML = `<h3>${data.title}</h3>${data.html}`;
             // Modal anzeigen
             modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Hintergrund nicht scrollbar
+            document.body.style.overflow = 'hidden';
           }
         });
       });
@@ -121,12 +781,12 @@
       // Modal schließen
       function closeModal() {
         modal.classList.remove('active');
-        document.body.style.overflow = ''; // Scrolling wieder erlauben
+        document.body.style.overflow = '';
       }
       
       closeBtn.addEventListener('click', closeModal);
       
-      // Schließen bei Klick auf Overlay (außerhalb Content)
+      // Schließen bei Klick auf Overlay
       modal.addEventListener('click', function(e) {
         if (e.target === modal) {
           closeModal();
@@ -144,7 +804,6 @@
     // Sticky Header: Schatten beim Scrollen
     document.addEventListener('DOMContentLoaded', function() {
       const siteHead = document.querySelector('.site-head');
-      let lastScroll = 0;
       
       window.addEventListener('scroll', function() {
         const currentScroll = window.pageYOffset;
@@ -154,585 +813,6 @@
         } else {
           siteHead.classList.remove('scrolled');
         }
-        
-        lastScroll = currentScroll;
-      });
-    });
-  </script><!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alexander Forum für Reflexion & Resilienz | Think & Do Tank Wien</title>
-
-  <!-- Canonical & robots -->
-  <link rel="canonical" href="https://alexander.forum/">
-  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <meta name="theme-color" content="#0f2a3a">
-
-  <!-- Description (optimiert für SEO) -->
-  <meta name="description" content="Unabhängiger Think & Do Tank in Wien. Für gesellschaftliche Resilienz, tiefere Reflexion und kluge Zukunftsgestaltung. Analysen, Workshops und Briefings zu Krisen, Technologie und Zusammenhalt.">
-  <meta name="keywords" content="Resilienz, Think Tank Wien, Reflexion, Gesellschaftsanalyse, Krisenmanagement, Zukunftsgestaltung, Interdisziplinarität, Systemresilienz">
-  <meta name="author" content="Alexander Forum für Reflexion & Resilienz">
-
-  <!-- Open Graph (erweitert) -->
-  <meta property="og:site_name" content="Alexander Forum">
-  <meta property="og:url" content="https://alexander.forum/">
-  <meta property="og:title" content="Alexander Forum für Reflexion & Resilienz | Think & Do Tank Wien">
-  <meta property="og:description" content="Für gesellschaftliche Resilienz, tiefere Reflexion und kluge Zukunftsgestaltung. Unabhängiger Think & Do Tank in Wien.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://alexander.forum/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:locale" content="de_AT">
-  <meta property="og:locale:alternate" content="en_US">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Alexander Forum – Reflexion & Resilienz">
-  <meta name="twitter:description" content="Für gesellschaftliche Resilienz, tiefere Reflexion und kluge Zukunftsgestaltung.">
-  <meta name="twitter:image" content="https://alexander.forum/og-image.png">
-
-  <!-- Icons & manifest -->
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#0f2a3a">
-  <link rel="manifest" href="site.webmanifest">
-
-  <!-- hreflang -->
-  <link rel="alternate" href="https://alexander.forum/" hreflang="de">
-  <link rel="alternate" href="https://alexander.forum/en/" hreflang="en">
-  <link rel="alternate" href="https://alexander.forum/" hreflang="x-default">
-
-  <!-- Alternate PDFs for crawlers (DE & EN) -->
-  <link rel="alternate" type="application/pdf" href="/Alexander-Forum_Positionspapier_2025.pdf" hreflang="de" title="Positionspapier 2025 (PDF)">
-  <link rel="alternate" type="application/pdf" href="/Alexander-Forum_Mission_Statement_EN.pdf" hreflang="en" title="Mission Statement 2025 (PDF)">
-
-  <!-- Performance -->
-  <link rel="preload" as="image" href="AF-Logo-final.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- Schema.org (JSON-LD) – Erweitert -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Alexander Forum für Reflexion & Resilienz",
-    "alternateName": "Alexander Forum",
-    "url": "https://alexander.forum/",
-    "logo": "https://alexander.forum/AF-Logo-final.svg",
-    "image": "https://alexander.forum/og-image.png",
-    "description": "Unabhängiger Think & Do Tank in Wien. Für gesellschaftliche Resilienz, tiefere Reflexion und kluge Zukunftsgestaltung.",
-    "email": "kontakt@alexanderforum.org",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Wien",
-      "addressCountry": "AT"
-    },
-    "foundingDate": "2025",
-    "founder": {
-      "@type": "Person",
-      "name": "Dorian Alexander Rammer"
-    },
-    "knowsAbout": [
-      "Resilienz",
-      "Gesellschaftsanalyse",
-      "Krisenmanagement",
-      "Systemdenken",
-      "Interdisziplinarität",
-      "Psychologie",
-      "Politikberatung"
-    ],
-    "areaServed": {
-      "@type": "Country",
-      "name": "Österreich"
-    },
-    "sameAs": []
-  }
-  </script>
-
-  <!-- BreadcrumbList Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://alexander.forum/"
-      }
-    ]
-  }
-  </script>
-
-  <!-- WebSite Schema mit Sitelinks Search Box -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Alexander Forum",
-    "url": "https://alexander.forum/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://alexander.forum/?s={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-</head>
-<body>
-  <a class="skip" href="#main">Zum Inhalt springen</a>
-
-  <header class="site-head" aria-label="Alexander Forum">
-    <nav class="mini-nav" aria-label="Sektionen">
-      <a href="#auftrag">Auftrag</a>
-      <a href="#themen">Themen</a>
-      <a href="#arbeitsweise">Arbeitsweise</a>
-      <a href="#resilienz-dossier">Resilienz-Dossier</a>
-      <a href="#namensvorbilder">Namensvorbilder</a>
-      <a href="#kontakt">Kontakt</a>
-      <a href="#downloads">Downloads</a>
-      <a class="lang" href="/en/" hreflang="en" aria-label="Switch to English">EN</a>
-    </nav>
-  </header>
-
-  <main id="main" class="wrap">
-    <section class="card stack stack--md">
-      <img class="logo"
-           src="AF-Logo-final.svg"
-           alt="Alexander Forum – Baum-Signet"
-           width="450" height="120"
-           fetchpriority="high"
-           loading="eager">
-
-      <h1>ALEXANDER FORUM</h1>
-      <p class="tag">für Reflexion &amp; Resilienz</p>
-      <p class="subclaim">Für gesellschaftliche Resilienz, tiefere Reflexion und kluge Zukunftsgestaltung.</p>
-
-      <h2 id="auftrag">Unser Auftrag</h2>
-      <p class="lead">
-        Das <strong>Alexander Forum für Reflexion &amp; Resilienz</strong> ist ein unabhängiger, gemeinnütziger
-        <em>Think&nbsp;&amp;&nbsp;Do&nbsp;Tank</em> mit Sitz in Wien.
-        Wir verbinden gesellschaftliche Beobachtung, strategisches Denken und praktische Erfahrung,
-        um neue Perspektiven auf Wandel, Krisen und Zusammenhalt zu eröffnen.
-      </p>
-      <p>
-        <strong>Resilienz</strong> verstehen wir als gemeinsame Aufgabe von Politik, Wissenschaft, Kultur und Gesellschaft.
-        Gesellschaftliche und persönliche Krisen sind miteinander verwoben:
-        Wer unter Druck steht, kann weniger beitragen – und ungelöste Spannungen schwächen das Ganze.
-      </p>
-
-      <h2 id="themen">Themenfelder</h2>
-      <p>
-        Unser Ansatz ist <strong>interdisziplinär</strong> – von Klima und Konflikten
-        über Technologie und Sicherheit bis zu Psychologie und Medizin.
-        Wir arbeiten offen, benennen Unsicherheiten transparent und veröffentlichen Analysen,
-        Einordnungen und Reports, die Orientierung geben, Versäumnisse sichtbar machen und Lösungen anregen.
-      </p>
-      <ul class="bullets">
-        <li>
-          <strong>Resilienz &amp; gesellschaftliche Belastungsproben</strong><br>
-          Zwischen Anpassung, Erschöpfung und Neuanfang.
-        </li>
-        <li>
-          <strong>Information &amp; Vertrauen</strong><br>
-          Kommunikation, Angst, Polarisierung und Verantwortung im digitalen Zeitalter.
-        </li>
-        <li>
-          <strong>Technologie &amp; Risiko</strong><br>
-          Wie Fortschritt Stabilität und Sicherheit verändert.
-        </li>
-        <li>
-          <strong>Identität &amp; Zusammenhalt</strong><br>
-          Zugehörigkeit, Trauma und die Frage, was eine Gemeinschaft trägt.
-        </li>
-      </ul>
-
-      <h2 id="arbeitsweise">Arbeitsweise</h2>
-      <p>
-        Wir fördern <strong>Reflexion statt Reizüberflutung</strong> und einen Dialog,
-        der Widersprüche aushält und verschiedene Perspektiven ernst nimmt.
-        Das Forum lädt zum Diskurs ein und sucht nach Wegen,
-        wie konstruktives Denken zu gemeinsamem Handeln werden kann.
-      </p>
-      <p>
-        Unsere Arbeit bleibt praxisnah – in Analysen und Synthesen,
-        in <strong>Briefings</strong> für Organisationen und in <strong>Workshops</strong>, die Austausch ermöglichen
-        und Resilienz als gemeinsame Haltung stärken.
-      </p>
-
-      <div class="cta-row">
-        <a class="btn" href="mailto:kontakt@alexanderforum.org?subject=Anfrage%20Erstgespräch">Termin anfragen</a>
-        <a class="btn btn-secondary" href="/viewer/index.html?file=/Alexander-Forum_Positionspapier_2025.pdf&title=Positionspapier%202025">
-          Positionspapier 2025 ansehen
-        </a>
-      </div>
-
-      <!-- ===================== RESILIENZ-DOSSIER ===================== -->
-      <section id="resilienz-dossier" class="dossier-card" aria-label="Grundlagendossier Resilienz">
-        <header>
-          <h2>Grundlagendossier: Resilienz – Interdisziplinäre Analyse und Zukunftskompetenz</h2>
-          <p class="meta">
-            Alexander Forum für Reflexion &amp; Resilienz (Wien) · 10. Oktober 2025 · Version 1.1
-          </p>
-        </header>
-
-        <p class="teaser">
-          Resilienz ist die Fähigkeit, Krisen zu bewältigen und an ihnen zu wachsen – biologisch, psychologisch,
-          sozial und systemisch gedacht. Das Dossier erklärt, warum Resilienz unser Namensbestandteil ist und
-          wie sie praktisch gefördert werden kann: von kindlicher Bindung bis Organisationskultur,
-          von Neuroplastizität bis Community-Resilienz – inklusive Digital-Resilienz als neuer Kulturtechnik.
-        </p>
-
-        <div class="infobox note" role="note" aria-label="Hinweis">
-          <h4>Warum Resilienz im Titel?</h4>
-          <p>Resilienz ist für uns ein <strong>Gestaltungsprinzip</strong>: Bedingungen schaffen, unter denen Menschen
-             und Gemeinschaften nicht nur durchhalten, sondern <em>gedeihen</em>.</p>
-        </div>
-
-        <ul class="keypoints">
-          <li>– Dynamisches Konzept: Resilienz ist erlern- und gestaltbar.</li>
-          <li>– Biopsychosozial: Person × Umwelt – Schutzfaktoren können Risiken überkompensieren.</li>
-          <li>– Praxisnah: Übungen, organisationaler Transfer, Community- und Systemresilienz.</li>
-          <li>– Digital: Informationsüberlastung, sozialer Vergleich &amp; „Digital Resilience Literacy".</li>
-        </ul>
-
-        <div class="cta-row">
-          <a class="btn" href="/resilienz/">Zum vollständigen Dossier</a>
-        </div>
-
-        <p class="license">
-          Zitierfähig, mit zahlreichen Quellenhinweisen. Lizenz: CC BY-NC 4.0 (nicht-kommerziell).
-        </p>
-      </section>
-      <!-- =================== /RESILIENZ-DOSSIER =================== -->
-      
-      <!-- === Namensvorbilder: Alexandriner & Alexandrinas ================= -->
-      <section id="namensvorbilder" aria-label="Unsere alexandrinischen Namensvorbilder" class="stack stack--md">
-        <header>
-          <h2>Unsere alexandrinischen Namensvorbilder</h2>
-          <p class="teaser">
-            Der Name „Alexander" ist bei uns Programm – als Haltung, nicht als Personenkult.
-            Die hier versammelten Persönlichkeiten – Männer und Frauen mit „Alexander"-Bezug – zeigen
-            verschiedene Facetten von Resilienz und Reflexion: systemisches Denken, Innovationsfreude,
-            moralische Standhaftigkeit, institutionelle Stabilität und persönliche Erkundungslust.
-          </p>
-        </header>
-
-        <div class="inspirations-grid" role="list" aria-label="Grid der Namensvorbilder">
-          <!-- HERO CARD: Alexander der Große (full-width oben) -->
-          <article class="inspiration-card hero" role="listitem">
-            <img class="cover" 
-                 src="/img/alexander-great.jpg" 
-                 alt="Alexander der Große – Pompeji-Mosaik (ca. 100 v.Chr.)" 
-                 width="800" 
-                 height="600"
-                 loading="eager">
-            <div class="body">
-              <h3>Alexander der Große</h3>
-              <p class="tagline">Strategie &amp; Anpassungsfähigkeit</p>
-              <p class="short">
-                Feldherr und Staatsgründer mit enormer Wirkung – und Ambivalenzen.
-                Seine Kampagnen verbreiteten Wissen und Vernetzung, waren aber auch gewaltsam.
-                Lehre: Führung in Unsicherheit braucht Tempo und Übersetzung – jedoch immer mit Ethik-Checks.
-              </p>
-              <ul class="lektionen">
-                <li>Entscheiden unter Unsicherheit</li>
-                <li>Kulturelle Übersetzungsarbeit</li>
-                <li>Macht reflektieren, Schäden begrenzen</li>
-              </ul>
-              <button class="btn btn-accordion" data-target="alexander-great-detail" aria-expanded="false" aria-controls="alexander-great-detail">
-                Mehr erfahren
-              </button>
-            </div>
-          </article>
-
-          <!-- Normale Karten (3+3 Grid) -->
-          <!-- Karte: Hypatia von Alexandria -->
-          <article class="inspiration-card" role="listitem">
-            <img class="cover" 
-                 src="/img/hypatia.jpg" 
-                 alt="Hypatia von Alexandria (Gemälde von Jules Maurice Gaspard, 1908)" 
-                 width="640" 
-                 height="360"
-                 loading="lazy">
-            <div class="body">
-              <h3>Hypatia von Alexandria</h3>
-              <p class="tagline">Bildung als Leuchtturm</p>
-              <p class="short">
-                Philosophin, Mathematikerin und Lehrerin im spätantiken Alexandria.
-                Hypatia steht für die Idee, dass Bildung und Wissensvermittlung
-                kulturelle Resilienz stiften: kritisches Denken, Dialogfähigkeit
-                und die Weitergabe von Handwerk der Vernunft – auch unter Druck.
-              </p>
-              <ul class="lektionen">
-                <li>Bildung als kulturelles Immunsystem</li>
-                <li>Räume für Kritik stabilisieren Gemeinschaften</li>
-                <li>Wissen überdauert kurzfristige Stürme</li>
-              </ul>
-              <button class="btn btn-accordion" data-target="hypatia-detail">
-                Mehr erfahren
-              </button>
-            </div>
-          </article>
-
-          <!-- Karte: Alexandra David-Néel -->
-          <article class="inspiration-card" role="listitem">
-            <img class="cover" 
-                 src="/img/david-neel.jpg" 
-                 alt="Alexandra David-Néel in tibetischer Kleidung, Lhasa 1924" 
-                 width="640" 
-                 height="360"
-                 loading="lazy">
-            <div class="body">
-              <h3>Alexandra David-Néel</h3>
-              <p class="tagline">Mut an den Rändern</p>
-              <p class="short">
-                Reisende, Autorin, Tibetforscherin. Sie überschritt Grenzen – geografisch,
-                kulturell, gesellschaftlich – und verband Abenteuerlust mit innerer Disziplin.
-                Ihr Lebensweg zeigt: Resilienz entsteht, wenn Neugier, Selbstführung und Respekt
-                vor dem Fremden zusammenkommen.
-              </p>
-              <ul class="lektionen">
-                <li>Exploration stärkt Selbstwirksamkeit</li>
-                <li>Innere Ordnung in unsicheren Umfeldern</li>
-                <li>Kulturelle Sensibilität als Ressource</li>
-              </ul>
-              <button class="btn btn-accordion" data-target="david-neel-detail">
-                Mehr erfahren
-              </button>
-            </div>
-          </article>
-
-          <!-- Karte: Alexandra Kollontai -->
-          <article class="inspiration-card" role="listitem">
-            <img class="cover" 
-                 src="/img/kollontai.jpg" 
-                 alt="Alexandra Kollontai – koloriertes historisches Porträt" 
-                 width="640" 
-                 height="360"
-                 loading="lazy">
-            <div class="body">
-              <h3>Alexandra Kollontai</h3>
-              <p class="tagline">Solidarität gestalten</p>
-              <p class="short">
-                Politikerin, Feministin, Diplomatin – eine der ersten Frauen in hohen Staatsämtern.
-                Kollontai kämpfte für soziale Absicherung, Frauenrechte und institutionelle Reformen.
-                Sie steht für die Einsicht: Kollektive Resilienz wächst, wenn Strukturen Fairness ermöglichen.
-              </p>
-              <ul class="lektionen">
-                <li>Resilienz braucht Institutionen &amp; Netze</li>
-                <li>Gerechtigkeit ist Prävention</li>
-                <li>Hartnäckigkeit gegen Widerstände</li>
-              </ul>
-              <button class="btn btn-accordion" data-target="kollontai-detail">
-                Mehr erfahren
-              </button>
-            </div>
-          </article>
-
-          <!-- Karte: Alexander der Große -->
-          <article class="inspiration-card" role="listitem">
-            <div class="cover-placeholder" data-initial="G" aria-label="Platzhalter Alexander der Große"></div>
-            <div class="body">
-              <h3>Alexander der Große</h3>
-              <p class="tagline">Strategie &amp; Anpassungsfähigkeit</p>
-              <p class="short">
-                Feldherr und Staatsgründer mit enormer Wirkung – und Ambivalenzen.
-                Seine Kampagnen verbreiteten Wissen und Vernetzung, waren aber auch gewaltsam.
-                Lehre: Führung in Unsicherheit braucht Tempo und Übersetzung – jedoch immer mit Ethik-Checks.
-              </p>
-              <ul class="lektionen">
-                <li>Entscheiden unter Unsicherheit</li>
-                <li>Kulturelle Übersetzungsarbeit</li>
-                <li>Macht reflektieren, Schäden begrenzen</li>
-              </ul>
-              <button class="btn btn-accordion" data-target="alexander-great-detail" aria-expanded="false" aria-controls="alexander-great-detail">
-                Mehr erfahren
-              </button>
-            </div>
-            <div id="alexander-great-detail" class="deepdive-inline" hidden>
-              <h4>Alexander der Große – Strategie &amp; Anpassungsfähigkeit</h4>
-              <p><strong>Kurz:</strong> Brillanter Stratege mit ambivalenter Bilanz: Vernetzung und Wissenszirkulation – aber auch Gewalt und Expansion.</p>
-              <p>Lehrreich ist der Umgang mit Unsicherheit: schnelles Entscheiden, Lernen im Feld, kulturelle Übersetzungsarbeit (Verwaltung, Sprachen, Eliten). Genauso lehrreich ist die Grenze: Macht, die nicht reflektiert wird, produziert neue Verwundbarkeit. Resiliente Führung verbindet Mut mit Selbstbegrenzung.</p>
-              <h5>Unsere Lektionen</h5>
-              <ul>
-                <li>Schnell lernen, sauber korrigieren.</li>
-                <li>Lokale Kontexte ernst nehmen.</li>
-                <li>Ethik-Checks in Strategien einbauen.</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- Karte: Alexander Solschenizyn -->
-          <article class="inspiration-card" role="listitem">
-            <img class="cover" 
-                 src="/img/solschenizyn.jpg" 
-                 alt="Alexander Solschenizyn, Porträt 1974 (Foto: Bert Verhoeff/Anefo)" 
-                 width="640" 
-                 height="360"
-                 loading="lazy">
-            <div class="body">
-              <h3>Alexander Solschenizyn</h3>
-              <p class="tagline">Wahrheit als Widerstand</p>
-              <p class="short">
-                Lagerüberlebender und Autor, dessen Werk Zeugenschaft, Sinn und Verantwortung in den Mittelpunkt rückt.
-                Er erinnert daran: Psychische Widerstandskraft nach Trauma braucht Wahrhaftigkeit – persönlich wie gesellschaftlich.
-              </p>
-              <ul class="lektionen">
-                <li>Erinnerung schützt vor Wiederholung</li>
-                <li>Sinnorientierung stabilisiert</li>
-                <li>Zeugenschaft schafft Kultur der Verantwortung</li>
-              </ul>
-              <button class="btn btn-accordion" data-target="solschenizyn-detail">
-                Mehr erfahren
-              </button>
-            </div>
-          </article>
-
-          <!-- Karte: Alexander Fleming -->
-          <article class="inspiration-card" role="listitem">
-            <img class="cover" 
-                 src="/img/fleming.jpg" 
-                 alt="Alexander Fleming in seinem Labor, 1943 (Wellcome Collection)" 
-                 width="640" 
-                 height="360"
-                 loading="lazy">
-            <div class="body">
-              <h3>Alexander Fleming</h3>
-              <p class="tagline">Fehler als Fundgrube</p>
-              <p class="short">
-                Entdecker des Penicillins. Seine Offenheit für das Unerwartete – und eine verunreinigte Petrischale –
-                wurde zum medizinischen Durchbruch. Resilienz heißt hier: Fehlerkultur, Beobachtungsschärfe, schnelle Translation.
-              </p>
-              <ul class="lektionen">
-                <li>Serendipität produktiv machen</li>
-                <li>Fehlerfreundliche Forschungskultur</li>
-                <li>Verbindung von Labor &amp; Praxis</li>
-              </ul>
-              <button class="btn btn-accordion" data-target="fleming-detail">
-                Mehr erfahren
-              </button>
-            </div>
-          </article>
-
-          <!-- Karte: Alexander von Humboldt -->
-          <article class="inspiration-card" role="listitem">
-            <img class="cover" 
-                 src="/img/humboldt.jpg" 
-                 alt="Alexander von Humboldt (Gemälde von Julius Schrader, 1859)" 
-                 width="640" 
-                 height="360"
-                 loading="lazy">
-            <div class="body">
-              <h3>Alexander von Humboldt</h3>
-              <p class="tagline">Vernetzung sichtbar machen</p>
-              <p class="short">
-                Naturforscher und Systemdenker. Er verknüpfte Ökologie, Klima, Daten und Kultur – lokal beobachtet,
-                global verstanden. Seine Lehre: Resilienz beginnt mit dem Sehen von Wechselwirkungen und Langfristhorizonten.
-              </p>
-              <ul class="lektionen">
-                <li>Systemverständnis als Basis</li>
-                <li>Interdisziplinarität erhöht Anpassungsfähigkeit</li>
-                <li>Langfrist denken, kurz handeln</li>
-              </ul>
-              <button class="btn btn-accordion" data-target="humboldt-detail">
-                Mehr erfahren
-              </button>
-            </div>
-          </article>
-        </div>
-
-        <!-- MODAL für Details (wird per JS befüllt) -->
-        <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-          <div class="modal-content">
-            <button class="modal-close" aria-label="Schließen">&times;</button>
-            <div id="modal-body">
-              <!-- Content wird per JS hier eingefügt -->
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <h2 id="kontakt">Kontakt</h2>
-      <p>Schreiben Sie uns für Kooperationen, Briefings oder Veranstaltungen:</p>
-      <div class="contact">
-        <a class="btn" href="mailto:kontakt@alexanderforum.org">kontakt@alexanderforum.org</a>
-      </div>
-
-      <!-- Downloads -->
-      <h2 id="downloads">Downloads</h2>
-      <ul class="bullets">
-        <li><a href="/viewer/index.html?file=/Alexander-Forum_Positionspapier_2025.pdf&title=Positionspapier%202025&return=/#downloads">Positionspapier 2025 – Online-Ansicht</a></li>
-        <li><a href="/viewer/index.html?file=/Alexander-Forum_Mission_Statement_EN.pdf&title=Mission%20Statement%202025&return=/#downloads">Mission Statement 2025 – Online-Ansicht (EN)</a></li>
-        <li><a href="/viewer/index.html?file=/downloads/AF_Resilienz_Grundlagendossier_PUBLIC_v1.1.pdf&title=Resilienz%20Grundlagendossier&return=/#downloads">Grundlagendossier Resilienz – PDF-Ansicht</a></li>
-      </ul>
-
-    </section>
-
-    <footer class="foot">
-      <p>© 2025 Alexander Forum für Reflexion &amp; Resilienz. Alle Rechte vorbehalten.</p>
-    </footer>
-  </main>
-
-  <script>
-    // Akkordeon-Funktionalität für Namensvorbilder
-    document.addEventListener('DOMContentLoaded', function() {
-      const buttons = document.querySelectorAll('.btn-accordion');
-      
-      buttons.forEach(button => {
-        button.addEventListener('click', function() {
-          const targetId = this.getAttribute('data-target');
-          const target = document.getElementById(targetId);
-          const isExpanded = this.getAttribute('aria-expanded') === 'true';
-          
-          // Alle anderen schließen
-          buttons.forEach(otherButton => {
-            if (otherButton !== button) {
-              const otherId = otherButton.getAttribute('data-target');
-              const other = document.getElementById(otherId);
-              otherButton.setAttribute('aria-expanded', 'false');
-              otherButton.textContent = 'Mehr erfahren';
-              other.hidden = true;
-            }
-          });
-          
-          // Aktuelles togglen
-          if (isExpanded) {
-            this.setAttribute('aria-expanded', 'false');
-            this.textContent = 'Mehr erfahren';
-            target.hidden = true;
-          } else {
-            this.setAttribute('aria-expanded', 'true');
-            this.textContent = 'Weniger anzeigen';
-            target.hidden = false;
-            // Sanft zum aufgeklappten Inhalt scrollen
-            setTimeout(() => {
-              target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }, 100);
-          }
-        });
-      });
-
-      // Sticky Header: Schatten beim Scrollen
-      const siteHead = document.querySelector('.site-head');
-      let lastScroll = 0;
-      
-      window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 50) {
-          siteHead.classList.add('scrolled');
-        } else {
-          siteHead.classList.remove('scrolled');
-        }
-        
-        lastScroll = currentScroll;
       });
     });
   </script>
