@@ -1,24 +1,24 @@
-/* Alexander Forum – styles.css  */
+/* Alexander Forum – styles.css (Enhanced Edition) */
 
 :root{
   --af-navy:#0f2a3a;
   --af-navy-600:#1c3c4f;
   --af-ink:#121416;
-  --af-muted:#4a5861;        /* dunkler für AA-Kontrast */
+  --af-muted:#4a5861;
   --af-bg:#f7f8fa;
   --af-card:#ffffff;
   --af-border:#e6eaee;
 
   /* Spacing scale (4/8px-basierend) */
   --space-0: 0;
-  --space-1: .25rem;   /* 4px */
-  --space-2: .5rem;    /* 8px */
-  --space-3: .75rem;   /* 12px */
-  --space-4: 1rem;     /* 16px */
-  --space-5: 1.5rem;   /* 24px */
-  --space-6: 2rem;     /* 32px */
-  --space-7: 2.5rem;   /* 40px */
-  --space-8: 3rem;     /* 48px */
+  --space-1: .25rem;
+  --space-2: .5rem;
+  --space-3: .75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.5rem;
+  --space-8: 3rem;
 }
 
 *{ box-sizing:border-box }
@@ -55,11 +55,11 @@ html,body{
   flex-wrap:wrap;
   align-items:center;
   justify-content:flex-end;
-  font-size:1rem; /* etwas größer für Lesbarkeit */
+  font-size:1rem;
 }
 .mini-nav a{
   text-decoration:none;
-  color:var(--af-ink); /* besserer Kontrast */
+  color:var(--af-ink);
   padding:.25rem .4rem;
   border-radius:6px;
 }
@@ -89,7 +89,7 @@ html,body{
 .logo{
   display:block;
   margin:0 auto .9rem;
-  width:min(450px,100%); /* Desktop max; schrumpft auf Mobile */
+  width:min(450px,100%);
   height:auto;
 }
 
@@ -105,6 +105,22 @@ h1{
 h2{
   margin: var(--space-6) 0 var(--space-3);
   font-size:clamp(1.15rem, 1rem + .8vw, 1.4rem);
+  color:var(--af-navy);
+}
+h3{
+  margin: var(--space-4) 0 var(--space-2);
+  font-size:clamp(1.05rem, .95rem + .5vw, 1.2rem);
+  color:var(--af-navy);
+}
+h4{
+  margin: var(--space-3) 0 var(--space-2);
+  font-size:1.05rem;
+  color:var(--af-navy-600);
+}
+h5{
+  margin: var(--space-3) 0 var(--space-2);
+  font-size:1rem;
+  font-weight:700;
   color:var(--af-navy);
 }
 .tag{
@@ -124,7 +140,7 @@ em{ font-style:italic }
 
 /* Fließtext in Blöcken im Blocksatz */
 @media (min-width:700px){
-  .card p:not(.tag){
+  .card p:not(.tag):not(.teaser):not(.tagline):not(.short){
     text-align: justify;
     text-justify: inter-word;
     hyphens: auto;
@@ -166,17 +182,27 @@ em{ font-style:italic }
   letter-spacing:.01em;
   transition:background .2s ease, transform .06s ease, box-shadow .2s ease;
   border:1px solid rgba(0,0,0,0.06);
-  min-height:44px; /* Touch-Zielfläche */
+  min-height:44px;
+  cursor:pointer;
+  font-family:inherit;
+  font-size:1rem;
+  line-height:1.4;
 }
 .btn:hover{ background:var(--af-navy-600) }
 .btn:active{ transform:translateY(1px) }
 .btn-secondary{
   background:#fff;
   color:var(--af-navy);
-  border:1px solid #cfd8df;            /* klarer Kontrast */
+  border:1px solid #cfd8df;
 }
 .btn-secondary:hover{
   background:#eaf0f4;
+}
+
+/* Akkordeon-Button für Namensvorbilder */
+.btn-accordion{
+  margin-top: var(--space-2);
+  width:100%;
 }
 
 .foot{
@@ -274,12 +300,12 @@ a:hover{ text-decoration-thickness: .12em; }
 /* Keypoints: echte Spiegelstriche im Content, keine Browser-Bullets */
 #resilienz-dossier .keypoints{
   margin: .35rem 0 1rem 0;
-  padding-left: 0;            /* kein Einzug; Strich ist Teil des Textes */
+  padding-left: 0;
   list-style: none;
 }
 #resilienz-dossier .keypoints li{
   margin: .25rem 0;
-  text-indent: 0;             /* kein Hanging-Indent nötig, da "– " im Text */
+  text-indent: 0;
 }
 
 /* Download-Buttons */
@@ -331,9 +357,9 @@ a:hover{ text-decoration-thickness: .12em; }
 
 /* === Stack/Flow-System (automatische Vertikalabstände) ============== */
 .stack > * + *{ margin-top: var(--flow-space, var(--space-4)) }
-.stack--sm{ --flow-space: var(--space-3) }   /* 12px */
-.stack--md{ --flow-space: var(--space-5) }   /* 24px */
-.stack--lg{ --flow-space: var(--space-6) }   /* 32px */
+.stack--sm{ --flow-space: var(--space-3) }
+.stack--md{ --flow-space: var(--space-5) }
+.stack--lg{ --flow-space: var(--space-6) }
 
 /* === Margin-Utilities (bei Bedarf) ================================== */
 .mt-0{ margin-top: var(--space-0) }
@@ -368,7 +394,8 @@ a:hover{ text-decoration-thickness: .12em; }
   overflow:hidden;
   box-shadow:0 8px 16px rgba(15,42,58,.05);
   transition: transform .12s ease, box-shadow .2s ease, border-color .2s ease;
-  display:flex; flex-direction:column;
+  display:flex; 
+  flex-direction:column;
 }
 .inspiration-card:hover{
   transform: translateY(-2px);
@@ -376,17 +403,48 @@ a:hover{ text-decoration-thickness: .12em; }
   border-color: #cfd8df;
 }
 
-.inspiration-card .cover{
-  display:block;
+/* Platzhalter-Cover mit Initialen */
+.cover-placeholder{
+  display:flex;
+  align-items:center;
+  justify-content:center;
   width:100%;
   height:auto;
   aspect-ratio: 16/9;
-  object-fit: cover;
-  background: #e8edf2;
+  background: linear-gradient(135deg, var(--af-navy) 0%, var(--af-navy-600) 100%);
+  color:#fff;
+  font-size:4rem;
+  font-weight:700;
+  font-family: Georgia, serif;
+  position:relative;
+  overflow:hidden;
+}
+.cover-placeholder::before{
+  content: attr(data-initial);
+  position:relative;
+  z-index:2;
+  opacity:.9;
+}
+.cover-placeholder::after{
+  content:'';
+  position:absolute;
+  top:-50%;
+  right:-50%;
+  width:200%;
+  height:200%;
+  background: radial-gradient(circle, rgba(255,255,255,.15) 0%, transparent 70%);
+  animation: subtle-pulse 8s ease-in-out infinite;
+}
+@keyframes subtle-pulse{
+  0%, 100%{ transform: translate(0,0) scale(1); }
+  50%{ transform: translate(-10%,-10%) scale(1.1); }
 }
 
 .inspiration-card .body{
   padding: 1rem 1.1rem 1.15rem;
+  flex-grow:1;
+  display:flex;
+  flex-direction:column;
 }
 .inspiration-card h3{
   margin: .15rem 0 .1rem;
@@ -397,33 +455,86 @@ a:hover{ text-decoration-thickness: .12em; }
   margin: .1rem 0 .5rem;
   color: var(--af-navy-600);
   font-weight:700;
+  font-size:.95rem;
 }
 .inspiration-card .short{
   margin: 0 0 .6rem;
+  flex-grow:1;
 }
 
 .lektionen{
   margin:.25rem 0 .75rem;
   padding-left: 1.1rem;
+  font-size:.95rem;
 }
 .lektionen li{ margin:.15rem 0 }
 
-.deepdive{
-  margin: 2rem 0;
-  padding: 1rem 1rem 1.1rem;
-  border-left: 4px solid var(--af-navy);
-  background: rgba(15,42,58,.03);
-  border-radius:8px;
+/* Akkordeon-Content unter jeder Karte */
+.deepdive-inline{
+  padding: 1rem 1.1rem 1.25rem;
+  background: rgba(15,42,58,.02);
+  border-top:1px solid var(--af-border);
+  animation: slideDown .3s ease-out;
 }
-.deepdive h4{
-  margin: .6rem 0 .25rem;
+.deepdive-inline[hidden]{
+  display:none;
+}
+@keyframes slideDown{
+  from{ 
+    opacity:0; 
+    max-height:0;
+    padding-top:0;
+    padding-bottom:0;
+  }
+  to{ 
+    opacity:1; 
+    max-height:1000px;
+    padding-top:1rem;
+    padding-bottom:1.25rem;
+  }
+}
+.deepdive-inline h4{
+  margin: .2rem 0 .4rem;
   font-size:1.02rem;
   color: var(--af-navy-600);
+}
+.deepdive-inline h5{
+  margin: .6rem 0 .25rem;
+  font-size:.98rem;
+  color: var(--af-navy);
+}
+.deepdive-inline p{
+  margin-bottom:.5rem;
+  font-size:.95rem;
+}
+.deepdive-inline ul{
+  margin:.25rem 0 .5rem;
+  padding-left:1.2rem;
+  font-size:.95rem;
+}
+.deepdive-inline ul li{
+  margin:.2rem 0;
 }
 
 /* Dark mode – Karten */
 @media (prefers-color-scheme: dark){
   .inspiration-card{ box-shadow:none; border-color:#2a3640; }
   .inspiration-card:hover{ border-color:#3a4a59; }
-  .deepdive{ background: rgba(156,195,218,.1); border-color:#2a3640; }
+  .cover-placeholder{
+    background: linear-gradient(135deg, #1c3c4f 0%, #2a4a5f 100%);
+  }
+  .deepdive-inline{ 
+    background: rgba(156,195,218,.08); 
+    border-color:#2a3640; 
+  }
+}
+
+/* Responsive: Mobile-Optimierung für Karten */
+@media (max-width:600px){
+  .inspirations-grid{
+    grid-template-columns: 1fr;
+  }
+  .cover-placeholder{
+    font-size:3rem;
+  }
 }
