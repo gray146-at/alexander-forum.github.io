@@ -134,10 +134,21 @@ h5{
   color:var(--af-navy);
 }
 .tag{
-  margin:.25rem 0 1.5rem;
+  margin:.25rem 0 .5rem;
   text-align:center;
   font-style:italic;
   color:var(--af-muted);
+  font-size:.95rem;
+}
+.subclaim{
+  margin:.5rem auto 1.5rem;
+  text-align:center;
+  max-width:620px;
+  font-size:clamp(1.05rem, .95rem + .4vw, 1.15rem);
+  line-height:1.5;
+  color:var(--af-navy);
+  font-weight:500;
+  letter-spacing:.01em;
 }
 .lead{
   font-size:clamp(1.05rem, .95rem + .5vw, 1.175rem);
@@ -425,6 +436,31 @@ a:hover{ text-decoration-thickness: .12em; }
   margin-top: .75rem;
 }
 
+/* Hero-Card für Alexander den Großen (full-width) */
+.inspiration-card.hero{
+  grid-column: 1 / -1;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+.inspiration-card.hero .cover{
+  aspect-ratio: 4/3;
+  height: 100%;
+  object-fit: cover;
+}
+.inspiration-card.hero .body{
+  padding: 1.5rem 2rem;
+}
+@media (max-width:768px){
+  .inspiration-card.hero{
+    grid-template-columns: 1fr;
+  }
+  .inspiration-card.hero .cover{
+    aspect-ratio: 16/9;
+  }
+}
+
 .inspiration-card{
   border:1px solid var(--af-border);
   border-radius:14px;
@@ -439,6 +475,16 @@ a:hover{ text-decoration-thickness: .12em; }
   transform: translateY(-2px);
   box-shadow:0 14px 26px rgba(15,42,58,.08);
   border-color: #cfd8df;
+}
+
+/* Cover-Bilder (echte Fotos) */
+.inspiration-card .cover{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  background: #e8edf2;
 }
 
 /* Platzhalter-Cover mit Initialen */
