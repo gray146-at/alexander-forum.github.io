@@ -4,67 +4,370 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alexander Forum for Reflection & Resilience | Think & Do Tank Vienna</title>
-
-  <!-- Canonical & robots -->
   <link rel="canonical" href="https://alexander.forum/en/">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="theme-color" content="#0f2a3a">
+  <meta name="description" content="Independent Think & Do Tank in Vienna. For societal resilience, deeper reflection and thoughtful future-making. Analysis, workshops and briefings on crises, technology and cohesion.">
+  
+  <style>
+    :root{
+      --af-navy:#0f2a3a;
+      --af-navy-600:#1c3c4f;
+      --af-ink:#121416;
+      --af-muted:#4a5861;
+      --af-bg:#f7f8fa;
+      --af-card:#ffffff;
+      --af-border:#e6eaee;
+      --space-2: .5rem;
+      --space-3: .75rem;
+      --space-4: 1rem;
+      --space-5: 1.5rem;
+      --space-6: 2rem;
+      --space-7: 2.5rem;
+    }
 
-  <!-- Description (SEO optimized) -->
-  <meta name="description" content="Independent Think & Do Tank in Vienna. For societal resilience, deeper reflection, and smart future shaping. Analysis, workshops, and briefings on crises, technology, and cohesion.">
-  <meta name="keywords" content="Resilience, Think Tank Vienna, Reflection, Social Analysis, Crisis Management, Future Shaping, Interdisciplinarity, System Resilience">
-  <meta name="author" content="Alexander Forum for Reflection & Resilience">
+    *{ box-sizing:border-box }
 
-  <!-- Open Graph (enhanced) -->
-  <meta property="og:site_name" content="Alexander Forum">
-  <meta property="og:url" content="https://alexander.forum/en/">
-  <meta property="og:title" content="Alexander Forum for Reflection & Resilience | Think & Do Tank Vienna">
-  <meta property="og:description" content="For societal resilience, deeper reflection, and smart future shaping. Independent Think & Do Tank in Vienna.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://alexander.forum/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:locale:alternate" content="de_AT">
+    html,body{
+      margin:0; padding:0;
+      background:var(--af-bg);
+      color:var(--af-ink);
+      font-family:"Georgia","Palatino Linotype","Times New Roman",serif;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Alexander Forum – Reflection & Resilience">
-  <meta name="twitter:description" content="For societal resilience, deeper reflection, and smart future shaping.">
-  <meta name="twitter:image" content="https://alexander.forum/og-image.png">
+    .skip{ position:absolute; left:-9999px; }
+    .skip:focus{ position:static; background:#fff; border:2px solid var(--af-navy); padding:.3rem .5rem; }
 
-  <!-- Icons & manifest -->
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f2a3a">
-  <link rel="manifest" href="/site.webmanifest">
+    .site-head{
+      position:sticky; top:0; z-index:100;
+      max-width:980px; margin:0 auto; padding:.75rem 1rem;
+      background:var(--af-bg);
+      border-bottom:1px solid transparent;
+      transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    .site-head.scrolled{
+      border-bottom-color:var(--af-border);
+      box-shadow:0 2px 8px rgba(15,42,58,0.06);
+    }
+    .mini-nav{
+      display:flex; gap:var(--space-3); flex-wrap:wrap;
+      align-items:center; justify-content:flex-end; font-size:1rem;
+    }
+    .mini-nav a{
+      text-decoration:none; color:var(--af-ink);
+      padding:.25rem .4rem; border-radius:6px;
+    }
+    .mini-nav a:hover{ background:rgba(15,42,58,.08); color:var(--af-navy) }
+    .mini-nav .lang{
+      font-weight:600; color:var(--af-navy);
+      border:1px solid var(--af-border);
+    }
 
-  <!-- hreflang -->
-  <link rel="alternate" href="https://alexander.forum/" hreflang="de">
-  <link rel="alternate" href="https://alexander.forum/en/" hreflang="en">
-  <link rel="alternate" href="https://alexander.forum/en/" hreflang="x-default">
+    .wrap{
+      max-width:880px; margin:0 auto;
+      padding:2.75rem 1.25rem 3.5rem;
+    }
 
-  <!-- Alternate PDFs for crawlers (DE & EN) -->
-  <link rel="alternate" type="application/pdf" href="/Alexander-Forum_Mission_Statement_EN.pdf" hreflang="en" title="Mission Statement 2025 (PDF)">
-  <link rel="alternate" type="application/pdf" href="/Alexander-Forum_Positionspapier_2025.pdf" hreflang="de" title="Positionspapier 2025 (PDF)">
+    .card{
+      background:var(--af-card);
+      border:1px solid var(--af-border);
+      border-radius:14px;
+      padding:2.25rem 2rem;
+      box-shadow:0 8px 20px rgba(15,42,58,0.06);
+    }
 
-  <!-- Performance -->
-  <link rel="preload" as="image" href="/AF-Logo-final.svg">
+    .logo{
+      display:block; margin:0 auto .9rem;
+      width:min(450px,100%); height:auto;
+    }
 
-  <link rel="stylesheet" href="/styles.css">
+    h1{
+      margin:.25rem 0 0; text-align:center;
+      font-size:clamp(1.75rem, 1.2rem + 2vw, 2.3rem);
+      letter-spacing:.01em; font-weight:700; color:var(--af-navy);
+    }
+    h2{
+      margin:var(--space-6) 0 var(--space-3);
+      font-size:clamp(1.15rem, 1rem + .8vw, 1.4rem);
+      color:var(--af-navy);
+    }
+    h3{
+      margin:var(--space-4) 0 var(--space-2);
+      font-size:clamp(1.05rem, .95rem + .5vw, 1.2rem);
+      color:var(--af-navy);
+    }
+    h4{
+      margin:var(--space-3) 0 var(--space-2);
+      font-size:1.05rem; color:var(--af-navy-600);
+    }
+    h5{
+      margin:var(--space-3) 0 var(--space-2);
+      font-size:1rem; font-weight:700; color:var(--af-navy);
+    }
 
-  <!-- Schema.org (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Alexander Forum for Reflection & Resilience",
-    "url": "https://alexander.forum/en/",
-    "logo": "https://alexander.forum/AF-Logo-final.svg",
-    "email": "mailto:kontakt@alexanderforum.org",
-    "sameAs": []
-  }
-  </script>
+    .tag{
+      margin:.25rem 0 .5rem; text-align:center;
+      font-style:italic; color:var(--af-muted); font-size:.95rem;
+    }
+    .subclaim{
+      margin:.5rem auto 1.5rem; text-align:center; max-width:620px;
+      font-size:clamp(1.05rem, .95rem + .4vw, 1.15rem);
+      line-height:1.5; color:var(--af-navy); font-weight:500;
+    }
+    .lead{
+      font-size:clamp(1.05rem, .95rem + .5vw, 1.175rem);
+      color:var(--af-ink); margin-bottom:var(--space-3);
+    }
+    p{ margin:0 0 var(--space-3) }
+    strong{ font-weight:700; color:var(--af-navy) }
+
+    .bullets{
+      margin:.25rem 0 1rem 0; padding-left:1.1rem;
+    }
+    .bullets li{ margin:.25rem 0 }
+
+    .cta-row{
+      display:flex; gap:var(--space-3); flex-wrap:wrap;
+      margin:var(--space-4) 0 var(--space-3);
+    }
+
+    .contact{
+      margin-top:var(--space-4);
+      display:flex; justify-content:center;
+    }
+
+    .btn{
+      display:inline-block;
+      background:var(--af-navy); color:#fff;
+      text-decoration:none;
+      padding:.72rem 1.1rem; border-radius:8px;
+      font-weight:700; letter-spacing:.01em;
+      transition:background .2s ease, transform .06s ease;
+      border:1px solid rgba(0,0,0,0.06);
+      min-height:44px; cursor:pointer;
+      font-family:inherit; font-size:1rem; line-height:1.4;
+    }
+    .btn:hover{ background:var(--af-navy-600) }
+    .btn:active{ transform:translateY(1px) }
+    .btn-secondary{
+      background:#fff; color:var(--af-navy);
+      border:1px solid #cfd8df;
+    }
+    .btn-secondary:hover{ background:#eaf0f4 }
+
+    .foot{
+      text-align:center; color:var(--af-muted);
+      font-size:.95rem; margin-top:1.25rem;
+      padding:1.25rem .5rem 0;
+    }
+
+    .dossier-card{
+      background:var(--af-card);
+      border:1px solid var(--af-border);
+      border-radius:14px;
+      padding:2rem 2rem 2.25rem;
+      margin:var(--space-7) 0;
+      box-shadow:0 8px 20px rgba(15,42,58,0.06);
+      position:relative;
+    }
+    .dossier-card::before{
+      content:''; position:absolute;
+      top:0; left:0; right:0; height:4px;
+      background:linear-gradient(90deg, var(--af-navy) 0%, var(--af-navy-600) 100%);
+      border-radius:14px 14px 0 0;
+    }
+    .dossier-card .meta{
+      color:var(--af-muted); font-size:.95rem; margin-top:.25rem;
+    }
+    .dossier-card .teaser{
+      margin:.75rem 0 1rem; line-height:1.7;
+    }
+    .dossier-card .keypoints{
+      margin:.35rem 0 1rem 0; padding-left:0; list-style:none;
+    }
+    .dossier-card .keypoints li{ margin:.25rem 0 }
+    .dossier-card .license{
+      color:var(--af-muted); font-size:.95rem; margin-top:.15rem;
+    }
+
+    .infobox{
+      position:relative; margin:var(--space-5) 0;
+      padding:.85rem 1rem .9rem 1rem;
+      border:1px solid var(--af-border);
+      border-left-width:4px; border-left-color:var(--af-navy);
+      border-radius:10px; background:rgba(15,42,58,.04);
+    }
+    .infobox h4{
+      margin:0 0 .4rem; font-size:1.05rem; color:var(--af-navy);
+    }
+    .infobox p{ margin:0 0 .35rem }
+
+    /* === NAMESAKES GRID === */
+    .inspirations-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.25rem;
+      margin-top:.75rem;
+    }
+
+    /* HERO Card (Alexander the Great) – full width */
+    .inspiration-card.hero{
+      grid-column:1 / -1;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1.5rem;
+      align-items:center;
+    }
+    .inspiration-card.hero .cover{
+      aspect-ratio:4/3;
+      height:100%;
+      object-fit:cover;
+    }
+    .inspiration-card.hero .body{
+      padding:1.5rem 2rem;
+    }
+
+    .inspiration-card{
+      border:1px solid var(--af-border);
+      border-radius:14px;
+      background:var(--af-card);
+      overflow:hidden;
+      box-shadow:0 8px 16px rgba(15,42,58,.05);
+      transition:transform .12s ease, box-shadow .2s ease, border-color .2s ease;
+      display:flex;
+      flex-direction:column;
+    }
+    .inspiration-card:hover{
+      transform:translateY(-2px);
+      box-shadow:0 14px 26px rgba(15,42,58,.08);
+      border-color:#cfd8df;
+    }
+
+    .inspiration-card .cover{
+      display:block; width:100%; height:auto;
+      aspect-ratio:16/9; object-fit:cover;
+      background:#e8edf2;
+    }
+
+    .cover-placeholder{
+      display:flex; align-items:center; justify-content:center;
+      width:100%; height:auto; aspect-ratio:16/9;
+      background:linear-gradient(135deg, var(--af-navy) 0%, var(--af-navy-600) 100%);
+      color:#fff; font-size:4rem; font-weight:700;
+      position:relative; overflow:hidden;
+    }
+
+    .inspiration-card .body{
+      padding:1rem 1.1rem 1.15rem;
+      flex-grow:1;
+      display:flex;
+      flex-direction:column;
+    }
+    .inspiration-card h3{
+      margin:.15rem 0 .1rem;
+      font-size:1.05rem;
+      color:var(--af-navy);
+    }
+    .inspiration-card .tagline{
+      margin:.1rem 0 .5rem;
+      color:var(--af-navy-600);
+      font-weight:700;
+      font-size:.95rem;
+    }
+    .inspiration-card .short{
+      margin:0 0 .6rem;
+      flex-grow:1;
+    }
+
+    .lektionen{
+      margin:.25rem 0 .75rem;
+      padding-left:1.1rem;
+      font-size:.95rem;
+    }
+    .lektionen li{ margin:.15rem 0 }
+
+    /* === MODAL OVERLAY === */
+    .modal-overlay{
+      display:none;
+      position:fixed;
+      top:0; left:0; right:0; bottom:0;
+      background:rgba(12,17,21,0.85);
+      z-index:9999;
+      padding:2rem 1rem;
+      overflow-y:auto;
+      align-items:center;
+      justify-content:center;
+    }
+    .modal-overlay.active{
+      display:flex;
+    }
+    .modal-content{
+      position:relative;
+      background:var(--af-card);
+      border:1px solid var(--af-border);
+      border-radius:14px;
+      max-width:700px;
+      width:100%;
+      padding:2rem 2.5rem 2.25rem;
+      box-shadow:0 20px 60px rgba(15,42,58,0.4);
+      animation:modalFadeIn .3s ease-out;
+    }
+    @keyframes modalFadeIn{
+      from{ opacity:0; transform:translateY(-20px) }
+      to{ opacity:1; transform:translateY(0) }
+    }
+    .modal-close{
+      position:absolute;
+      top:1rem; right:1rem;
+      background:transparent;
+      border:none;
+      font-size:2rem;
+      line-height:1;
+      cursor:pointer;
+      color:var(--af-muted);
+      transition:color .2s ease;
+      padding:.25rem .5rem;
+    }
+    .modal-close:hover{
+      color:var(--af-navy);
+    }
+    #modal-body h3{
+      margin-top:0;
+      color:var(--af-navy);
+    }
+    #modal-body h5{
+      margin-top:1rem;
+      color:var(--af-navy);
+    }
+    #modal-body ul{
+      padding-left:1.2rem;
+    }
+    #modal-body ul li{
+      margin:.3rem 0;
+    }
+
+    @media (max-width:768px){
+      .inspiration-card.hero{
+        grid-template-columns:1fr;
+      }
+      .inspiration-card.hero .cover{
+        aspect-ratio:16/9;
+      }
+      .modal-content{
+        padding:1.5rem 1.25rem;
+      }
+    }
+
+    @media (max-width:600px){
+      .wrap{ padding:2rem .9rem 2.5rem }
+      .card{ padding:1.6rem 1.1rem }
+      .inspirations-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -72,101 +375,87 @@
   <header class="site-head" aria-label="Alexander Forum">
     <nav class="mini-nav" aria-label="Sections">
       <a href="#mission">Mission</a>
-      <a href="#themes">Themes</a>
+      <a href="#topics">Topics</a>
       <a href="#approach">Approach</a>
       <a href="#resilience-dossier">Resilience Dossier</a>
-      <a href="#role-models">Role Models</a>
+      <a href="#namesakes">Namesakes</a>
       <a href="#contact">Contact</a>
       <a href="#downloads">Downloads</a>
-      <a class="lang" href="/" hreflang="de" aria-label="Zur deutschen Seite wechseln">DE</a>
+      <a class="lang" href="/" hreflang="de" aria-label="Zur deutschen Version">DE</a>
     </nav>
   </header>
 
   <main id="main" class="wrap">
-    <section class="card stack stack--md">
-      <img class="logo"
-           src="/AF-Logo-final.svg"
-           alt="Alexander Forum – tree emblem"
-           width="450" height="120"
-           fetchpriority="high">
+    <section class="card">
+      <img class="logo" src="/AF-Logo-final.svg" alt="Alexander Forum – Tree Signet" width="450" height="120">
 
       <h1>ALEXANDER FORUM</h1>
       <p class="tag">for Reflection &amp; Resilience</p>
+      <p class="subclaim">For societal resilience, deeper reflection and thoughtful future-making.</p>
 
-      <h2 id="mission">Our mission</h2>
+      <h2 id="mission">Our Mission</h2>
       <p class="lead">
         The <strong>Alexander Forum for Reflection &amp; Resilience</strong> is an independent, non-profit
         <em>Think&nbsp;&amp;&nbsp;Do&nbsp;Tank</em> based in Vienna.
-        We combine societal observation, strategic thinking, and practical experience to open new perspectives on change,
-        crises, and social cohesion.
+        We connect societal observation, strategic thinking and practical experience
+        to open new perspectives on change, crises and cohesion.
       </p>
       <p>
-        We see <strong>resilience</strong> as a shared task across politics, science, culture, and society.
-        Personal and societal crises are interwoven: when people are under pressure, they contribute less – and unresolved tensions weaken the whole.
+        We understand <strong>resilience</strong> as a shared task of politics, science, culture and society.
+        Societal and personal crises are interwoven:
+        Those under pressure can contribute less – and unresolved tensions weaken the whole.
       </p>
 
-      <h2 id="themes">Themes</h2>
+      <h2 id="topics">Focus Areas</h2>
       <p>
-        Our approach is <strong>interdisciplinary</strong> – from climate and conflict to technology and security,
-        psychology and medicine. We work openly, name uncertainties transparently, and publish analyses and briefs
-        that provide orientation, highlight omissions, and suggest solutions.
+        Our approach is <strong>interdisciplinary</strong> – from climate and conflicts
+        to technology and security, psychology and medicine.
+        We work openly, name uncertainties transparently and publish analyses,
+        assessments and reports that provide orientation, make shortcomings visible and inspire solutions.
       </p>
       <ul class="bullets">
-        <li>
-          <strong>Resilience &amp; societal stress tests</strong><br>
-          Between adaptation, exhaustion, and renewal.
-        </li>
-        <li>
-          <strong>Information &amp; trust</strong><br>
-          Communication, fear, polarization, and responsibility in the digital age.
-        </li>
-        <li>
-          <strong>Technology &amp; risk</strong><br>
-          How progress reshapes stability and security.
-        </li>
-        <li>
-          <strong>Identity &amp; cohesion</strong><br>
-          Belonging, trauma, and what holds a community together.
-        </li>
+        <li><strong>Resilience &amp; societal stress tests</strong><br>Between adaptation, exhaustion and new beginnings.</li>
+        <li><strong>Information &amp; trust</strong><br>Communication, fear, polarization and responsibility in the digital age.</li>
+        <li><strong>Technology &amp; risk</strong><br>How progress changes stability and security.</li>
+        <li><strong>Identity &amp; cohesion</strong><br>Belonging, trauma and the question of what sustains a community.</li>
       </ul>
 
-      <h2 id="approach">Approach</h2>
+      <h2 id="approach">Our Approach</h2>
       <p>
-        We foster <strong>reflection over noise</strong> and a dialogue that can hold contradictions and take multiple perspectives seriously.
-        The Forum invites discourse and looks for ways to turn constructive thinking into shared action.
+        We promote <strong>reflection over information overload</strong> and a dialogue
+        that tolerates contradictions and takes different perspectives seriously.
+        The Forum invites discourse and seeks ways
+        for constructive thinking to become collective action.
       </p>
       <p>
-        Our work remains practice-oriented – in analyses and syntheses, in <strong>briefings</strong> for organizations,
-        and in <strong>workshops</strong> that enable exchange and strengthen resilience as a shared stance.
+        Our work remains practice-oriented – in analyses and syntheses,
+        in <strong>briefings</strong> for organizations and in <strong>workshops</strong> that enable exchange
+        and strengthen resilience as a shared attitude.
       </p>
 
       <div class="cta-row">
-        <a class="btn" href="mailto:kontakt@alexanderforum.org?subject=Introductory%20meeting%20request">Request a meeting</a>
-        <a class="btn btn-secondary" href="/viewer/index.html?file=/Alexander-Forum_Mission_Statement_EN.pdf&title=Mission%20Statement%202025&return=/en/#downloads">
-          View Mission Statement 2025
-        </a>
+        <a class="btn" href="mailto:kontakt@alexanderforum.org?subject=Inquiry%20Initial%20Meeting">Request a meeting</a>
+        <a class="btn btn-secondary" href="/viewer/index.html?file=/Alexander-Forum_Mission_Statement_EN.pdf&title=Mission%20Statement%202025">View Mission Statement 2025</a>
       </div>
 
       <!-- ===================== RESILIENCE DOSSIER ===================== -->
-      <section id="resilience-dossier" class="dossier-card" aria-label="Foundational Resilience Dossier">
+      <section id="resilience-dossier" class="dossier-card" aria-label="Foundation Dossier Resilience">
         <header>
-          <h2>Foundational Dossier: Resilience – Interdisciplinary Analysis and Future Competency</h2>
-          <p class="meta">
-            Alexander Forum for Reflection &amp; Resilience (Vienna) · October 10, 2025 · Version 1.1
-          </p>
+          <h2>Foundation Dossier: Resilience – Interdisciplinary Analysis and Future Competence</h2>
+          <p class="meta">Alexander Forum for Reflection &amp; Resilience (Vienna) · October 10, 2025 · Version 1.1</p>
         </header>
 
         <p class="teaser">
-          Resilience is the ability to withstand crises, recover, and grow from them – conceived biologically,
-          psychologically, socially, and systemically. This dossier explains why resilience is part of our name
-          and how it can be fostered in practice: from early attachment and organizational culture to neuroplasticity,
-          community resilience – including digital resilience as a new cultural technique.
+          Resilience is the ability to cope with crises and grow from them – understood biologically, psychologically,
+          socially and systemically. The dossier explains why resilience is part of our name and
+          how it can be promoted practically: from childhood attachment to organizational culture,
+          from neuroplasticity to community resilience – including digital resilience as a new cultural technique.
         </p>
 
         <div class="infobox note" role="note" aria-label="Note">
-          <h4>Why "Resilience" in our name?</h4>
-          <p>For us, resilience is a <strong>principle of shaping</strong> – creating conditions under which
-             people and communities do not merely endure but <em>flourish</em>.</p>
+          <h4>Why Resilience in the Title?</h4>
+          <p>For us, resilience is a <strong>design principle</strong>: creating conditions under which people
+             and communities don't just survive, but <em>thrive</em>.</p>
         </div>
 
         <ul class="keypoints">
@@ -177,72 +466,77 @@
         </ul>
 
         <div class="cta-row">
-          <a class="btn" href="/en/resilience/">Read full dossier</a>
+          <a class="btn" href="/resilience/">To the full dossier</a>
         </div>
 
-        <p class="license">
-          Citable, with extensive references. License: CC BY-NC 4.0 (non-commercial).
-        </p>
+        <p class="license">Citable, with numerous source references. License: CC BY-NC 4.0 (non-commercial).</p>
       </section>
-      <!-- =================== /RESILIENCE DOSSIER =================== -->
 
-      <!-- === Role Models: Alexandrians ================= -->
-      <section id="role-models" aria-label="Our Alexandrian Role Models" class="stack stack--md">
+      <!-- ===================== NAMESAKES ===================== -->
+      <section id="namesakes" aria-label="Our Alexandrian namesakes">
         <header>
-          <h2>Our Alexandrian Role Models</h2>
+          <h2>Our Alexandrian Namesakes</h2>
           <p class="teaser">
-            The name "Alexander" is our program – as an attitude, not personality cult.
-            The figures assembled here – men and women with "Alexander" connections – show
+            The name "Alexander" is our program – as an attitude, not a personality cult.
+            The personalities gathered here – men and women with "Alexander" connections – show
             different facets of resilience and reflection: systemic thinking, innovative spirit,
-            moral steadfastness, institutional stability, and personal exploration.
+            moral integrity, institutional stability and personal exploratory drive.
           </p>
         </header>
 
-        <div class="inspirations-grid" role="list" aria-label="Role models grid">
+        <div class="inspirations-grid" role="list" aria-label="Grid of namesakes">
+          
+          <!-- HERO CARD: Alexander the Great (full-width top) -->
+          <article class="inspiration-card hero" role="listitem">
+            <img class="cover" src="/img/alexander-great.jpg" alt="Alexander the Great – Pompeii Mosaic (ca. 100 BC)" width="800" height="600" loading="eager">
+            <div class="body">
+              <h3>Alexander the Great</h3>
+              <p class="tagline">Strategy &amp; Adaptability</p>
+              <p class="short">
+                Military commander and state founder with enormous impact – and ambivalences.
+                His campaigns spread knowledge and connectivity, but were also violent.
+                Lesson: Leadership in uncertainty requires speed and translation – but always with ethics checks.
+              </p>
+              <ul class="lektionen">
+                <li>Deciding under uncertainty</li>
+                <li>Cultural translation work</li>
+                <li>Reflecting power, limiting harm</li>
+              </ul>
+              <button class="btn" data-target="alexander-great-detail">Learn more</button>
+            </div>
+          </article>
+
           <!-- Card: Hypatia of Alexandria -->
           <article class="inspiration-card" role="listitem">
-            <div class="cover-placeholder" data-initial="H" aria-label="Placeholder Hypatia"></div>
+            <img class="cover" src="/img/hypatia.jpg" alt="Hypatia of Alexandria" width="640" height="360" loading="lazy">
             <div class="body">
               <h3>Hypatia of Alexandria</h3>
               <p class="tagline">Education as Lighthouse</p>
               <p class="short">
-                Philosopher, mathematician, and teacher in late antique Alexandria.
+                Philosopher, mathematician and teacher in late ancient Alexandria.
                 Hypatia stands for the idea that education and knowledge transmission
-                create cultural resilience: critical thinking, dialogic capacity,
-                and the passing on of rational tools – even under pressure.
+                create cultural resilience: critical thinking, dialogue capacity
+                and passing on the craft of reason – even under pressure.
               </p>
               <ul class="lektionen">
                 <li>Education as cultural immune system</li>
-                <li>Spaces for critique stabilize communities</li>
+                <li>Spaces for criticism stabilize communities</li>
                 <li>Knowledge outlasts short-term storms</li>
               </ul>
-              <button class="btn btn-accordion" data-target="hypatia-detail" aria-expanded="false" aria-controls="hypatia-detail">
-                Learn more
-              </button>
-            </div>
-            <div id="hypatia-detail" class="deepdive-inline" hidden>
-              <h4>Hypatia of Alexandria – Education as Lighthouse</h4>
-              <p><strong>In brief:</strong> Philosopher, mathematician, teacher; symbol of rational thought and teaching tradition in turbulent times.</p>
-              <p>Hypatia taught at one of antiquity's most significant knowledge centers. Her importance lies less in a single work than in practice: teaching, discussing, passing on methods. In phases of social tension, precisely this protects – shared standards, fairness in argument, verifiable reasons – from sliding into myth and violence. Education becomes a societal resilience achievement.</p>
-              <h5>Our lessons</h5>
-              <ul>
-                <li>Invest in education: It works slowly but sustainably.</li>
-                <li>Remain capable of critique: Debate culture is stability culture.</li>
-                <li>Mediate rather than preach: Methods strengthen self-efficacy.</li>
-              </ul>
+              <button class="btn" data-target="hypatia-detail">Learn more</button>
             </div>
           </article>
 
           <!-- Card: Alexandra David-Néel -->
           <article class="inspiration-card" role="listitem">
-            <div class="cover-placeholder" data-initial="A" aria-label="Placeholder Alexandra David-Néel"></div>
+            <img class="cover" src="/img/david-neel.jpg" alt="Alexandra David-Néel in Tibetan clothing" width="640" height="360" loading="lazy">
             <div class="body">
               <h3>Alexandra David-Néel</h3>
-              <p class="tagline">Courage at the Edges</p>
+              <p class="tagline">Courage at the Margins</p>
               <p class="short">
-                Traveler, author, Tibet researcher. She crossed boundaries – geographic,
-                cultural, social – and combined adventurous spirit with inner discipline.
-                Her life shows: Resilience emerges when curiosity, self-leadership, and respect
+                Traveler, author, Tibet researcher. She crossed borders – geographically,
+                culturally, socially – and combined adventurousness with inner discipline.
+                Her life path shows: Resilience emerges when curiosity, self-leadership and respect
                 for the foreign come together.
               </p>
               <ul class="lektionen">
@@ -250,200 +544,111 @@
                 <li>Inner order in uncertain environments</li>
                 <li>Cultural sensitivity as resource</li>
               </ul>
-              <button class="btn btn-accordion" data-target="david-neel-detail" aria-expanded="false" aria-controls="david-neel-detail">
-                Learn more
-              </button>
-            </div>
-            <div id="david-neel-detail" class="deepdive-inline" hidden>
-              <h4>Alexandra David-Néel – Courage at the Edges</h4>
-              <p><strong>In brief:</strong> Traveler, Tibet researcher, author – an example of personal robustness and cultural openness.</p>
-              <p>David-Néel combined adventure, asceticism, and precise observation. Her boundary crossings – partly disguised, often under real risks – show how inner order (rituals, breath, focus) and respect for the Other lead to resilient action. Exploration without hubris is a school of self-leadership.</p>
-              <h5>Our lessons</h5>
-              <ul>
-                <li>Train self-leadership (routine, breath, sleep, movement).</li>
-                <li>Cultivate curiosity, suspend judgment.</li>
-                <li>Assess risk, respect boundaries, yet go.</li>
-              </ul>
+              <button class="btn" data-target="david-neel-detail">Learn more</button>
             </div>
           </article>
 
           <!-- Card: Alexandra Kollontai -->
           <article class="inspiration-card" role="listitem">
-            <div class="cover-placeholder" data-initial="K" aria-label="Placeholder Alexandra Kollontai"></div>
+            <img class="cover" src="/img/kollontai.jpg" alt="Alexandra Kollontai" width="640" height="360" loading="lazy">
             <div class="body">
               <h3>Alexandra Kollontai</h3>
               <p class="tagline">Shaping Solidarity</p>
               <p class="short">
                 Politician, feminist, diplomat – one of the first women in high state offices.
-                Kollontai fought for social security, women's rights, and institutional reforms.
-                She stands for the insight: Collective resilience grows when structures enable fairness.
+                Kollontai fought for social security, women's rights and institutional reforms.
+                She represents the insight: Collective resilience grows when structures enable fairness.
               </p>
               <ul class="lektionen">
                 <li>Resilience needs institutions &amp; networks</li>
                 <li>Justice is prevention</li>
                 <li>Persistence against resistance</li>
               </ul>
-              <button class="btn btn-accordion" data-target="kollontai-detail" aria-expanded="false" aria-controls="kollontai-detail">
-                Learn more
-              </button>
-            </div>
-            <div id="kollontai-detail" class="deepdive-inline" hidden>
-              <h4>Alexandra Kollontai – Shaping Solidarity</h4>
-              <p><strong>In brief:</strong> Politician, feminist, diplomat; one of the first women as minister and ambassador. Focus: social rights, protection from poverty, participation.</p>
-              <p>Kollontai stands for the insight that individual resilience hits limits when structures are unjust. Her agenda – childcare, social security, women workers' rights – understands resilience as a collective task. Institutions that consider care work and vulnerability increase the crisis robustness of the entire society.</p>
-              <h5>Our lessons</h5>
-              <ul>
-                <li>Resilience policy is social policy: Security prevents crisis consequences.</li>
-                <li>Make institutions fair – this creates trust.</li>
-                <li>Negotiate persistently: Change is a process, not a sprint.</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- Card: Alexander the Great -->
-          <article class="inspiration-card" role="listitem">
-            <div class="cover-placeholder" data-initial="G" aria-label="Placeholder Alexander the Great"></div>
-            <div class="body">
-              <h3>Alexander the Great</h3>
-              <p class="tagline">Strategy &amp; Adaptability</p>
-              <p class="short">
-                Military leader and state founder with enormous impact – and ambivalences.
-                His campaigns spread knowledge and networking but were also violent.
-                Lesson: Leadership in uncertainty needs speed and translation – but always with ethics checks.
-              </p>
-              <ul class="lektionen">
-                <li>Deciding under uncertainty</li>
-                <li>Cultural translation work</li>
-                <li>Reflect power, limit damage</li>
-              </ul>
-              <button class="btn btn-accordion" data-target="alexander-great-detail" aria-expanded="false" aria-controls="alexander-great-detail">
-                Learn more
-              </button>
-            </div>
-            <div id="alexander-great-detail" class="deepdive-inline" hidden>
-              <h4>Alexander the Great – Strategy &amp; Adaptability</h4>
-              <p><strong>In brief:</strong> Brilliant strategist with ambivalent record: networking and knowledge circulation – but also violence and expansion.</p>
-              <p>Instructive is the handling of uncertainty: quick deciding, learning in the field, cultural translation work (administration, languages, elites). Equally instructive is the limit: Power that is not reflected produces new vulnerability. Resilient leadership combines courage with self-limitation.</p>
-              <h5>Our lessons</h5>
-              <ul>
-                <li>Learn quickly, correct cleanly.</li>
-                <li>Take local contexts seriously.</li>
-                <li>Build ethics checks into strategies.</li>
-              </ul>
+              <button class="btn" data-target="kollontai-detail">Learn more</button>
             </div>
           </article>
 
           <!-- Card: Alexander Solzhenitsyn -->
           <article class="inspiration-card" role="listitem">
-            <div class="cover-placeholder" data-initial="S" aria-label="Placeholder Alexander Solzhenitsyn"></div>
+            <img class="cover" src="/img/solschenizyn.jpg" alt="Alexander Solzhenitsyn" width="640" height="360" loading="lazy">
             <div class="body">
               <h3>Alexander Solzhenitsyn</h3>
               <p class="tagline">Truth as Resistance</p>
               <p class="short">
-                Camp survivor and author whose work centers witnessing, meaning, and responsibility.
-                He reminds us: Psychological resilience after trauma needs truthfulness – personally and societally.
+                Camp survivor and author whose work focuses on witnessing, meaning and responsibility.
+                He reminds us: Psychological resilience after trauma requires truthfulness – personally and societally.
               </p>
               <ul class="lektionen">
-                <li>Memory protects from repetition</li>
-                <li>Meaning orientation stabilizes</li>
+                <li>Memory protects against repetition</li>
+                <li>Meaning-orientation stabilizes</li>
                 <li>Witnessing creates culture of responsibility</li>
               </ul>
-              <button class="btn btn-accordion" data-target="solzhenitsyn-detail" aria-expanded="false" aria-controls="solzhenitsyn-detail">
-                Learn more
-              </button>
-            </div>
-            <div id="solzhenitsyn-detail" class="deepdive-inline" hidden>
-              <h4>Alexander Solzhenitsyn – Truth as Resistance</h4>
-              <p><strong>In brief:</strong> Writer and witness of political violence; his work grapples with meaning, memory, and accountability.</p>
-              <p>Resilience here means re-narrating destroyed realities. Witnessing protects from repression, meaning provides direction, and public debates create spaces for healing. Solzhenitsyn reminds: Without truth, resilience remains facade.</p>
-              <h5>Our lessons</h5>
-              <ul>
-                <li>Memory politics is health prevention.</li>
-                <li>Strengthen sources of meaning (values, belonging, practice).</li>
-                <li>Institutionally secure witnessing.</li>
-              </ul>
+              <button class="btn" data-target="solschenizyn-detail">Learn more</button>
             </div>
           </article>
 
           <!-- Card: Alexander Fleming -->
           <article class="inspiration-card" role="listitem">
-            <div class="cover-placeholder" data-initial="F" aria-label="Placeholder Alexander Fleming"></div>
+            <img class="cover" src="/img/fleming.jpg" alt="Alexander Fleming in his laboratory" width="640" height="360" loading="lazy">
             <div class="body">
               <h3>Alexander Fleming</h3>
-              <p class="tagline">Mistakes as Treasure</p>
+              <p class="tagline">Errors as Goldmine</p>
               <p class="short">
-                Discoverer of penicillin. His openness to the unexpected – and a contaminated petri dish –
+                Discoverer of penicillin. His openness to the unexpected – and a contaminated Petri dish –
                 became a medical breakthrough. Resilience here means: error culture, observational acuity, rapid translation.
               </p>
               <ul class="lektionen">
-                <li>Make serendipity productive</li>
+                <li>Making serendipity productive</li>
                 <li>Error-friendly research culture</li>
                 <li>Connection of lab &amp; practice</li>
               </ul>
-              <button class="btn btn-accordion" data-target="fleming-detail" aria-expanded="false" aria-controls="fleming-detail">
-                Learn more
-              </button>
-            </div>
-            <div id="fleming-detail" class="deepdive-inline" hidden>
-              <h4>Alexander Fleming – Mistakes as Treasure</h4>
-              <p><strong>In brief:</strong> Discoverer of penicillin; example of serendipitous innovation through careful observation.</p>
-              <p>A "botched" petri dish led to discovery with global impact. The message: Create conditions where chance can become useful – with error culture, rapid prototyping, and bridges between lab and application.</p>
-              <h5>Our lessons</h5>
-              <ul>
-                <li>Make mistakes visible and evaluate them.</li>
-                <li>From observation to prototype – without detours.</li>
-                <li>Scientific humility as strength.</li>
-              </ul>
+              <button class="btn" data-target="fleming-detail">Learn more</button>
             </div>
           </article>
 
           <!-- Card: Alexander von Humboldt -->
           <article class="inspiration-card" role="listitem">
-            <div class="cover-placeholder" data-initial="H" aria-label="Placeholder Alexander von Humboldt"></div>
+            <img class="cover" src="/img/humboldt.jpg" alt="Alexander von Humboldt" width="640" height="360" loading="lazy">
             <div class="body">
               <h3>Alexander von Humboldt</h3>
               <p class="tagline">Making Connections Visible</p>
               <p class="short">
-                Natural scientist and systems thinker. He connected ecology, climate, data, and culture – observed locally,
-                understood globally. His lesson: Resilience begins with seeing interactions and long-term horizons.
+                Natural scientist and systems thinker. He connected ecology, climate, data and culture – locally observed,
+                globally understood. His lesson: Resilience begins with seeing interdependencies and long-term horizons.
               </p>
               <ul class="lektionen">
-                <li>Systems understanding as basis</li>
+                <li>System understanding as foundation</li>
                 <li>Interdisciplinarity increases adaptability</li>
-                <li>Think long-term, act short</li>
+                <li>Think long-term, act short-term</li>
               </ul>
-              <button class="btn btn-accordion" data-target="humboldt-detail" aria-expanded="false" aria-controls="humboldt-detail">
-                Learn more
-              </button>
-            </div>
-            <div id="humboldt-detail" class="deepdive-inline" hidden>
-              <h4>Alexander von Humboldt – Connections &amp; Systems Thinking</h4>
-              <p><strong>In brief:</strong> Natural scientist and world thinker; connected ecology, climate, data, and culture.</p>
-              <p>Humboldt shows how resilience is conceived beyond the individual: in ecosystems, institutions, and practices.
-              Who recognizes interactions avoids short-circuit politics and builds robust paths – scientifically grounded, socially embedded, long-term.</p>
-              <h5>Our lessons</h5>
-              <ul>
-                <li>Institutionalize interdisciplinarity.</li>
-                <li>Couple local action with global perspective.</li>
-                <li>Long-term horizons against pure efficiency logic.</li>
-              </ul>
+              <button class="btn" data-target="humboldt-detail">Learn more</button>
             </div>
           </article>
+
+        </div>
+
+        <!-- MODAL for details -->
+        <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+          <div class="modal-content">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <div id="modal-body">
+              <!-- Content will be inserted here by JS -->
+            </div>
+          </div>
         </div>
       </section>
 
       <h2 id="contact">Contact</h2>
-      <p>For collaborations, briefings, or events, write to us:</p>
+      <p>Write to us for collaborations, briefings or events:</p>
       <div class="contact">
         <a class="btn" href="mailto:kontakt@alexanderforum.org">kontakt@alexanderforum.org</a>
       </div>
 
-      <!-- Downloads -->
       <h2 id="downloads">Downloads</h2>
       <ul class="bullets">
         <li><a href="/viewer/index.html?file=/Alexander-Forum_Mission_Statement_EN.pdf&title=Mission%20Statement%202025&return=/en/#downloads">Mission Statement 2025 – Online View</a></li>
-        <li><a href="/viewer/index.html?file=/Alexander-Forum_Positionspapier_2025.pdf&title=Position%20Paper%202025&return=/en/#downloads">Position Paper 2025 – Online View (DE)</a></li>
-        <li><a href="/viewer/index.html?file=/downloads/AF_Resilienz_Grundlagendossier_PUBLIC_v1.1.pdf&title=Resilience%20Dossier%20(DE)&return=/en/#downloads">Resilience Dossier – PDF View (DE)</a></li>
+        <li><a href="/viewer/index.html?file=/Alexander-Forum_Positionspapier_2025.pdf&title=Positionspapier%202025&return=/en/#downloads">Positionspapier 2025 – Online View (DE)</a></li>
+        <li><a href="/viewer/index.html?file=/downloads/AF_Resilience_Foundation_Dossier_EN_v1.1.pdf&title=Resilience%20Foundation%20Dossier&return=/en/#downloads">Foundation Dossier Resilience – PDF View</a></li>
       </ul>
 
     </section>
@@ -454,47 +659,151 @@
   </main>
 
   <script>
-    // Accordion functionality for role models
+    // Modal system for namesakes
     document.addEventListener('DOMContentLoaded', function() {
-      const buttons = document.querySelectorAll('.btn-accordion');
+      const modal = document.getElementById('modal');
+      const modalBody = document.getElementById('modal-body');
+      const closeBtn = modal.querySelector('.modal-close');
+      
+      // Content database for all persons
+      const content = {
+        'alexander-great-detail': {
+          title: 'Alexander the Great – Strategy & Adaptability',
+          html: `
+            <p><strong>Brief:</strong> Brilliant strategist with ambivalent legacy: connectivity and knowledge circulation – but also violence and expansion.</p>
+            <p>What's instructive is the handling of uncertainty: quick decision-making, learning in the field, cultural translation work (administration, languages, elites). Equally instructive is the limit: Power that isn't reflected produces new vulnerability. Resilient leadership combines courage with self-limitation.</p>
+            <h5>Our Lessons</h5>
+            <ul>
+              <li>Learn quickly, correct cleanly.</li>
+              <li>Take local contexts seriously.</li>
+              <li>Build ethics checks into strategies.</li>
+            </ul>
+          `
+        },
+        'hypatia-detail': {
+          title: 'Hypatia of Alexandria – Education as Lighthouse',
+          html: `
+            <p><strong>Brief:</strong> Philosopher, mathematician, teacher; symbol of rational thinking and teaching tradition in turbulent times.</p>
+            <p>Hypatia taught in one of antiquity's most important knowledge centers. Her significance lies less in a single work than in practice: teaching, discussing, passing on methods. In phases of social tension, precisely this protects – shared standards, fairness in argument, verifiable reasons – from sliding into myth and violence. Education thus becomes a societal resilience achievement.</p>
+            <h5>Our Lessons</h5>
+            <ul>
+              <li>Invest in education: It works slowly but sustainably.</li>
+              <li>Remain capable of criticism: Debate culture is stability culture.</li>
+              <li>Mediate rather than preach: Methods strengthen self-efficacy.</li>
+            </ul>
+          `
+        },
+        'david-neel-detail': {
+          title: 'Alexandra David-Néel – Courage at the Margins',
+          html: `
+            <p><strong>Brief:</strong> Traveler, Tibet researcher, author – an example of personal robustness and cultural openness.</p>
+            <p>David-Néel combined adventure, asceticism and precise observation. Her boundary crossings – partly disguised, often under real risks – show how inner order (rituals, breath, focus) and respect for the Other lead to resilient action. Exploration without hubris is a school of self-leadership.</p>
+            <h5>Our Lessons</h5>
+            <ul>
+              <li>Train self-leadership (routine, breath, sleep, movement).</li>
+              <li>Cultivate curiosity, suspend judgment.</li>
+              <li>Assess risk, respect boundaries, go anyway.</li>
+            </ul>
+          `
+        },
+        'kollontai-detail': {
+          title: 'Alexandra Kollontai – Shaping Solidarity',
+          html: `
+            <p><strong>Brief:</strong> Politician, feminist, diplomat; one of the first women as minister and ambassador. Focus: social rights, protection from poverty, participation.</p>
+            <p>Kollontai stands for the insight that individual resilience hits limits when structures are unjust. Her agenda – childcare, social security, workers' rights – understands resilience as a collective task. Institutions that consider care work and vulnerability increase the crisis robustness of the entire society.</p>
+            <h5>Our Lessons</h5>
+            <ul>
+              <li>Resilience policy is social policy: Security prevents crisis consequences.</li>
+              <li>Make institutions fair – that's how trust emerges.</li>
+              <li>Negotiate persistently: Change is a process, not a sprint.</li>
+            </ul>
+          `
+        },
+        'solschenizyn-detail': {
+          title: 'Alexander Solzhenitsyn – Truth as Resistance',
+          html: `
+            <p><strong>Brief:</strong> Writer and witness of political violence; his work grapples with meaning, memory and accountability.</p>
+            <p>Resilience here means re-narrating destroyed realities. Witnessing protects against repression, meaning provides direction, and public debates create spaces for healing. Solzhenitsyn reminds us: Without truth, resilience remains facade.</p>
+            <h5>Our Lessons</h5>
+            <ul>
+              <li>Memory politics is health prevention.</li>
+              <li>Strengthen sources of meaning (values, belonging, practice).</li>
+              <li>Secure witnessing institutionally.</li>
+            </ul>
+          `
+        },
+        'fleming-detail': {
+          title: 'Alexander Fleming – Errors as Goldmine',
+          html: `
+            <p><strong>Brief:</strong> Discoverer of penicillin; example of serendipitous innovation through careful observation.</p>
+            <p>A "botched" Petri dish led to a discovery with global impact. The message: Create conditions in which chance can become useful – with error culture, rapid prototyping and bridges between lab and application.</p>
+            <h5>Our Lessons</h5>
+            <ul>
+              <li>Make errors visible and evaluate them.</li>
+              <li>From observation to prototype – without detours.</li>
+              <li>Scientific humility as strength.</li>
+            </ul>
+          `
+        },
+        'humboldt-detail': {
+          title: 'Alexander von Humboldt – Connection & Systems Thinking',
+          html: `
+            <p><strong>Brief:</strong> Natural scientist and world thinker; connected ecology, climate, data and culture.</p>
+            <p>Humboldt shows how resilience is thought beyond the individual: in ecosystems, institutions and practices. Those who recognize interactions avoid short-circuit politics and build robust pathways – scientifically grounded, socially embedded, long-term.</p>
+            <h5>Our Lessons</h5>
+            <ul>
+              <li>Institutionalize interdisciplinarity.</li>
+              <li>Couple local action with global perspective.</li>
+              <li>Long-term horizons against pure efficiency logic.</li>
+            </ul>
+          `
+        }
+      };
+      
+      // Find all buttons
+      const buttons = document.querySelectorAll('.btn[data-target]');
       
       buttons.forEach(button => {
         button.addEventListener('click', function() {
           const targetId = this.getAttribute('data-target');
-          const target = document.getElementById(targetId);
-          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+          const data = content[targetId];
           
-          // Close all others
-          buttons.forEach(otherButton => {
-            if (otherButton !== button) {
-              const otherId = otherButton.getAttribute('data-target');
-              const other = document.getElementById(otherId);
-              otherButton.setAttribute('aria-expanded', 'false');
-              otherButton.textContent = 'Learn more';
-              other.hidden = true;
-            }
-          });
-          
-          // Toggle current
-          if (isExpanded) {
-            this.setAttribute('aria-expanded', 'false');
-            this.textContent = 'Learn more';
-            target.hidden = true;
-          } else {
-            this.setAttribute('aria-expanded', 'true');
-            this.textContent = 'Show less';
-            target.hidden = false;
-            // Smooth scroll to expanded content
-            setTimeout(() => {
-              target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }, 100);
+          if (data) {
+            // Fill modal
+            modalBody.innerHTML = `<h3>${data.title}</h3>${data.html}`;
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
           }
         });
       });
+      
+      // Close modal
+      function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      closeBtn.addEventListener('click', closeModal);
+      
+      // Close on overlay click
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+      
+      // Close with ESC key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+    });
 
-      // Sticky Header: Shadow on scroll
+    // Sticky Header: Shadow on scroll
+    document.addEventListener('DOMContentLoaded', function() {
       const siteHead = document.querySelector('.site-head');
-      let lastScroll = 0;
       
       window.addEventListener('scroll', function() {
         const currentScroll = window.pageYOffset;
@@ -504,8 +813,6 @@
         } else {
           siteHead.classList.remove('scrolled');
         }
-        
-        lastScroll = currentScroll;
       });
     });
   </script>
