@@ -3,29 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alexander Forum für Reflexion & Resilienz</title>
+  <title>Alexander Forum für Reflexion & Resilienz | Think & Do Tank Wien</title>
 
   <!-- Canonical & robots -->
   <link rel="canonical" href="https://alexander.forum/">
-  <meta name="robots" content="index,follow">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="theme-color" content="#0f2a3a">
 
-  <!-- Description -->
-  <meta name="description" content="Unabhängiger Think & Do Tank in Wien – Analyse, Einordnung und Praxis für gesellschaftliche und individuelle Resilienz.">
+  <!-- Description (optimiert für SEO) -->
+  <meta name="description" content="Unabhängiger Think & Do Tank in Wien. Für gesellschaftliche Resilienz, tiefere Reflexion und kluge Zukunftsgestaltung. Analysen, Workshops und Briefings zu Krisen, Technologie und Zusammenhalt.">
+  <meta name="keywords" content="Resilienz, Think Tank Wien, Reflexion, Gesellschaftsanalyse, Krisenmanagement, Zukunftsgestaltung, Interdisziplinarität, Systemresilienz">
+  <meta name="author" content="Alexander Forum für Reflexion & Resilienz">
 
-  <!-- Open Graph -->
+  <!-- Open Graph (erweitert) -->
   <meta property="og:site_name" content="Alexander Forum">
   <meta property="og:url" content="https://alexander.forum/">
-  <meta property="og:title" content="Alexander Forum – Reflexion & Resilienz">
-  <meta property="og:description" content="Ein gemeinnütziger Think & Do Tank in Wien. Analysen, Dialog und Umsetzung für Resilienz.">
+  <meta property="og:title" content="Alexander Forum für Reflexion & Resilienz | Think & Do Tank Wien">
+  <meta property="og:description" content="Für gesellschaftliche Resilienz, tiefere Reflexion und kluge Zukunftsgestaltung. Unabhängiger Think & Do Tank in Wien.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="og-image.png">
+  <meta property="og:image" content="https://alexander.forum/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="de_AT">
+  <meta property="og:locale:alternate" content="en_US">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Alexander Forum – Reflexion & Resilienz">
-  <meta name="twitter:description" content="Analysen, Dialog und Umsetzung für Resilienz.">
-  <meta name="twitter:image" content="og-image.png">
+  <meta name="twitter:description" content="Für gesellschaftliche Resilienz, tiefere Reflexion und kluge Zukunftsgestaltung.">
+  <meta name="twitter:image" content="https://alexander.forum/og-image.png">
 
   <!-- Icons & manifest -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -44,19 +50,78 @@
 
   <!-- Performance -->
   <link rel="preload" as="image" href="AF-Logo-final.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Schema.org (JSON-LD) -->
+  <!-- Schema.org (JSON-LD) – Erweitert -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Alexander Forum für Reflexion & Resilienz",
+    "alternateName": "Alexander Forum",
     "url": "https://alexander.forum/",
     "logo": "https://alexander.forum/AF-Logo-final.svg",
-    "email": "mailto:kontakt@alexanderforum.org",
+    "image": "https://alexander.forum/og-image.png",
+    "description": "Unabhängiger Think & Do Tank in Wien. Für gesellschaftliche Resilienz, tiefere Reflexion und kluge Zukunftsgestaltung.",
+    "email": "kontakt@alexanderforum.org",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Wien",
+      "addressCountry": "AT"
+    },
+    "foundingDate": "2025",
+    "founder": {
+      "@type": "Person",
+      "name": "Dorian Alexander Rammer"
+    },
+    "knowsAbout": [
+      "Resilienz",
+      "Gesellschaftsanalyse",
+      "Krisenmanagement",
+      "Systemdenken",
+      "Interdisziplinarität",
+      "Psychologie",
+      "Politikberatung"
+    ],
+    "areaServed": {
+      "@type": "Country",
+      "name": "Österreich"
+    },
     "sameAs": []
+  }
+  </script>
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://alexander.forum/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- WebSite Schema mit Sitelinks Search Box -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Alexander Forum",
+    "url": "https://alexander.forum/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://alexander.forum/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
   }
   </script>
 </head>
@@ -82,10 +147,12 @@
            src="AF-Logo-final.svg"
            alt="Alexander Forum – Baum-Signet"
            width="450" height="120"
-           fetchpriority="high">
+           fetchpriority="high"
+           loading="eager">
 
       <h1>ALEXANDER FORUM</h1>
       <p class="tag">für Reflexion &amp; Resilienz</p>
+      <p class="subclaim">Für gesellschaftliche Resilienz, tiefere Reflexion und kluge Zukunftsgestaltung.</p>
 
       <h2 id="auftrag">Unser Auftrag</h2>
       <p class="lead">
@@ -200,7 +267,7 @@
         <div class="inspirations-grid" role="list" aria-label="Grid der Namensvorbilder">
           <!-- Karte: Hypatia von Alexandria -->
           <article class="inspiration-card" role="listitem">
-            <div class="cover-placeholder" data-initial="H" aria-label="Platzhalter Hypatia"></div>
+            <div class="cover-placeholder" data-initial="H" aria-label="Platzhalter Hypatia" role="img"></div>
             <div class="body">
               <h3>Hypatia von Alexandria</h3>
               <p class="tagline">Bildung als Leuchtturm</p>
