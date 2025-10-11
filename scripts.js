@@ -271,4 +271,59 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
+  // ==================== ACTIVE NAVIGATION HIGHLIGHTING ====================
+  const navLinks = document.querySelectorAll('.mini-nav a[href^="#"]');
+  const sections = document.querySelectorAll('section[id], h2[id]');
+  
+  if (navLinks.length > 0 && sections.length > 0) {
+    // Create a map of section IDs to their positions
+    const sectionPositions = Array.from(sections).map(section => ({
+      id: section.id,
+      top: section.offsetTop - 100, // 100px offset for sticky header
+      bottom: section.offsetTop + section.offsetHeight
+    }));
+    
+    function updateActiveNav() {
+      const scrollPos = window.pageYOffset + 150; // Adjusted for better UX
+      
+      // Find current section
+      let currentSection = null;
+      for (const section of sectionPositions) {
+        if (scrollPos >= section.top && scrollPos < section.bottom) {
+          currentSection = section.id;
+          break;
+        }
+      }
+      
+      // Update nav links
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href || href === '#') return;
+        
+        const targetId = href.substring(1); // Remove '#'
+        
+        if (targetId === currentSection) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+    
+    // Update on scroll (throttled for performance)
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          updateActiveNav();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+    
+    // Initial check
+    updateActiveNav();
+  }
+  
 });
