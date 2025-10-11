@@ -1,329 +1,327 @@
-// Alexander Forum – scripts.js
-// Modal system & Sticky header
+// Alexander Forum – scripts.js (Updated with Dropdown Navigation)
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   
-  // ==================== MODAL SYSTEM ====================
-  const modal = document.getElementById('modal');
-  const modalBody = document.getElementById('modal-body');
-  const closeBtn = modal ? modal.querySelector('.modal-close') : null;
-  
-  // Content database for all persons (DE & EN)
-  const content = {
-    'alexander-great-detail': {
-      de: {
-        title: 'Alexander der Große – Strategie & Anpassungsfähigkeit',
-        html: `
-          <p><strong>Kurz:</strong> Brillanter Stratege mit ambivalenter Bilanz: Vernetzung und Wissenszirkulation – aber auch Gewalt und Expansion.</p>
-          <p>Lehrreich ist der Umgang mit Unsicherheit: schnelles Entscheiden, Lernen im Feld, kulturelle Übersetzungsarbeit (Verwaltung, Sprachen, Eliten). Genauso lehrreich ist die Grenze: Macht, die nicht reflektiert wird, produziert neue Verwundbarkeit. Resiliente Führung verbindet Mut mit Selbstbegrenzung.</p>
-          <h5>Unsere Lektionen</h5>
-          <ul>
-            <li>Schnell lernen, sauber korrigieren.</li>
-            <li>Lokale Kontexte ernst nehmen.</li>
-            <li>Ethik-Checks in Strategien einbauen.</li>
-          </ul>
-        `
-      },
-      en: {
-        title: 'Alexander the Great – Strategy & Adaptability',
-        html: `
-          <p><strong>Brief:</strong> Brilliant strategist with ambivalent legacy: connectivity and knowledge circulation – but also violence and expansion.</p>
-          <p>What's instructive is the handling of uncertainty: quick decision-making, learning in the field, cultural translation work (administration, languages, elites). Equally instructive is the limit: Power that isn't reflected produces new vulnerability. Resilient leadership combines courage with self-limitation.</p>
-          <h5>Our Lessons</h5>
-          <ul>
-            <li>Learn quickly, correct cleanly.</li>
-            <li>Take local contexts seriously.</li>
-            <li>Build ethics checks into strategies.</li>
-          </ul>
-        `
-      }
-    },
-    'hypatia-detail': {
-      de: {
-        title: 'Hypatia von Alexandria – Bildung als Leuchtturm',
-        html: `
-          <p><strong>Kurz:</strong> Philosophin, Mathematikerin, Lehrerin; Symbol für rationales Denken und Lehrtradition in stürmischen Zeiten.</p>
-          <p>Hypatia lehrte in einem der bedeutendsten Wissenszentren der Antike. Ihre Bedeutung liegt weniger in einem einzelnen Werk als in der Praxis: lehren, diskutieren, Methoden weitergeben. In Phasen sozialer Spannung schützt genau das – geteilte Maßstäbe, Fairness im Argument, überprüfbare Gründe – vor dem Abgleiten in Mythos und Gewalt. Bildung wird so zur gesellschaftlichen Resilienzleistung.</p>
-          <h5>Unsere Lektionen</h5>
-          <ul>
-            <li>In Bildung investieren: Sie wirkt langsam, aber nachhaltig.</li>
-            <li>Kritikfähig bleiben: Debattenkultur ist Stabilitätskultur.</li>
-            <li>Vermitteln statt predigen: Methoden stärken Selbstwirksamkeit.</li>
-          </ul>
-        `
-      },
-      en: {
-        title: 'Hypatia of Alexandria – Education as Lighthouse',
-        html: `
-          <p><strong>Brief:</strong> Philosopher, mathematician, teacher; symbol of rational thinking and teaching tradition in turbulent times.</p>
-          <p>Hypatia taught in one of antiquity's most important knowledge centers. Her significance lies less in a single work than in practice: teaching, discussing, passing on methods. In phases of social tension, precisely this protects – shared standards, fairness in argument, verifiable reasons – from sliding into myth and violence. Education thus becomes a societal resilience achievement.</p>
-          <h5>Our Lessons</h5>
-          <ul>
-            <li>Invest in education: It works slowly but sustainably.</li>
-            <li>Remain capable of criticism: Debate culture is stability culture.</li>
-            <li>Mediate rather than preach: Methods strengthen self-efficacy.</li>
-          </ul>
-        `
-      }
-    },
-    'david-neel-detail': {
-      de: {
-        title: 'Alexandra David-Néel – Mut an den Rändern',
-        html: `
-          <p><strong>Kurz:</strong> Reisende, Tibetforscherin, Autorin – ein Beispiel für persönliche Robustheit und kulturelle Offenheit.</p>
-          <p>David-Néel vereinte Abenteuer, Askese und präzise Beobachtung. Ihre Grenzgänge – teils verkleidet, oft unter realen Risiken – zeigen, wie innere Ordnung (Rituale, Atem, Fokus) und Respekt gegenüber dem Anderen zu resilientem Handeln führen. Exploration ohne Hybris ist eine Schule der Selbstführung.</p>
-          <h5>Unsere Lektionen</h5>
-          <ul>
-            <li>Selbstführung trainieren (Routine, Atem, Schlaf, Bewegung).</li>
-            <li>Neugier kultivieren, Urteile aufschieben.</li>
-            <li>Risiko bewerten, Grenzen achten, trotzdem gehen.</li>
-          </ul>
-        `
-      },
-      en: {
-        title: 'Alexandra David-Néel – Courage at the Margins',
-        html: `
-          <p><strong>Brief:</strong> Traveler, Tibet researcher, author – an example of personal robustness and cultural openness.</p>
-          <p>David-Néel combined adventure, asceticism and precise observation. Her boundary crossings – partly disguised, often under real risks – show how inner order (rituals, breath, focus) and respect for the Other lead to resilient action. Exploration without hubris is a school of self-leadership.</p>
-          <h5>Our Lessons</h5>
-          <ul>
-            <li>Train self-leadership (routine, breath, sleep, movement).</li>
-            <li>Cultivate curiosity, suspend judgment.</li>
-            <li>Assess risk, respect boundaries, go anyway.</li>
-          </ul>
-        `
-      }
-    },
-    'kollontai-detail': {
-      de: {
-        title: 'Alexandra Kollontai – Solidarität gestalten',
-        html: `
-          <p><strong>Kurz:</strong> Politikerin, Feministin, Diplomatin; eine der ersten Frauen als Ministerin und Botschafterin. Arbeitsschwerpunkt: soziale Rechte, Schutz vor Armut, Teilhabe.</p>
-          <p>Kollontai steht für die Einsicht, dass individuelle Resilienz an Grenzen stößt, wenn Strukturen ungerecht sind. Ihre Agenda – Kinderbetreuung, soziale Sicherung, Arbeitnehmerinnenrechte – versteht Resilienz als kollektive Aufgabe. Institutionen, die Care-Arbeit und Verwundbarkeit mitdenken, erhöhen die Krisenrobustheit der ganzen Gesellschaft.</p>
-          <h5>Unsere Lektionen</h5>
-          <ul>
-            <li>Resilienzpolitik ist Sozialpolitik: Absicherung beugt Krisenfolgen vor.</li>
-            <li>Institutionen fair machen – so entsteht Vertrauen.</li>
-            <li>Hartnäckig verhandeln: Wandel ist ein Prozess, kein Sprint.</li>
-          </ul>
-        `
-      },
-      en: {
-        title: 'Alexandra Kollontai – Shaping Solidarity',
-        html: `
-          <p><strong>Brief:</strong> Politician, feminist, diplomat; one of the first women as minister and ambassador. Focus: social rights, protection from poverty, participation.</p>
-          <p>Kollontai stands for the insight that individual resilience hits limits when structures are unjust. Her agenda – childcare, social security, workers' rights – understands resilience as a collective task. Institutions that consider care work and vulnerability increase the crisis robustness of the entire society.</p>
-          <h5>Our Lessons</h5>
-          <ul>
-            <li>Resilience policy is social policy: Security prevents crisis consequences.</li>
-            <li>Make institutions fair – that's how trust emerges.</li>
-            <li>Negotiate persistently: Change is a process, not a sprint.</li>
-          </ul>
-        `
-      }
-    },
-    'solschenizyn-detail': {
-      de: {
-        title: 'Alexander Solschenizyn – Wahrheit als Widerstand',
-        html: `
-          <p><strong>Kurz:</strong> Schriftsteller und Zeuge politischer Gewalt; sein Werk ringt um Sinn, Erinnerung und Verantwortlichkeit.</p>
-          <p>Resilienz heißt hier, zerstörte Wirklichkeiten neu zu erzählen. Zeugenschaft schützt vor Verdrängung, Sinn stiftet Richtung, und öffentliche Debatten schaffen Räume für Heilung. Solschenizyn erinnert daran: Ohne Wahrheit bleibt Resilienz Fassade.</p>
-          <h5>Unsere Lektionen</h5>
-          <ul>
-            <li>Erinnerungspolitik ist Gesundheitsprävention.</li>
-            <li>Sinnquellen stärken (Werte, Zugehörigkeit, Praxis).</li>
-            <li>Zeugenschaft institutionell sichern.</li>
-          </ul>
-        `
-      },
-      en: {
-        title: 'Alexander Solzhenitsyn – Truth as Resistance',
-        html: `
-          <p><strong>Brief:</strong> Writer and witness of political violence; his work grapples with meaning, memory and accountability.</p>
-          <p>Resilience here means re-narrating destroyed realities. Witnessing protects against repression, meaning provides direction, and public debates create spaces for healing. Solzhenitsyn reminds us: Without truth, resilience remains facade.</p>
-          <h5>Our Lessons</h5>
-          <ul>
-            <li>Memory politics is health prevention.</li>
-            <li>Strengthen sources of meaning (values, belonging, practice).</li>
-            <li>Secure witnessing institutionally.</li>
-          </ul>
-        `
-      }
-    },
-    'fleming-detail': {
-      de: {
-        title: 'Alexander Fleming – Fehler als Fundgrube',
-        html: `
-          <p><strong>Kurz:</strong> Entdecker des Penicillins; Beispiel für serendipitäre Innovation durch genaue Beobachtung.</p>
-          <p>Eine „verpatzte" Petrischale führte zur Entdeckung mit globaler Wirkung. Die Botschaft: Schaffe Bedingungen, in denen Zufall nützlich werden darf – mit Fehlerkultur, schneller Prototypisierung und Brücken zwischen Labor und Anwendung.</p>
-          <h5>Unsere Lektionen</h5>
-          <ul>
-            <li>Fehler sichtbar machen und auswerten.</li>
-            <li>Von Beobachtung zu Prototyp – ohne Umwege.</li>
-            <li>Wissenschaftliche Demut als Stärke.</li>
-          </ul>
-        `
-      },
-      en: {
-        title: 'Alexander Fleming – Errors as Goldmine',
-        html: `
-          <p><strong>Brief:</strong> Discoverer of penicillin; example of serendipitous innovation through careful observation.</p>
-          <p>A "botched" Petri dish led to a discovery with global impact. The message: Create conditions in which chance can become useful – with error culture, rapid prototyping and bridges between lab and application.</p>
-          <h5>Our Lessons</h5>
-          <ul>
-            <li>Make errors visible and evaluate them.</li>
-            <li>From observation to prototype – without detours.</li>
-            <li>Scientific humility as strength.</li>
-          </ul>
-        `
-      }
-    },
-    'humboldt-detail': {
-      de: {
-        title: 'Alexander von Humboldt – Vernetzung & Systemdenken',
-        html: `
-          <p><strong>Kurz:</strong> Naturforscher und Weltdenker; verknüpfte Ökologie, Klima, Daten und Kultur.</p>
-          <p>Humboldt zeigt, wie Resilienz jenseits des Individuums gedacht wird: in Ökosystemen, Institutionen und Praktiken. Wer Wechselwirkungen erkennt, vermeidet Kurzschluss-Politik und baut robuste Pfade – wissenschaftlich fundiert, sozial eingebettet, langfristig.</p>
-          <h5>Unsere Lektionen</h5>
-          <ul>
-            <li>Interdisziplinarität institutionalisieren.</li>
-            <li>Lokales Handeln mit globalem Blick koppeln.</li>
-            <li>Langfristhorizonte gegen reine Effizienzlogik.</li>
-          </ul>
-        `
-      },
-      en: {
-        title: 'Alexander von Humboldt – Connection & Systems Thinking',
-        html: `
-          <p><strong>Brief:</strong> Natural scientist and world thinker; connected ecology, climate, data and culture.</p>
-          <p>Humboldt shows how resilience is thought beyond the individual: in ecosystems, institutions and practices. Those who recognize interactions avoid short-circuit politics and build robust pathways – scientifically grounded, socially embedded, long-term.</p>
-          <h5>Our Lessons</h5>
-          <ul>
-            <li>Institutionalize interdisciplinarity.</li>
-            <li>Couple local action with global perspective.</li>
-            <li>Long-term horizons against pure efficiency logic.</li>
-          </ul>
-        `
-      }
-    }
-  };
-  
-  // Detect language from HTML lang attribute
-  const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
-  
-  // Find all buttons with data-target
-  const buttons = document.querySelectorAll('.btn[data-target]');
-  
-  if (modal && modalBody && buttons.length > 0) {
-    buttons.forEach(button => {
-      button.addEventListener('click', function() {
-        const targetId = this.getAttribute('data-target');
-        const data = content[targetId];
-        
-        if (data && data[lang]) {
-          // Fill modal with correct language
-          modalBody.innerHTML = `<h3>${data[lang].title}</h3>${data[lang].html}`;
-          // Show modal
-          modal.classList.add('active');
-          document.body.style.overflow = 'hidden';
-        }
-      });
-    });
-    
-    // Close modal function
-    function closeModal() {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-    
-    // Close button
-    if (closeBtn) {
-      closeBtn.addEventListener('click', closeModal);
-    }
-    
-    // Close on overlay click (outside content)
-    modal.addEventListener('click', function(e) {
-      if (e.target === modal) {
-        closeModal();
-      }
-    });
-    
-    // Close with ESC key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
-        closeModal();
-      }
-    });
-  }
-  
-  // ==================== STICKY HEADER ====================
+  // ===== STICKY HEADER SCROLL EFFECT =====
   const siteHead = document.querySelector('.site-head');
-  
   if (siteHead) {
-    window.addEventListener('scroll', function() {
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
       const currentScroll = window.pageYOffset;
-      
       if (currentScroll > 50) {
         siteHead.classList.add('scrolled');
       } else {
         siteHead.classList.remove('scrolled');
       }
+      lastScroll = currentScroll;
     });
   }
-  
-  // ==================== ACTIVE NAVIGATION HIGHLIGHTING ====================
-  const navLinks = document.querySelectorAll('.mini-nav a[href^="#"]');
-  const sections = document.querySelectorAll('section[id], h2[id]');
-  
-  if (navLinks.length > 0 && sections.length > 0) {
-    // Create a map of section IDs to their positions
-    const sectionPositions = Array.from(sections).map(section => ({
-      id: section.id,
-      top: section.offsetTop - 100, // 100px offset for sticky header
-      bottom: section.offsetTop + section.offsetHeight
-    }));
-    
-    function updateActiveNav() {
-      const scrollPos = window.pageYOffset + 150; // Adjusted for better UX
+
+  // ===== DROPDOWN NAVIGATION =====
+  const dropdownToggle = document.querySelector('.nav-dropdown-toggle');
+  const dropdownMenu = document.querySelector('.nav-dropdown-menu');
+  const navDropdown = document.querySelector('.nav-dropdown');
+
+  if (dropdownToggle && dropdownMenu) {
+    // Toggle dropdown on button click
+    dropdownToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isExpanded = dropdownToggle.getAttribute('aria-expanded') === 'true';
       
-      // Find current section
-      let currentSection = null;
-      for (const section of sectionPositions) {
-        if (scrollPos >= section.top && scrollPos < section.bottom) {
-          currentSection = section.id;
-          break;
+      if (isExpanded) {
+        closeDropdown();
+      } else {
+        openDropdown();
+      }
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (navDropdown && !navDropdown.contains(e.target)) {
+        closeDropdown();
+      }
+    });
+
+    // Close dropdown on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeDropdown();
+      }
+    });
+
+    // Close dropdown when clicking on menu item
+    const dropdownLinks = dropdownMenu.querySelectorAll('a');
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        closeDropdown();
+      });
+    });
+
+    function openDropdown() {
+      dropdownToggle.setAttribute('aria-expanded', 'true');
+      dropdownMenu.classList.add('active');
+    }
+
+    function closeDropdown() {
+      dropdownToggle.setAttribute('aria-expanded', 'false');
+      dropdownMenu.classList.remove('active');
+    }
+  }
+
+  // ===== MODAL FOR INSPIRATIONS =====
+  const modal = document.getElementById('modal');
+  const modalBody = document.getElementById('modal-body');
+  const modalClose = document.querySelector('.modal-close');
+  const modalTriggers = document.querySelectorAll('[data-target]');
+
+  // Modal content data
+  const modalContent = {
+    'alexander-great-detail': {
+      title: 'Alexander der Große',
+      subtitle: 'Strategie & Anpassungsfähigkeit',
+      content: `
+        <p><strong>356–323 v. Chr.</strong> – Makedonischer König und Feldherr, dessen Feldzüge ein Reich von Griechenland bis Indien schufen.</p>
+        
+        <h5>Resilienz-Perspektive</h5>
+        <p>Alexander zeigt, wie schnelle Entscheidungen unter Unsicherheit und kulturelle Übersetzungsarbeit Systeme stabilisieren können – aber auch, wie unkontrollierte Macht destruktiv wirkt.</p>
+        
+        <h5>Zentrale Lektionen</h5>
+        <ul>
+          <li><strong>Entscheiden unter Unsicherheit:</strong> Tempo und Klarheit in komplexen Lagen</li>
+          <li><strong>Kulturelle Synthese:</strong> Integration verschiedener Traditionen als Stabilisierungsfaktor</li>
+          <li><strong>Macht reflektieren:</strong> Die Notwendigkeit von Checks and Balances</li>
+          <li><strong>Logistik als Fundament:</strong> Versorgungslinien sichern langfristige Handlungsfähigkeit</li>
+        </ul>
+        
+        <h5>Ambivalenzen</h5>
+        <p>Seine Eroberungen waren gewaltsam und forderten enormes Leid. Die Lehre: Führungsstärke ohne ethische Reflexion führt zu Schäden, die Generationen überdauern.</p>
+      `
+    },
+    'hypatia-detail': {
+      title: 'Hypatia von Alexandria',
+      subtitle: 'Bildung als Leuchtturm',
+      content: `
+        <p><strong>ca. 355–415 n. Chr.</strong> – Philosophin, Mathematikerin und Astronomin im spätantiken Alexandria.</p>
+        
+        <h5>Resilienz-Perspektive</h5>
+        <p>Hypatia verkörpert die stabilisierende Kraft von Bildung und rationalem Diskurs in Krisenzeiten. Ihr Wirken zeigt: Wissensräume schaffen kulturelle Resilienz.</p>
+        
+        <h5>Zentrale Lektionen</h5>
+        <ul>
+          <li><strong>Bildung als Immunsystem:</strong> Kritisches Denken schützt Gesellschaften</li>
+          <li><strong>Dialogräume erhalten:</strong> Orte des Austauschs stabilisieren in Umbrüchen</li>
+          <li><strong>Interdisziplinarität:</strong> Mathematik, Philosophie, Astronomie als Gesamtperspektive</li>
+          <li><strong>Vorbildfunktion:</strong> Persönliche Integrität stärkt institutionelles Vertrauen</li>
+        </ul>
+        
+        <h5>Vermächtnis</h5>
+        <p>Ihr gewaltsamer Tod durch religiöse Fanatiker erinnert daran, dass Aufklärung und Vernunft immer wieder verteidigt werden müssen.</p>
+      `
+    },
+    'david-neel-detail': {
+      title: 'Alexandra David-Néel',
+      subtitle: 'Mut an den Rändern',
+      content: `
+        <p><strong>1868–1969</strong> – Französische Reisende, Buddhistin und Autorin, erste westliche Frau in Lhasa.</p>
+        
+        <h5>Resilienz-Perspektive</h5>
+        <p>David-Néel zeigt, wie Exploration, Neugier und innere Disziplin persönliche Resilienz aufbauen. Ihre Reisen waren physisch und psychisch herausfordernd – und stärkten ihre Selbstwirksamkeit.</p>
+        
+        <h5>Zentrale Lektionen</h5>
+        <ul>
+          <li><strong>Grenzen überschreiten:</strong> Neue Umgebungen fördern Anpassungsfähigkeit</li>
+          <li><strong>Innere Ordnung:</strong> Meditation und Selbstführung als Ankerpunkte</li>
+          <li><strong>Kulturelle Sensibilität:</strong> Respekt vor dem Fremden als Lernressource</li>
+          <li><strong>Langfristperspektive:</strong> Geduld und Ausdauer in der Verfolgung großer Ziele</li>
+        </ul>
+        
+        <h5>Vermächtnis</h5>
+        <p>Ihre Schriften über tibetischen Buddhismus und ihre Lebensgeschichte inspirieren bis heute Menschen, die ihre Komfortzone verlassen wollen.</p>
+      `
+    },
+    'kollontai-detail': {
+      title: 'Alexandra Kollontai',
+      subtitle: 'Solidarität gestalten',
+      content: `
+        <p><strong>1872–1952</strong> – Sowjetische Revolutionärin, Feministin und Diplomatin. Erste Frau in einer Regierung weltweit.</p>
+        
+        <h5>Resilienz-Perspektive</h5>
+        <p>Kollontai kämpfte für strukturelle Veränderungen: Kinderbetreuung, Frauenrechte, soziale Absicherung. Sie verstand: Kollektive Resilienz braucht faire Institutionen.</p>
+        
+        <h5>Zentrale Lektionen</h5>
+        <ul>
+          <li><strong>Strukturelle Gerechtigkeit:</strong> Faire Systeme erhöhen gesellschaftliche Widerstandskraft</li>
+          <li><strong>Soziale Netze:</strong> Solidarität als Fundament von Resilienz</li>
+          <li><strong>Hartnäckigkeit:</strong> Reformarbeit braucht langen Atem gegen Widerstände</li>
+          <li><strong>Geschlechtergerechtigkeit:</strong> Gleichstellung als stabilisierender Faktor</li>
+        </ul>
+        
+        <h5>Ambivalenzen</h5>
+        <p>Ihre Verstrickung in das sowjetische System zeigt die Spannung zwischen Idealismus und politischer Realität. Lehre: Systemkritik muss auch die eigenen Strukturen einschließen.</p>
+      `
+    },
+    'solschenizyn-detail': {
+      title: 'Alexander Solschenizyn',
+      subtitle: 'Wahrheit als Widerstand',
+      content: `
+        <p><strong>1918–2008</strong> – Russischer Schriftsteller, Dissident und Nobelpreisträger. Überlebte acht Jahre Gulag.</p>
+        
+        <h5>Resilienz-Perspektive</h5>
+        <p>Solschenizyn überlebte extreme Bedingungen durch Sinnorientierung und die Verpflichtung zur Zeugenschaft. Sein Werk zeigt: Wahrheit ist eine Form von Widerstand.</p>
+        
+        <h5>Zentrale Lektionen</h5>
+        <ul>
+          <li><strong>Sinnorientierung:</strong> Viktor Frankls Erkenntnisse praktisch gelebt</li>
+          <li><strong>Erinnerungskultur:</strong> Dokumentation schützt vor Wiederholung</li>
+          <li><strong>Moralische Klarheit:</strong> Persönliche Integrität unter Druck bewahren</li>
+          <li><strong>Zeugenschaft:</strong> Erlebtes dokumentieren schafft historische Verantwortung</li>
+        </ul>
+        
+        <h5>Vermächtnis</h5>
+        <p>Der „Archipel Gulag" ist ein Jahrhundertwerk über Trauma, Macht und die Fähigkeit des Menschen, unter unmenschlichen Bedingungen Würde zu bewahren.</p>
+      `
+    },
+    'fleming-detail': {
+      title: 'Alexander Fleming',
+      subtitle: 'Fehler als Fundgrube',
+      content: `
+        <p><strong>1881–1955</strong> – Schottischer Bakteriologe, Entdecker des Penicillins. Nobelpreis 1945.</p>
+        
+        <h5>Resilienz-Perspektive</h5>
+        <p>Flemings Entdeckung war ein Glücksfall – aber nur, weil er offen für das Unerwartete war. Seine Geschichte zeigt: Fehlerkultur und Beobachtungsgabe sind Resilienzfaktoren.</p>
+        
+        <h5>Zentrale Lektionen</h5>
+        <ul>
+          <li><strong>Serendipität nutzen:</strong> Zufälle produktiv machen durch Aufmerksamkeit</li>
+          <li><strong>Fehlerfreundlichkeit:</strong> Kulturen, die Experimente erlauben, innovieren besser</li>
+          <li><strong>Schnelle Translation:</strong> Von der Entdeckung zur Anwendung</li>
+          <li><strong>Interdisziplinäre Zusammenarbeit:</strong> Penicillin wurde erst durch Teamwork massentauglich</li>
+        </ul>
+        
+        <h5>Vermächtnis</h5>
+        <p>Penicillin rettete Millionen Leben und revolutionierte die Medizin. Flemings Offenheit für das Unerwartete ist ein Modell für resiliente Forschung.</p>
+      `
+    },
+    'humboldt-detail': {
+      title: 'Alexander von Humboldt',
+      subtitle: 'Vernetzung sichtbar machen',
+      content: `
+        <p><strong>1769–1859</strong> – Preußischer Naturforscher, Geograph und Universalgelehrter. Begründer der modernen Geographie.</p>
+        
+        <h5>Resilienz-Perspektive</h5>
+        <p>Humboldt verstand die Erde als vernetztes System. Seine Arbeit zeigt: Resilienz entsteht durch Systemverständnis und die Fähigkeit, Wechselwirkungen zu sehen.</p>
+        
+        <h5>Zentrale Lektionen</h5>
+        <ul>
+          <li><strong>Systemdenken:</strong> Alles hängt mit allem zusammen</li>
+          <li><strong>Langfristperspektive:</strong> Klimawandel und Ökologie früh erkannt</li>
+          <li><strong>Interdisziplinarität:</strong> Naturwissenschaft, Kultur und Politik verbinden</li>
+          <li><strong>Datenbasierte Analyse:</strong> Messungen als Grundlage für Verständnis</li>
+        </ul>
+        
+        <h5>Vermächtnis</h5>
+        <p>Humboldts Warnung vor der Zerstörung natürlicher Gleichgewichte ist heute aktueller denn je. Seine Methode – genau beobachten, vernetzen, langfristig denken – ist ein Modell für resiliente Wissenschaft.</p>
+      `
+    }
+  };
+
+  // Open modal
+  modalTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = trigger.getAttribute('data-target');
+      const data = modalContent[target];
+      
+      if (data && modal && modalBody) {
+        modalBody.innerHTML = `
+          <h3>${data.title}</h3>
+          <p class="tagline" style="color: var(--af-navy-600); font-weight: 700; margin-bottom: 1rem;">${data.subtitle}</p>
+          ${data.content}
+        `;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Focus modal for accessibility
+        modal.focus();
+      }
+    });
+  });
+
+  // Close modal
+  function closeModal() {
+    if (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (modalClose) {
+    modalClose.addEventListener('click', closeModal);
+  }
+
+  if (modal) {
+    // Close on overlay click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  }
+
+  // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      
+      // Skip if it's just "#" or modal trigger
+      if (href === '#' || this.hasAttribute('data-target')) return;
+      
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        
+        // Update URL without triggering page jump
+        if (history.pushState) {
+          history.pushState(null, null, href);
         }
       }
+    });
+  });
+
+  // ===== ACTIVE NAV HIGHLIGHTING (based on scroll position) =====
+  const sections = document.querySelectorAll('section[id], h2[id]');
+  const navLinks = document.querySelectorAll('.mini-nav a[href^="#"]');
+
+  if (sections.length > 0 && navLinks.length > 0) {
+    window.addEventListener('scroll', () => {
+      let current = '';
       
-      // Update nav links
-      navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (!href || href === '#') return;
-        
-        const targetId = href.substring(1); // Remove '#'
-        
-        if (targetId === currentSection) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
         }
       });
-    }
-    
-    // Update on scroll (throttled for performance)
-    let ticking = false;
-    window.addEventListener('scroll', function() {
-      if (!ticking) {
-        window.requestAnimationFrame(function() {
-          updateActiveNav();
-          ticking = false;
-        });
-        ticking = true;
-      }
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
     });
-    
-    // Initial check
-    updateActiveNav();
   }
-  
+
 });
