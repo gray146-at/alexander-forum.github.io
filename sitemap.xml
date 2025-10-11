@@ -1,32 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Startseite (DE) -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage DE (Default) -->
   <url>
     <loc>https://alexander.forum/</loc>
-    <lastmod>2025-10-10</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alexander.forum/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alexander.forum/"/>
   </url>
-
-  <!-- Englisch -->
+  
+  <!-- Homepage EN -->
   <url>
     <loc>https://alexander.forum/en/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alexander.forum/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alexander.forum/en/"/>
+  </url>
+  
+  <!-- Resilienz Dossier DE -->
+  <url>
+    <loc>https://alexander.forum/resilienz/</loc>
+    <lastmod>2025-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- PDFs -->
+  
+  <!-- Resilience Dossier EN (wenn vorhanden) -->
+  <url>
+    <loc>https://alexander.forum/resilience/</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- PDFs (optional - only if you want them indexed) -->
   <url>
     <loc>https://alexander.forum/Alexander-Forum_Positionspapier_2025.pdf</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
+  
   <url>
     <loc>https://alexander.forum/Alexander-Forum_Mission_Statement_EN.pdf</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
+
 </urlset>
