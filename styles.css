@@ -1,4 +1,4 @@
-/* Alexander Forum – styles.css (Enhanced Edition) */
+/* Alexander Forum – styles.css (Clean Edition with Modal & Grid Fixes) */
 
 :root{
   --af-navy:#0f2a3a;
@@ -9,7 +9,7 @@
   --af-card:#ffffff;
   --af-border:#e6eaee;
 
-  /* Spacing scale (4/8px-basierend) */
+  /* Spacing scale (4/8px-based) */
   --space-0: 0;
   --space-1: .25rem;
   --space-2: .5rem;
@@ -34,16 +34,17 @@ html,body{
   -moz-osx-font-smoothing:grayscale;
 }
 
-/* Skip-Link (A11y) */
+/* === Skip-Link (A11y) === */
 .skip{
   position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
 }
 .skip:focus{
   position:static; width:auto; height:auto; display:inline-block;
-  background:#fff; border:2px solid var(--af-navy); padding:.3rem .5rem; border-radius:6px; margin:.5rem;
+  background:#fff; border:2px solid var(--af-navy); padding:.3rem .5rem; 
+  border-radius:6px; margin:.5rem;
 }
 
-/* --- Header / mini nav --- */
+/* === Header / Mini Nav === */
 .site-head{
   position: sticky;
   top: 0;
@@ -80,7 +81,7 @@ html,body{
   border:1px solid var(--af-border);
 }
 
-/* --- Layout --- */
+/* === Layout === */
 .wrap{
   max-width:880px;
   margin:0 auto;
@@ -95,7 +96,7 @@ html,body{
   box-shadow:0 8px 20px rgba(15,42,58,0.06);
 }
 
-/* --- Logo --- */
+/* === Logo === */
 .logo{
   display:block;
   margin:0 auto .9rem;
@@ -103,7 +104,7 @@ html,body{
   height:auto;
 }
 
-/* --- Type scale --- */
+/* === Typography === */
 h1{
   margin:.25rem 0 0;
   text-align:center;
@@ -159,7 +160,7 @@ p{ margin:0 0 var(--space-3) }
 strong{ font-weight:700; color:var(--af-navy) }
 em{ font-style:italic }
 
-/* Fließtext in Blöcken im Blocksatz */
+/* Justified text for body paragraphs on larger screens */
 @media (min-width:700px){
   .card p:not(.tag):not(.teaser):not(.tagline):not(.short){
     text-align: justify;
@@ -170,14 +171,14 @@ em{ font-style:italic }
   }
 }
 
-/* Listen für Themen */
+/* === Lists === */
 .bullets{
   margin:.25rem 0 1rem 0;
   padding-left:1.1rem;
 }
 .bullets li{ margin:.25rem 0 }
 
-/* CTA-Reihe */
+/* === CTA Row === */
 .cta-row{
   display:flex;
   gap: var(--space-3);
@@ -185,13 +186,14 @@ em{ font-style:italic }
   margin: var(--space-4) 0 var(--space-3);
 }
 
-/* Kontakt/Buttons */
+/* === Contact === */
 .contact{
   margin-top: var(--space-4);
   display:flex;
   justify-content:center;
 }
 
+/* === Buttons === */
 .btn{
   display:inline-block;
   background:var(--af-navy);
@@ -220,12 +222,7 @@ em{ font-style:italic }
   background:#eaf0f4;
 }
 
-/* Akkordeon-Button für Namensvorbilder */
-.btn-accordion{
-  margin-top: var(--space-2);
-  width:100%;
-}
-
+/* === Footer === */
 .foot{
   text-align:center;
   color:var(--af-muted);
@@ -234,80 +231,7 @@ em{ font-style:italic }
   padding:1.25rem .5rem 0;
 }
 
-/* Mobile ≤600px */
-@media (max-width:600px){
-  .wrap{ padding:2rem .9rem 2.5rem }
-  .card{ padding:1.6rem 1.1rem }
-  .dossier-card{ padding:1.6rem 1.1rem 1.8rem }
-}
-
-/* Accessibility */
-a:focus, .btn:focus, .mini-nav a:focus{
-  outline:3px solid rgba(15,42,58,.6);
-  outline-offset:3px;
-}
-
-/* Blockquote (optional für künftige Zitate) */
-blockquote{
-  margin:1rem 0;
-  padding:.75rem 1rem;
-  border-left:4px solid var(--af-navy);
-  background:rgba(15,42,58,.04);
-  font-style:italic;
-}
-
-/* Dark mode – dezent */
-@media (prefers-color-scheme: dark){
-  :root{
-    --af-bg:#0c1115;
-    --af-card:#0f1419;
-    --af-border:#1c2730;
-    --af-ink:#e8edf2;
-    --af-muted:#9fb1bc;
-    --af-navy:#9cc3da;
-    --af-navy-600:#c1d9e6;
-  }
-  .card{ box-shadow:none; }
-  .site-head.scrolled{
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  }
-  .btn{
-    background:#c1d9e6; color:#0c1115;
-  }
-  .btn:hover{ background:#d3e4ee }
-  .btn-secondary{
-    background:transparent; color:var(--af-ink); border:1px solid var(--af-muted);
-  }
-  .btn-secondary:hover{ background:#182029 }
-  a, .bullets a, .mini-nav a{ color:#e8edf2 }
-  .mini-nav a:hover{ color:#cfe3ee; background:rgba(156,195,218,.18) }
-}
-
-/* Print – 1-Pager ohne Button/Fuß */
-@media print{
-  .mini-nav, .btn, .foot{ display:none !important; }
-  .card{ border:none; box-shadow:none; }
-  body{ background:#fff; color:#000; }
-}
-
-/* === Contrast & readability enhancements === */
-a{
-  color: var(--af-navy);
-  text-decoration: underline;
-  text-underline-offset: .15em;
-  text-decoration-thickness: .08em;
-}
-a:hover{ text-decoration-thickness: .12em; }
-.bullets a{
-  color: var(--af-navy);
-  text-decoration: underline;
-  text-underline-offset: .14em;
-}
-.bullets a:hover{ background: rgba(15,42,58,.06); }
-
-/* === Resilienz-Dossier: Ergänzungen ================================== */
-
-/* Dossier als eigene Card mit visueller Abgrenzung */
+/* === Dossier Card === */
 .dossier-card{
   background: var(--af-card);
   border: 1px solid var(--af-border);
@@ -327,45 +251,30 @@ a:hover{ text-decoration-thickness: .12em; }
   background: linear-gradient(90deg, var(--af-navy) 0%, var(--af-navy-600) 100%);
   border-radius: 14px 14px 0 0;
 }
-
-/* Section-Rahmen & Abstände */
-#resilienz-dossier header .meta{
+.dossier-card header .meta{
   color: var(--af-muted);
   font-size: .95rem;
   margin-top: .25rem;
 }
-#resilienz-dossier .teaser{
+.dossier-card .teaser{
   margin: .75rem 0 1rem;
   line-height: 1.7;
 }
-
-/* Keypoints: echte Spiegelstriche im Content, keine Browser-Bullets */
-#resilienz-dossier .keypoints{
+.dossier-card .keypoints{
   margin: .35rem 0 1rem 0;
   padding-left: 0;
   list-style: none;
 }
-#resilienz-dossier .keypoints li{
+.dossier-card .keypoints li{
   margin: .25rem 0;
-  text-indent: 0;
 }
-
-/* Download-Buttons */
-#resilienz-dossier .downloads{
-  display: flex;
-  gap: var(--space-3);
-  flex-wrap: wrap;
-  margin: .85rem 0 .35rem;
-}
-
-/* Lizenzzeile */
-#resilienz-dossier .license{
+.dossier-card .license{
   color: var(--af-muted);
   font-size: .95rem;
   margin-top: .15rem;
 }
 
-/* === Infobox / Hinweis-Kasten ======================================= */
+/* === Infobox === */
 .infobox{
   position: relative;
   margin: var(--space-5) 0;
@@ -384,51 +293,12 @@ a:hover{ text-decoration-thickness: .12em; }
 .infobox p{ margin: 0 0 .35rem }
 .infobox .small{ color: var(--af-muted); font-size: .95rem; }
 
-/* Varianten */
+/* Infobox variants */
 .infobox.success{ border-left-color:#2f855a; background:rgba(47,133,90,.06) }
 .infobox.warn{    border-left-color:#b7791f; background:rgba(183,121,31,.06) }
 .infobox.note{    border-left-color:#3182ce; background:rgba(49,130,206,.06) }
 
-/* Dark Mode */
-@media (prefers-color-scheme: dark){
-  .infobox{ background:rgba(156,195,218,.1); border-color:#2a3640 }
-  .infobox.success{ background:rgba(47,133,90,.12) }
-  .infobox.warn{    background:rgba(183,121,31,.12) }
-  .infobox.note{    background:rgba(49,130,206,.12) }
-  .dossier-card{ 
-    box-shadow:none; 
-    border-color:#2a3640;
-  }
-  .dossier-card::before{
-    background: linear-gradient(90deg, #9cc3da 0%, #c1d9e6 100%);
-  }
-}
-
-/* === Stack/Flow-System (automatische Vertikalabstände) ============== */
-.stack > * + *{ margin-top: var(--flow-space, var(--space-4)) }
-.stack--sm{ --flow-space: var(--space-3) }
-.stack--md{ --flow-space: var(--space-5) }
-.stack--lg{ --flow-space: var(--space-6) }
-
-/* === Margin-Utilities (bei Bedarf) ================================== */
-.mt-0{ margin-top: var(--space-0) }
-.mt-1{ margin-top: var(--space-1) }
-.mt-2{ margin-top: var(--space-2) }
-.mt-3{ margin-top: var(--space-3) }
-.mt-4{ margin-top: var(--space-4) }
-.mt-5{ margin-top: var(--space-5) }
-.mt-6{ margin-top: var(--space-6) }
-.mb-0{ margin-bottom: var(--space-0) }
-.mb-1{ margin-bottom: var(--space-1) }
-.mb-2{ margin-bottom: var(--space-2) }
-.mb-3{ margin-bottom: var(--space-3) }
-.mb-4{ margin-bottom: var(--space-4) }
-.mb-5{ margin-bottom: var(--space-5) }
-.mb-6{ margin-bottom: var(--space-6) }
-.mx-auto{ margin-left:auto; margin-right:auto }
-
-/* === Namensvorbilder – visuelles Upgrade ================================= */
-
+/* === NAMESAKES / INSPIRATIONS GRID === */
 .inspirations-grid{
   display:grid;
   grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
@@ -436,7 +306,7 @@ a:hover{ text-decoration-thickness: .12em; }
   margin-top: .75rem;
 }
 
-/* Hero-Card für Alexander den Großen (full-width) */
+/* HERO Card (Alexander the Great) – full width at top */
 .inspiration-card.hero{
   grid-column: 1 / -1;
   display:grid;
@@ -452,15 +322,8 @@ a:hover{ text-decoration-thickness: .12em; }
 .inspiration-card.hero .body{
   padding: 1.5rem 2rem;
 }
-@media (max-width:768px){
-  .inspiration-card.hero{
-    grid-template-columns: 1fr;
-  }
-  .inspiration-card.hero .cover{
-    aspect-ratio: 16/9;
-  }
-}
 
+/* Normal cards */
 .inspiration-card{
   border:1px solid var(--af-border);
   border-radius:14px;
@@ -477,7 +340,7 @@ a:hover{ text-decoration-thickness: .12em; }
   border-color: #cfd8df;
 }
 
-/* Cover-Bilder (echte Fotos) */
+/* Cover images */
 .inspiration-card .cover{
   display:block;
   width:100%;
@@ -487,7 +350,7 @@ a:hover{ text-decoration-thickness: .12em; }
   background: #e8edf2;
 }
 
-/* Platzhalter-Cover mit Initialen (fallback falls keine Bilder) */
+/* Placeholder covers with initials (fallback) */
 .cover-placeholder{
   display:flex;
   align-items:center;
@@ -524,6 +387,7 @@ a:hover{ text-decoration-thickness: .12em; }
   50%{ transform: translate(-10%,-10%) scale(1.1); }
 }
 
+/* Card body */
 .inspiration-card .body{
   padding: 1rem 1.1rem 1.15rem;
   flex-grow:1;
@@ -553,72 +417,193 @@ a:hover{ text-decoration-thickness: .12em; }
 }
 .lektionen li{ margin:.15rem 0 }
 
-/* Akkordeon-Content unter jeder Karte */
-.deepdive-inline{
-  padding: 1rem 1.1rem 1.25rem;
-  background: rgba(15,42,58,.02);
-  border-top:1px solid var(--af-border);
-  animation: slideDown .3s ease-out;
-}
-.deepdive-inline[hidden]{
+/* === MODAL OVERLAY === */
+.modal-overlay{
   display:none;
+  position:fixed;
+  top:0; left:0; right:0; bottom:0;
+  background:rgba(12,17,21,0.85);
+  z-index:9999;
+  padding:2rem 1rem;
+  overflow-y:auto;
+  align-items:center;
+  justify-content:center;
 }
-@keyframes slideDown{
-  from{ 
-    opacity:0; 
-    max-height:0;
-    padding-top:0;
-    padding-bottom:0;
-  }
-  to{ 
-    opacity:1; 
-    max-height:1000px;
-    padding-top:1rem;
-    padding-bottom:1.25rem;
-  }
+.modal-overlay.active{
+  display:flex;
 }
-.deepdive-inline h4{
-  margin: .2rem 0 .4rem;
-  font-size:1.02rem;
-  color: var(--af-navy-600);
+.modal-content{
+  position:relative;
+  background:var(--af-card);
+  border:1px solid var(--af-border);
+  border-radius:14px;
+  max-width:700px;
+  width:100%;
+  padding:2rem 2.5rem 2.25rem;
+  box-shadow:0 20px 60px rgba(15,42,58,0.4);
+  animation:modalFadeIn .3s ease-out;
 }
-.deepdive-inline h5{
-  margin: .6rem 0 .25rem;
-  font-size:.98rem;
-  color: var(--af-navy);
+@keyframes modalFadeIn{
+  from{ opacity:0; transform:translateY(-20px) }
+  to{ opacity:1; transform:translateY(0) }
 }
-.deepdive-inline p{
-  margin-bottom:.5rem;
-  font-size:.95rem;
+.modal-close{
+  position:absolute;
+  top:1rem; right:1rem;
+  background:transparent;
+  border:none;
+  font-size:2rem;
+  line-height:1;
+  cursor:pointer;
+  color:var(--af-muted);
+  transition:color .2s ease;
+  padding:.25rem .5rem;
 }
-.deepdive-inline ul{
-  margin:.25rem 0 .5rem;
+.modal-close:hover{
+  color:var(--af-navy);
+}
+#modal-body h3{
+  margin-top:0;
+  color:var(--af-navy);
+}
+#modal-body h5{
+  margin-top:1rem;
+  color:var(--af-navy);
+}
+#modal-body ul{
   padding-left:1.2rem;
-  font-size:.95rem;
 }
-.deepdive-inline ul li{
-  margin:.2rem 0;
+#modal-body ul li{
+  margin:.3rem 0;
 }
 
-/* Dark mode – Karten */
+/* === Accessibility === */
+a:focus, .btn:focus, .mini-nav a:focus{
+  outline:3px solid rgba(15,42,58,.6);
+  outline-offset:3px;
+}
+
+/* === Links === */
+a{
+  color: var(--af-navy);
+  text-decoration: underline;
+  text-underline-offset: .15em;
+  text-decoration-thickness: .08em;
+}
+a:hover{ text-decoration-thickness: .12em; }
+.bullets a{
+  color: var(--af-navy);
+  text-decoration: underline;
+  text-underline-offset: .14em;
+}
+.bullets a:hover{ background: rgba(15,42,58,.06); }
+
+/* === Blockquote (optional for future quotes) === */
+blockquote{
+  margin:1rem 0;
+  padding:.75rem 1rem;
+  border-left:4px solid var(--af-navy);
+  background:rgba(15,42,58,.04);
+  font-style:italic;
+}
+
+/* === Stack/Flow System === */
+.stack > * + *{ margin-top: var(--flow-space, var(--space-4)) }
+.stack--sm{ --flow-space: var(--space-3) }
+.stack--md{ --flow-space: var(--space-5) }
+.stack--lg{ --flow-space: var(--space-6) }
+
+/* === Margin Utilities === */
+.mt-0{ margin-top: var(--space-0) }
+.mt-1{ margin-top: var(--space-1) }
+.mt-2{ margin-top: var(--space-2) }
+.mt-3{ margin-top: var(--space-3) }
+.mt-4{ margin-top: var(--space-4) }
+.mt-5{ margin-top: var(--space-5) }
+.mt-6{ margin-top: var(--space-6) }
+.mb-0{ margin-bottom: var(--space-0) }
+.mb-1{ margin-bottom: var(--space-1) }
+.mb-2{ margin-bottom: var(--space-2) }
+.mb-3{ margin-bottom: var(--space-3) }
+.mb-4{ margin-bottom: var(--space-4) }
+.mb-5{ margin-bottom: var(--space-5) }
+.mb-6{ margin-bottom: var(--space-6) }
+.mx-auto{ margin-left:auto; margin-right:auto }
+
+/* === RESPONSIVE === */
+
+/* Tablet: hero card stays 2-column, modal adjusts */
+@media (max-width:768px){
+  .inspiration-card.hero{
+    grid-template-columns:1fr;
+  }
+  .inspiration-card.hero .cover{
+    aspect-ratio:16/9;
+  }
+  .modal-content{
+    padding:1.5rem 1.25rem;
+  }
+}
+
+/* Mobile: everything single column */
+@media (max-width:600px){
+  .wrap{ padding:2rem .9rem 2.5rem }
+  .card{ padding:1.6rem 1.1rem }
+  .dossier-card{ padding:1.6rem 1.1rem 1.8rem }
+  .inspirations-grid{
+    grid-template-columns:1fr;
+  }
+  .cover-placeholder{
+    font-size:3rem;
+  }
+}
+
+/* === DARK MODE === */
 @media (prefers-color-scheme: dark){
+  :root{
+    --af-bg:#0c1115;
+    --af-card:#0f1419;
+    --af-border:#1c2730;
+    --af-ink:#e8edf2;
+    --af-muted:#9fb1bc;
+    --af-navy:#9cc3da;
+    --af-navy-600:#c1d9e6;
+  }
+  .card{ box-shadow:none; }
+  .site-head.scrolled{
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .btn{
+    background:#c1d9e6; color:#0c1115;
+  }
+  .btn:hover{ background:#d3e4ee }
+  .btn-secondary{
+    background:transparent; color:var(--af-ink); border:1px solid var(--af-muted);
+  }
+  .btn-secondary:hover{ background:#182029 }
+  a, .bullets a, .mini-nav a{ color:#e8edf2 }
+  .mini-nav a:hover{ color:#cfe3ee; background:rgba(156,195,218,.18) }
+  .infobox{ background:rgba(156,195,218,.1); border-color:#2a3640 }
+  .infobox.success{ background:rgba(47,133,90,.12) }
+  .infobox.warn{    background:rgba(183,121,31,.12) }
+  .infobox.note{    background:rgba(49,130,206,.12) }
+  .dossier-card{ 
+    box-shadow:none; 
+    border-color:#2a3640;
+  }
+  .dossier-card::before{
+    background: linear-gradient(90deg, #9cc3da 0%, #c1d9e6 100%);
+  }
   .inspiration-card{ box-shadow:none; border-color:#2a3640; }
   .inspiration-card:hover{ border-color:#3a4a59; }
   .cover-placeholder{
     background: linear-gradient(135deg, #1c3c4f 0%, #2a4a5f 100%);
   }
-  .deepdive-inline{ 
-    background: rgba(156,195,218,.08); 
-    border-color:#2a3640; 
-  }
 }
 
-/* Responsive: Mobile-Optimierung für Karten */
-@media (max-width:600px){
-  .inspirations-grid{
-    grid-template-columns: 1fr;
-  }
-  .cover-placeholder{
-    font-size:3rem;
-  }
+/* === PRINT === */
+@media print{
+  .mini-nav, .btn, .foot{ display:none !important; }
+  .card{ border:none; box-shadow:none; }
+  body{ background:#fff; color:#000; }
 }
