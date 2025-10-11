@@ -1,4 +1,164 @@
-<!DOCTYPE html>
+<script>
+    // Modal-System für Namensvorbilder
+    document.addEventListener('DOMContentLoaded', function() {
+      const modal = document.getElementById('modal');
+      const modalBody = document.getElementById('modal-body');
+      const closeBtn = modal.querySelector('.modal-close');
+      
+      // Content-Datenbank für alle Personen
+      const content = {
+        'alexander-great-detail': {
+          title: 'Alexander der Große – Strategie & Anpassungsfähigkeit',
+          html: `
+            <p><strong>Kurz:</strong> Brillanter Stratege mit ambivalenter Bilanz: Vernetzung und Wissenszirkulation – aber auch Gewalt und Expansion.</p>
+            <p>Lehrreich ist der Umgang mit Unsicherheit: schnelles Entscheiden, Lernen im Feld, kulturelle Übersetzungsarbeit (Verwaltung, Sprachen, Eliten). Genauso lehrreich ist die Grenze: Macht, die nicht reflektiert wird, produziert neue Verwundbarkeit. Resiliente Führung verbindet Mut mit Selbstbegrenzung.</p>
+            <h5>Unsere Lektionen</h5>
+            <ul>
+              <li>Schnell lernen, sauber korrigieren.</li>
+              <li>Lokale Kontexte ernst nehmen.</li>
+              <li>Ethik-Checks in Strategien einbauen.</li>
+            </ul>
+          `
+        },
+        'hypatia-detail': {
+          title: 'Hypatia von Alexandria – Bildung als Leuchtturm',
+          html: `
+            <p><strong>Kurz:</strong> Philosophin, Mathematikerin, Lehrerin; Symbol für rationales Denken und Lehrtradition in stürmischen Zeiten.</p>
+            <p>Hypatia lehrte in einem der bedeutendsten Wissenszentren der Antike. Ihre Bedeutung liegt weniger in einem einzelnen Werk als in der Praxis: lehren, diskutieren, Methoden weitergeben. In Phasen sozialer Spannung schützt genau das – geteilte Maßstäbe, Fairness im Argument, überprüfbare Gründe – vor dem Abgleiten in Mythos und Gewalt. Bildung wird so zur gesellschaftlichen Resilienzleistung.</p>
+            <h5>Unsere Lektionen</h5>
+            <ul>
+              <li>In Bildung investieren: Sie wirkt langsam, aber nachhaltig.</li>
+              <li>Kritikfähig bleiben: Debattenkultur ist Stabilitätskultur.</li>
+              <li>Vermitteln statt predigen: Methoden stärken Selbstwirksamkeit.</li>
+            </ul>
+          `
+        },
+        'david-neel-detail': {
+          title: 'Alexandra David-Néel – Mut an den Rändern',
+          html: `
+            <p><strong>Kurz:</strong> Reisende, Tibetforscherin, Autorin – ein Beispiel für persönliche Robustheit und kulturelle Offenheit.</p>
+            <p>David-Néel vereinte Abenteuer, Askese und präzise Beobachtung. Ihre Grenzgänge – teils verkleidet, oft unter realen Risiken – zeigen, wie innere Ordnung (Rituale, Atem, Fokus) und Respekt gegenüber dem Anderen zu resilientem Handeln führen. Exploration ohne Hybris ist eine Schule der Selbstführung.</p>
+            <h5>Unsere Lektionen</h5>
+            <ul>
+              <li>Selbstführung trainieren (Routine, Atem, Schlaf, Bewegung).</li>
+              <li>Neugier kultivieren, Urteile aufschieben.</li>
+              <li>Risiko bewerten, Grenzen achten, trotzdem gehen.</li>
+            </ul>
+          `
+        },
+        'kollontai-detail': {
+          title: 'Alexandra Kollontai – Solidarität gestalten',
+          html: `
+            <p><strong>Kurz:</strong> Politikerin, Feministin, Diplomatin; eine der ersten Frauen als Ministerin und Botschafterin. Arbeitsschwerpunkt: soziale Rechte, Schutz vor Armut, Teilhabe.</p>
+            <p>Kollontai steht für die Einsicht, dass individuelle Resilienz an Grenzen stößt, wenn Strukturen ungerecht sind. Ihre Agenda – Kinderbetreuung, soziale Sicherung, Arbeitnehmerinnenrechte – versteht Resilienz als kollektive Aufgabe. Institutionen, die Care-Arbeit und Verwundbarkeit mitdenken, erhöhen die Krisenrobustheit der ganzen Gesellschaft.</p>
+            <h5>Unsere Lektionen</h5>
+            <ul>
+              <li>Resilienzpolitik ist Sozialpolitik: Absicherung beugt Krisenfolgen vor.</li>
+              <li>Institutionen fair machen – so entsteht Vertrauen.</li>
+              <li>Hartnäckig verhandeln: Wandel ist ein Prozess, kein Sprint.</li>
+            </ul>
+          `
+        },
+        'solschenizyn-detail': {
+          title: 'Alexander Solschenizyn – Wahrheit als Widerstand',
+          html: `
+            <p><strong>Kurz:</strong> Schriftsteller und Zeuge politischer Gewalt; sein Werk ringt um Sinn, Erinnerung und Verantwortlichkeit.</p>
+            <p>Resilienz heißt hier, zerstörte Wirklichkeiten neu zu erzählen. Zeugenschaft schützt vor Verdrängung, Sinn stiftet Richtung, und öffentliche Debatten schaffen Räume für Heilung. Solschenizyn erinnert daran: Ohne Wahrheit bleibt Resilienz Fassade.</p>
+            <h5>Unsere Lektionen</h5>
+            <ul>
+              <li>Erinnerungspolitik ist Gesundheitsprävention.</li>
+              <li>Sinnquellen stärken (Werte, Zugehörigkeit, Praxis).</li>
+              <li>Zeugenschaft institutionell sichern.</li>
+            </ul>
+          `
+        },
+        'fleming-detail': {
+          title: 'Alexander Fleming – Fehler als Fundgrube',
+          html: `
+            <p><strong>Kurz:</strong> Entdecker des Penicillins; Beispiel für serendipitäre Innovation durch genaue Beobachtung.</p>
+            <p>Eine „verpatzte" Petrischale führte zur Entdeckung mit globaler Wirkung. Die Botschaft: Schaffe Bedingungen, in denen Zufall nützlich werden darf – mit Fehlerkultur, schneller Prototypisierung und Brücken zwischen Labor und Anwendung.</p>
+            <h5>Unsere Lektionen</h5>
+            <ul>
+              <li>Fehler sichtbar machen und auswerten.</li>
+              <li>Von Beobachtung zu Prototyp – ohne Umwege.</li>
+              <li>Wissenschaftliche Demut als Stärke.</li>
+            </ul>
+          `
+        },
+        'humboldt-detail': {
+          title: 'Alexander von Humboldt – Vernetzung & Systemdenken',
+          html: `
+            <p><strong>Kurz:</strong> Naturforscher und Weltdenker; verknüpfte Ökologie, Klima, Daten und Kultur.</p>
+            <p>Humboldt zeigt, wie Resilienz jenseits des Individuums gedacht wird: in Ökosystemen, Institutionen und Praktiken. Wer Wechselwirkungen erkennt, vermeidet Kurzschluss-Politik und baut robuste Pfade – wissenschaftlich fundiert, sozial eingebettet, langfristig.</p>
+            <h5>Unsere Lektionen</h5>
+            <ul>
+              <li>Interdisziplinarität institutionalisieren.</li>
+              <li>Lokales Handeln mit globalem Blick koppeln.</li>
+              <li>Langfristhorizonte gegen reine Effizienzlogik.</li>
+            </ul>
+          `
+        }
+      };
+      
+      // Alle Buttons finden
+      const buttons = document.querySelectorAll('.btn-accordion');
+      
+      buttons.forEach(button => {
+        button.addEventListener('click', function() {
+          const targetId = this.getAttribute('data-target');
+          const data = content[targetId];
+          
+          if (data) {
+            // Modal befüllen
+            modalBody.innerHTML = `<h3>${data.title}</h3>${data.html}`;
+            // Modal anzeigen
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Hintergrund nicht scrollbar
+          }
+        });
+      });
+      
+      // Modal schließen
+      function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Scrolling wieder erlauben
+      }
+      
+      closeBtn.addEventListener('click', closeModal);
+      
+      // Schließen bei Klick auf Overlay (außerhalb Content)
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+      
+      // Schließen mit ESC-Taste
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+    });
+
+    // Sticky Header: Schatten beim Scrollen
+    document.addEventListener('DOMContentLoaded', function() {
+      const siteHead = document.querySelector('.site-head');
+      let lastScroll = 0;
+      
+      window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 50) {
+          siteHead.classList.add('scrolled');
+        } else {
+          siteHead.classList.remove('scrolled');
+        }
+        
+        lastScroll = currentScroll;
+      });
+    });
+  </script><!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="utf-8">
@@ -290,17 +450,6 @@
                 Mehr erfahren
               </button>
             </div>
-            <div id="alexander-great-detail" class="deepdive-inline" hidden>
-              <h4>Alexander der Große – Strategie &amp; Anpassungsfähigkeit</h4>
-              <p><strong>Kurz:</strong> Brillanter Stratege mit ambivalenter Bilanz: Vernetzung und Wissenszirkulation – aber auch Gewalt und Expansion.</p>
-              <p>Lehrreich ist der Umgang mit Unsicherheit: schnelles Entscheiden, Lernen im Feld, kulturelle Übersetzungsarbeit (Verwaltung, Sprachen, Eliten). Genauso lehrreich ist die Grenze: Macht, die nicht reflektiert wird, produziert neue Verwundbarkeit. Resiliente Führung verbindet Mut mit Selbstbegrenzung.</p>
-              <h5>Unsere Lektionen</h5>
-              <ul>
-                <li>Schnell lernen, sauber korrigieren.</li>
-                <li>Lokale Kontexte ernst nehmen.</li>
-                <li>Ethik-Checks in Strategien einbauen.</li>
-              </ul>
-            </div>
           </article>
 
           <!-- Normale Karten (3+3 Grid) -->
@@ -326,20 +475,9 @@
                 <li>Räume für Kritik stabilisieren Gemeinschaften</li>
                 <li>Wissen überdauert kurzfristige Stürme</li>
               </ul>
-              <button class="btn btn-accordion" data-target="hypatia-detail" aria-expanded="false" aria-controls="hypatia-detail">
+              <button class="btn btn-accordion" data-target="hypatia-detail">
                 Mehr erfahren
               </button>
-            </div>
-            <div id="hypatia-detail" class="deepdive-inline" hidden>
-              <h4>Hypatia von Alexandria – Bildung als Leuchtturm</h4>
-              <p><strong>Kurz:</strong> Philosophin, Mathematikerin, Lehrerin; Symbol für rationales Denken und Lehrtradition in stürmischen Zeiten.</p>
-              <p>Hypatia lehrte in einem der bedeutendsten Wissenszentren der Antike. Ihre Bedeutung liegt weniger in einem einzelnen Werk als in der Praxis: lehren, diskutieren, Methoden weitergeben. In Phasen sozialer Spannung schützt genau das – geteilte Maßstäbe, Fairness im Argument, überprüfbare Gründe – vor dem Abgleiten in Mythos und Gewalt. Bildung wird so zur gesellschaftlichen Resilienzleistung.</p>
-              <h5>Unsere Lektionen</h5>
-              <ul>
-                <li>In Bildung investieren: Sie wirkt langsam, aber nachhaltig.</li>
-                <li>Kritikfähig bleiben: Debattenkultur ist Stabilitätskultur.</li>
-                <li>Vermitteln statt predigen: Methoden stärken Selbstwirksamkeit.</li>
-              </ul>
             </div>
           </article>
 
@@ -365,20 +503,9 @@
                 <li>Innere Ordnung in unsicheren Umfeldern</li>
                 <li>Kulturelle Sensibilität als Ressource</li>
               </ul>
-              <button class="btn btn-accordion" data-target="david-neel-detail" aria-expanded="false" aria-controls="david-neel-detail">
+              <button class="btn btn-accordion" data-target="david-neel-detail">
                 Mehr erfahren
               </button>
-            </div>
-            <div id="david-neel-detail" class="deepdive-inline" hidden>
-              <h4>Alexandra David-Néel – Mut an den Rändern</h4>
-              <p><strong>Kurz:</strong> Reisende, Tibetforscherin, Autorin – ein Beispiel für persönliche Robustheit und kulturelle Offenheit.</p>
-              <p>David-Néel vereinte Abenteuer, Askese und präzise Beobachtung. Ihre Grenzgänge – teils verkleidet, oft unter realen Risiken – zeigen, wie innere Ordnung (Rituale, Atem, Fokus) und Respekt gegenüber dem Anderen zu resilientem Handeln führen. Exploration ohne Hybris ist eine Schule der Selbstführung.</p>
-              <h5>Unsere Lektionen</h5>
-              <ul>
-                <li>Selbstführung trainieren (Routine, Atem, Schlaf, Bewegung).</li>
-                <li>Neugier kultivieren, Urteile aufschieben.</li>
-                <li>Risiko bewerten, Grenzen achten, trotzdem gehen.</li>
-              </ul>
             </div>
           </article>
 
@@ -403,20 +530,9 @@
                 <li>Gerechtigkeit ist Prävention</li>
                 <li>Hartnäckigkeit gegen Widerstände</li>
               </ul>
-              <button class="btn btn-accordion" data-target="kollontai-detail" aria-expanded="false" aria-controls="kollontai-detail">
+              <button class="btn btn-accordion" data-target="kollontai-detail">
                 Mehr erfahren
               </button>
-            </div>
-            <div id="kollontai-detail" class="deepdive-inline" hidden>
-              <h4>Alexandra Kollontai – Solidarität gestalten</h4>
-              <p><strong>Kurz:</strong> Politikerin, Feministin, Diplomatin; eine der ersten Frauen als Ministerin und Botschafterin. Arbeitsschwerpunkt: soziale Rechte, Schutz vor Armut, Teilhabe.</p>
-              <p>Kollontai steht für die Einsicht, dass individuelle Resilienz an Grenzen stößt, wenn Strukturen ungerecht sind. Ihre Agenda – Kinderbetreuung, soziale Sicherung, Arbeitnehmerinnenrechte – versteht Resilienz als kollektive Aufgabe. Institutionen, die Care-Arbeit und Verwundbarkeit mitdenken, erhöhen die Krisenrobustheit der ganzen Gesellschaft.</p>
-              <h5>Unsere Lektionen</h5>
-              <ul>
-                <li>Resilienzpolitik ist Sozialpolitik: Absicherung beugt Krisenfolgen vor.</li>
-                <li>Institutionen fair machen – so entsteht Vertrauen.</li>
-                <li>Hartnäckig verhandeln: Wandel ist ein Prozess, kein Sprint.</li>
-              </ul>
             </div>
           </article>
 
@@ -473,20 +589,9 @@
                 <li>Sinnorientierung stabilisiert</li>
                 <li>Zeugenschaft schafft Kultur der Verantwortung</li>
               </ul>
-              <button class="btn btn-accordion" data-target="solschenizyn-detail" aria-expanded="false" aria-controls="solschenizyn-detail">
+              <button class="btn btn-accordion" data-target="solschenizyn-detail">
                 Mehr erfahren
               </button>
-            </div>
-            <div id="solschenizyn-detail" class="deepdive-inline" hidden>
-              <h4>Alexander Solschenizyn – Wahrheit als Widerstand</h4>
-              <p><strong>Kurz:</strong> Schriftsteller und Zeuge politischer Gewalt; sein Werk ringt um Sinn, Erinnerung und Verantwortlichkeit.</p>
-              <p>Resilienz heißt hier, zerstörte Wirklichkeiten neu zu erzählen. Zeugenschaft schützt vor Verdrängung, Sinn stiftet Richtung, und öffentliche Debatten schaffen Räume für Heilung. Solschenizyn erinnert daran: Ohne Wahrheit bleibt Resilienz Fassade.</p>
-              <h5>Unsere Lektionen</h5>
-              <ul>
-                <li>Erinnerungspolitik ist Gesundheitsprävention.</li>
-                <li>Sinnquellen stärken (Werte, Zugehörigkeit, Praxis).</li>
-                <li>Zeugenschaft institutionell sichern.</li>
-              </ul>
             </div>
           </article>
 
@@ -510,20 +615,9 @@
                 <li>Fehlerfreundliche Forschungskultur</li>
                 <li>Verbindung von Labor &amp; Praxis</li>
               </ul>
-              <button class="btn btn-accordion" data-target="fleming-detail" aria-expanded="false" aria-controls="fleming-detail">
+              <button class="btn btn-accordion" data-target="fleming-detail">
                 Mehr erfahren
               </button>
-            </div>
-            <div id="fleming-detail" class="deepdive-inline" hidden>
-              <h4>Alexander Fleming – Fehler als Fundgrube</h4>
-              <p><strong>Kurz:</strong> Entdecker des Penicillins; Beispiel für serendipitäre Innovation durch genaue Beobachtung.</p>
-              <p>Eine „verpatzte" Petrischale führte zur Entdeckung mit globaler Wirkung. Die Botschaft: Schaffe Bedingungen, in denen Zufall nützlich werden darf – mit Fehlerkultur, schneller Prototypisierung und Brücken zwischen Labor und Anwendung.</p>
-              <h5>Unsere Lektionen</h5>
-              <ul>
-                <li>Fehler sichtbar machen und auswerten.</li>
-                <li>Von Beobachtung zu Prototyp – ohne Umwege.</li>
-                <li>Wissenschaftliche Demut als Stärke.</li>
-              </ul>
             </div>
           </article>
 
@@ -547,23 +641,21 @@
                 <li>Interdisziplinarität erhöht Anpassungsfähigkeit</li>
                 <li>Langfrist denken, kurz handeln</li>
               </ul>
-              <button class="btn btn-accordion" data-target="humboldt-detail" aria-expanded="false" aria-controls="humboldt-detail">
+              <button class="btn btn-accordion" data-target="humboldt-detail">
                 Mehr erfahren
               </button>
             </div>
-            <div id="humboldt-detail" class="deepdive-inline" hidden>
-              <h4>Alexander von Humboldt – Vernetzung &amp; Systemdenken</h4>
-              <p><strong>Kurz:</strong> Naturforscher und Weltdenker; verknüpfte Ökologie, Klima, Daten und Kultur.</p>
-              <p>Humboldt zeigt, wie Resilienz jenseits des Individuums gedacht wird: in Ökosystemen, Institutionen und Praktiken.
-              Wer Wechselwirkungen erkennt, vermeidet Kurzschluss-Politik und baut robuste Pfade – wissenschaftlich fundiert, sozial eingebettet, langfristig.</p>
-              <h5>Unsere Lektionen</h5>
-              <ul>
-                <li>Interdisziplinarität institutionalisieren.</li>
-                <li>Lokales Handeln mit globalem Blick koppeln.</li>
-                <li>Langfristhorizonte gegen reine Effizienzlogik.</li>
-              </ul>
-            </div>
           </article>
+        </div>
+
+        <!-- MODAL für Details (wird per JS befüllt) -->
+        <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+          <div class="modal-content">
+            <button class="modal-close" aria-label="Schließen">&times;</button>
+            <div id="modal-body">
+              <!-- Content wird per JS hier eingefügt -->
+            </div>
+          </div>
         </div>
       </section>
 
