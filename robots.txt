@@ -1,4 +1,15 @@
 User-agent: *
 Allow: /
 
+# Sitemap location
 Sitemap: https://alexander.forum/sitemap.xml
+
+# Block admin/internal areas (if any)
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /*.pdf$
+
+# Allow PDF files for indexing
+Allow: /Alexander-Forum_Positionspapier_2025.pdf
+Allow: /Alexander-Forum_Mission_Statement_EN.pdf
+Allow: /downloads/
