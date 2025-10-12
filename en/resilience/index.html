@@ -25,13 +25,30 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <header class="site-head">
-    <nav class="mini-nav">
+  <header class="site-head" aria-label="Alexander Forum">
+    <nav class="mini-nav" aria-label="Main navigation">
       <a href="/en/">Home</a>
-      <a href="/en/#resilience-dossier">Dossier Overview</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          About Us
+          <span class="dropdown-arrow">▾</span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="/en/about/" role="menuitem">About Us</a>
+          <a href="/en/why-alexander/" role="menuitem">Why Alexander?</a>
+        </div>
+      </div>
+      <a href="/en/#topics">Topics</a>
+      <a href="/en/#approach">Approach</a>
+      <a href="/en/publications/">Publications</a>
       <a href="/en/#contact">Contact</a>
-      <a class="lang" href="/resilienz/" hreflang="de">DE</a>
+      <a class="lang" href="/resilienz/" hreflang="de" aria-label="Auf Deutsch wechseln">DE</a>
     </nav>
+    <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
 
   <main id="main" class="wrap">
@@ -213,6 +230,7 @@
     }
   </style>
 
+  <script src="../scripts.js"></script>
   <script>
     // Sticky Header
     document.addEventListener('DOMContentLoaded', function() {
