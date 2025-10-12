@@ -17,8 +17,8 @@
   <meta property="og:description" content="Resilienz als erlernbare Widerstandskraft: biologisch, psychologisch, sozial, systemisch.">
   <meta property="og:type" content="article">
 
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
   <link rel="alternate" href="/" hreflang="de">
   <link rel="alternate" href="/en/" hreflang="en">
 
@@ -26,7 +26,7 @@
     /* Resilienz-spezifische Ergänzungen */
     .chapter-nav{
       position:sticky;
-      top:1rem;
+      top:5rem;
       background:var(--af-card);
       border:1px solid var(--af-border);
       border-radius:12px;
@@ -69,7 +69,7 @@
     }
 
     .chapter{
-      scroll-margin-top:2rem;
+      scroll-margin-top:6rem;
       margin-bottom:var(--space-7);
       padding:var(--space-5) 0;
       border-bottom:1px solid var(--af-border);
@@ -140,10 +140,13 @@
       }
     }
 
-    @media (max-width:600px){
+    @media (max-width:900px){
       .chapter-nav{
         position:relative;
         top:auto;
+      }
+      .chapter{
+        scroll-margin-top:2rem;
       }
     }
   </style>
@@ -151,13 +154,30 @@
 <body>
   <a class="skip" href="#main">Zum Inhalt springen</a>
 
-  <header class="site-head">
-    <nav class="mini-nav">
-      <a href="/">Home</a>
-      <a href="/#resilienz-dossier">Dossier-Übersicht</a>
+  <header class="site-head" aria-label="Alexander Forum">
+    <nav class="mini-nav" aria-label="Hauptnavigation">
+      <a href="/">Start</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Über uns
+          <span class="dropdown-arrow">▾</span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="/ueber-uns/" role="menuitem">Über uns</a>
+          <a href="/warum-alexander/" role="menuitem">Warum Alexander?</a>
+        </div>
+      </div>
+      <a href="/#themen">Themen</a>
+      <a href="/#arbeitsweise">Arbeitsweise</a>
+      <a href="/publikationen/">Publikationen</a>
       <a href="/#kontakt">Kontakt</a>
-      <a class="lang" href="/en/" hreflang="en">EN</a>
+      <a class="lang" href="/en/" hreflang="en" aria-label="Switch to English">EN</a>
     </nav>
+    <button class="mobile-menu-toggle" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
 
   <main id="main" class="wrap">
@@ -382,10 +402,10 @@
       <section id="kapitel-5" class="chapter">
         <h2>5. Resilienz und digitale Gesellschaft: Neue Herausforderungen</h2>
 
-        <h3>Informationsüberlastung und digitaler Stress</h3>
+        <h3>Informationsüber lastung und digitaler Stress</h3>
         <p>
           Die digitale Transformation schafft spezifische Anforderungen an Resilienz. 
-          Informationsüberlastung, permanente Erreichbarkeit und algorithmisch kuratierte Realitäten 
+          Informationsüberflutung, permanente Erreichbarkeit und algorithmisch kuratierte Realitäten 
           erfordern neue Bewältigungsstrategien.
         </p>
         <p>
@@ -649,7 +669,7 @@
         </p>
         
         <div class="cta-row">
-          <a class="btn" href="/viewer/index.html?file=/downloads/AF_Resilienz_Grundlagendossier_PUBLIC_v1.1.pdf&title=Resilienz%20Grundlagendossier&return=/resilienz/">
+          <a class="btn" href="/viewer/index.html?file=/downloads/AF_Resilienz_Grundlagendossier_PUBLIC_v1.1.pdf&title=Resilienz%20Grundlagendossier&return=/resilienz/#quellen">
             PDF ansehen
           </a>
           <a class="btn btn-secondary" href="/downloads/AF_Resilienz_Grundlagendossier_PUBLIC_v1.1.pdf" download>
@@ -677,6 +697,7 @@
     </footer>
   </main>
 
+  <script src="../scripts.js"></script>
   <script>
     // Aktive Kapitel-Markierung beim Scrollen
     document.addEventListener('DOMContentLoaded', function() {
