@@ -1,4 +1,4 @@
-/* Alexander Forum – styles.css (Clean Edition with Modal, Grid & Dropdown) */
+/* Alexander Forum – styles.css (Fixed Mobile Menu & Modal) */
 
 :root{
   --af-navy:#0f2a3a;
@@ -206,6 +206,7 @@ html,body{
   cursor: pointer;
   padding: .5rem;
   z-index: 101;
+  position: relative;
 }
 
 .mobile-menu-toggle span{
@@ -217,15 +218,15 @@ html,body{
   border-radius: 2px;
 }
 
-.mobile-menu-toggle[aria-expanded="true"] span:nth-child(1){
+.mobile-menu-toggle.active span:nth-child(1){
   transform: rotate(45deg) translate(5px, 5px);
 }
 
-.mobile-menu-toggle[aria-expanded="true"] span:nth-child(2){
+.mobile-menu-toggle.active span:nth-child(2){
   opacity: 0;
 }
 
-.mobile-menu-toggle[aria-expanded="true"] span:nth-child(3){
+.mobile-menu-toggle.active span:nth-child(3){
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
@@ -258,7 +259,8 @@ html,body{
     z-index: 100;
   }
   
-  .mini-nav.active{
+  /* FIXED: Changed from .active to .mobile-open */
+  .mini-nav.mobile-open{
     right: 0;
   }
   
@@ -811,10 +813,11 @@ em{ font-style:italic }
   top:0; left:0; right:0; bottom:0;
   background:rgba(12,17,21,0.85);
   z-index:9999;
-  padding:2rem 1rem;
+  padding:1rem;
   overflow-y:auto;
   align-items:center;
   justify-content:center;
+  -webkit-overflow-scrolling: touch;
 }
 .modal-overlay.active{
   display:flex;
@@ -826,18 +829,23 @@ em{ font-style:italic }
   border-radius:14px;
   max-width:700px;
   width:100%;
+  max-height:90vh;
+  overflow-y:auto;
   padding:2rem 2.5rem 2.25rem;
   box-shadow:0 20px 60px rgba(15,42,58,0.4);
   animation:modalFadeIn .3s ease-out;
+  margin:auto;
+  -webkit-overflow-scrolling: touch;
 }
 @keyframes modalFadeIn{
   from{ opacity:0; transform:translateY(-20px) }
   to{ opacity:1; transform:translateY(0) }
 }
 .modal-close{
-  position:absolute;
-  top:1rem; right:1rem;
-  background:transparent;
+  position:sticky;
+  top:0;
+  float:right;
+  background:var(--af-card);
   border:none;
   font-size:2rem;
   line-height:1;
@@ -845,9 +853,14 @@ em{ font-style:italic }
   color:var(--af-muted);
   transition:color .2s ease;
   padding:.25rem .5rem;
+  margin:-0.5rem -1rem 0 1rem;
+  z-index:10;
 }
 .modal-close:hover{
   color:var(--af-navy);
+}
+#modal-body{
+  clear:both;
 }
 #modal-body h3{
   margin-top:0;
@@ -862,6 +875,25 @@ em{ font-style:italic }
 }
 #modal-body ul li{
   margin:.3rem 0;
+}
+
+/* Mobile Modal Fixes */
+@media (max-width:768px){
+  .modal-overlay{
+    padding:.5rem;
+    align-items:flex-start;
+  }
+  .modal-content{
+    max-height:95vh;
+    padding:1.5rem 1.25rem;
+    margin-top:.5rem;
+  }
+  .modal-close{
+    position:sticky;
+    font-size:1.75rem;
+    padding:.5rem;
+    margin:-0.5rem -0.5rem 0 0.5rem;
+  }
 }
 
 /* === Accessibility === */
@@ -927,9 +959,6 @@ blockquote{
   .inspiration-card.hero .cover{
     aspect-ratio:16/9;
   }
-  .modal-content{
-    padding:1.5rem 1.25rem;
-  }
 }
 
 /* Mobile: everything single column */
@@ -993,11 +1022,14 @@ blockquote{
   .cover-placeholder{
     background: linear-gradient(135deg, #1c3c4f 0%, #2a4a5f 100%);
   }
+  .modal-close{
+    background:var(--af-card);
+  }
 }
 
 /* === PRINT === */
 @media print{
-  .mini-nav, .btn, .foot{ display:none !important; }
+  .mini-nav, .btn, .foot, .mobile-menu-toggle{ display:none !important; }
   .card{ border:none; box-shadow:none; }
   body{ background:#fff; color:#000; }
 }
