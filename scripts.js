@@ -1,9 +1,14 @@
-// Alexander Forum – scripts.js (Updated with Dropdown Navigation)
+// ============================================
+// ALEXANDER FORUM – COMPLETE SCRIPTS
+// ============================================
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
   
-  // ===== STICKY HEADER SCROLL EFFECT =====
+  // ============================================
+  // 1. STICKY HEADER WITH SCROLL EFFECT
+  // ============================================
   const siteHead = document.querySelector('.site-head');
+  
   if (siteHead) {
     let lastScroll = 0;
     window.addEventListener('scroll', () => {
@@ -17,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ===== DROPDOWN NAVIGATION =====
+  // ============================================
+  // 2. DROPDOWN NAVIGATION (Desktop)
+  // ============================================
   const dropdownToggle = document.querySelector('.nav-dropdown-toggle');
   const dropdownMenu = document.querySelector('.nav-dropdown-menu');
   const navDropdown = document.querySelector('.nav-dropdown');
@@ -25,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (dropdownToggle && dropdownMenu) {
     // Toggle dropdown on button click
     dropdownToggle.addEventListener('click', (e) => {
+      e.preventDefault();
       e.stopPropagation();
       const isExpanded = dropdownToggle.getAttribute('aria-expanded') === 'true';
       
@@ -68,7 +76,63 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ===== MODAL FOR INSPIRATIONS =====
+  // ============================================
+  // 3. MOBILE HAMBURGER MENU
+  // ============================================
+  const mobileToggle = document.querySelector('.mobile-menu-toggle');
+  const miniNav = document.querySelector('.mini-nav');
+  
+  if (mobileToggle && miniNav) {
+    mobileToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const isOpen = miniNav.classList.contains('mobile-open');
+      
+      if (isOpen) {
+        // Close menu
+        miniNav.classList.remove('mobile-open');
+        mobileToggle.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.setAttribute('aria-label', 
+          mobileToggle.getAttribute('lang') === 'de' ? 'Menü öffnen' : 'Open menu');
+        document.body.style.overflow = '';
+      } else {
+        // Open menu
+        miniNav.classList.add('mobile-open');
+        mobileToggle.classList.add('active');
+        mobileToggle.setAttribute('aria-expanded', 'true');
+        mobileToggle.setAttribute('aria-label', 
+          mobileToggle.getAttribute('lang') === 'de' ? 'Menü schließen' : 'Close menu');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+    
+    // Close mobile menu when clicking on a link
+    const mobileLinks = miniNav.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        miniNav.classList.remove('mobile-open');
+        mobileToggle.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+    
+    // Close mobile menu on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && miniNav.classList.contains('mobile-open')) {
+        miniNav.classList.remove('mobile-open');
+        mobileToggle.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  // ============================================
+  // 4. MODAL FOR INSPIRATIONS (Alexander Figures)
+  // ============================================
   const modal = document.getElementById('modal');
   const modalBody = document.getElementById('modal-body');
   const modalClose = document.querySelector('.modal-close');
@@ -383,29 +447,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalContent = lang === 'en' ? modalContentEN : modalContentDE;
 
   // Open modal
-  modalTriggers.forEach(trigger => {
-    trigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      const target = trigger.getAttribute('data-target');
-      const data = modalContent[target];
-      
-      if (data && modal && modalBody) {
-        modalBody.innerHTML = `
-          <h3>${data.title}</h3>
-          <p class="tagline" style="color: var(--af-navy-600); font-weight: 700; margin-bottom: 1rem;">${data.subtitle}</p>
-          ${data.content}
-        `;
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+  if (modalTriggers.length > 0) {
+    modalTriggers.forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = trigger.getAttribute('data-target');
+        const data = modalContent[target];
         
-        // Focus modal for accessibility
-        modal.focus();
-      }
+        if (data && modal && modalBody) {
+          modalBody.innerHTML = `
+            <h3>${data.title}</h3>
+            <p class="tagline" style="color: var(--af-navy-600); font-weight: 700; margin-bottom: 1rem;">${data.subtitle}</p>
+            ${data.content}
+          `;
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          
+          // Focus modal for accessibility
+          modal.focus();
+        }
+      });
     });
-  });
+  }
 
   // Close modal
-  function closeModal() {
+  function closeModalWindow() {
     if (modal) {
       modal.classList.remove('active');
       document.body.style.overflow = '';
@@ -413,26 +479,28 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (modalClose) {
-    modalClose.addEventListener('click', closeModal);
+    modalClose.addEventListener('click', closeModalWindow);
   }
 
   if (modal) {
     // Close on overlay click
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
-        closeModal();
+        closeModalWindow();
       }
     });
 
     // Close on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && modal.classList.contains('active')) {
-        closeModal();
+        closeModalWindow();
       }
     });
   }
 
-  // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+  // ============================================
+  // 5. SMOOTH SCROLL FOR ANCHOR LINKS
+  // ============================================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
@@ -443,9 +511,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
+        
+        // Get header height for offset
+        const headerHeight = siteHead ? siteHead.offsetHeight : 0;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
         });
         
         // Update URL without triggering page jump
@@ -456,7 +529,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ===== ACTIVE NAV HIGHLIGHTING (based on scroll position) =====
+  // ============================================
+  // 6. ACTIVE NAV HIGHLIGHTING (based on scroll)
+  // ============================================
   const sections = document.querySelectorAll('section[id], h2[id]');
   const navLinks = document.querySelectorAll('.mini-nav a[href^="#"]');
 
@@ -482,3 +557,34 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+// ============================================
+// UTILITY FUNCTIONS
+// ============================================
+
+// Debounce function for performance
+function debounce(func, wait = 20, immediate = true) {
+  let timeout;
+  return function() {
+    const context = this, args = arguments;
+    const later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    const callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
+
+// Check if element is in viewport
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
