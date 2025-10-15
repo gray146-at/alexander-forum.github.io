@@ -1,4 +1,4 @@
-/* Alexander Forum – styles.css (Fixed Mobile Menu & Modal) */
+/* Alexander Forum – styles.css (Newsletter Mobile Optimiert) */
 
 :root{
   --af-navy:#0f2a3a;
@@ -259,7 +259,6 @@ html,body{
     z-index: 100;
   }
   
-  /* FIXED: Changed from .active to .mobile-open */
   .mini-nav.mobile-open{
     right: 0;
   }
@@ -1001,12 +1000,24 @@ blockquote{
   border: none;
   background: transparent;
   width: 100%;
-  height: 320px;
   max-width: 100%;
   display: block;
 }
 
-/* Mobile Optimierung */
+/* OPTIMIERTE NEWSLETTER IFRAME-HÖHE für Desktop und Mobile */
+@media (min-width: 768px) {
+  .newsletter-embed iframe {
+    height: 350px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .newsletter-embed iframe {
+    height: 420px !important;
+  }
+}
+
+/* Mobile Optimierung für Newsletter Section */
 @media (max-width: 600px) {
   .newsletter-section {
     padding: 2rem 1.5rem;
@@ -1014,10 +1025,6 @@ blockquote{
   
   .newsletter-embed {
     padding: 0.75rem;
-  }
-  
-  .newsletter-embed iframe {
-    height: 280px;
   }
 }
 
