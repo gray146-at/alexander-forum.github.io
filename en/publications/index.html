@@ -9,13 +9,13 @@
   <link rel="canonical" href="https://alexander.forum/en/publications/">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#0f2a3a">
-  <meta name="description" content="Publications of the Alexander Forum: Foundation Dossiers, Policy Briefs and Impulse – Essays and analyses on resilience, crises and social cohesion.">
+  <meta name="description" content="Publications by Alexander Forum: Core dossiers, policy briefs and Impulse – essays and analyses on resilience, crises and social cohesion.">
   
   <!-- Open Graph -->
   <meta property="og:site_name" content="Alexander Forum">
   <meta property="og:url" content="https://alexander.forum/en/publications/">
   <meta property="og:title" content="Publications | Alexander Forum">
-  <meta property="og:description" content="Foundation Dossiers, Policy Briefs and Impulse – Essays and analyses on resilience and social cohesion.">
+  <meta property="og:description" content="Core dossiers, policy briefs and Impulse – essays and analyses on resilience and social cohesion.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   
@@ -43,11 +43,15 @@
         </div>
       </div>
       <a href="/en/#topics">Topics</a>
-      <a href="/en/#approach">Approach</a>
       <a href="/en/publications/" class="active">Publications</a>
       <a href="/en/#contact">Contact</a>
-      <a class="lang" href="/publikationen/" hreflang="de" aria-label="Auf Deutsch wechseln">DE</a>
+      <a class="lang" href="/publikationen/" hreflang="de" aria-label="Zur deutschen Version">DE</a>
     </nav>
+    <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
 
   <main id="main" class="wrap">
@@ -58,20 +62,20 @@
       <p class="tag">Analyses, Dossiers & Impulse</p>
 
       <p class="lead">
-        We publish three types of texts: <strong>Foundation Dossiers</strong> for comprehensive analyses, 
-        <strong>Policy Briefs</strong> for practice-oriented recommendations, and <strong>Impulse</strong> – essays 
-        and commentaries on current developments.
+        We publish three types of texts: <strong>Core Dossiers</strong> for comprehensive analyses, 
+        <strong>Policy Briefs</strong> for practice-oriented recommendations, and <strong>Impulse</strong> – essays and 
+        commentaries on current developments.
       </p>
 
       <p>
-        Our work combines intellectual depth with practical relevance. We name uncertainties transparently, 
-        work with sources, and search for perspectives that are lost in daily debates.
+        Our work combines intellectual depth with practical relevance. We transparently acknowledge uncertainties, 
+        work with sources, and seek perspectives that get lost in daily debates.
       </p>
 
       <h2>Our Formats</h2>
 
-      <!-- Format Cards Grid -->
-      <div class="publications-formats">
+      <!-- Format Cards Grid - only 2 cards -->
+      <div class="publications-formats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
         
         <!-- Dossiers & Reports -->
         <article class="format-card">
@@ -79,8 +83,8 @@
           <h3>Dossiers & Reports</h3>
           <p class="format-meta">20,000+ words · PDF</p>
           <p>
-            Comprehensive, interdisciplinary explorations of fundamental topics. Citable, 
-            with source references and long-term perspective. For those who want to dive deep.
+            Comprehensive, interdisciplinary treatments of fundamental topics. Citable, 
+            with reference apparatus and long-term perspective. For those who want to dive deep.
           </p>
           <p class="format-example"><strong>Example:</strong> Resilience – Interdisciplinary Analysis and Future Competence</p>
         </article>
@@ -92,32 +96,49 @@
           <p class="format-meta">3,000–5,000 words · PDF</p>
           <p>
             Practice-oriented statements with concrete action recommendations for organizations, 
-            politics, and civil society. Evidence-based, compact, implementation-oriented.
+            politics and civil society. Evidence-based, compact, implementation-focused.
           </p>
           <p class="format-example"><strong>Example:</strong> In preparation</p>
         </article>
 
-        <!-- Impulse (Prominent) -->
-        <article class="format-card impulse-card">
-          <div class="format-icon">⚡</div>
-          <h3>Impulse</h3>
-          <p class="format-meta">1,000–15,000 words · Online</p>
-          <p>
-            Essays, analyses, and commentaries on societal developments. Reflective, 
-            more current, dialogical. Published irregularly on our platform 
-            <strong>Impulse</strong>.
+      </div>
+
+      <!-- Impulse & Newsletter - full width -->
+      <section id="impulse-newsletter" class="newsletter-section" style="margin-bottom: 3rem;">
+        <div style="max-width: 680px; margin: 0 auto;">
+          <div style="text-align: center; margin-bottom: 1.5rem;">
+            <div class="format-icon" style="font-size: 3rem; margin-bottom: .5rem;">⚡</div>
+            <h2 style="color: #fff; margin: .5rem 0;">Impulse – Essays & Analyses</h2>
+            <p class="format-meta" style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">1,000–15,000 words · Online</p>
+          </div>
+          
+          <p style="font-size: 1.05rem; margin: 0 auto 1.5rem; text-align: center; opacity: 0.95; line-height: 1.6;">
+            Essays, analyses and commentaries on societal developments. Reflective, timely, dialogical. 
+            We respect your time: Our newsletter appears irregularly – only when we publish something substantial.
           </p>
           
-          <div class="impulse-cta-box">
-            <p style="margin-bottom: .75rem;"><strong>Read & subscribe to Impulse:</strong></p>
-            <div class="cta-row" style="margin: 0;">
-              <a class="btn" href="https://impulse.alexander.forum" target="_blank" rel="noopener">To Impulse</a>
-              <a class="btn btn-secondary" href="https://impulse.alexander.forum/subscribe" target="_blank" rel="noopener">Subscribe to Newsletter</a>
-            </div>
+          <!-- Substack Embed -->
+          <div class="newsletter-embed">
+            <iframe 
+              src="https://alexanderforum.substack.com/embed" 
+              width="100%" 
+              height="320" 
+              style="border: none; background: transparent; max-width: 100%;" 
+              frameborder="0" 
+              scrolling="no"
+              title="Newsletter signup Impulse">
+            </iframe>
           </div>
-        </article>
-
-      </div>
+          
+          <p style="font-size: .9rem; margin-top: 1rem; text-align: center; opacity: 0.85;">
+            No advertising. No spam. Unsubscribe anytime.
+          </p>
+          
+          <p style="font-size: .9rem; margin-top: 1.5rem; text-align: center; opacity: 0.75;">
+            All Impulse essays are also available at <a href="/impulse/" style="color: rgba(255,255,255,0.9); text-decoration: underline;">alexander.forum/impulse</a>.
+          </p>
+        </div>
+      </section>
 
       <h2 id="current-publications">Current Publications</h2>
 
@@ -127,58 +148,36 @@
         <!-- Resilience Dossier -->
         <article class="publication-item">
           <div class="publication-meta">
-            <span class="pub-type">Foundation Dossier</span>
+            <span class="pub-type">Core Dossier</span>
             <span class="pub-date">October 10, 2025</span>
           </div>
           <h3>Resilience – Interdisciplinary Analysis and Future Competence</h3>
           <p class="pub-teaser">
-            The dossier explains why resilience is part of our name and how it can be promoted practically: 
-            from childhood attachment to organizational culture, from neuroplasticity to community resilience.
+            The dossier explains why resilience is part of our name and how it can be practically 
+            fostered: from childhood bonding to organizational culture, from neuroplasticity 
+            to community resilience.
           </p>
           <div class="pub-tags">
             <span class="tag-pill">Resilience</span>
             <span class="tag-pill">Psychology</span>
             <span class="tag-pill">Systems Theory</span>
           </div>
-          <a class="btn" href="/en/resilience/">To the Dossier</a>
+          <a class="btn" href="/en/resilience/">Read Dossier</a>
         </article>
 
-        <!-- Placeholder for Policy Brief -->
+        <!-- Placeholder for more publications -->
         <article class="publication-item placeholder">
           <div class="publication-meta">
             <span class="pub-type">Policy Brief</span>
             <span class="pub-date">In preparation</span>
           </div>
-          <h3>More publications coming soon</h3>
+          <h3>More Publications Coming Soon</h3>
           <p class="pub-teaser">
-            We are working on Policy Briefs addressing current societal challenges. 
-            Subscribe to our newsletter to not miss any publication.
+            We are working on policy briefs addressing current societal challenges. 
+            Subscribe to our newsletter so you don't miss any publication.
           </p>
         </article>
 
-        <!-- Placeholder for Impulse -->
-        <article class="publication-item placeholder">
-          <div class="publication-meta">
-            <span class="pub-type">Impulse</span>
-            <span class="pub-date">Irregular</span>
-          </div>
-          <h3>Essays & Analyses on Impulse</h3>
-          <p class="pub-teaser">
-            Our shorter texts appear on <strong>impulse.alexander.forum</strong> – 
-            essays, commentaries, and reflections on current developments.
-          </p>
-          <a class="btn btn-secondary" href="https://impulse.alexander.forum" target="_blank" rel="noopener">To Impulse</a>
-        </article>
-
-      </div>
-
-      <div class="infobox note" style="margin-top: 3rem;">
-        <h4>Subscribe to Newsletter</h4>
-        <p>
-          Stay informed about new publications, events, and projects. 
-          Our newsletter appears irregularly and respects your time.
-        </p>
-        <a class="btn" href="https://impulse.alexander.forum/subscribe" target="_blank" rel="noopener" style="margin-top: .5rem;">Subscribe now</a>
       </div>
 
     </section>
