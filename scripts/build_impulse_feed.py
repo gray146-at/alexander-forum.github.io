@@ -16,7 +16,7 @@ def first_image(html: str) -> str | None:
 def main():
     d = feedparser.parse(SUBSTACK_FEED)
     items = []
-    for e in d.entries[:25]:
+    for e in d.entries[:25]:  # nimm die 25 neuesten
         content_html = ""
         if "content" in e and e.content:
             content_html = e.content[0].value
