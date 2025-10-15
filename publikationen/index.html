@@ -43,11 +43,15 @@
         </div>
       </div>
       <a href="/#themen">Themen</a>
-      <a href="/#arbeitsweise">Arbeitsweise</a>
       <a href="/publikationen/" class="active">Publikationen</a>
       <a href="/#kontakt">Kontakt</a>
       <a class="lang" href="/en/publications/" hreflang="en" aria-label="Switch to English">EN</a>
     </nav>
+    <button class="mobile-menu-toggle" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
 
   <main id="main" class="wrap">
@@ -70,8 +74,8 @@
 
       <h2>Unsere Formate</h2>
 
-      <!-- Format Cards Grid -->
-      <div class="publications-formats">
+      <!-- Format Cards Grid - nur 2 Karten -->
+      <div class="publications-formats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
         
         <!-- Dossiers & Reports -->
         <article class="format-card">
@@ -97,27 +101,44 @@
           <p class="format-example"><strong>Beispiel:</strong> In Vorbereitung</p>
         </article>
 
-        <!-- Impulse (Prominent) -->
-        <article class="format-card impulse-card">
-          <div class="format-icon">⚡</div>
-          <h3>Impulse</h3>
-          <p class="format-meta">1.000–15.000 Wörter · Online</p>
-          <p>
-            Essays, Analysen und Kommentare zu gesellschaftlichen Entwicklungen. Reflexiv, 
-            tagesaktueller, dialogisch. Erscheinen unregelmäßig auf unserer Plattform 
-            <strong>Impulse</strong>.
+      </div>
+
+      <!-- Impulse & Newsletter - volle Breite -->
+      <section id="impulse-newsletter" class="newsletter-section" style="margin-bottom: 3rem;">
+        <div style="max-width: 680px; margin: 0 auto;">
+          <div style="text-align: center; margin-bottom: 1.5rem;">
+            <div class="format-icon" style="font-size: 3rem; margin-bottom: .5rem;">⚡</div>
+            <h2 style="color: #fff; margin: .5rem 0;">Impulse – Essays & Analysen</h2>
+            <p class="format-meta" style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">1.000–15.000 Wörter · Online</p>
+          </div>
+          
+          <p style="font-size: 1.05rem; margin: 0 auto 1.5rem; text-align: center; opacity: 0.95; line-height: 1.6;">
+            Essays, Analysen und Kommentare zu gesellschaftlichen Entwicklungen. Reflexiv, zeitnah, dialogisch. 
+            Wir respektieren Ihre Zeit: Unser Newsletter erscheint unregelmäßig – nur wenn wir etwas Substanzielles veröffentlichen.
           </p>
           
-          <div class="impulse-cta-box">
-            <p style="margin-bottom: .75rem;"><strong>Impulse direkt lesen & abonnieren:</strong></p>
-            <div class="cta-row" style="margin: 0;">
-              <a class="btn" href="https://impulse.alexander.forum" target="_blank" rel="noopener">Zu den Impulsen</a>
-              <a class="btn btn-secondary" href="https://impulse.alexander.forum/subscribe" target="_blank" rel="noopener">Newsletter abonnieren</a>
-            </div>
+          <!-- Substack Embed -->
+          <div class="newsletter-embed">
+            <iframe 
+              src="https://alexanderforum.substack.com/embed" 
+              width="100%" 
+              height="320" 
+              style="border: none; background: transparent; max-width: 100%;" 
+              frameborder="0" 
+              scrolling="no"
+              title="Newsletter-Anmeldung Impulse">
+            </iframe>
           </div>
-        </article>
-
-      </div>
+          
+          <p style="font-size: .9rem; margin-top: 1rem; text-align: center; opacity: 0.85;">
+            Keine Werbung. Kein Spam. Jederzeit abbestellbar.
+          </p>
+          
+          <p style="font-size: .9rem; margin-top: 1.5rem; text-align: center; opacity: 0.75;">
+            Alle Impulse sind auch gesammelt auf <a href="/impulse/" style="color: rgba(255,255,255,0.9); text-decoration: underline;">alexander.forum/impulse</a> lesbar.
+          </p>
+        </div>
+      </section>
 
       <h2 id="aktuelle-publikationen">Aktuelle Publikationen</h2>
 
@@ -144,7 +165,7 @@
           <a class="btn" href="/resilienz/">Zum Dossier</a>
         </article>
 
-        <!-- Platzhalter für Policy Brief -->
+        <!-- Platzhalter für weitere Publikationen -->
         <article class="publication-item placeholder">
           <div class="publication-meta">
             <span class="pub-type">Policy Brief</span>
@@ -157,29 +178,6 @@
           </p>
         </article>
 
-        <!-- Platzhalter für Impulse -->
-        <article class="publication-item placeholder">
-          <div class="publication-meta">
-            <span class="pub-type">Impulse</span>
-            <span class="pub-date">Unregelmäßig</span>
-          </div>
-          <h3>Essays & Analysen auf Impulse</h3>
-          <p class="pub-teaser">
-            Unsere kürzeren Texte erscheinen auf <strong>impulse.alexander.forum</strong> – 
-            Essays, Kommentare und Reflexionen zu aktuellen Entwicklungen.
-          </p>
-          <a class="btn btn-secondary" href="https://impulse.alexander.forum" target="_blank" rel="noopener">Zu den Impulsen</a>
-        </article>
-
-      </div>
-
-      <div class="infobox note" style="margin-top: 3rem;">
-        <h4>Newsletter abonnieren</h4>
-        <p>
-          Bleiben Sie informiert über neue Publikationen, Veranstaltungen und Projekte. 
-          Unser Newsletter erscheint unregelmäßig und respektiert Ihre Zeit.
-        </p>
-        <a class="btn" href="https://impulse.alexander.forum/subscribe" target="_blank" rel="noopener" style="margin-top: .5rem;">Jetzt abonnieren</a>
       </div>
 
     </section>
