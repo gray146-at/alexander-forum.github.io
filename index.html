@@ -183,7 +183,7 @@
           <a class="btn btn-secondary" href="/warum-alexander/">Alle 7 Porträts lesen</a>
         </div>
 
-        <!-- MODAL für Details (bleibt gleich) -->
+        <!-- MODAL für Details -->
         <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
           <div class="modal-content">
             <button class="modal-close" aria-label="Schließen">&times;</button>
@@ -193,14 +193,30 @@
       </section>
 
       <!-- ===================== IMPULSE-NEWSLETTER ===================== -->
-      <section id="impulse" style="background: linear-gradient(135deg, #0f2a3a, #1c3c4f); color: #fff; padding: 2.5rem 2rem; border-radius: 14px; text-align: center; margin: 3rem 0;">
-        <h2 style="color: #fff; margin-top: 0;">⚡ Impulse – Essays & Reflexionen</h2>
-        <p style="font-size: 1.1rem; margin: 1rem auto; max-width: 600px; opacity: 0.95;">
-          Kurze Essays zu gesellschaftlichen Entwicklungen, Krisen und Zusammenhalt. 
-          Erscheinen in Kürze – abonnieren Sie den Newsletter, um als Erste*r informiert zu werden.
-        </p>
-        <div class="cta-row" style="justify-content: center; margin-top: 1.5rem;">
-          <a class="btn" href="https://impulse.alexander.forum/subscribe" style="background: #fff; color: var(--af-navy); border: none;">Newsletter abonnieren</a>
+      <section id="impulse" class="newsletter-section">
+        <div style="max-width: 640px; margin: 0 auto;">
+          <h2 style="color: #fff; margin-top: 0; text-align: center;">⚡ Impulse – Essays & Reflexionen</h2>
+          <p style="font-size: 1.05rem; margin: 1rem auto 1.5rem; text-align: center; opacity: 0.95; line-height: 1.6;">
+            Wir respektieren Ihre Zeit: Unser Newsletter erscheint unregelmäßig – 
+            nur wenn wir etwas Substanzielles veröffentlichen. Keine Füller-Mails.
+          </p>
+          
+          <!-- Substack Embed -->
+          <div class="newsletter-embed">
+            <iframe 
+              src="https://alexanderforum.substack.com/embed" 
+              width="100%" 
+              height="320" 
+              style="border: none; background: transparent; max-width: 100%;" 
+              frameborder="0" 
+              scrolling="no"
+              title="Newsletter-Anmeldung Impulse">
+            </iframe>
+          </div>
+          
+          <p style="font-size: .9rem; margin-top: 1rem; text-align: center; opacity: 0.85;">
+            Keine Werbung. Kein Spam. Jederzeit abbestellbar.
+          </p>
         </div>
       </section>
 
