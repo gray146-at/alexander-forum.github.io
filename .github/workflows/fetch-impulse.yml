@@ -2,7 +2,7 @@ name: Build Impulse Feed
 on:
   workflow_dispatch:
   schedule:
-    - cron: "15 * * * *"   # stündlich +15; alternativ täglich 06:00: "0 6 * * *"
+    - cron: "15 * * * *"   # stündlich +15; alternativ: täglich 06:00 -> "0 6 * * *"
 permissions:
   contents: write
 jobs:
