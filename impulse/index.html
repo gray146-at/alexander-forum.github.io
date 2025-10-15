@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Impulse – Alexander Forum</title>
+  <meta name="description" content="Impulse vom Alexander Forum – kurze Essays, Notizen und Hinweise.">
+  <link rel="canonical" href="https://alexander.forum/impulse/">
+  <!-- Falls deine Haupt-CSS nicht global geladen wird, hier einbinden:
+  <link rel="stylesheet" href="/styles.css">
+  -->
+  <style>
+    /* Minimaler Zusatz, nutzt deine Variablen – kompatibel zu deinem Stylesheet. */
+    :root{ --af-navy:#0f2a3a; --af-navy-600:#1c3c4f; --af-ink:#121416; --af-muted:#4a5861; --af-bg:#f7f8fa; --af-card:#fff; --af-border:#e6eaee }
+    html,body{ background:var(--af-bg); color:var(--af-ink); font-family:"Georgia","Palatino Linotype","Times New Roman",serif; line-height:1.6; margin:0 }
+    .wrap{ max-width:880px; margin:0 auto; padding:2.25rem 1.25rem 3rem }
+    header{ margin:0 0 1rem }
+    h1{ margin:.25rem 0 .5rem; font-size:clamp(1.75rem,1.2rem + 2vw,2.3rem); color:var(--af-navy) }
+    .lead{ color:var(--af-muted) }
+    .grid{ display:grid; grid-template-columns:1fr; gap:16px }
+    @media(min-width:720px){ .grid{ grid-template-columns:repeat(2,1fr) } }
+    .card{ background:var(--af-card); border:1px solid var(--af-border); border-radius:14px; padding:16px; box-shadow:0 8px 20px rgba(15,42,58,0.06) }
+    .card h2{ font-size:1.05rem; margin:.2rem 0 }
+    .meta{ font-size:.9rem; color:var(--af-muted) }
+    .excerpt{ margin:.4rem 0 0 }
+    .thumb{ width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px; margin-bottom:10px; display:none }
+    .btn{ display:inline-block; margin-top:22px; padding:10px 14px; border-radius:12px; border:1px solid var(--af-navy); text-decoration:none; color:var(--af-navy) }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Impulse</h1>
+      <p class="lead">Kurze Essays, Notizen & Hinweise aus dem Alexander Forum.</p>
+    </header>
+
+    <section id="posts" class="grid" aria-live="polite">
+      <p>Lade Beiträge …</p>
+    </section>
+
+    <a class="btn" id="more" href="https://alexanderforum.substack.com/archive" target="_blank" rel="noopener">Alle Beiträge auf Substack</a>
+  </div>
+
+<script>
+(async () => {
+  const FEED = '/impulse/feed.json';
+  try{
+    const res = await fetch(FEED, {cache:'no-store'});
+    const data = await res.json();
+    const posts = (data.items || []).slice(0, 10);
+    const wrap = document.getElementById('posts');
+    wrap.innerHTML = '';
+
+    if(!posts.length){ wrap.innerHTML = '<p>Keine Einträge gefunden.</p>'; return; }
+
+    for(const p of posts){
+      const card = document.createElement('article');
+      card.className = 'card';
+      const date = new Date(p.date_published || p.date).toLocaleDateString('de-AT',{year:'numeric',month:'short',day:'2-digit'});
+      const img = p.image || (p._images && p._images[0]) || '';
+
+      card.innerHTML = `
+        ${img ? `<img class="thumb" src="${img}" alt="">` : ``}
+        <div class="meta">${date}</div>
+        <h2><a href="${p.url}" target="_blank" rel="noopener">${p.title || 'Ohne Titel'}</a></h2>
+        <p class="excerpt">${(p.summary || p.content_text || '').replace(/(<([^>]+)>)/gi,'').slice(0,160)}&hellip;</p>
+      `;
+      wrap.appendChild(card);
+      if(img) card.querySelector('.thumb').style.display = 'block';
+    }
+  } catch(e){
+    document.getElementById('posts').innerHTML = '<p>Feed momentan nicht erreichbar.</p>';
+    console.error(e);
+  }
+})();
+</script>
+</body>
+</html>
