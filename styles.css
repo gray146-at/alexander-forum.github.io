@@ -1027,6 +1027,80 @@ blockquote{
   }
 }
 
+/* === PORTRAIT PAGES ("Warum Alexander") === */
+
+/* Deep portraits with proper spacing and visual separation */
+.portrait-deep {
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  border-top: 2px solid var(--af-border);
+}
+
+/* First portrait doesn't need top spacing */
+.portrait-deep:first-of-type {
+  margin-top: 2rem;
+  border-top: none;
+}
+
+/* Portrait header (title + tagline + meta) */
+.portrait-header {
+  margin-bottom: var(--space-4);
+}
+
+.portrait-header h2 {
+  margin: 0 0 .25rem;
+  font-size: clamp(1.4rem, 1.2rem + 1vw, 1.8rem);
+}
+
+.portrait-header .tagline {
+  display: block;
+  margin: .25rem 0 .5rem;
+  color: var(--af-navy-600);
+  font-weight: 700;
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+.portrait-header .meta {
+  color: var(--af-muted);
+  font-size: .95rem;
+  margin: 0;
+}
+
+/* Portrait cover images - consistent sizing */
+.portrait-deep .cover {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 10px;
+  margin: 0 auto 1.5rem;
+  display: block;
+  box-shadow: 0 4px 12px rgba(15, 42, 58, 0.1);
+}
+
+/* Dark mode adjustments for portraits */
+@media (prefers-color-scheme: dark) {
+  .portrait-deep {
+    border-top-color: #2a3640;
+  }
+  
+  .portrait-deep .cover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Mobile: reduce spacing */
+@media (max-width: 768px) {
+  .portrait-deep {
+    margin-top: 3rem;
+    padding-top: 2rem;
+  }
+  
+  .portrait-deep:first-of-type {
+    margin-top: 1.5rem;
+  }
+}
+
 /* === PRINT === */
 @media print{
   .mini-nav, .btn, .foot, .mobile-menu-toggle{ display:none !important; }
