@@ -1,0 +1,32 @@
+name: Build Impulse Feed
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 * * * *"   # stündlich +15; alternativ täglich 06:00: "0 6 * * *"
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install feedparser requests
+
+      - name: Generate feed.json from Substack RSS
+        run: |
+          python scripts/build_impulse_feed.py
+
+      - name: Commit feed.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add impulse/feed.json
+          git commit -m "chore: update impulse feed" || echo "no changes"
+          git push
