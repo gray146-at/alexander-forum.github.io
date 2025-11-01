@@ -9,7 +9,6 @@
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#0f2a3a">
   <meta name="description" content="Publikationen des Alexander Forums: Grundlagendossiers und Policy Briefs – Analysen zu Resilienz, Polykrise und gesellschaftlicher Transformation.">
-
   <meta property="og:site_name" content="Alexander Forum">
   <meta property="og:url" content="https://alexander.forum/publikationen/">
   <meta property="og:title" content="Publikationen | Alexander Forum">
@@ -29,6 +28,7 @@
     .pub-tags{display:flex;gap:.5rem;margin:.75rem 0 1rem;flex-wrap:wrap;}
     .tag-pill{font-size:.85rem;padding:.2rem .5rem;border-radius:999px;border:1px solid rgba(255,255,255,0.16);opacity:.9;}
     .btn{display:inline-block;padding:.6rem 1rem;border-radius:8px;border:1px solid rgba(255,255,255,0.2);text-decoration:none;font-weight:600;}
+    .formats-muted{margin-top:2rem;padding:1rem;border:1px solid rgba(255,255,255,.12);border-radius:10px;background:rgba(255,255,255,.02);}
   </style>
 </head>
 <body>
@@ -37,18 +37,37 @@
   <header class="site-head" aria-label="Alexander Forum">
     <nav class="mini-nav" aria-label="Hauptnavigation">
       <a href="/">Start</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Über uns
+          <span class="dropdown-arrow">▾</span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="/ueber-uns/" role="menuitem">Über uns</a>
+          <a href="/warum-alexander/" role="menuitem">Warum Alexander?</a>
+        </div>
+      </div>
       <a href="/#themen">Themen</a>
       <a href="/publikationen/" class="active">Publikationen</a>
       <a href="/#kontakt">Kontakt</a>
       <a class="lang" href="/en/publications/" hreflang="en" aria-label="Switch to English">EN</a>
     </nav>
+    <button class="mobile-menu-toggle" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
   <main id="main" class="wrap">
     <section class="card">
       <h1>Publikationen</h1>
       <p class="lead">
-        Unsere Dossiers und Policy Briefs beleuchten zentrale Zukunftsthemen aus interdisziplinärer Perspektive – mit Fokus auf Resilienz, Polykrise und gesellschaftliche Transformation.
+        Unsere <strong>Grundlagendossiers</strong> und <strong>Policy Briefs</strong> beleuchten zentrale Zukunftsthemen
+        interdisziplinär – mit Fokus auf Resilienz, Polykrise und gesellschaftliche Transformation.
+      </p>
+      <p>
+        Wir arbeiten evidenzbasiert und transparent, veröffentlichen offen zugänglich und stärken
+        das Verständnis für komplexe Systeme. Dossiers bieten strukturierte Analysen; künftige
+        <em>Policy Briefs</em> liefern kompakte, umsetzungsorientierte Empfehlungen.
       </p>
 
       <h2 id="aktuelle-publikationen">Aktuelle Publikationen</h2>
@@ -63,7 +82,7 @@
           </div>
           <h3>Resilienz – Interdisziplinäre Analyse und Zukunftskompetenz</h3>
           <p class="pub-teaser">
-            Warum Resilienz unser Namensbestandteil ist – und wie sie praktisch gefördert werden kann: 
+            Warum Resilienz unser Namensbestandteil ist – und wie sie praktisch gefördert werden kann:
             von kindlicher Bindung bis Organisationskultur, von Neuroplastizität bis Community-Resilienz.
           </p>
           <div class="pub-tags">
@@ -82,8 +101,8 @@
           </div>
           <h3>Die Ära der Gleichzeitigkeit</h3>
           <p class="pub-teaser">
-            Über die Logik multipler Krisen und die Grenzen der Anpassung: 
-            warum sich Krisen heute gegenseitig verstärken – und wieso Transformation statt bloßer Anpassung nötig ist.
+            Über die Logik multipler Krisen und die Grenzen der Anpassung: warum sich Krisen heute
+            gegenseitig verstärken – und wieso Transformation statt bloßer Anpassung nötig ist.
           </p>
           <div class="pub-tags">
             <span class="tag-pill">Polykrise</span>
@@ -94,6 +113,17 @@
         </article>
 
       </div>
+
+      <!-- Unsere Formate -->
+      <section id="formate" class="formats-muted">
+        <h2>Unsere Formate</h2>
+        <ul>
+          <li><strong>Dossiers &amp; Reports:</strong> 20.000+ Wörter, Langfristperspektive, zitierfähig, Open Access (PDF).</li>
+          <li><strong>Policy Briefs:</strong> 3.000–5.000 Wörter, kompakt, umsetzungsorientiert, evidenzbasiert (PDF).</li>
+        </ul>
+        <p>Alle Veröffentlichungen erscheinen unter <strong>Creative Commons</strong> (CC BY-NC-SA 4.0) und dürfen mit Namensnennung geteilt werden.</p>
+      </section>
+
     </section>
 
     <footer class="foot">
