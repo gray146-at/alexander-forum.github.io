@@ -9,13 +9,13 @@
   <link rel="canonical" href="https://alexander.forum/publikationen/">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#0f2a3a">
-  <meta name="description" content="Publikationen des Alexander Forums: Grundlagendossiers, Policy Briefs und Impulse – Essays und Analysen zu Resilienz, Krisen und gesellschaftlichem Zusammenhalt.">
+  <meta name="description" content="Publikationen des Alexander Forums: Grundlagendossiers und Policy Briefs – Analysen zu Resilienz, Krisen und gesellschaftlichem Zusammenhalt.">
   
   <!-- Open Graph -->
   <meta property="og:site_name" content="Alexander Forum">
   <meta property="og:url" content="https://alexander.forum/publikationen/">
   <meta property="og:title" content="Publikationen | Alexander Forum">
-  <meta property="og:description" content="Grundlagendossiers, Policy Briefs und Impulse – Essays und Analysen zu Resilienz und gesellschaftlichem Zusammenhalt.">
+  <meta property="og:description" content="Grundlagendossiers und Policy Briefs – Analysen zu Resilienz und gesellschaftlichem Zusammenhalt.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_AT">
   
@@ -25,6 +25,74 @@
   
   <!-- Stylesheet -->
   <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Publikationen optisch hervorheben */
+    #aktuelle-publikationen { 
+      margin-top: 1rem;
+    }
+    .publication-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+    .publication-item {
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 1.25rem;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06);
+      background: rgba(255,255,255,0.02);
+    }
+    .publication-item.placeholder {
+      opacity: .95;
+    }
+    .publication-meta {
+      display: flex;
+      gap: .75rem;
+      font-size: .95rem;
+      opacity: .85;
+      margin-bottom: .5rem;
+      flex-wrap: wrap;
+    }
+    .pub-type {
+      background: rgba(255,255,255,0.06);
+      padding: .2rem .5rem;
+      border-radius: 6px;
+    }
+    .pub-tags {
+      display: flex;
+      gap: .5rem;
+      margin: .75rem 0 1rem;
+      flex-wrap: wrap;
+    }
+    .tag-pill {
+      font-size: .85rem;
+      padding: .2rem .5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      opacity: .9;
+    }
+    .btn {
+      display: inline-block;
+      padding: .6rem 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.2);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    /* Formate dezenter gestalten */
+    .formats-muted h2 {
+      opacity: .92;
+      font-size: 1.4rem;
+      margin-top: 2rem;
+    }
+    .formats-muted .format-card {
+      opacity: .92;
+      background: rgba(255,255,255,0.02);
+      border: 1px dashed rgba(255,255,255,0.15);
+      padding: 1rem;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
   <a class="skip" href="#main">Zum Inhalt springen</a>
@@ -59,12 +127,11 @@
       <img class="logo" src="../AF-Logo-final.svg" alt="Alexander Forum – Baum-Signet" width="450" height="120" loading="eager">
 
       <h1>Publikationen</h1>
-      <p class="tag">Analysen, Dossiers & Impulse</p>
+      <p class="tag">Analysen &amp; Dossiers</p>
 
       <p class="lead">
-        Wir veröffentlichen drei Arten von Texten: <strong>Grundlagendossiers</strong> für umfassende Analysen, 
-        <strong>Policy Briefs</strong> für praxisnahe Empfehlungen und <strong>Impulse</strong> – Essays und 
-        Kommentare zu aktuellen Entwicklungen.
+        Wir veröffentlichen zwei Arten von Texten: <strong>Grundlagendossiers</strong> für umfassende Analysen 
+        und <strong>Policy Briefs</strong> für praxisnahe Empfehlungen.
       </p>
 
       <p>
@@ -72,76 +139,9 @@
         transparent, arbeiten mit Quellen und suchen nach Perspektiven, die in der Tagesdebatte untergehen.
       </p>
 
-      <h2>Unsere Formate</h2>
-
-      <!-- Format Cards Grid - nur 2 Karten -->
-      <div class="publications-formats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-        
-        <!-- Dossiers & Reports -->
-        <article class="format-card">
-          <div class="format-icon">📚</div>
-          <h3>Dossiers & Reports</h3>
-          <p class="format-meta">20.000+ Wörter · PDF</p>
-          <p>
-            Umfassende, interdisziplinäre Aufarbeitungen fundamentaler Themen. Zitierfähig, 
-            mit Quellenapparat und Langfristperspektive. Für alle, die tief einsteigen wollen.
-          </p>
-          <p class="format-example"><strong>Beispiel:</strong> Resilienz – Interdisziplinäre Analyse und Zukunftskompetenz</p>
-        </article>
-
-        <!-- Policy Briefs -->
-        <article class="format-card">
-          <div class="format-icon">📋</div>
-          <h3>Policy Briefs</h3>
-          <p class="format-meta">3.000–5.000 Wörter · PDF</p>
-          <p>
-            Praxisnahe Stellungnahmen mit konkreten Handlungsempfehlungen für Organisationen, 
-            Politik und Zivilgesellschaft. Evidenzbasiert, kompakt, umsetzungsorientiert.
-          </p>
-          <p class="format-example"><strong>Beispiel:</strong> In Vorbereitung</p>
-        </article>
-
-      </div>
-
-      <!-- Impulse & Newsletter - volle Breite -->
-      <section id="impulse-newsletter" class="newsletter-section" style="margin-bottom: 3rem;">
-        <div style="max-width: 680px; margin: 0 auto;">
-          <div style="text-align: center; margin-bottom: 1.5rem;">
-            <div class="format-icon" style="font-size: 3rem; margin-bottom: .5rem;">⚡</div>
-            <h2 style="color: #fff; margin: .5rem 0;">Impulse – Essays & Analysen</h2>
-            <p class="format-meta" style="color: rgba(255,255,255,0.7); margin-bottom: 1rem; text-align: center;">1.000–15.000 Wörter · Online</p>
-          </div>
-          
-          <p style="font-size: 1.05rem; margin: 0 auto 1.5rem; text-align: center; opacity: 0.95; line-height: 1.6;">
-            Essays, Analysen und Kommentare zu gesellschaftlichen Entwicklungen. Reflexiv, zeitnah, dialogisch. 
-            Wir respektieren Ihre Zeit: Unser Newsletter erscheint unregelmäßig – nur wenn wir etwas Substanzielles veröffentlichen.
-          </p>
-          
-          <!-- Substack Embed -->
-          <div class="newsletter-embed">
-            <iframe 
-              src="https://alexanderforum.substack.com/embed" 
-              width="100%" 
-              style="border: none; background: transparent; max-width: 100%; height: 420px;" 
-              frameborder="0" 
-              scrolling="no"
-              title="Newsletter-Anmeldung Impulse">
-            </iframe>
-          </div>
-          
-          <p style="font-size: .9rem; margin-top: 1rem; text-align: center; opacity: 0.85;">
-            Keine Werbung. Kein Spam. Jederzeit abbestellbar.
-          </p>
-          
-          <p style="font-size: .9rem; margin-top: 1.5rem; text-align: center; opacity: 0.75;">
-            Alle Impulse sind auch gesammelt auf <a href="/impulse/" style="color: rgba(255,255,255,0.9); text-decoration: underline;">alexander.forum/impulse</a> lesbar.
-          </p>
-        </div>
-      </section>
-
+      <!-- Aktuelle Publikationen -->
       <h2 id="aktuelle-publikationen">Aktuelle Publikationen</h2>
 
-      <!-- Publication List -->
       <div class="publication-list">
         
         <!-- Resilienz-Dossier -->
@@ -164,7 +164,7 @@
           <a class="btn" href="/resilienz/">Zum Dossier</a>
         </article>
 
-        <!-- Platzhalter für weitere Publikationen -->
+        <!-- Platzhalter -->
         <article class="publication-item placeholder">
           <div class="publication-meta">
             <span class="pub-type">Policy Brief</span>
@@ -172,12 +172,44 @@
           </div>
           <h3>Weitere Publikationen folgen</h3>
           <p class="pub-teaser">
-            Wir arbeiten an Policy Briefs zu aktuellen gesellschaftlichen Herausforderungen. 
-            Abonnieren Sie unseren Newsletter, um keine Veröffentlichung zu verpassen.
+            Neue Texte erscheinen laufend hier auf der Website.
           </p>
         </article>
 
       </div>
+
+      <!-- Unsere Formate -->
+      <section class="formats-muted">
+        <h2>Unsere Formate</h2>
+
+        <div class="publications-formats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; margin-bottom: 2rem;">
+          
+          <!-- Dossiers & Reports -->
+          <article class="format-card">
+            <div class="format-icon">📚</div>
+            <h3>Dossiers &amp; Reports</h3>
+            <p class="format-meta">20.000+ Wörter · PDF</p>
+            <p>
+              Umfassende, interdisziplinäre Aufarbeitungen fundamentaler Themen. Zitierfähig, 
+              mit Quellenapparat und Langfristperspektive. Für alle, die tief einsteigen wollen.
+            </p>
+            <p class="format-example"><strong>Beispiel:</strong> Resilienz – Interdisziplinäre Analyse und Zukunftskompetenz</p>
+          </article>
+
+          <!-- Policy Briefs -->
+          <article class="format-card">
+            <div class="format-icon">📋</div>
+            <h3>Policy Briefs</h3>
+            <p class="format-meta">3.000–5.000 Wörter · PDF</p>
+            <p>
+              Praxisnahe Stellungnahmen mit konkreten Handlungsempfehlungen für Organisationen, 
+              Politik und Zivilgesellschaft. Evidenzbasiert, kompakt, umsetzungsorientiert.
+            </p>
+            <p class="format-example"><strong>Beispiel:</strong> In Vorbereitung</p>
+          </article>
+
+        </div>
+      </section>
 
     </section>
 
