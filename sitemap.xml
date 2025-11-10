@@ -5,7 +5,7 @@
   <!-- Homepage DE (Default) -->
   <url>
     <loc>https://alexander.forum/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-11-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://alexander.forum/en/"/>
@@ -16,7 +16,7 @@
   <!-- Homepage EN -->
   <url>
     <loc>https://alexander.forum/en/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-11-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://alexander.forum/"/>
@@ -27,7 +27,7 @@
   <!-- Warum Alexander DE -->
   <url>
     <loc>https://alexander.forum/warum-alexander/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://alexander.forum/en/why-alexander/"/>
@@ -38,7 +38,7 @@
   <!-- Why Alexander EN -->
   <url>
     <loc>https://alexander.forum/en/why-alexander/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://alexander.forum/warum-alexander/"/>
@@ -49,7 +49,7 @@
   <!-- Über uns DE -->
   <url>
     <loc>https://alexander.forum/ueber-uns/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://alexander.forum/en/about/"/>
@@ -60,7 +60,7 @@
   <!-- About EN -->
   <url>
     <loc>https://alexander.forum/en/about/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://alexander.forum/ueber-uns/"/>
@@ -71,7 +71,7 @@
   <!-- Publikationen DE -->
   <url>
     <loc>https://alexander.forum/publikationen/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-11-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://alexander.forum/en/publications/"/>
@@ -82,7 +82,7 @@
   <!-- Publications EN -->
   <url>
     <loc>https://alexander.forum/en/publications/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-11-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://alexander.forum/publikationen/"/>
@@ -93,7 +93,7 @@
   <!-- Resilienz Dossier DE -->
   <url>
     <loc>https://alexander.forum/resilienz/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://alexander.forum/en/resilience/"/>
@@ -104,7 +104,7 @@
   <!-- Resilience Dossier EN -->
   <url>
     <loc>https://alexander.forum/en/resilience/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://alexander.forum/resilienz/"/>
@@ -112,17 +112,39 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://alexander.forum/resilienz/"/>
   </url>
   
-  <!-- PDFs (optional - only if you want them indexed) -->
+  <!-- Gleichzeitigkeit Dossier DE -->
   <url>
-    <loc>https://alexander.forum/Alexander-Forum_Positionspapier_2025.pdf</loc>
-    <lastmod>2025-01-15</lastmod>
+    <loc>https://alexander.forum/gleichzeitigkeit/</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alexander.forum/en/era-of-simultaneity/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alexander.forum/gleichzeitigkeit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alexander.forum/gleichzeitigkeit/"/>
+  </url>
+  
+  <!-- Era of Simultaneity EN -->
+  <url>
+    <loc>https://alexander.forum/en/era-of-simultaneity/</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alexander.forum/gleichzeitigkeit/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alexander.forum/en/era-of-simultaneity/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alexander.forum/gleichzeitigkeit/"/>
+  </url>
+  
+  <!-- PDFs (only if you want them indexed) -->
+  <url>
+    <loc>https://alexander.forum/downloads/AF_Resilienz_Grundlagendossier_PUBLIC_v1.1.pdf</loc>
+    <lastmod>2025-11-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://alexander.forum/Alexander-Forum_Mission_Statement_EN.pdf</loc>
-    <lastmod>2025-01-15</lastmod>
+    <loc>https://alexander.forum/gleichzeitigkeit/AF_Die_Aera_der_Gleichzeitigkeit.pdf</loc>
+    <lastmod>2025-11-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
