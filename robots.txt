@@ -4,12 +4,16 @@ Allow: /
 # Sitemap location
 Sitemap: https://alexander.forum/sitemap.xml
 
-# Block admin/internal areas (if any)
+# Block admin/internal areas (if any exist in future)
 Disallow: /admin/
 Disallow: /wp-admin/
-Disallow: /*.pdf$
 
-# Allow PDF files for indexing
-Allow: /Alexander-Forum_Positionspapier_2025.pdf
-Allow: /Alexander-Forum_Mission_Statement_EN.pdf
-Allow: /downloads/
+# Allow specific PDFs for indexing
+Allow: /downloads/*.pdf
+Allow: /gleichzeitigkeit/*.pdf
+
+# Disallow viewer (no need to index viewer pages)
+Disallow: /viewer/
+
+# Disallow build scripts
+Disallow: /scripts/
