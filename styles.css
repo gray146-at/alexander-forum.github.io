@@ -457,6 +457,97 @@ em{ font-style:italic }
   padding:1.25rem .5rem 0;
 }
 
+/* === Footer Navigation === */
+.foot-nav{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.foot-nav a{
+  color: var(--af-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.foot-nav a:hover{
+  color: var(--af-navy);
+  text-decoration: underline;
+}
+
+.foot-nav .sep{
+  color: var(--af-border);
+  user-select: none;
+}
+
+@media (max-width: 600px){
+  .foot-nav{
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .foot-nav .sep{
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark){
+  .foot-nav a{
+    color: var(--af-muted);
+  }
+  .foot-nav a:hover{
+    color: var(--af-navy);
+  }
+}
+
+/* === Breadcrumb Navigation === */
+.breadcrumb{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--af-muted);
+}
+
+.breadcrumb a{
+  color: var(--af-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover{
+  color: var(--af-navy);
+  text-decoration: underline;
+}
+
+.breadcrumb .sep{
+  color: var(--af-border);
+  user-select: none;
+}
+
+.breadcrumb .current{
+  color: var(--af-ink);
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark){
+  .breadcrumb a{
+    color: var(--af-muted);
+  }
+  .breadcrumb a:hover{
+    color: var(--af-navy);
+  }
+  .breadcrumb .current{
+    color: var(--af-ink);
+  }
+}
+
 /* === Dossier Card === */
 .dossier-card{
   background: var(--af-card);
