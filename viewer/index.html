@@ -38,9 +38,30 @@
       const p = new URLSearchParams(location.search);
       const raw   = p.get('file')   || '';
       const title = p.get('title')  || '';
-      const ret   = p.get('return') || ''; // optionaler Rücksprung
+      const ret   = p.get('return') || '';
+      const lang  = p.get('lang')   || 'de'; // Default German
 
-      // Datei nur gleiche Domain/relativ zulassen
+      // Translation strings
+      const i18n = {
+        de: {
+          back: '← Zurück',
+          toHome: '← Zur Startseite',
+          download: 'PDF herunterladen',
+          notFound: 'Datei nicht gefunden oder ungültig.',
+          brandPrefix: 'Alexander Forum · '
+        },
+        en: {
+          back: '← Back',
+          toHome: '← Back to Home',
+          download: 'Download PDF',
+          notFound: 'File not found or invalid.',
+          brandPrefix: 'Alexander Forum · '
+        }
+      };
+
+      const t = i18n[lang] || i18n.de;
+
+      // File validation (same-origin only)
       let file = '';
       try{
         if(raw.startsWith('/')) file = raw;
@@ -51,35 +72,33 @@
         }
       }catch(e){}
 
-      // Titel setzen
+      // Set title
       const brand = document.getElementById('brand');
       if(!file || !file.endsWith('.pdf')){
-        brand.textContent = 'Datei nicht gefunden oder ungültig.';
+        brand.textContent = t.notFound;
         return;
       }
       if(title){
         document.title = title + ' | Alexander Forum';
         brand.textContent = title;
       }else{
-        brand.textContent = 'Alexander Forum · ' + (file.split('/').pop() || 'PDF');
+        brand.textContent = t.brandPrefix + (file.split('/').pop() || 'PDF');
       }
 
-      // Iframe & Download
+      // Set iframe & download
       const url = file + (file.includes('#') ? '' : '#page=1&zoom=page-width');
       document.getElementById('frame').src = url;
       const dl = document.getElementById('dl');
       dl.href = file;
-      dl.setAttribute('aria-label','PDF herunterladen: ' + (title || file));
+      dl.textContent = t.download;
+      dl.setAttribute('aria-label', t.download + ': ' + (title || file));
 
-      // Zurück-Button-Logik:
-      // 1) Wenn echte History vorhanden: history.back()
-      // 2) sonst: zu return=... (falls gesetzt und same-origin)
-      // 3) sonst: zur Startseite (DE: '/'; EN-Seite verlinkt return=/en/#downloads)
+      // Back button logic
       const backBtn = document.getElementById('backBtn');
       function sameOrigin(url){
         try{ return new URL(url, location.origin).origin === location.origin; }catch(e){ return false; }
       }
-      const defaultReturn = '/#downloads';
+      const defaultReturn = lang === 'en' ? '/en/' : '/';
       let fallback = defaultReturn;
       if(ret && sameOrigin(ret)) fallback = new URL(ret, location.origin).pathname + new URL(ret, location.origin).hash;
 
@@ -89,9 +108,11 @@
         else location.href = fallback;
       });
 
-      // Label anpassen, wenn kein Verlauf existiert
+      // Adjust button label if no history
       if(history.length <= 1){
-        backBtn.textContent = '← Zur Startseite';
+        backBtn.textContent = t.toHome;
+      } else {
+        backBtn.textContent = t.back;
       }
     })();
   </script>
