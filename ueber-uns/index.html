@@ -27,70 +27,84 @@
   <link rel="stylesheet" href="../styles.css">
 
   <!-- Schema.org Markup -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ResearchOrganization",
-  "@id": "https://alexander.forum/#organization",
-  "name": "Alexander Forum für Reflexion & Resilienz",
-  "alternateName": "Alexander Forum",
-  "url": "https://alexander.forum",
-  "logo": {
-    "@type": "ImageObject",
-    "url": "https://alexander.forum/AF-Logo-final.svg"
-  },
-  "description": "Unabhängiger Think & Do Tank für gesellschaftliche Reflexion und Resilienz mit Sitz in Wien.",
-  "legalName": "Alexander Forum für Reflexion & Resilienz",
-  "foundingDate": "2025-01-01",
-  "foundingLocation": {
-    "@type": "Place",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Wien",
-      "addressCountry": "AT"
-    }
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Wien",
-    "addressCountry": "AT"
-  },
-  "email": "kontakt@alexanderforum.org",
-  "contactPoint": [{
-    "@type": "ContactPoint",
-    "contactType": "General Inquiries",
-    "email": "kontakt@alexanderforum.org",
-    "areaServed": "AT",
-    "availableLanguage": ["de", "en"]
-  }],
-  "founder": {
-    "@type": "Person",
-    "name": "Dorian Alexander Rammer",
-    "url": "https://www.dorianrammer.at",
-    "jobTitle": "Gründer & Leiter",
-    "sameAs": [
-      "https://www.dorianrammer.at"
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ResearchOrganization",
+        "@id": "https://alexanderforum.org/#organization",
+        "name": "Alexander Forum für Reflexion & Resilienz",
+        "alternateName": "Alexander Forum",
+        "url": "https://alexanderforum.org",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://alexander.forum/AF-Logo-final.svg"
+        },
+        "description": "Unabhängiger Think & Do Tank für gesellschaftliche Reflexion und Resilienz mit Sitz in Wien.",
+        "foundingDate": "2025-01-01",
+        "foundingLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Wien",
+            "addressCountry": "AT"
+          }
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Wien",
+          "addressCountry": "AT"
+        },
+        "email": "kontakt@alexanderforum.org",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "General Inquiries",
+          "email": "kontakt@alexanderforum.org",
+          "areaServed": "AT",
+          "availableLanguage": ["de", "en"]
+        },
+        "founder": {
+          "@type": "Person",
+          "@id": "https://dorianrammer.at/#person",
+          "name": "Dorian Alexander Rammer",
+          "url": "https://dorianrammer.at",
+          "jobTitle": "Gründer & Leiter"
+        },
+        "sameAs": [
+          "https://alexander.forum",
+          "https://alexanderforum.org"
+        ],
+        "knowsAbout": [
+          "Gesellschaftliche und individuelle Resilienz",
+          "Polykrise und Ära der Gleichzeitigkeit",
+          "Trauma, Sucht und psychosoziale Versorgung",
+          "Bindungstheorie und Entwicklungspsychologie",
+          "Zivilcourage und demokratischer Zusammenhalt",
+          "Interdisziplinäre Krisenforschung und Systemresilienz",
+          "Suchtprävention und Harm Reduction",
+          "Transformative Gesellschaftsanalyse"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://alexanderforum.org/#website",
+        "name": "Alexander Forum",
+        "url": "https://alexanderforum.org",
+        "publisher": {
+          "@id": "https://alexanderforum.org/#organization"
+        }
+      }
     ]
-  },
-  "sameAs": [
-    "https://alexander.forum"
-  ],
-  "areaServed": {
-    "@type": "Place",
-    "name": "Austria"
-  },
-  "knowsAbout": [
-    "Resilienz",
-    "Krisenmanagement",
-    "Gesellschaftliche Transformation",
-    "Interdisziplinäre Forschung",
-    "Psychologie",
-    "Politikwissenschaft"
-  ],
-  "keywords": "Resilienz, Think Tank Wien, Polykrise, Gesellschaftsanalyse, Krisenmanagement, Zukunftsgestaltung, Interdisziplinarität, Systemresilienz, Krisenbewältigung, gesellschaftliche Transformation, Dorian Rammer, Think and Do Tank, Reflexion, psychische Gesundheit, Zusammenhalt, resilience, think tank vienna, polycrisis, societal analysis, crisis management, future shaping, interdisciplinary approaches, systemic resilience, crisis response, social transformation, mental health, social cohesion"
-}
-</script>
-  <link rel="stylesheet" href="../styles.css">
+  }
+  </script>
+
+  <!-- Identity Signals -->
+  <link rel="me" href="https://alexanderforum.org">
+  <link rel="me" href="https://alexander.forum">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
   <a class="skip" href="#main">Zum Inhalt springen</a>
@@ -169,7 +183,7 @@
 
       <h2>Beirat</h2>
       <p>
-        <em>Im Aufbau.</em> Wir suchen Expert*innen aus Psychologie, Politikwissenschaft, Soziologie, Medizin, Philosophie und verwandten Feldern. Der Beirat berät bei der thematischen Ausrichtung, gibt Feedback zu Publikationen und erweitert das Netzwerk. Zeitaufwand: 2–3 Treffen pro Jahr, keine Bezahlung, aber Sichtbarkeit auf der Website und Einbindung in die Programmentwicklung.
+        <em>Im Aufbau.</em> Wir suchen Expert*innen aus Psychologie, Politikwissenschaft, Soziologie, Medizin, Philosophie und verwandten Feldern. Der Beirat berät bei der thematischen Ausrichtung, gibt Feedback zu Publikationen und erweitert das Netzwerk. Zeitaufwand: 2–3 Treffen pro Jahr, keine Bezahlung, aber Sichtbarkeit auf der Website und weiteren Medien sowie Einbindung in die Programmentwicklung.
       </p>
       <p>
         <strong>Interesse?</strong> Schreiben Sie an: <a href="mailto:kontakt@alexanderforum.org">kontakt@alexanderforum.org</a>
