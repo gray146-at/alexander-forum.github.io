@@ -43,10 +43,10 @@
     "@graph": [
       {
         "@type": "ResearchOrganization",
-        "@id": "https://alexanderforum.org/#organization",
+        "@id": "https://alexander.forum/#organization",
         "name": "Alexander Forum für Reflexion & Resilienz",
         "alternateName": "Alexander Forum",
-        "url": "https://alexanderforum.org",
+        "url": "https://alexander.forum",
         "logo": {
           "@type": "ImageObject",
           "url": "https://alexander.forum/AF-Logo-final.svg"
@@ -99,11 +99,11 @@
       },
       {
         "@type": "WebSite",
-        "@id": "https://alexanderforum.org/#website",
+        "@id": "https://alexander.forum/#website",
         "name": "Alexander Forum",
-        "url": "https://alexanderforum.org",
+        "url": "https://alexander.forum",
         "publisher": {
-          "@id": "https://alexanderforum.org/#organization"
+          "@id": "https://alexander.forum/#organization"
         }
       }
     ]
@@ -129,6 +129,9 @@
     .btn{display:inline-block;padding:.6rem 1rem;border-radius:8px;border:1px solid rgba(255,255,255,0.2);text-decoration:none;font-weight:600}
     .section-head{display:flex;align-items:baseline;gap:.75rem;flex-wrap:wrap}
     .section-head .more{margin-left:auto}
+
+    /* Kleine Erweiterung für „Institutionston“ */
+    .fineprint{opacity:.85;font-size:.98rem}
   </style>
 </head>
 <body>
@@ -178,7 +181,20 @@
         Wer unter Druck steht, kann weniger beitragen – und ungelöste Spannungen schwächen das Ganze.
       </p>
 
-      <!-- FEATURE: Publikationen-Teaser (Impulse entfernt) -->
+      <!-- NEU: kurzer Methodik-/Arbeitsweise-Block (institutionell, aber nicht lang) -->
+      <h2 id="arbeitsweise" style="margin-top:1.75rem">Wie wir arbeiten</h2>
+      <p>
+        Wir arbeiten interdisziplinär, quellennah und mit einem klaren Anspruch an Sprache.
+        Unsere Analysen sollen nicht nur benennen, <em>worüber</em> gerade gesprochen wird,
+        sondern auch, <em>was dabei übersehen wird</em>.
+      </p>
+      <p class="fineprint">
+        Wo Datenlagen unsicher sind, markieren wir das. Wo Debatten zu schnell moralisch werden,
+        versuchen wir die Mechanik dahinter sichtbar zu machen. Reflexion ist bei uns kein Sicherheitsabstand,
+        sondern Voraussetzung für verantwortliches Handeln.
+      </p>
+
+      <!-- FEATURE: Publikationen-Teaser -->
       <div class="section-head" style="margin-top:2rem">
         <h2 id="publikationen">Aktuelle Publikationen</h2>
         <a class="more btn" href="/publikationen/" aria-label="Alle Publikationen ansehen">Alle ansehen</a>
@@ -233,7 +249,7 @@
       <p>
         Unser Ansatz ist <strong>interdisziplinär</strong> – von Klima und Konflikten
         über Technologie und Sicherheit bis zu Psychologie und Medizin.
-        Wir arbeiten offen, benennen Unsicherheiten transparent und veröffentlichen Analysen,
+        Wir benennen Unsicherheiten transparent und veröffentlichen Analysen,
         Einordnungen und Reports, die Orientierung geben, Versäumnisse sichtbar machen und Lösungen anregen.
       </p>
       <ul class="bullets">
@@ -242,6 +258,14 @@
         <li><strong>Technologie &amp; Risiko</strong><br>Wie Fortschritt Stabilität und Sicherheit verändert.</li>
         <li><strong>Identität &amp; Zusammenhalt</strong><br>Zugehörigkeit, Trauma und die Frage, was eine Gemeinschaft trägt.</li>
       </ul>
+
+      <!-- NEU: kleines „Was wir anbieten“-Signal (Think-&-Do ohne Sales-Vibe) -->
+      <h2 id="formate" style="margin-top:2.25rem">Formate</h2>
+      <p>
+        Unsere Arbeit erscheint als Essays, Analysen und Dossiers.
+        Zusätzlich entwickeln wir punktuell <strong>Briefings</strong> und <strong>Workshops</strong>,
+        wenn Organisationen Orientierung, Kontext oder eine traumasensible Perspektive auf komplexe Lagen benötigen.
+      </p>
 
       <!-- ===================== NAMENSVORBILDER (gekürzt) ===================== -->
       <section id="namensvorbilder" aria-label="Warum Alexander?" style="margin: 3rem 0;">
@@ -258,7 +282,7 @@
             <img class="cover" src="/img/alexander-great.jpg" alt="Alexander der Große – Pompeji-Mosaik" width="640" height="360" loading="lazy">
             <div class="body">
               <h3>Alexander der Große</h3>
-              <p class="tagline">Strategie & Anpassungsfähigkeit</p>
+              <p class="tagline">Strategie &amp; Anpassungsfähigkeit</p>
               <p class="short">
                 Feldherr und Staatsgründer mit enormer Wirkung – und Ambivalenzen.
                 Lehre: Führung in Unsicherheit braucht Tempo und Übersetzung – jedoch immer mit Ethik-Checks.
