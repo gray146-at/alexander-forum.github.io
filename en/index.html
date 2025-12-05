@@ -9,15 +9,15 @@
   <link rel="canonical" href="https://alexander.forum/en/">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="theme-color" content="#0f2a3a">
-  <meta name="description" content="Independent Think & Do Tank in Vienna. For societal and individual resilience. Analyses, dossiers, and briefings on the polycrisis, technology, and social cohesion.">
-  <meta name="keywords" content="resilience, think tank Vienna, polycrisis, societal analysis, risk, transformation, systems resilience, crisis management, future shaping, interdisciplinary approaches, systemic resilience, crisis response, social transformation, Dorian Rammer, think and do tank, reflection, mental health, social cohesion">
+  <meta name="description" content="Independent Think & Do Tank in Vienna. For societal & individual resilience and bold future shaping. Analyses, dossiers and briefings on the polycrisis, technology and social cohesion.">
+  <meta name="keywords" content="resilience, think tank Vienna, polycrisis, Alexander Forum, Dorian Rammer, societal analysis, systems resilience, mental health, social cohesion">
   <meta name="author" content="Alexander Forum for Reflection & Resilience">
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="Alexander Forum">
   <meta property="og:url" content="https://alexander.forum/en/">
   <meta property="og:title" content="Alexander Forum for Reflection & Resilience | Think & Do Tank Vienna">
-  <meta property="og:description" content="Independent Think & Do Tank in Vienna. For societal & individual resilience and bold futures.">
+  <meta property="og:description" content="For societal & individual resilience and bold future shaping. Independent Think & Do Tank in Vienna.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://alexander.forum/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -34,10 +34,91 @@
   <!-- hreflang -->
   <link rel="alternate" href="https://alexander.forum/" hreflang="de">
   <link rel="alternate" href="https://alexander.forum/en/" hreflang="en">
-  <link rel="alternate" href="https://alexander.forum/en/" hreflang="x-default">
+  <link rel="alternate" href="https://alexander.forum/" hreflang="x-default">
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ResearchOrganization",
+        "@id": "https://alexander.forum/#organization",
+        "name": "Alexander Forum for Reflection & Resilience",
+        "alternateName": "Alexander Forum",
+        "url": "https://alexander.forum",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://alexander.forum/AF-Logo-final.svg"
+        },
+        "description": "Independent Think & Do Tank for societal reflection and resilience based in Vienna.",
+        "foundingDate": "2025-01-01",
+        "foundingLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Vienna",
+            "addressCountry": "AT"
+          }
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Vienna",
+          "addressCountry": "AT"
+        },
+        "email": "kontakt@alexanderforum.org",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "General Inquiries",
+          "email": "kontakt@alexanderforum.org",
+          "areaServed": "AT",
+          "availableLanguage": ["de", "en"]
+        },
+        "founder": {
+          "@type": "Person",
+          "@id": "https://dorianrammer.at/#person",
+          "name": "Dorian Rammer",
+          "alternateName": "Dorian Alexander Rammer",
+          "url": "https://dorianrammer.at",
+          "jobTitle": "Founder & Director"
+        },
+        "sameAs": [
+          "https://alexander.forum",
+          "https://alexanderforum.org"
+        ],
+        "knowsAbout": [
+          "Societal and individual resilience",
+          "Polycrisis and the era of simultaneity",
+          "Trauma, addiction and psychosocial care",
+          "Attachment theory and developmental psychology",
+          "Civic courage and democratic cohesion",
+          "Interdisciplinary crisis research and systems resilience",
+          "Addiction prevention and harm reduction",
+          "Transformative societal analysis"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://alexander.forum/#website",
+        "name": "Alexander Forum",
+        "url": "https://alexander.forum",
+        "publisher": {
+          "@id": "https://alexander.forum/#organization"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Identity Signals -->
+  <link rel="me" href="https://alexanderforum.org">
+  <link rel="me" href="https://alexander.forum">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
 
   <style>
-    /* Small helpers for the homepage teaser */
+    /* Small helper styles for homepage teasers */
     .pub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;margin-top:.75rem}
     .pub-card{border:1px solid rgba(255,255,255,0.12);padding:1.25rem;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.06);background:rgba(255,255,255,0.02)}
     .pub-meta{display:flex;gap:.6rem;flex-wrap:wrap;opacity:.85;font-size:.95rem;margin-bottom:.5rem}
@@ -48,6 +129,9 @@
     .btn{display:inline-block;padding:.6rem 1rem;border-radius:8px;border:1px solid rgba(255,255,255,0.2);text-decoration:none;font-weight:600}
     .section-head{display:flex;align-items:baseline;gap:.75rem;flex-wrap:wrap}
     .section-head .more{margin-left:auto}
+
+    /* Small addition for an institutional tone */
+    .fineprint{opacity:.85;font-size:.98rem}
   </style>
 </head>
 <body>
@@ -57,7 +141,7 @@
     <nav class="mini-nav" aria-label="Main navigation">
       <a href="/en/">Home</a>
       <div class="nav-dropdown">
-        <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
           About
           <span class="dropdown-arrow">▾</span>
         </button>
@@ -71,7 +155,7 @@
       <a href="/en/#contact">Contact</a>
       <a class="lang" href="/" hreflang="de" aria-label="Auf Deutsch wechseln">DE</a>
     </nav>
-    <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+    <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </header>
@@ -82,45 +166,42 @@
 
       <h1>ALEXANDER FORUM</h1>
       <p class="tag">for Reflection &amp; Resilience</p>
-      <p class="subclaim">For collective &amp; individual resilience — and bold futures.</p>
+      <p class="subclaim">For collective &amp; individual resilience — and bold future shaping.</p>
 
       <h2 id="mission">Our Mission</h2>
       <p class="lead">
         The <strong>Alexander Forum for Reflection &amp; Resilience</strong> is an independent, non-profit
-        <em>Think &amp; Do Tank</em> based in Vienna. We connect observation, strategy, and practice to open new
-        perspectives on change, crises, and cohesion.
+        <em>Think&nbsp;&amp;&nbsp;Do&nbsp;Tank</em> based in Vienna.
+        We connect societal observation, strategic thinking, and practical experience
+        to open new perspectives on change, crises, and cohesion.
       </p>
       <p>
         We see <strong>resilience</strong> as a shared task across politics, science, culture, and society.
-        Societal and personal crises are intertwined; unresolved tensions weaken the whole — and those under pressure can contribute less.
-      </p>
-      <p>
-        A core focus of our work is how rules, institutions, and public narratives keep pace with reality.
-        The fact that something is established does not automatically mean it still works well.
-        We treat critique as part of democratic maintenance: precise, evidence-aware, and attentive to unintended consequences.
-        Resilience is not only an individual capacity, but also a property of systems that remain willing to learn.
+        Societal and personal crises are intertwined:
+        those under pressure can contribute less — and unresolved tensions weaken the whole.
       </p>
 
-      <h3 id="principles" style="margin-top:1.5rem">Principles &amp; Quality Standards</h3>
+      <!-- NEW: short methodology / working style block -->
+      <h2 id="how-we-work" style="margin-top:1.75rem">How we work</h2>
       <p>
-        To make complexity workable without flattening it, we follow a small set of guiding standards:
+        We work interdisciplinarily, close to sources, and with a clear commitment to language.
+        Our analyses aim to name not only <em>what</em> is being debated,
+        but also <em>what is being overlooked</em>.
       </p>
-      <ul class="bullets">
-        <li><strong>Context before reflex</strong><br>We ask not only what happens, but how people and systems reach their breaking points.</li>
-        <li><strong>Responsibility without dehumanization</strong><br>Explanations do not replace boundaries, but they improve prevention.</li>
-        <li><strong>Proportionality</strong><br>We weigh problems, measures, and side effects rather than relying on symbolic hardness.</li>
-        <li><strong>Transparency</strong><br>We mark uncertainty instead of disguising it.</li>
-        <li><strong>Interdisciplinarity</strong><br>Psychology, political science, medicine, and social theory are read together on purpose.</li>
-      </ul>
+      <p class="fineprint">
+        Where evidence is uncertain, we say so. Where debates turn too quickly moral,
+        we try to make the underlying mechanics visible. For us, reflection is not a safe distance —
+        it is a prerequisite for responsible action.
+      </p>
 
-      <!-- FEATURE: Publications teaser (newsletter/impulse removed) -->
+      <!-- Publications teaser -->
       <div class="section-head" style="margin-top:2rem">
         <h2 id="publications">Current Publications</h2>
-        <a class="more btn" href="/en/publications/" aria-label="See all publications">View all</a>
+        <a class="more btn" href="/en/publications/" aria-label="View all publications">View all</a>
       </div>
 
       <div class="pub-grid" aria-label="Publications teaser">
-        <!-- Dossier I: Resilience -->
+        <!-- Resilience dossier -->
         <article class="pub-card">
           <div class="pub-meta">
             <span class="pill">Foundation Dossier</span>
@@ -129,7 +210,7 @@
           </div>
           <h3>Resilience – Interdisciplinary Analysis and Future Competence</h3>
           <p>
-            Why resilience sits at our core — and how to strengthen it in practice:
+            Why resilience sits at our core — and how it can be strengthened in practice:
             from early attachment to organizational culture, from neuroplasticity to community resilience.
           </p>
           <div class="tags">
@@ -141,7 +222,7 @@
           </div>
         </article>
 
-        <!-- Dossier II: The Era of Simultaneity -->
+        <!-- Era of simultaneity dossier -->
         <article class="pub-card">
           <div class="pub-meta">
             <span class="pill">Foundation Dossier</span>
@@ -150,8 +231,8 @@
           </div>
           <h3>The Era of Simultaneity</h3>
           <p>
-            On the logic of multiple crises and the limits of adaptation:
-            why crises reinforce one another today — and why transformation beyond adaptation is required.
+            On the logic of multiple crises and the limits of adaptation: why crises reinforce one another today —
+            and why transformation beyond adaptation is required.
             <em>(Currently available in German only.)</em>
           </p>
           <div class="tags">
@@ -167,9 +248,10 @@
       <!-- ===================== TOPICS ===================== -->
       <h2 id="topics" style="margin-top:2.25rem">Topics</h2>
       <p>
-        Our approach is <strong>interdisciplinary</strong> — from climate and conflict to technology and security,
-        as well as psychology and medicine. We are transparent about uncertainty and publish analyses and reports
-        that offer orientation, reveal blind spots, and inspire solutions.
+        Our approach is <strong>interdisciplinary</strong> — from climate and conflict
+        to technology and security, as well as psychology and medicine.
+        We mark uncertainty transparently and publish analyses,
+        briefings and reports that offer orientation, surface blind spots, and inspire solutions.
       </p>
       <ul class="bullets">
         <li><strong>Resilience &amp; Societal Stress Tests</strong><br>Between adaptation, exhaustion, and renewal.</li>
@@ -178,19 +260,27 @@
         <li><strong>Identity &amp; Cohesion</strong><br>Belonging, trauma, and what holds communities together.</li>
       </ul>
 
+      <!-- NEW: compact “formats” signal -->
+      <h2 id="formats" style="margin-top:2.25rem">Formats</h2>
+      <p>
+        Our work takes shape as essays, analyses, and dossiers.
+        In addition, we develop <strong>briefings</strong> and <strong>workshops</strong> on a selective basis
+        when organizations need orientation, context, or a trauma-informed lens on complex situations.
+      </p>
+
       <!-- ===================== NAME INSPIRATIONS (short) ===================== -->
       <section id="name" aria-label="Why Alexander?" style="margin: 3rem 0;">
         <header>
           <h2>Why “Alexander”?</h2>
           <p class="teaser" style="max-width: 680px; margin: .5rem auto 1.5rem;">
-            The name is a program — a <strong>stance, not hero worship</strong>. We look to history for patterns
-            of resilience, reflection, and responsibility.
+            The name is a program — a <strong>stance, not hero worship</strong>.
+            We look to historical lives for patterns of resilience, reflection, and responsibility.
           </p>
         </header>
 
         <div class="inspirations-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
           <article class="inspiration-card" role="listitem">
-            <img class="cover" src="/img/alexander-great.jpg" alt="Alexander the Great — Pompeii mosaic" width="640" height="360" loading="lazy">
+            <img class="cover" src="/img/alexander-great.jpg" alt="Alexander the Great – Pompeii mosaic" width="640" height="360" loading="lazy">
             <div class="body">
               <h3>Alexander the Great</h3>
               <p class="tagline">Strategy &amp; Adaptability</p>
@@ -208,8 +298,9 @@
               <h3>Hypatia of Alexandria</h3>
               <p class="tagline">Education as a Lighthouse</p>
               <p class="short">
-                Philosopher and teacher in late antique Alexandria. Education and knowledge transmission
-                build cultural resilience: critical thinking, dialogue, and the craft of reason.
+                Philosopher and teacher in late antique Alexandria.
+                Education and knowledge transmission build cultural resilience:
+                critical thinking, dialogue, and the craft of reason.
               </p>
               <a class="btn btn-secondary" href="/en/why-alexander/">More</a>
             </div>
@@ -221,7 +312,7 @@
       <h2 id="contact">Contact</h2>
       <p>For cooperation, briefings, or events, write to us:</p>
       <div class="contact">
-        <a class="btn" href="mailto:contact@alexanderforum.org">contact@alexanderforum.org</a>
+        <a class="btn" href="mailto:kontakt@alexanderforum.org">kontakt@alexanderforum.org</a>
       </div>
     </section>
 
@@ -245,6 +336,8 @@
   </main>
 
   <script src="../scripts.js"></script>
+
+  <!-- privacy-first analytics -->
   <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 </body>
 </html>
