@@ -36,83 +36,71 @@
   <link rel="alternate" href="https://alexander.forum/en/" hreflang="en">
   <link rel="alternate" href="https://alexander.forum/" hreflang="x-default">
 
-  <!-- Schema.org Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "ResearchOrganization",
-        "@id": "https://alexander.forum/#organization",
-        "name": "Alexander Forum for Reflection & Resilience",
-        "alternateName": "Alexander Forum",
-        "url": "https://alexander.forum",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://alexander.forum/AF-Logo-final.svg"
-        },
-        "description": "Independent Think & Do Tank for societal reflection and resilience based in Vienna.",
-        "foundingDate": "2025-01-01",
-        "foundingLocation": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Vienna",
-            "addressCountry": "AT"
-          }
-        },
+ <!-- Schema.org Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "ResearchOrganization"],
+      "@id": "https://alexander.forum/#organization",
+      "url": "https://alexander.forum/",
+      "name": "Alexander Forum for Reflection & Resilience",
+      "alternateName": "Alexander Forum",
+      "description": "Independent Think & Do Tank for societal reflection and resilience based in Vienna.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://alexander.forum/AF-Logo-final.svg"
+      },
+      "foundingDate": "2025-01-01",
+      "foundingLocation": {
+        "@type": "Place",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Vienna",
           "addressCountry": "AT"
-        },
-        "email": "kontakt@alexanderforum.org",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "General Inquiries",
-          "email": "kontakt@alexanderforum.org",
-          "areaServed": "AT",
-          "availableLanguage": ["de", "en"]
-        },
-        "founder": {
-          "@type": "Person",
-          "@id": "https://dorianrammer.at/#person",
-          "name": "Dorian Rammer",
-          "alternateName": "Dorian Alexander Rammer",
-          "url": "https://dorianrammer.at",
-          "jobTitle": "Founder & Director"
-        },
-        "sameAs": [
-          "https://alexander.forum",
-          "https://alexanderforum.org"
-        ],
-        "knowsAbout": [
-          "Societal and individual resilience",
-          "Polycrisis and the era of simultaneity",
-          "Trauma, addiction and psychosocial care",
-          "Attachment theory and developmental psychology",
-          "Civic courage and democratic cohesion",
-          "Interdisciplinary crisis research and systems resilience",
-          "Addiction prevention and harm reduction",
-          "Transformative societal analysis"
-        ]
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://alexander.forum/#website",
-        "name": "Alexander Forum",
-        "url": "https://alexander.forum",
-        "publisher": {
-          "@id": "https://alexander.forum/#organization"
         }
-      }
-    ]
-  }
-  </script>
-
-  <!-- Identity Signals -->
-  <link rel="me" href="https://alexanderforum.org">
-  <link rel="me" href="https://alexander.forum">
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vienna",
+        "addressCountry": "AT"
+      },
+      "email": "kontakt@alexanderforum.org",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "General Inquiries",
+        "email": "kontakt@alexanderforum.org",
+        "areaServed": "AT",
+        "availableLanguage": ["de", "en"]
+      },
+      "founder": {
+        "@id": "https://www.widerstandskraft.link/ueber-dorian-rammer/#person"
+      },
+      "knowsAbout": [
+        "Societal and individual resilience",
+        "Polycrisis and the era of simultaneity",
+        "Trauma, addiction and psychosocial care",
+        "Attachment theory and developmental psychology",
+        "Civic courage and democratic cohesion",
+        "Interdisciplinary crisis research and systems resilience",
+        "Addiction prevention and harm reduction",
+        "Transformative societal analysis"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://alexander.forum/#website",
+      "url": "https://alexander.forum/",
+      "name": "Alexander Forum",
+      "publisher": {
+        "@id": "https://alexander.forum/#organization"
+      },
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
