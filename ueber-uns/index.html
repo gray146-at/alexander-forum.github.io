@@ -28,99 +28,76 @@
 
   <!-- Schema.org Markup -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "ResearchOrganization",
-        "@id": "https://alexanderforum.org/#organization",
-        "name": "Alexander Forum für Reflexion & Resilienz",
-        "alternateName": "Alexander Forum",
-        "url": "https://alexanderforum.org",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://alexander.forum/AF-Logo-final.svg"
-        },
-        "description": "Unabhängiger Think & Do Tank für gesellschaftliche Reflexion und Resilienz mit Sitz in Wien.",
-        "foundingDate": "2025-01-01",
-        "foundingLocation": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Wien",
-            "addressCountry": "AT"
-          }
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Wien",
-          "addressCountry": "AT"
-        },
-        "email": "kontakt@alexanderforum.org",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "General Inquiries",
-          "email": "kontakt@alexanderforum.org",
-          "areaServed": "AT",
-          "availableLanguage": ["de", "en"]
-        },
-        "founder": {
-          "@type": "Person",
-          "@id": "https://dorianrammer.at/#person",
-          "name": "Dorian Rammer",
-          "alternateName": "Dorian Alexander Rammer",
-          "url": "https://dorianrammer.at",
-          "email": "office@dorianrammer.at",
-          "image": "https://www.widerstandskraft.link/content/images/2025/11/DR-xl-gumpi.jpg",
-          "jobTitle": "Gründer & Leiter",
-          "description": "Öffentliche Stimme zu Trauma, Sucht, gesellschaftlicher Resilienz und psychosozialen Themen.",
-          "knowsAbout": [
-            "Trauma und Traumaverarbeitung",
-            "Suchtprävention und Substanzerfahrung",
-            "Psychosoziale Resilienz und Krisenbewältigung",
-            "Bindungstheorie und Entwicklungspsychologie",
-            "Chemsex und queere Gesundheit",
-            "Zivilcourage und politische Teilhabe",
-            "Gesellschaftliche Transformation und Polykrise",
-            "Psychische Gesundheit und Versorgung"
-          ],
-          "sameAs": [
-            "https://widerstandskraft.link",
-            "https://alexanderforum.org",
-            "https://alexander.forum",
-            "https://instagram.com/whoisdoriangray",
-            "https://facebook.com/dorian.a.rammer",
-            "https://linkedin.com/in/dorianrammer",
-            "https://youtube.com/@dorianrammer"
-          ]
-        },
-        "sameAs": [
-          "https://alexander.forum",
-          "https://alexanderforum.org"
-        ],
-        "knowsAbout": [
-          "Gesellschaftliche und individuelle Resilienz",
-          "Polykrise und Ära der Gleichzeitigkeit",
-          "Trauma, Sucht und psychosoziale Versorgung",
-          "Bindungstheorie und Entwicklungspsychologie",
-          "Zivilcourage und demokratischer Zusammenhalt",
-          "Interdisziplinäre Krisenforschung und Systemresilienz",
-          "Suchtprävention und Harm Reduction",
-          "Transformative Gesellschaftsanalyse"
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["AboutPage", "ProfilePage"],
+      "@id": "https://alexander.forum/ueber-uns/#page",
+      "url": "https://alexander.forum/ueber-uns/",
+      "name": "Über uns | Alexander Forum für Reflexion & Resilienz",
+      "mainEntity": {
+        "@id": "https://alexander.forum/#organization"
       },
-      {
-        "@type": "WebSite",
-        "@id": "https://alexanderforum.org/#website",
-        "name": "Alexander Forum",
-        "url": "https://alexanderforum.org",
-        "publisher": {
-          "@id": "https://alexanderforum.org/#organization"
-        }
+      "isPartOf": {
+        "@id": "https://alexander.forum/#website"
+      },
+      "inLanguage": "de-AT"
+    },
+    {
+      "@type": ["Organization", "ResearchOrganization"],
+      "@id": "https://alexander.forum/#organization",
+      "url": "https://alexander.forum/",
+      "name": "Alexander Forum für Reflexion & Resilienz",
+      "alternateName": "Alexander Forum",
+      "description": "Unabhängiger Think & Do Tank für gesellschaftliche Reflexion und Resilienz mit Sitz in Wien.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://alexander.forum/AF-Logo-final.svg"
+      },
+      "foundingDate": "2025-01-01",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Wien",
+        "addressCountry": "AT"
+      },
+      "email": "kontakt@alexanderforum.org",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "General Inquiries",
+        "email": "kontakt@alexanderforum.org",
+        "areaServed": "AT",
+        "availableLanguage": ["de", "en"]
+      },
+      "founder": {
+        "@id": "https://www.widerstandskraft.link/ueber-dorian-rammer/#person"
+      },
+      "employee": {
+        "@id": "https://www.widerstandskraft.link/ueber-dorian-rammer/#person"
+      },
+      "knowsAbout": [
+        "Gesellschaftliche und individuelle Resilienz",
+        "Polykrise und Ära der Gleichzeitigkeit",
+        "Trauma, Sucht und psychosoziale Versorgung",
+        "Bindungstheorie und Entwicklungspsychologie",
+        "Zivilcourage und demokratischer Zusammenhalt",
+        "Interdisziplinäre Krisenforschung und Systemresilienz",
+        "Suchtprävention und Harm Reduction",
+        "Transformative Gesellschaftsanalyse"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://alexander.forum/#website",
+      "url": "https://alexander.forum/",
+      "name": "Alexander Forum",
+      "publisher": {
+        "@id": "https://alexander.forum/#organization"
       }
-    ]
-  }
-  </script>
+    }
+  ]
+}
+</script>
 
   <!-- Identity Signals -->
   <link rel="me" href="https://alexanderforum.org">
