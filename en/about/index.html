@@ -26,70 +26,80 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="../../styles.css">
 
-  <!-- Schema.org Markup (EN) -->
+ <!-- Schema.org Markup (EN) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ResearchOrganization",
-  "@id": "https://alexander.forum/#organization",
-  "name": "Alexander Forum for Reflection & Resilience",
-  "alternateName": "Alexander Forum",
-  "legalName": "Alexander Forum for Reflection & Resilience",
-  "url": "https://alexander.forum",
-  "logo": {
-    "@type": "ImageObject",
-    "url": "https://alexander.forum/AF-Logo-final.svg"
-  },
-  "description": "Independent Think & Do Tank for societal reflection and resilience based in Vienna.",
-  "foundingDate": "2025-01-01",
-  "foundingLocation": {
-    "@type": "Place",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Vienna",
-      "addressCountry": "AT"
+  "@graph": [
+    {
+      "@type": ["AboutPage", "ProfilePage"],
+      "@id": "https://alexander.forum/en/about/#page",
+      "url": "https://alexander.forum/en/about/",
+      "name": "About Us | Alexander Forum for Reflection & Resilience",
+      "mainEntity": {
+        "@id": "https://alexander.forum/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://alexander.forum/#website"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": ["Organization", "ResearchOrganization"],
+      "@id": "https://alexander.forum/#organization",
+      "url": "https://alexander.forum/",
+      "name": "Alexander Forum for Reflection & Resilience",
+      "alternateName": "Alexander Forum",
+      "description": "Independent Think & Do Tank for societal reflection and resilience based in Vienna.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://alexander.forum/AF-Logo-final.svg"
+      },
+      "foundingDate": "2025-01-01",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vienna",
+        "addressCountry": "AT"
+      },
+      "email": "kontakt@alexanderforum.org",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "General Inquiries",
+        "email": "kontakt@alexanderforum.org",
+        "areaServed": "AT",
+        "availableLanguage": ["de", "en"]
+      },
+      "founder": {
+        "@id": "https://www.widerstandskraft.link/ueber-dorian-rammer/#person"
+      },
+      "employee": {
+        "@id": "https://www.widerstandskraft.link/ueber-dorian-rammer/#person"
+      },
+      "knowsAbout": [
+        "Societal and individual resilience",
+        "Polycrisis and the era of simultaneity",
+        "Trauma, addiction and psychosocial care",
+        "Attachment theory and developmental psychology",
+        "Civic courage and democratic cohesion",
+        "Interdisciplinary crisis research and systems resilience",
+        "Addiction prevention and harm reduction",
+        "Transformative societal analysis"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://alexander.forum/#website",
+      "url": "https://alexander.forum/",
+      "name": "Alexander Forum",
+      "publisher": {
+        "@id": "https://alexander.forum/#organization"
+      },
+      "inLanguage": "en"
     }
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Vienna",
-    "addressCountry": "AT"
-  },
-  "email": "kontakt@alexanderforum.org",
-  "contactPoint": [{
-    "@type": "ContactPoint",
-    "contactType": "General Inquiries",
-    "email": "kontakt@alexanderforum.org",
-    "areaServed": "AT",
-    "availableLanguage": ["en", "de"]
-  }],
-  "founder": {
-    "@type": "Person",
-    "name": "Dorian Alexander Rammer",
-    "url": "https://www.dorianrammer.at",
-    "jobTitle": "Founder & Director",
-    "sameAs": [
-      "https://www.dorianrammer.at"
-    ]
-  },
-  "sameAs": [
-    "https://alexander.forum"
-  ],
-  "areaServed": {
-    "@type": "Place",
-    "name": "Austria"
-  },
-  "knowsAbout": [
-    "Resilience",
-    "Crisis Management",
-    "Societal Transformation",
-    "Interdisciplinary Research",
-    "Psychology",
-    "Political Science"
-  ],
-  "keywords": "resilience, think tank vienna, polycrisis, societal analysis, crisis management, future shaping, interdisciplinary approaches, systemic resilience, crisis response, social transformation, Dorian Rammer, think and do tank, reflection, mental health, social cohesion"
+  ]
 }
 </script>
+  
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
