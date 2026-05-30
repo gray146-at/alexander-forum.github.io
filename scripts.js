@@ -253,6 +253,23 @@
   }
 
   // ============================================
+  // SIMPLE ANALYTICS
+  // ============================================
+  function loadSimpleAnalytics() {
+    if (window.__afSimpleAnalyticsLoaded) return;
+    if (document.querySelector('script[src*="scripts.simpleanalyticscdn.com/latest.js"]')) return;
+
+    window.__afSimpleAnalyticsLoaded = true;
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://scripts.simpleanalyticscdn.com/latest.js';
+    script.setAttribute('data-collect-dnt', 'true');
+
+    document.body.appendChild(script);
+  }
+
+  // ============================================
   // SITE UI
   // ============================================
   function initStickyHeader() {
@@ -450,6 +467,7 @@
   }
 
   function init() {
+    loadSimpleAnalytics();
     initConsent();
     initStickyHeader();
     initDropdownNavigation();
