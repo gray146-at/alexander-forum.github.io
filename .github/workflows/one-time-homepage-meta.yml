@@ -1,0 +1,78 @@
+name: One-time homepage meta update
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  patch-homepage-meta:
+    if: contains(github.event.head_commit.message, '[meta-fix]')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Patch German and English homepage meta data
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+
+          replacements = {
+              "index.html": {
+                  '<title>Alexander Forum für Reflexion &amp; Resilienz | Wien</title>': '<title>Alexander Forum | Resilienz, Polykrise &amp; gesellschaftliche Transformation</title>',
+                  '<meta name="description" content="Unabhängiger Think &amp; Do Tank in Wien. Analysen &amp; Dossiers zu Resilienz, Polykrise, Technologie und Zusammenhalt.">': '<meta name="description" content="Unabhängiger Think &amp; Do Tank aus Wien für Resilienz, Polykrise, gesellschaftliche Analyse, Prävention und demokratischen Zusammenhalt.">',
+                  '<meta property="og:title" content="Alexander Forum für Reflexion &amp; Resilienz | Wien">': '<meta property="og:title" content="Alexander Forum | Resilienz, Polykrise &amp; gesellschaftliche Transformation">',
+                  '<meta property="og:description" content="Unabhängiger Think &amp; Do Tank in Wien. Analysen &amp; Dossiers zu Resilienz, Polykrise, Technologie und Zusammenhalt.">': '<meta property="og:description" content="Unabhängiger Think &amp; Do Tank aus Wien für Resilienz, Polykrise, gesellschaftliche Analyse, Prävention und demokratischen Zusammenhalt.">',
+                  '"description": "Unabhängiger Think & Do Tank für gesellschaftliche Reflexion und Resilienz mit Sitz in Wien."': '"description": "Unabhängiger Think & Do Tank aus Wien für Resilienz, Polykrise, gesellschaftliche Analyse, Prävention und demokratischen Zusammenhalt."',
+              },
+              "en/index.html": {
+                  '<title>Alexander Forum for Reflection &amp; Resilience | Vienna</title>': '<title>Alexander Forum | Resilience, Polycrisis &amp; Societal Transformation</title>',
+                  '<meta name="description" content="Independent Think &amp; Do Tank in Vienna. Analyses &amp; dossiers on resilience, polycrisis, technology and social cohesion.">': '<meta name="description" content="Independent Think &amp; Do Tank from Vienna for resilience, polycrisis, societal analysis, prevention and democratic cohesion.">',
+                  '<meta property="og:title" content="Alexander Forum for Reflection &amp; Resilience | Vienna">': '<meta property="og:title" content="Alexander Forum | Resilience, Polycrisis &amp; Societal Transformation">',
+                  '<meta property="og:description" content="Independent Think &amp; Do Tank in Vienna. Analyses &amp; dossiers on resilience, polycrisis, technology and social cohesion.">': '<meta property="og:description" content="Independent Think &amp; Do Tank from Vienna for resilience, polycrisis, societal analysis, prevention and democratic cohesion.">',
+                  '"description": "Independent Think & Do Tank for societal reflection and resilience based in Vienna."': '"description": "Independent Think & Do Tank from Vienna for resilience, polycrisis, societal analysis, prevention and democratic cohesion."',
+              },
+          }
+
+          for file_name, mapping in replacements.items():
+              path = Path(file_name)
+              text = path.read_text(encoding='utf-8')
+              original = text
+              for old, new in mapping.items():
+                  if old not in text:
+                      print(f'Pattern not found in {file_name}: {old[:80]}')
+                  text = text.replace(old, new)
+              if text != original:
+                  path.write_text(text, encoding='utf-8')
+                  print(f'Patched {file_name}')
+              else:
+                  print(f'No changes for {file_name}')
+
+          trigger = Path('.homepage-meta-trigger')
+          if trigger.exists():
+              trigger.unlink()
+              print('Removed trigger file')
+
+          workflow = Path('.github/workflows/one-time-homepage-meta.yml')
+          if workflow.exists():
+              workflow.unlink()
+              print('Removed one-time workflow')
+          PY
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "Update homepage meta titles and descriptions [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
