@@ -1,0 +1,58 @@
+name: One-time copyright year update
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  patch-copyright-years:
+    if: contains(github.event.head_commit.message, '[copyright-years]')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update copyright year range in HTML files
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+
+          changed = []
+          for path in sorted(Path('.').rglob('*.html')):
+              text = path.read_text(encoding='utf-8')
+              new = text.replace('© 2025 Alexander Forum', '© 2025-2026 Alexander Forum')
+              if new != text:
+                  path.write_text(new, encoding='utf-8')
+                  changed.append(str(path))
+
+          for path in changed:
+              print(f'Patched {path}')
+
+          trigger = Path('.copyright-years-trigger')
+          if trigger.exists():
+              trigger.unlink()
+              print('Removed trigger file')
+
+          workflow = Path('.github/workflows/one-time-copyright-years.yml')
+          if workflow.exists():
+              workflow.unlink()
+              print('Removed one-time workflow')
+          PY
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "Update copyright year range [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
