@@ -24,7 +24,6 @@
     try {
       window.localStorage.setItem(CONSENT_KEY, value);
     } catch (e) {
-      // If localStorage is blocked, keep the choice for the current page only.
       window.__afClarityConsent = value;
     }
   }
@@ -74,82 +73,16 @@
     const style = document.createElement('style');
     style.id = 'af-consent-styles';
     style.textContent = `
-      #af-consent-banner {
-        position: fixed;
-        left: 1rem;
-        right: 1rem;
-        bottom: 1rem;
-        z-index: 99999;
-        display: flex;
-        justify-content: center;
-        pointer-events: none;
-      }
-
-      .af-consent-box {
-        max-width: 760px;
-        width: min(760px, 100%);
-        background: rgba(15, 42, 58, 0.98);
-        color: #fff;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        border-radius: 14px;
-        padding: 1rem 1.15rem;
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-        pointer-events: auto;
-        font-family: Georgia, 'Palatino Linotype', 'Times New Roman', serif;
-      }
-
-      .af-consent-box p {
-        margin: 0 0 .9rem;
-        font-size: .95rem;
-        line-height: 1.5;
-      }
-
-      .af-consent-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: .65rem;
-      }
-
-      .af-consent-actions button {
-        min-height: 42px;
-        cursor: pointer;
-        border-radius: 8px;
-        border: 1px solid rgba(255, 255, 255, 0.28);
-        padding: .55rem .85rem;
-        font-family: inherit;
-        font-size: .95rem;
-        font-weight: 700;
-      }
-
-      #af-consent-accept {
-        background: #fff;
-        color: #0f2a3a;
-      }
-
-      #af-consent-decline {
-        background: transparent;
-        color: #fff;
-      }
-
-      #af-privacy-settings {
-        cursor: pointer;
-      }
-
-      @media (max-width: 600px) {
-        #af-consent-banner {
-          left: .75rem;
-          right: .75rem;
-          bottom: .75rem;
-        }
-
-        .af-consent-box {
-          padding: .9rem;
-        }
-
-        .af-consent-actions button {
-          width: 100%;
-        }
-      }
+      #af-consent-banner { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 99999; display: flex; justify-content: center; pointer-events: none; }
+      .af-consent-box { max-width: 760px; width: min(760px, 100%); background: rgba(15, 42, 58, 0.98); color: #fff; border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 14px; padding: 1rem 1.15rem; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35); pointer-events: auto; font-family: Georgia, 'Palatino Linotype', 'Times New Roman', serif; }
+      .af-consent-box p { margin: 0 0 .9rem; font-size: .95rem; line-height: 1.5; }
+      .af-consent-actions { display: flex; flex-wrap: wrap; gap: .65rem; }
+      .af-consent-actions button { min-height: 42px; cursor: pointer; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.28); padding: .55rem .85rem; font-family: inherit; font-size: .95rem; font-weight: 700; }
+      #af-consent-accept { background: #fff; color: #0f2a3a; }
+      #af-consent-decline { background: transparent; color: #fff; }
+      #af-privacy-settings { cursor: pointer; }
+      .af-build-note { margin-top: .85rem; padding: .75rem .9rem; border: 1px solid rgba(255,255,255,.14); border-radius: 10px; background: rgba(255,255,255,.03); opacity: .92; font-size: .96rem; line-height: 1.5; }
+      @media (max-width: 600px) { #af-consent-banner { left: .75rem; right: .75rem; bottom: .75rem; } .af-consent-box { padding: .9rem; } .af-consent-actions button { width: 100%; } }
     `;
     document.head.appendChild(style);
   }
@@ -217,25 +150,17 @@
     if (!footerNav || document.getElementById('af-privacy-settings')) return;
 
     const isEnglish = (document.documentElement.lang || '').toLowerCase().startsWith('en');
+    appendFooterLink(footerNav, '#', isEnglish ? 'Privacy settings' : 'Datenschutz-Einstellungen', 'af-privacy-settings');
 
-    const sep = document.createElement('span');
-    sep.className = 'sep';
-    sep.textContent = '·';
-
-    const link = document.createElement('a');
-    link.href = '#';
-    link.id = 'af-privacy-settings';
-    link.textContent = isEnglish ? 'Privacy settings' : 'Datenschutz-Einstellungen';
-
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      removeStoredConsent();
-      denyMicrosoftClarity();
-      createConsentBanner();
-    });
-
-    footerNav.appendChild(sep);
-    footerNav.appendChild(link);
+    const link = document.getElementById('af-privacy-settings');
+    if (link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        removeStoredConsent();
+        denyMicrosoftClarity();
+        createConsentBanner();
+      });
+    }
   }
 
   function initConsent() {
@@ -267,6 +192,127 @@
     script.setAttribute('data-collect-dnt', 'true');
 
     document.body.appendChild(script);
+  }
+
+  // ============================================
+  // SITE-WIDE STRUCTURE HELPERS
+  // ============================================
+  function appendFooterLink(footerNav, href, text, id) {
+    if (!footerNav) return;
+    if (id && document.getElementById(id)) return;
+    if (!id && footerNav.querySelector('a[href="' + href + '"]')) return;
+
+    if (footerNav.children.length) {
+      const sep = document.createElement('span');
+      sep.className = 'sep';
+      sep.textContent = '·';
+      footerNav.appendChild(sep);
+    }
+
+    const link = document.createElement('a');
+    link.href = href;
+    link.textContent = text;
+    if (id) link.id = id;
+    footerNav.appendChild(link);
+  }
+
+  function normalizeFooter() {
+    const footerNav = document.querySelector('.foot-nav');
+    if (!footerNav) return;
+
+    const isEnglish = (document.documentElement.lang || '').toLowerCase().startsWith('en');
+    appendFooterLink(footerNav, '/impressum/', isEnglish ? 'Imprint' : 'Impressum');
+    appendFooterLink(footerNav, '/datenschutz/', isEnglish ? 'Privacy policy' : 'Datenschutz');
+  }
+
+  function addBuildNotice() {
+    const path = window.location.pathname.replace(/\/+$/, '/') || '/';
+    const shouldAdd = path === '/' || path === '/ueber-uns/';
+    if (!shouldAdd || document.querySelector('.af-build-note')) return;
+
+    injectConsentStyles();
+
+    const target = path === '/'
+      ? document.querySelector('#auftrag + .lead')
+      : document.querySelector('p.lead');
+    if (!target) return;
+
+    const note = document.createElement('p');
+    note.className = 'af-build-note';
+    note.textContent = 'Das Alexander Forum versteht sich als unabhängiges, gemeinnütziges Institut im fortwährenden Aufbau: ein wachsender Ort für Analyse, Reflexion und konkrete Resilienzarbeit.';
+    target.insertAdjacentElement('afterend', note);
+  }
+
+  function getLanguagePair(pathname) {
+    const clean = pathname.replace(/\/+$/, '/') || '/';
+    const pairs = {
+      '/': '/en/',
+      '/en/': '/',
+      '/ueber-uns/': '/en/about/',
+      '/en/about/': '/ueber-uns/',
+      '/warum-alexander/': '/en/why-alexander/',
+      '/en/why-alexander/': '/warum-alexander/',
+      '/publikationen/': '/en/publications/',
+      '/en/publications/': '/publikationen/',
+      '/resilienz/': '/en/resilience/',
+      '/en/resilience/': '/resilienz/',
+      '/gleichzeitigkeit/': '/en/era-of-simultaneity/',
+      '/en/era-of-simultaneity/': '/gleichzeitigkeit/',
+      '/impressum/': '/en/',
+      '/datenschutz/': '/en/'
+    };
+    return pairs[clean] || null;
+  }
+
+  function updateLanguageSwitcher() {
+    const pair = getLanguagePair(window.location.pathname);
+    if (!pair) return;
+
+    document.querySelectorAll('a.lang').forEach(function(link) {
+      link.href = pair;
+      const isEnglishPage = (document.documentElement.lang || '').toLowerCase().startsWith('en');
+      link.textContent = isEnglishPage ? 'DE' : 'EN';
+      link.setAttribute('hreflang', isEnglishPage ? 'de' : 'en');
+      link.setAttribute('aria-label', isEnglishPage ? 'Auf Deutsch wechseln' : 'Switch to English');
+    });
+  }
+
+  function updateAlternateLinks() {
+    const pair = getLanguagePair(window.location.pathname);
+    if (!pair) return;
+
+    const origin = window.location.origin;
+    const isEnglishPage = (document.documentElement.lang || '').toLowerCase().startsWith('en');
+    const currentLang = isEnglishPage ? 'en' : 'de';
+    const otherLang = isEnglishPage ? 'de' : 'en';
+
+    function upsertAlternate(lang, href) {
+      let link = document.querySelector('link[rel="alternate"][hreflang="' + lang + '"]');
+      if (!link) {
+        link = document.createElement('link');
+        link.rel = 'alternate';
+        link.hreflang = lang;
+        document.head.appendChild(link);
+      }
+      link.href = href;
+    }
+
+    upsertAlternate(currentLang, origin + window.location.pathname);
+    upsertAlternate(otherLang, origin + pair);
+    upsertAlternate('x-default', isEnglishPage ? origin + pair : origin + window.location.pathname);
+  }
+
+  function normalizeEnglishViewerLinks() {
+    const isEnglish = (document.documentElement.lang || '').toLowerCase().startsWith('en');
+    if (!isEnglish) return;
+
+    document.querySelectorAll('a[href*="/viewer/index.html?"]').forEach(function(link) {
+      const url = new URL(link.getAttribute('href'), window.location.origin);
+      if (!url.searchParams.has('lang')) {
+        url.searchParams.set('lang', 'en');
+        link.setAttribute('href', url.pathname + url.search + url.hash);
+      }
+    });
   }
 
   // ============================================
@@ -468,6 +514,11 @@
 
   function init() {
     loadSimpleAnalytics();
+    normalizeFooter();
+    updateLanguageSwitcher();
+    updateAlternateLinks();
+    normalizeEnglishViewerLinks();
+    addBuildNotice();
     initConsent();
     initStickyHeader();
     initDropdownNavigation();
