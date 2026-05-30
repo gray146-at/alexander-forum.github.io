@@ -60,7 +60,7 @@
   <!-- About EN -->
   <url>
     <loc>https://alexander.forum/en/about/</loc>
-    <lastmod>2026-03-15</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://alexander.forum/ueber-uns/"/>
@@ -134,12 +134,25 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://alexander.forum/gleichzeitigkeit/"/>
   </url>
 
-  <!-- Legal pages -->
+  <!-- Legal pages DE/EN -->
   <url>
     <loc>https://alexander.forum/impressum/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alexander.forum/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alexander.forum/en/imprint/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alexander.forum/impressum/"/>
+  </url>
+
+  <url>
+    <loc>https://alexander.forum/en/imprint/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alexander.forum/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alexander.forum/en/imprint/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alexander.forum/impressum/"/>
   </url>
 
   <url>
@@ -147,6 +160,19 @@
     <lastmod>2026-05-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alexander.forum/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alexander.forum/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alexander.forum/datenschutz/"/>
+  </url>
+
+  <url>
+    <loc>https://alexander.forum/en/privacy/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alexander.forum/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alexander.forum/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alexander.forum/datenschutz/"/>
   </url>
 
   <!-- PDFs -->
