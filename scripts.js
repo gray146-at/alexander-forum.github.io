@@ -164,28 +164,28 @@
     banner.id = 'af-consent-banner';
     banner.setAttribute('role', 'dialog');
     banner.setAttribute('aria-live', 'polite');
-    banner.setAttribute('aria-label', isEnglish ? 'Analytics consent' : 'Analyse-Einwilligung');
+    banner.setAttribute('aria-label', isEnglish ? 'Statistics consent' : 'Statistik-Einwilligung');
 
     banner.innerHTML = isEnglish ? `
       <div class="af-consent-box">
         <p>
-          We use Microsoft Clarity only with your consent to understand how this website is used.
-          This may involve analytics cookies and session data. You can allow or decline analytics.
+          For our statistics, optional website analytics are helpful: they show which content is useful and where we can improve the site.
+          If you agree, usage data such as page views, clicks and sessions may be processed.
         </p>
         <div class="af-consent-actions">
-          <button type="button" id="af-consent-accept">Allow analytics</button>
-          <button type="button" id="af-consent-decline">Decline</button>
+          <button type="button" id="af-consent-accept">Allow optional statistics</button>
+          <button type="button" id="af-consent-decline">Continue without statistics</button>
         </div>
       </div>
     ` : `
       <div class="af-consent-box">
         <p>
-          Wir nutzen Microsoft Clarity nur mit Ihrer Einwilligung, um besser zu verstehen, wie diese Website verwendet wird.
-          Dabei können Analyse-Cookies und Session-Daten verarbeitet werden. Sie können zustimmen oder ablehnen.
+          Für unsere Statistik ist eine optionale Website-Analyse hilfreich: Sie zeigt uns, welche Inhalte nützlich sind und wo wir die Seite verbessern können.
+          Wenn Sie zustimmen, können Nutzungsdaten wie Seitenaufrufe, Klicks und Sitzungen verarbeitet werden.
         </p>
         <div class="af-consent-actions">
-          <button type="button" id="af-consent-accept">Analyse erlauben</button>
-          <button type="button" id="af-consent-decline">Ablehnen</button>
+          <button type="button" id="af-consent-accept">Optionale Statistik erlauben</button>
+          <button type="button" id="af-consent-decline">Ohne Statistik fortfahren</button>
         </div>
       </div>
     `;
