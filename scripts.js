@@ -221,25 +221,36 @@
     if (!footerNav) return;
 
     const isEnglish = (document.documentElement.lang || '').toLowerCase().startsWith('en');
-    appendFooterLink(footerNav, '/impressum/', isEnglish ? 'Imprint' : 'Impressum');
-    appendFooterLink(footerNav, '/datenschutz/', isEnglish ? 'Privacy policy' : 'Datenschutz');
+    appendFooterLink(footerNav, isEnglish ? '/en/imprint/' : '/impressum/', isEnglish ? 'Imprint' : 'Impressum');
+    appendFooterLink(footerNav, isEnglish ? '/en/privacy/' : '/datenschutz/', isEnglish ? 'Privacy policy' : 'Datenschutz');
   }
 
   function addBuildNotice() {
     const path = window.location.pathname.replace(/\/+$/, '/') || '/';
-    const shouldAdd = path === '/' || path === '/ueber-uns/';
+    const isEnglish = (document.documentElement.lang || '').toLowerCase().startsWith('en');
+    const shouldAdd = ['/', '/ueber-uns/', '/en/', '/en/about/'].includes(path);
     if (!shouldAdd || document.querySelector('.af-build-note')) return;
 
     injectConsentStyles();
 
-    const target = path === '/'
-      ? document.querySelector('#auftrag + .lead')
+    const target = (path === '/' || path === '/en/')
+      ? document.querySelector('#auftrag + .lead, #mission + .lead')
       : document.querySelector('p.lead');
     if (!target) return;
 
     const note = document.createElement('p');
     note.className = 'af-build-note';
-    note.textContent = 'Das Alexander Forum versteht sich als unabhängiges, gemeinnütziges Institut im fortwährenden Aufbau: ein wachsender Ort für Analyse, Reflexion und konkrete Resilienzarbeit.';
+
+    if (path === '/') {
+      note.textContent = 'Das Alexander Forum ist langfristig angelegt: als wachsendes Institut für Analyse, Reflexion und konkrete Resilienzarbeit - offen für Kooperationen, Beiträge und gemeinsame Weiterentwicklung.';
+    } else if (path === '/ueber-uns/') {
+      note.textContent = 'Das Alexander Forum versteht sich als unabhängiges, gemeinnütziges Institut im fortwährenden Aufbau: ein wachsender Ort für Analyse, Reflexion und konkrete Resilienzarbeit.';
+    } else if (path === '/en/') {
+      note.textContent = 'The Alexander Forum is designed for the long term: as a growing institute for analysis, reflection and practical resilience work - open to cooperation, contributions and shared development.';
+    } else if (path === '/en/about/') {
+      note.textContent = 'The Alexander Forum understands itself as an independent, non-profit institute in continuous development: a growing space for analysis, reflection and practical resilience work.';
+    }
+
     target.insertAdjacentElement('afterend', note);
   }
 
@@ -258,8 +269,10 @@
       '/en/resilience/': '/resilienz/',
       '/gleichzeitigkeit/': '/en/era-of-simultaneity/',
       '/en/era-of-simultaneity/': '/gleichzeitigkeit/',
-      '/impressum/': '/en/',
-      '/datenschutz/': '/en/'
+      '/impressum/': '/en/imprint/',
+      '/en/imprint/': '/impressum/',
+      '/datenschutz/': '/en/privacy/',
+      '/en/privacy/': '/datenschutz/'
     };
     return pairs[clean] || null;
   }
