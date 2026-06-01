@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Die Ära der Gleichzeitigkeit | Alexander Forum</title>
+  <title>Die Ära der Gleichzeitigkeit | Polykrise &amp; Resilienz</title>
 
   <link rel="canonical" href="https://alexander.forum/gleichzeitigkeit/">
   <link rel="alternate" href="https://alexander.forum/gleichzeitigkeit/" hreflang="de">
@@ -11,14 +11,19 @@
   <link rel="alternate" href="https://alexander.forum/gleichzeitigkeit/" hreflang="x-default">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#0f2a3a">
-  <meta name="description" content="Dossier II: Die Ära der Gleichzeitigkeit – Über die Logik multipler Krisen und die Grenzen der Anpassung. Eine Analyse zu Polykrise, Strukturproblemen und gesellschaftlicher Transformation.">
+  <meta name="description" content="Dossier II des Alexander Forums: Analyse zur Polykrise, digitalen Fragmentierung, Zukunftsangst, institutioneller Überforderung und gesellschaftlicher Resilienz.">
 
   <meta property="og:site_name" content="Alexander Forum">
   <meta property="og:url" content="https://alexander.forum/gleichzeitigkeit/">
-  <meta property="og:title" content="Die Ära der Gleichzeitigkeit – Dossier II">
-  <meta property="og:description" content="Über die Logik multipler Krisen und die Grenzen der Anpassung.">
+  <meta property="og:title" content="Die Ära der Gleichzeitigkeit - Dossier II">
+  <meta property="og:description" content="Über Polykrise, institutionelle Überforderung, digitale Fragmentierung, Zukunftsangst und die Grenzen bloßer Anpassung.">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="de_AT">
+  <meta property="article:published_time" content="2025-11-01">
+  <meta property="article:modified_time" content="2026-06-01">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Die Ära der Gleichzeitigkeit - Dossier II">
+  <meta name="twitter:description" content="Ein analytisches Dossier zur Polykrise und zu langfristiger gesellschaftlicher Resilienz.">
 
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -35,7 +40,7 @@
   "@id": "https://alexander.forum/gleichzeitigkeit/#dossier",
   "url": "https://alexander.forum/gleichzeitigkeit/",
   "headline": "Die Ära der Gleichzeitigkeit",
-  "description": "Dossier II über die Logik multipler Krisen und die Grenzen der Anpassung: Analyse zu Polykrise, Strukturproblemen und gesellschaftlicher Transformation.",
+  "description": "Dossier II über die Logik multipler Krisen und die Grenzen der Anpassung: Analyse zu Polykrise, digitaler Fragmentierung, institutioneller Überforderung, Zukunftsangst und gesellschaftlicher Resilienz.",
   "author": {
     "@type": "Organization",
     "name": "Alexander Forum für Reflexion & Resilienz",
@@ -51,16 +56,19 @@
     }
   },
   "datePublished": "2025-11-01",
-  "dateModified": "2026-05-30",
+  "dateModified": "2026-06-01",
   "inLanguage": "de-AT",
   "about": [
     "Polykrise",
     "Gleichzeitigkeit",
     "gesellschaftliche Transformation",
     "Systemkrisen",
-    "Resilienz"
+    "Resilienz",
+    "digitale Fragmentierung",
+    "mentale Gesundheit",
+    "Demokratiekrise"
   ],
-  "keywords": "Polykrise, Ära der Gleichzeitigkeit, Systemkrisen, gesellschaftliche Transformation, Resilienz, Anpassung",
+  "keywords": "Polykrise, Ära der Gleichzeitigkeit, Systemkrisen, gesellschaftliche Transformation, Resilienz, Anpassung, Zukunftsangst, digitale Fragmentierung, institutionelle Überforderung",
   "isPartOf": {
     "@type": "WebSite",
     "@id": "https://alexander.forum/#website",
@@ -79,10 +87,29 @@
     .pub-hero { margin-bottom: 1rem }
     .pub-meta { display:flex; gap:.75rem; flex-wrap:wrap; opacity:.85; margin:.25rem 0 1rem }
     .pub-meta .pill { border:1px solid rgba(255,255,255,.16); border-radius:999px; padding:.2rem .6rem; font-size:.9rem }
-    .actions { display:flex; gap:.75rem; flex-wrap:wrap; margin:1rem 0 1.25rem }
+    .dossier-page .lead { margin-bottom: 1rem; max-width: 760px }
+    .dossier-page p { max-width: 760px }
+    .status-note { color: var(--af-muted); font-size: .95rem }
+    .key-theses { background: rgba(255,255,255,.025); border:1px solid rgba(255,255,255,.12); border-radius:10px; padding:1rem; margin:1.15rem 0 1.2rem }
+    .key-theses h2 { margin:0 0 .75rem; font-size:1.15rem }
+    .thesis-grid { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:.75rem }
+    .thesis-grid li { border:1px solid rgba(255,255,255,.10); border-radius:10px; padding:.75rem .85rem; background:rgba(255,255,255,.02) }
+    .thesis-grid strong { display:block; margin-bottom:.25rem }
+    .thesis-grid span { display:block; font-size:.95rem; line-height:1.5 }
+    .actions { display:flex; gap:.75rem; flex-wrap:wrap; margin:1.15rem 0 1.25rem }
     .btn { display:inline-block; padding:.65rem 1rem; border-radius:8px; border:1px solid rgba(255,255,255,.2); text-decoration:none; font-weight:600 }
     .abstract { background: rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.12); border-radius:10px; padding:1rem; margin:1.25rem 0 }
+    .abstract h2 { margin-top:0 }
     .license { font-size:.95rem; opacity:.9; margin-top:1rem }
+
+    @media (min-width:700px){
+      .dossier-page.card p:not(.tag):not(.teaser):not(.tagline):not(.short){
+        text-align:left;
+        hyphens:manual;
+        -webkit-hyphens:manual;
+        -ms-hyphens:manual;
+      }
+    }
   </style>
 </head>
 <body>
@@ -101,7 +128,7 @@
   </header>
 
   <main id="main" class="wrap">
-    <section class="card">
+    <section class="card dossier-page">
       <h1 class="pub-hero">Die Ära der Gleichzeitigkeit</h1>
       <div class="pub-meta">
         <span class="pill">Dossier II</span>
@@ -110,16 +137,38 @@
         <span class="pill">CC BY-NC-SA 4.0</span>
       </div>
 
-      <p class="lead"><strong>Über die Logik multipler Krisen und die Grenzen der Anpassung.</strong> Dieses Dossier analysiert, warum die Gleichzeitigkeit systemischer Krisen eine neue Qualität markiert – und weshalb bloße Anpassung nicht genügt, wenn die Struktur selbst Probleme erzeugt.</p>
+      <p class="lead"><strong>Über die Logik multipler Krisen und die Grenzen der Anpassung.</strong> Das Dossier analysiert, warum Klima-, Demokratie-, Technologie-, Sicherheits- und Gesundheitskrisen heute nicht mehr isoliert verstanden werden können - sondern sich gegenseitig beschleunigen und gesellschaftliche Resilienz neu herausfordern.</p>
 
-      <!-- SEO-Einleitung -->
       <p>
-        Dieses Dossier untersucht, wie sich Klima-, Demokratie-, Sicherheits- und Technologiekrisen
-        heute gegenseitig überlagern – und warum herkömmliche Anpassungsstrategien an ihre Grenzen
-        stoßen. „Die Ära der Gleichzeitigkeit“ zeigt, dass wir nicht mehr einzelne Probleme nacheinander
-        lösen können, sondern Strukturen verändern müssen, die Krisen gleichzeitig hervorbringen.
-        Es bietet einen interdisziplinären Überblick über Dynamiken der Polykrise, systemische
-        Verwundbarkeiten und Wege zu langfristiger gesellschaftlicher Resilienz.
+        Die zentrale These: Wir leben nicht bloß in einer Zeit vieler Einzelkrisen, sondern an einer
+        Epochenschwelle. Herkömmliche Anpassungsstrategien reichen dort nicht mehr aus, wo Strukturen
+        selbst jene Probleme hervorbringen, die sie anschließend verwalten sollen.
+      </p>
+
+      <section class="key-theses" aria-labelledby="kernthesen">
+        <h2 id="kernthesen">Das Dossier zeigt</h2>
+        <ul class="thesis-grid">
+          <li>
+            <strong>Gleichzeitigkeit statt Einzelkrisen</strong>
+            <span>Krisen wirken nicht nur additiv, sondern verstärken einander in hochvernetzten Systemen.</span>
+          </li>
+          <li>
+            <strong>Institutionen unter Stress</strong>
+            <span>Politik, Märkte und Medien reagieren oft langsamer, als ökologische und technologische Dynamiken eskalieren.</span>
+          </li>
+          <li>
+            <strong>Informationsökologie als Umweltfaktor</strong>
+            <span>Digitale Fragmentierung, Reizüberflutung und algorithmische Öffentlichkeiten verändern Wahrnehmung und Vertrauen.</span>
+          </li>
+          <li>
+            <strong>Transformation statt bloßer Anpassung</strong>
+            <span>Langfristige Resilienz braucht neue Strukturen, nicht nur besseres Krisenmanagement.</span>
+          </li>
+        </ul>
+      </section>
+
+      <p class="status-note">
+        <strong>Stand:</strong> November 2025. Online redaktionell geschärft im Juni 2026; die PDF-Fassung bleibt Version 1.0.
       </p>
 
       <!-- Aktionen: Viewer + Download -->
@@ -138,20 +187,22 @@
       <div id="abstract" class="abstract">
         <h2>Abstract</h2>
         <p>
-          Wir erleben eine Überlagerung systemischer Krisen – Klima, Demokratie, Technologie,
-          mentale Gesundheit und soziale Fragmentierung – die sich gegenseitig verstärken.
+          Wir erleben eine Überlagerung systemischer Krisen - Klima, Demokratie, Technologie,
+          mentale Gesundheit und soziale Fragmentierung - die sich gegenseitig verstärken.
           Das Dossier argumentiert, dass die Moderne an strukturelle Grenzen stößt und
-          skizziert Orientierungen für Transformation statt reiner Anpassung.
+          Orientierungen für Transformation statt reiner Anpassung braucht.
         </p>
       </div>
 
       <p class="license">
-        © 2025-2026 Alexander Forum – Lizenz: CC BY-NC-SA 4.0. Kontakt: <a href="mailto:research@alexanderforum.org">research@alexanderforum.org</a>.
+        Publikation: © 2025-2026 Alexander Forum - veröffentlicht unter
+        <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.
+        Kontakt: <a href="mailto:research@alexanderforum.org">research@alexanderforum.org</a>.
       </p>
     </section>
 
     <footer class="foot">
-      <p>© 2025-2026 Alexander Forum für Reflexion &amp; Resilienz. Alle Rechte vorbehalten.</p>
+      <p>Website: © 2025-2026 Alexander Forum für Reflexion &amp; Resilienz. Publikationen gemäß jeweiliger Lizenz.</p>
       <nav class="foot-nav" aria-label="Footer-Navigation">
         <a href="/">Start</a>
         <span class="sep">·</span>
