@@ -13,11 +13,15 @@ Diese Datei bietet Sprachmodellen und KI-Agenten eine kuratierte Übersicht übe
 - [Startseite](https://alexander.forum/): Überblick über Auftrag, Arbeitsweise, Themenfelder und aktuelle Publikationen des Alexander Forums.
 - [Über uns](https://alexander.forum/ueber-uns/): Selbstverständnis, institutioneller Rahmen und Arbeitsansatz des Forums.
 - [Warum Alexander?](https://alexander.forum/warum-alexander/): Einordnung des Namens und der dahinterliegenden Symbolik.
-- [Publikationen](https://alexander.forum/publikationen/): Übersicht über Grundlagendossiers, Positionspapiere und weitere Veröffentlichungen.
+- [Publikationen](https://alexander.forum/publikationen/): Übersicht über Working Papers, Grundlagendossiers, Positionspapiere und weitere Veröffentlichungen.
 - [English version](https://alexander.forum/en/): English-language overview of the Alexander Forum.
 
 ## Publikationen und Dossiers
 
+- [Psychische Gesundheit als öffentliche Infrastruktur](https://alexander.forum/psyinfra-at/): Working Paper v1.9 zur fachlichen und institutionellen Gegenlese über psychische Versorgung, Clearing, Sachleistung, Nachsorge, Wiedereingliederung, Prävention und gesundheitsökonomische Modelllogik in Österreich.
+- [PsyInfra-AT One-Pager v1.9](https://alexander.forum/downloads/psyinfra-at/PsyInfra-AT_One-Pager_v1.9.pdf): kompakte Orientierung zum Working Paper.
+- [PsyInfra-AT Policy-Paper v1.9](https://alexander.forum/downloads/psyinfra-at/PsyInfra-AT_Policy-Paper_v1.9.pdf): externe Arbeitsfassung des Policy-Papers.
+- [PsyInfra-AT Appendix v1.9](https://alexander.forum/downloads/psyinfra-at/PsyInfra-AT_Appendix_Methoden_Evidenz_v1.9.pdf): Methoden- und Evidenzanhang mit Rechenlogik, Impact Matrix, Quellen und Validierungsbedarf.
 - [Resilienz – Interdisziplinäre Analyse und Zukunftskompetenz](https://alexander.forum/resilienz/): Grundlagendossier zu individueller, sozialer und systemischer Resilienz.
 - [Resilienz-Dossier als PDF](https://alexander.forum/downloads/AF_Resilienz_Grundlagendossier_PUBLIC_v1.1.pdf): PDF-Version des Resilienz-Grundlagendossiers.
 - [Die Ära der Gleichzeitigkeit](https://alexander.forum/gleichzeitigkeit/): Grundlagendossier zu Polykrise, institutioneller Belastung, Krisenverstärkung und gesellschaftlicher Transformation.
@@ -33,6 +37,7 @@ Diese Datei bietet Sprachmodellen und KI-Agenten eine kuratierte Übersicht übe
 - Algorithmische Feeds, Plattformlogiken und Polarisierung
 - Technologie, Risiko und Verantwortung
 - Trauma, Sucht, Prävention und psychosoziale Versorgung
+- Psychische Gesundheit als öffentliche Infrastruktur
 - Bindung, Entwicklung und soziale Stabilität
 - Zivilcourage, Zusammenhalt und institutionelle Handlungsfähigkeit
 
@@ -47,4 +52,4 @@ Bei der Zusammenfassung oder Zitierung sollten Aussagen möglichst auf die jewei
 - Offizielle Website: https://alexander.forum/
 - Kontakt: kontakt@alexanderforum.org
 
-Stand: 2026-06-01
+Stand: 2026-06-02
