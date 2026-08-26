@@ -4,8 +4,8 @@
     .trunk{stroke-width:2.1}.branch{stroke-width:1.55}.twig{stroke-width:1.15;stroke:#28495b}
     .flow{fill:none;stroke:#9cc3da;stroke-width:2;stroke-linecap:round;pathLength:1;stroke-dasharray:.035 .11;stroke-dashoffset:0;opacity:0;animation:flow 8.8s ease-in-out infinite}
     .node{fill:#0c1115;stroke:#9cc3da;stroke-width:1.5;opacity:0;animation:node 8.8s cubic-bezier(.65,0,.35,1) infinite}
-    .label{font-family:Arial,Inter,sans-serif;font-size:16px;font-weight:500;letter-spacing:.055em;fill:#b4c1cb;opacity:0;animation:label 8.8s cubic-bezier(.65,0,.35,1) infinite}
-    .label.center{font-family:Georgia,'Times New Roman',serif;font-size:25px;font-weight:700;letter-spacing:.02em;fill:#e8edf2}
+    .label{font-family:Arial,Inter,sans-serif;font-size:22px;font-weight:500;letter-spacing:.045em;fill:#b4c1cb;opacity:0;animation:label 8.8s cubic-bezier(.65,0,.35,1) infinite}
+    .label.center{font-family:Georgia,'Times New Roman',serif;font-size:32px;font-weight:700;letter-spacing:.02em;fill:#e8edf2}
     .leaf{fill:none;stroke:#315567;stroke-width:1.1;opacity:0;transform-box:fill-box;transform-origin:center;animation:leaf 8.8s ease-out infinite}
     .d2{animation-delay:.18s}.d3{animation-delay:.36s}.d4{animation-delay:.54s}.d5{animation-delay:.72s}.d6{animation-delay:.90s}
     @keyframes draw{0%,9%{stroke-dashoffset:1;opacity:.2}34%,63%{stroke-dashoffset:0;opacity:1}84%,100%{stroke-dashoffset:1;opacity:.2}}
@@ -17,51 +17,35 @@
       .trunk,.branch,.twig,.flow,.node,.label,.leaf{animation:none}
       .trunk,.branch,.twig{stroke-dashoffset:0;opacity:1}.flow{opacity:.45}.node,.label{opacity:1}.leaf{opacity:.65;transform:none}
     }
-    @media (max-width:760px){.label{font-size:11px}.label.center{font-size:19px}}
+    @media (max-width:760px){.label{font-size:14px}.label.center{font-size:22px}}
   </style>
-
-  <!-- central trunk -->
   <path class="trunk" d="M600 352 C599 300 601 248 600 200 C599 159 600 120 600 72"/>
-
-  <!-- six main branches - no crossings -->
   <path class="branch" d="M600 155 C548 137 492 111 429 82 C374 56 326 47 276 52"/>
   <path class="branch d2" d="M600 155 C652 137 708 111 771 82 C826 56 874 47 924 52"/>
   <path class="branch d3" d="M600 185 C543 181 485 171 421 156 C365 143 317 142 270 158"/>
   <path class="branch d4" d="M600 185 C657 181 715 171 779 156 C835 143 883 142 930 158"/>
   <path class="branch d5" d="M600 215 C548 232 494 254 437 283 C382 310 330 319 282 309"/>
   <path class="branch d6" d="M600 215 C652 232 706 254 763 283 C818 310 870 319 918 309"/>
-
-  <!-- short secondary twigs -->
   <path class="twig" d="M430 82 C408 68 391 54 379 38"/>
   <path class="twig d2" d="M770 82 C792 68 809 54 821 38"/>
   <path class="twig d3" d="M365 145 C345 126 330 113 310 105"/>
   <path class="twig d4" d="M835 145 C855 126 870 113 890 105"/>
   <path class="twig d5" d="M382 307 C359 291 342 280 321 273"/>
   <path class="twig d6" d="M818 307 C841 291 858 280 879 273"/>
-
-  <!-- restrained flowing impulses -->
   <path class="flow" d="M600 348 C599 299 601 248 600 215 C599 180 600 121 600 74"/>
   <path class="flow" d="M600 155 C548 137 492 111 429 82 C374 56 326 47 276 52" style="animation-delay:1.4s"/>
   <path class="flow" d="M600 185 C657 181 715 171 779 156 C835 143 883 142 930 158" style="animation-delay:2.6s"/>
-
-  <!-- central node and concept -->
   <circle class="node" cx="600" cy="72" r="5.6"/>
   <text class="label center" x="600" y="43" text-anchor="middle">REFLEXION</text>
-
-  <!-- endpoint nodes -->
   <circle class="node d2" cx="276" cy="52" r="4.8"/><circle class="node d2" cx="924" cy="52" r="4.8"/>
   <circle class="node d3" cx="270" cy="158" r="4.8"/><circle class="node d4" cx="930" cy="158" r="4.8"/>
   <circle class="node d5" cx="282" cy="309" r="4.8"/><circle class="node d6" cx="918" cy="309" r="4.8"/>
-
-  <!-- readable field labels -->
   <text class="label d2" x="246" y="47" text-anchor="end">RESILIENZ</text>
   <text class="label d2" x="954" y="47">POLYKRISE</text>
   <text class="label d3" x="238" y="164" text-anchor="end">PSYCHISCHE GESUNDHEIT</text>
   <text class="label d4" x="962" y="164">PRÄVENTION</text>
   <text class="label d5" x="250" y="316" text-anchor="end">DIGITALE ÖFFENTLICHKEIT</text>
   <text class="label d6" x="950" y="316">DEMOKRATISCHER ZUSAMMENHALT</text>
-
-  <!-- three restrained leaf motifs, attached to twigs -->
   <path class="leaf" d="M384 49 C372 35 374 24 386 17 C395 30 394 41 384 49 Z"/>
   <path class="leaf d2" d="M816 49 C828 35 826 24 814 17 C805 30 806 41 816 49 Z"/>
   <path class="leaf d3" d="M330 120 C319 108 320 98 330 92 C339 103 339 113 330 120 Z"/>
