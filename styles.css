@@ -82,6 +82,25 @@ blockquote{background:rgba(156,195,218,.06)!important;border-left-color:var(--af
   border-color:var(--af-navy)!important;
 }
 
+/* ---------- ALEXANDER FORUM TREE NETWORK ---------- */
+.subclaim::after{
+  content:"";
+  display:block;
+  width:min(820px,96vw);
+  height:200px;
+  margin:28px auto 0;
+  background:url('./af-tree-network.svg') center/contain no-repeat;
+  pointer-events:none;
+}
+
+@media (max-width:600px){
+  .subclaim::after{
+    width:calc(100vw - 28px);
+    height:150px;
+    margin-top:20px;
+  }
+}
+
 @media (max-width:900px){
   .mini-nav{
     background:var(--af-card)!important;
