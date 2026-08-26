@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Alexander Forum für Reflexion und Resilienz mit fünf Arbeitsfeldern">
+<defs>
+<style>
+.bg{fill:#0c1115}.ink{fill:#e8edf2}.blue{stroke:#9cc3da;fill:none}.muted{fill:#b4c1cb}.tree,.wordmark,.label,.branch,.node{animation-iteration-count:infinite;animation-timing-function:ease-in-out}.tree{animation:tree 11.4s both infinite;transform-box:fill-box;transform-origin:center}.wordmark{animation:wordmark 11.4s both infinite}.label{opacity:0;animation:reveal 11.4s both infinite;font:500 22px Arial,Inter,sans-serif;letter-spacing:.7px}.l1{animation-delay:.38s}.l2{animation-delay:.76s}.l3{animation-delay:1.14s}.l4{animation-delay:1.52s}.l5{animation-delay:1.90s}.branch{stroke:#315567;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;pathLength:1;animation:draw 11.4s both infinite}.b1{animation-delay:.4s}.b2{animation-delay:.76s}.b3{animation-delay:1.12s}.b4{animation-delay:1.48s}.b5{animation-delay:1.84s}.node{fill:#0c1115;stroke:#9cc3da;stroke-width:2.5;opacity:0;animation:node 11.4s both infinite}.n1{animation-delay:.38s}.n2{animation-delay:.76s}.n3{animation-delay:1.14s}.n4{animation-delay:1.52s}.n5{animation-delay:1.90s}.leaf{fill:none;stroke:#315567;stroke-width:2;opacity:0;animation:leaf 11.4s both infinite}.q1{animation-delay:.3s}.q2{animation-delay:.9s}.q3{animation-delay:1.5s}
+@keyframes tree{0%,7%{opacity:0;transform:translateY(20px) scale(.92)}18%,78%{opacity:1;transform:none}94%,100%{opacity:0;transform:translateY(-12px) scale(1.03)}}
+@keyframes wordmark{0%,12%{opacity:0;transform:translateX(14px)}28%,78%{opacity:1;transform:none}94%,100%{opacity:0;transform:translateX(0)}}
+@keyframes reveal{0%,42%{opacity:0;transform:translateY(8px)}55%,78%{opacity:1;transform:none}94%,100%{opacity:0}}
+@keyframes draw{0%,20%{stroke-dashoffset:1;opacity:.15}42%,78%{stroke-dashoffset:0;opacity:1}94%,100%{stroke-dashoffset:1;opacity:.15}}
+@keyframes node{0%,20%{opacity:0;r:2}43%,78%{opacity:1;r:5}94%,100%{opacity:0;r:2}}
+@keyframes leaf{0%,25%{opacity:0;transform:scale(.55) rotate(-10deg)}45%,78%{opacity:.8;transform:none}94%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.tree,.wordmark,.label,.branch,.node,.leaf{animation:none}.tree,.wordmark{opacity:1}.label{opacity:1}.branch{stroke-dashoffset:0;opacity:1}.node{opacity:1}.leaf{opacity:.7}}
+</style>
+</defs>
+<rect class="bg" width="1280" height="720" rx="0"/>
+<g class="tree">
+<path class="blue" stroke="#9cc3da" stroke-width="4" stroke-linecap="round" d="M380 410 C370 340 375 270 390 210"/>
+<path class="blue" stroke="#9cc3da" stroke-width="4" stroke-linecap="round" d="M390 270 C350 225 315 190 290 155"/>
+<path class="blue" stroke="#9cc3da" stroke-width="4" stroke-linecap="round" d="M392 255 C425 215 455 180 485 150"/>
+<path class="blue" stroke="#9cc3da" stroke-width="4" stroke-linecap="round" d="M378 330 C335 300 300 275 265 250"/>
+<path class="blue" stroke="#9cc3da" stroke-width="4" stroke-linecap="round" d="M386 300 C418 270 450 235 470 205"/>
+<circle cx="288" cy="153" r="7" fill="#9cc3da"/><circle cx="484" cy="149" r="7" fill="#9cc3da"/><circle cx="264" cy="250" r="7" fill="#9cc3da"/><circle cx="472" cy="204" r="7" fill="#9cc3da"/>
+<path class="leaf q1" d="M308 177 C294 160 295 144 307 134 C319 149 320 162 308 177Z"/><path class="leaf q2" d="M451 172 C466 154 480 154 491 164 C478 179 463 182 451 172Z"/><path class="leaf q3" d="M344 277 C328 263 328 248 338 238 C350 252 352 266 344 277Z"/>
+</g>
+<g class="wordmark">
+<text x="565" y="270" fill="#e8edf2" font-family="Georgia,Times New Roman,serif" font-size="82" font-style="italic">alexander</text>
+<text x="565" y="355" fill="#e8edf2" font-family="Georgia,Times New Roman,serif" font-size="104" font-weight="700" letter-spacing="3">forum</text>
+<text x="570" y="402" fill="#b4c1cb" font-family="Arial,Inter,sans-serif" font-size="28">für Reflexion &amp; Resilienz</text>
+</g>
+<circle cx="705" cy="475" r="7" fill="#0c1115" stroke="#9cc3da" stroke-width="2.5"/>
+<path class="branch" d="M705 475 C645 490 555 520 420 552 C345 569 300 570 250 560"/>
+<path class="branch b1" d="M705 475 C660 505 590 550 495 585 C450 601 410 606 370 602"/>
+<path class="branch b2" d="M705 475 C705 515 705 552 705 600"/>
+<path class="branch b3" d="M705 475 C750 505 820 550 915 585 C960 601 1000 606 1040 602"/>
+<path class="branch b4" d="M705 475 C765 490 855 520 990 552 C1065 569 1110 570 1160 560"/>
+<circle class="node n1" cx="250" cy="560" r="5"/><circle class="node n2" cx="370" cy="602" r="5"/><circle class="node n3" cx="705" cy="600" r="5"/><circle class="node n4" cx="1040" cy="602" r="5"/><circle class="node n5" cx="1160" cy="560" r="5"/>
+<text class="label l1" x="250" y="607" text-anchor="middle">PSYCHISCHE GESUNDHEIT</text>
+<text class="label l2" x="370" y="648" text-anchor="middle">DIGITALE ÖFFENTLICHKEIT</text>
+<text class="label l3" x="705" y="646" text-anchor="middle">POLYKRISE</text>
+<text class="label l4" x="1040" y="648" text-anchor="middle">PRÄVENTION</text>
+<text class="label l5" x="1160" y="607" text-anchor="middle">DEMOKRATISCHER ZUSAMMENHALT</text>
+</svg>
