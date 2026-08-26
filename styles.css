@@ -1,5 +1,5 @@
-/* Alexander Forum – default dark theme layer */
-@import url('https://raw.githubusercontent.com/gray146-at/alexander-forum.github.io/01963142866ff93c1d6348e46ebf986d0aaf5dd7/styles.css');
+/* Alexander Forum – default dark theme */
+@import url('./styles-base.css');
 
 :root{
   --af-bg:#0c1115;
@@ -18,8 +18,6 @@ html,body{
 
 .site-head{
   background:var(--af-bg)!important;
-  border-bottom-color:transparent!important;
-  box-shadow:none!important;
 }
 .site-head.scrolled{
   border-bottom-color:var(--af-border)!important;
@@ -76,7 +74,6 @@ a,.bullets a{color:var(--af-navy)!important}
 a:hover,.bullets a:hover{color:#cfe3ee!important}
 
 blockquote{background:rgba(156,195,218,.06)!important;border-left-color:var(--af-navy)!important}
-
 .mobile-menu-toggle span{background:var(--af-ink)!important}
 
 .skip:focus{
