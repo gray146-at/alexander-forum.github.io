@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" role="img" aria-label="Abstraktes Netzwerk aus Reflexion und Resilienz">
+  <style>
+    .trunk,.branch{fill:none;stroke:#315567;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:360;stroke-dashoffset:360;animation:draw 7.5s cubic-bezier(.65,0,.35,1) infinite}
+    .branch{stroke:#315567;animation-delay:.35s}
+    .flow{fill:none;stroke:#9cc3da;stroke-width:2;stroke-linecap:round;stroke-dasharray:3 15;opacity:0;animation:flow 7.5s ease-in-out infinite}
+    .node{fill:#0c1115;stroke:#9cc3da;stroke-width:1.4;r:4;opacity:0;animation:node 7.5s cubic-bezier(.65,0,.35,1) infinite}
+    .node.s2{animation-delay:.18s}.node.s3{animation-delay:.32s}.node.s4{animation-delay:.46s}.node.s5{animation-delay:.60s}.node.s6{animation-delay:.74s}
+    .leaf{fill:none;stroke:#315567;stroke-width:1.1;opacity:0;transform-box:fill-box;transform-origin:center;animation:leaf 7.5s ease-out infinite}
+    .leaf.l2{animation-delay:.25s}.leaf.l3{animation-delay:.5s}.leaf.l4{animation-delay:.75s}
+    @keyframes draw{0%,9%{stroke-dashoffset:360;opacity:.3}32%,61%{stroke-dashoffset:0;opacity:1}82%,100%{stroke-dashoffset:360;opacity:.3}}
+    @keyframes flow{0%,30%{opacity:0;stroke-dashoffset:0}38%,60%{opacity:.8;stroke-dashoffset:-54}68%,100%{opacity:0;stroke-dashoffset:0}}
+    @keyframes node{0%,12%{opacity:0;r:2.5}32%,61%{opacity:1;r:4.2}82%,100%{opacity:0;r:2.5}}
+    @keyframes leaf{0%,25%{opacity:0;transform:scale(.6) rotate(-8deg)}42%,62%{opacity:.75;transform:scale(1) rotate(0)}82%,100%{opacity:0;transform:scale(.8) rotate(4deg)}}
+    @media (prefers-reduced-motion:reduce){.trunk,.branch,.flow,.node,.leaf{animation:none}.trunk,.branch{stroke-dashoffset:0;opacity:1}.flow{opacity:.55}.node{opacity:1}.leaf{opacity:.65;transform:none}}
+  </style>
+  <!-- root / reflection -->
+  <path class="trunk" d="M450 28 L450 82 L450 178"/>
+  <path class="branch" d="M450 82 C450 82 365 80 255 80 L170 120"/>
+  <path class="branch" d="M450 82 C450 82 535 80 645 80 L730 120"/>
+  <path class="branch" d="M450 122 C450 122 380 128 325 160"/>
+  <path class="branch" d="M450 122 C450 122 520 128 575 160"/>
+  <path class="flow" d="M450 31 L450 78 L365 79 L258 119"/>
+  <path class="flow" d="M450 84 L535 81 L645 81 L728 119" style="animation-delay:1.5s"/>
+  <circle class="node" cx="450" cy="28"/>
+  <circle class="node s2" cx="170" cy="120"/>
+  <circle class="node s3" cx="730" cy="120"/>
+  <circle class="node s4" cx="325" cy="160"/>
+  <circle class="node s5" cx="575" cy="160"/>
+  <circle class="node s6" cx="450" cy="178"/>
+  <!-- small tree-like leaves -->
+  <path class="leaf" d="M438 39 C429 31 428 23 435 17 C441 25 444 32 438 39 Z"/>
+  <path class="leaf l2" d="M462 45 C470 36 478 35 484 40 C477 48 469 50 462 45 Z"/>
+  <path class="leaf l3" d="M205 109 C197 101 197 94 203 89 C210 96 211 103 205 109 Z"/>
+  <path class="leaf l4" d="M695 110 C703 101 710 100 716 105 C709 113 702 114 695 110 Z"/>
+</svg>
