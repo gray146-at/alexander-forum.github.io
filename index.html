@@ -136,6 +136,9 @@
 
     /* Kleine Erweiterung für „Institutionston“ */
     .fineprint{opacity:.85;font-size:.98rem}
+
+    /* Semantische H1 bleibt für Suchmaschinen und assistive Technologien vorhanden. */
+    .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
   </style>
 </head>
 <body>
@@ -168,7 +171,7 @@
     <section class="card">
       <img class="logo" src="AF-Logo-final.svg" alt="Alexander Forum - Baum-Signet" width="450" height="120" loading="eager">
 
-      <h1>ALEXANDER FORUM</h1>
+      <h1 class="sr-only">Alexander Forum für Reflexion &amp; Resilienz</h1>
       <p class="tag">für Reflexion &amp; Resilienz</p>
       <p class="subclaim">Für kollektive &amp; individuelle Resilienz sowie mutige Zukunftsgestaltung.</p>
 
@@ -247,112 +250,48 @@
           <span>Gegenlese erwünscht</span>
         </div>
         <div class="cta-row">
-          <a class="btn" href="/psyinfra-at/">Zum Projekt</a>
-          <a class="btn" href="/downloads/psyinfra-at/PsyInfra-AT_One-Pager_v1.9.pdf">One-Pager herunterladen</a>
+          <a class="btn" href="/publikationen/">Zur Publikation</a>
         </div>
       </article>
 
-      <!-- FEATURE: Publikationen-Teaser -->
-      <div class="section-head" style="margin-top:2rem">
-        <h2 id="publikationen">Aktuelle Publikationen</h2>
-        <a class="more btn" href="/publikationen/" aria-label="Alle Publikationen ansehen">Alle ansehen</a>
-      </div>
-
-      <div class="pub-grid" aria-label="Publikations-Teaser">
-        <!-- Resilienz-Dossier -->
+      <h2 id="themen">Themen</h2>
+      <div class="pub-grid">
         <article class="pub-card">
-          <div class="pub-meta">
-            <span class="pill">Grundlagendossier</span>
-            <span>Oktober 2025</span>
-            <span class="pill">CC BY-NC 4.0</span>
-          </div>
-          <h3>Resilienz - Interdisziplinäre Analyse und Zukunftskompetenz</h3>
-          <p>
-            Warum Resilienz unser Namensbestandteil ist - und wie sie praktisch gefördert werden kann:
-            von kindlicher Bindung bis Organisationskultur, von Neuroplastizität bis Community-Resilienz.
-          </p>
-          <div class="tags">
-            <span class="tag">Resilienz</span><span class="tag">Psychologie</span><span class="tag">Systemtheorie</span>
-          </div>
-          <div class="cta-row">
-            <a class="btn" href="/resilienz/">Zum Dossier</a>
-            <a class="btn" href="/viewer/index.html?file=/downloads/AF_Resilienz_Grundlagendossier_PUBLIC_v1.1.pdf&title=Resilienz%20Grundlagendossier&return=/#publikationen">PDF ansehen</a>
-          </div>
+          <div class="pub-meta"><span class="pill">RESILIENZ</span></div>
+          <h3>Individuelle &amp; gesellschaftliche Resilienz</h3>
+          <p>Was Menschen und Gesellschaften handlungsfähig hält - und was Widerstandskraft stärkt.</p>
         </article>
-
-        <!-- Dossier II: Ära der Gleichzeitigkeit -->
-        <article class="pub-card featured">
-          <div class="pub-meta">
-            <span class="pill">Grundlagendossier</span>
-            <span>November 2025</span>
-            <span class="pill">CC BY-NC-SA 4.0</span>
-          </div>
+        <article class="pub-card">
+          <div class="pub-meta"><span class="pill">POLYKRISE</span></div>
           <h3>Die Ära der Gleichzeitigkeit</h3>
-          <p>
-            Über Polykrise, institutionelle Überforderung und digitale Fragmentierung: warum Klima-,
-            Demokratie-, Technologie-, Sicherheits- und Gesundheitskrisen heute nicht mehr getrennt
-            verstanden werden können.
-          </p>
-          <div class="tags">
-            <span class="tag">Polykrise</span><span class="tag">Institutionen</span><span class="tag">Digitale Öffentlichkeit</span><span class="tag">Transformation</span>
-          </div>
-          <div class="cta-row">
-            <a class="btn" href="/gleichzeitigkeit/">Zum Dossier</a>
-            <a class="btn" href="/viewer/index.html?file=/gleichzeitigkeit/AF_Die_Aera_der_Gleichzeitigkeit.pdf&title=Die%20%C3%84ra%20der%20Gleichzeitigkeit&return=/#publikationen">PDF ansehen</a>
-          </div>
+          <p>Wie multiple Krisen, Beschleunigung und Unsicherheit zusammenwirken.</p>
         </article>
-      </div>
-
-      <h2 id="themen" style="margin-top:2rem">Themenfelder</h2>
-      <p>
-        Unser Ansatz ist <strong>interdisziplinär</strong> - von Klima und Konflikten
-        über Technologie und Sicherheit bis zu Psychologie und Medizin.
-        Wir arbeiten offen, benennen Unsicherheiten transparent und veröffentlichen Analysen,
-        Einordnungen und Reports, die Orientierung geben, Versäumnisse sichtbar machen und Lösungen anregen.
-      </p>
-      <ul class="bullets">
-        <li><strong>Resilienz &amp; gesellschaftliche Belastungsproben</strong><br>Zwischen Anpassung, Erschöpfung und Neuanfang.</li>
-        <li><strong>Information &amp; Vertrauen</strong><br>Kommunikation, Angst, Polarisierung und Verantwortung im digitalen Zeitalter.</li>
-        <li><strong>Technologie &amp; Risiko</strong><br>Wie Fortschritt Stabilität und Sicherheit verändert.</li>
-        <li><strong>Identität &amp; Zusammenhalt</strong><br>Zugehörigkeit, Trauma und die Frage, was eine Gemeinschaft trägt.</li>
-      </ul>
-
-      <div class="cta-row">
-        <a class="btn" href="mailto:kontakt@alexanderforum.org?subject=Anfrage%20Erstgespräch">Termin anfragen</a>
-        <a class="btn btn-secondary" href="/viewer/index.html?file=/Alexander-Forum_Positionspapier_2025.pdf&title=Positionspapier%202025">Positionspapier 2025 ansehen</a>
+        <article class="pub-card">
+          <div class="pub-meta"><span class="pill">PSYCHISCHE GESUNDHEIT</span></div>
+          <h3>Psychische Gesundheit &amp; Prävention</h3>
+          <p>Psychosoziale Versorgung, Suchtprävention, Public Health und soziale Infrastruktur.</p>
+        </article>
+        <article class="pub-card">
+          <div class="pub-meta"><span class="pill">DIGITALE ÖFFENTLICHKEIT</span></div>
+          <h3>Informationsökologie &amp; Demokratie</h3>
+          <p>Wie digitale Plattformen Aufmerksamkeit, Debatten und gemeinsames Wirklichkeitsverständnis verändern.</p>
+        </article>
       </div>
 
       <h2 id="kontakt">Kontakt</h2>
-      <p>
-        Für Kooperationen, Briefings, Gastbeiträge oder erste Gespräche:
-      </p>
-      <div class="contact">
-        <a class="btn" href="mailto:kontakt@alexanderforum.org">kontakt@alexanderforum.org</a>
-      </div>
+      <p>Für fachlichen Austausch, Kooperationen, Gegenlesen und Fragen erreichen Sie uns unter <a href="mailto:kontakt@alexanderforum.org">kontakt@alexanderforum.org</a>.</p>
     </section>
-
-    <!-- ===================== FOOTER ===================== -->
-    <footer class="foot">
-      <p>Website: © 2025-2026 Alexander Forum für Reflexion &amp; Resilienz. Publikationen gemäß jeweiliger Lizenz.</p>
-      <nav class="foot-nav" aria-label="Footer-Navigation">
-        <a href="/">Start</a>
-        <span class="sep">·</span>
-        <a href="/ueber-uns/">Über uns</a>
-        <span class="sep">·</span>
-        <a href="/publikationen/">Publikationen</a>
-        <span class="sep">·</span>
-        <a href="/resilienz/">Resilienz-Dossier</a>
-        <span class="sep">·</span>
-        <a href="/gleichzeitigkeit/">Gleichzeitigkeit-Dossier</a>
-        <span class="sep">·</span>
-        <a href="/#kontakt">Kontakt</a>
-      </nav>
-    </footer>
   </main>
 
-  <script src="scripts.js"></script>
+  <footer class="foot">
+    <div>© Alexander Forum für Reflexion &amp; Resilienz</div>
+    <nav class="foot-nav" aria-label="Footer-Navigation">
+      <a href="/impressum/">Impressum</a>
+      <span class="sep">·</span>
+      <a href="/datenschutz/">Datenschutz</a>
+    </nav>
+  </footer>
 
-  <!-- privacy-first analytics -->
-  <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
