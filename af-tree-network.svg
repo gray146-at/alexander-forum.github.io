@@ -1,80 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" role="img" aria-label="Abstrakter Baum für Reflexion und Resilienz">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 360" role="img" aria-label="Reflexion als Zentrum des Alexander Forums mit den Arbeitsfeldern Resilienz, Polykrise, psychische Gesundheit, Prävention, digitale Öffentlichkeit und demokratischer Zusammenhalt">
   <style>
-    .trunk,.branch,.twig{fill:none;stroke:#315567;stroke-linecap:round;stroke-linejoin:round;pathLength:1;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 8s cubic-bezier(.65,0,.35,1) infinite}
-    .trunk{stroke-width:2}
-    .branch{stroke-width:1.5}
-    .twig{stroke-width:1.15}
-    .flow{fill:none;stroke:#9cc3da;stroke-width:2;stroke-linecap:round;pathLength:1;stroke-dasharray:.035 .11;stroke-dashoffset:0;opacity:0;animation:flow 8s ease-in-out infinite}
-    .node{fill:#0c1115;stroke:#9cc3da;stroke-width:1.4;r:4;opacity:0;animation:node 8s cubic-bezier(.65,0,.35,1) infinite}
-    .n2{animation-delay:.16s}.n3{animation-delay:.30s}.n4{animation-delay:.44s}.n5{animation-delay:.58s}.n6{animation-delay:.72s}.n7{animation-delay:.86s}
-    .leaf{fill:none;stroke:#315567;stroke-width:1.1;opacity:0;transform-box:fill-box;transform-origin:center;animation:leaf 8s ease-out infinite}
-    .l2{animation-delay:.18s}.l3{animation-delay:.34s}.l4{animation-delay:.5s}.l5{animation-delay:.66s}.l6{animation-delay:.82s}
-
-    @keyframes draw{
-      0%,9%{stroke-dashoffset:1;opacity:.2}
-      34%,62%{stroke-dashoffset:0;opacity:1}
-      83%,100%{stroke-dashoffset:1;opacity:.2}
-    }
-    @keyframes flow{
-      0%,31%{opacity:0;stroke-dashoffset:0}
-      38%,61%{opacity:.78;stroke-dashoffset:-.32}
-      70%,100%{opacity:0;stroke-dashoffset:-.32}
-    }
-    @keyframes node{
-      0%,12%{opacity:0;r:2}
-      34%,62%{opacity:1;r:4.3}
-      82%,100%{opacity:0;r:2}
-    }
-    @keyframes leaf{
-      0%,26%{opacity:0;transform:scale(.65) rotate(-8deg)}
-      43%,63%{opacity:.7;transform:scale(1) rotate(0)}
-      82%,100%{opacity:0;transform:scale(.82) rotate(4deg)}
-    }
+    .trunk,.branch,.twig{fill:none;stroke:#315567;stroke-linecap:round;stroke-linejoin:round;pathLength:1;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 8.5s cubic-bezier(.65,0,.35,1) infinite}
+    .trunk{stroke-width:1.9}.branch{stroke-width:1.45}.twig{stroke-width:1.1;stroke:#28495b}
+    .flow{fill:none;stroke:#9cc3da;stroke-width:1.8;stroke-linecap:round;pathLength:1;stroke-dasharray:.035 .11;stroke-dashoffset:0;opacity:0;animation:flow 8.5s ease-in-out infinite}
+    .node{fill:#0c1115;stroke:#9cc3da;stroke-width:1.4;r:4.2;opacity:0;animation:node 8.5s cubic-bezier(.65,0,.35,1) infinite}
+    .label{font-family:Inter,Arial,sans-serif;font-size:12px;letter-spacing:.075em;fill:#9fb1bc;opacity:0;animation:label 8.5s cubic-bezier(.65,0,.35,1) infinite}
+    .label.center{font-family:Georgia,serif;font-size:18px;letter-spacing:.02em;fill:#e8edf2;font-weight:700}
+    .leaf{fill:none;stroke:#315567;stroke-width:1.05;opacity:0;transform-box:fill-box;transform-origin:center;animation:leaf 8.5s ease-out infinite}
+    .d2{animation-delay:.2s}.d3{animation-delay:.4s}.d4{animation-delay:.6s}.d5{animation-delay:.8s}.d6{animation-delay:1s}
+    @keyframes draw{0%,9%{stroke-dashoffset:1;opacity:.2}31%,62%{stroke-dashoffset:0;opacity:1}82%,100%{stroke-dashoffset:1;opacity:.2}}
+    @keyframes flow{0%,27%{opacity:0;stroke-dashoffset:0}36%,61%{opacity:.8;stroke-dashoffset:-.34}68%,100%{opacity:0;stroke-dashoffset:-.34}}
+    @keyframes node{0%,11%{opacity:0;r:2}31%,62%{opacity:1;r:4.3}82%,100%{opacity:0;r:2}}
+    @keyframes label{0%,15%{opacity:0;transform:translateY(4px)}34%,62%{opacity:1;transform:translateY(0)}82%,100%{opacity:0;transform:translateY(-2px)}}
+    @keyframes leaf{0%,24%{opacity:0;transform:scale(.55) rotate(-8deg)}42%,63%{opacity:.75;transform:scale(1) rotate(0)}82%,100%{opacity:0;transform:scale(.8) rotate(4deg)}}
     @media (prefers-reduced-motion:reduce){
-      .trunk,.branch,.twig,.flow,.node,.leaf{animation:none}
-      .trunk,.branch,.twig{stroke-dashoffset:0;opacity:1}
-      .flow{opacity:.45}
-      .node{opacity:1}
-      .leaf{opacity:.65;transform:none}
+      .trunk,.branch,.twig,.flow,.node,.label,.leaf{animation:none}
+      .trunk,.branch,.twig{stroke-dashoffset:0;opacity:1}.flow{opacity:.45}.node,.label{opacity:1}.leaf{opacity:.65;transform:none}
     }
+    @media (max-width:700px){.label{font-size:9px}.label.center{font-size:15px}}
   </style>
 
-  <!-- main trunk -->
-  <path class="trunk" d="M450 242 C449 212 451 180 450 150 C449 121 450 92 450 48"/>
+  <!-- central trunk -->
+  <path class="trunk" d="M550 330 C549 285 551 235 550 190 C549 157 550 128 550 98"/>
 
-  <!-- main branches: organic, upward-growing -->
-  <path class="branch" d="M450 170 C414 153 376 132 332 112 C289 92 246 76 205 62"/>
-  <path class="branch" d="M450 162 C488 145 527 124 571 104 C616 84 659 69 701 58"/>
-  <path class="branch" d="M450 128 C421 111 395 91 372 68 C355 51 342 38 326 28"/>
-  <path class="branch" d="M450 122 C479 103 504 83 528 61 C548 43 563 30 580 22"/>
+  <!-- six organic branches -->
+  <path class="branch" d="M550 147 C505 132 458 110 405 82 C359 58 315 46 272 47"/>
+  <path class="branch d2" d="M550 147 C595 132 642 110 695 82 C741 58 785 46 828 47"/>
+  <path class="branch d3" d="M550 170 C503 166 450 154 392 136 C345 121 303 120 266 135"/>
+  <path class="branch d4" d="M550 170 C597 166 650 154 708 136 C755 121 797 120 834 135"/>
+  <path class="branch d5" d="M550 191 C505 205 458 225 408 248 C360 271 319 278 284 270"/>
+  <path class="branch d6" d="M550 191 C595 205 642 225 692 248 C740 271 781 278 816 270"/>
 
-  <!-- smaller twigs -->
-  <path class="twig" d="M332 112 C315 101 302 90 290 76"/>
-  <path class="twig" d="M205 62 C186 59 167 53 151 43"/>
-  <path class="twig" d="M571 104 C589 94 606 83 620 69"/>
-  <path class="twig" d="M701 58 C718 54 733 47 747 37"/>
-  <path class="twig" d="M372 68 C361 58 353 47 348 34"/>
-  <path class="twig" d="M528 61 C540 51 547 40 551 27"/>
+  <!-- smaller tree twigs -->
+  <path class="twig" d="M405 82 C387 69 373 57 361 43"/>
+  <path class="twig d2" d="M695 82 C713 69 727 57 739 43"/>
+  <path class="twig d3" d="M345 124 C330 105 318 93 303 86"/>
+  <path class="twig d4" d="M755 124 C770 105 782 93 797 86"/>
+  <path class="twig d5" d="M360 267 C343 248 329 238 313 231"/>
+  <path class="twig d6" d="M740 267 C757 248 771 238 787 231"/>
 
-  <!-- subtle motion along selected paths -->
-  <path class="flow" d="M450 236 C449 203 451 174 450 145 C449 118 450 91 450 52"/>
-  <path class="flow" d="M450 167 C413 151 375 130 332 111 C289 91 248 76 207 63" style="animation-delay:1.25s"/>
-  <path class="flow" d="M450 159 C488 143 526 123 570 103 C614 84 657 69 699 58" style="animation-delay:2.2s"/>
+  <!-- subtle flowing impulses -->
+  <path class="flow" d="M550 326 C549 282 551 229 550 190 C550 159 550 126 550 100"/>
+  <path class="flow" d="M550 147 C505 132 458 110 405 82 C359 58 315 46 272 47" style="animation-delay:1.35s"/>
+  <path class="flow" d="M550 170 C597 166 650 154 708 136 C755 121 797 120 834 135" style="animation-delay:2.5s"/>
 
-  <!-- nodes -->
-  <circle class="node" cx="450" cy="48"/>
-  <circle class="node n2" cx="205" cy="62"/>
-  <circle class="node n3" cx="701" cy="58"/>
-  <circle class="node n4" cx="326" cy="28"/>
-  <circle class="node n5" cx="580" cy="22"/>
-  <circle class="node n6" cx="151" cy="43"/>
-  <circle class="node n7" cx="747" cy="37"/>
+  <!-- central node and concept -->
+  <circle class="node" cx="550" cy="98" r="5.2"/>
+  <text class="label center" x="550" y="78" text-anchor="middle">REFLEXION</text>
 
-  <!-- small tree-like leaves -->
-  <path class="leaf" d="M440 39 C430 31 429 23 436 16 C443 24 446 32 440 39 Z"/>
-  <path class="leaf l2" d="M460 48 C469 38 478 36 485 41 C478 49 468 52 460 48 Z"/>
-  <path class="leaf l3" d="M184 59 C175 51 175 43 181 37 C188 45 190 53 184 59 Z"/>
-  <path class="leaf l4" d="M719 56 C727 47 736 46 743 51 C736 59 726 61 719 56 Z"/>
-  <path class="leaf l5" d="M339 30 C331 22 331 15 337 10 C344 17 346 25 339 30 Z"/>
-  <path class="leaf l6" d="M592 25 C600 16 608 15 614 20 C607 28 599 30 592 25 Z"/>
+  <!-- endpoint nodes -->
+  <circle class="node d2" cx="272" cy="47"/><circle class="node d2" cx="828" cy="47"/>
+  <circle class="node d3" cx="266" cy="135"/><circle class="node d4" cx="834" cy="135"/>
+  <circle class="node d5" cx="284" cy="270"/><circle class="node d6" cx="816" cy="270"/>
+
+  <!-- field labels -->
+  <text class="label d2" x="252" y="43" text-anchor="end">RESILIENZ</text>
+  <text class="label d2" x="848" y="43">POLYKRISE</text>
+  <text class="label d3" x="244" y="139" text-anchor="end">PSYCHISCHE GESUNDHEIT</text>
+  <text class="label d4" x="856" y="139">PRÄVENTION</text>
+  <text class="label d5" x="262" y="279" text-anchor="end">DIGITALE ÖFFENTLICHKEIT</text>
+  <text class="label d6" x="838" y="279">DEMOKRATISCHER ZUSAMMENHALT</text>
+
+  <!-- restrained leaf motifs -->
+  <path class="leaf" d="M535 86 C523 74 524 63 533 54 C542 65 543 77 535 86 Z"/>
+  <path class="leaf d2" d="M565 88 C577 76 587 75 595 82 C586 92 574 94 565 88 Z"/>
+  <path class="leaf d3" d="M296 112 C284 102 283 91 291 83 C301 92 303 103 296 112 Z"/>
+  <path class="leaf d4" d="M804 112 C816 102 817 91 809 83 C799 92 797 103 804 112 Z"/>
 </svg>
