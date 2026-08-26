@@ -86,18 +86,32 @@ blockquote{background:rgba(156,195,218,.06)!important;border-left-color:var(--af
 .subclaim::after{
   content:"";
   display:block;
-  width:min(1080px,calc(100vw - 40px));
-  height:320px;
-  margin:40px auto 0;
+  width:min(700px,calc(100vw - 48px));
+  height:240px;
+  margin:30px auto 0;
   background:url('./af-tree-network.svg') center/contain no-repeat;
   pointer-events:none;
 }
 
-@media (max-width:760px){
+/* The subtitle is text, not a pill. */
+.subclaim .tag,
+.tag{
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  padding:0!important;
+  color:var(--af-muted)!important;
+  font-size:.95rem!important;
+  font-style:italic!important;
+  font-weight:400!important;
+  box-shadow:none!important;
+}
+
+@media (max-width:700px){
   .subclaim::after{
-    width:calc(100vw - 28px);
-    height:245px;
-    margin-top:28px;
+    width:calc(100vw - 32px);
+    height:210px;
+    margin-top:22px;
   }
 }
 
