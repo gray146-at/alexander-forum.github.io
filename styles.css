@@ -1,6 +1,13 @@
 /* Alexander Forum – styles.css (Newsletter Mobile Optimiert) */
 
-:root{--af-navy:#0f2a3a;--af-navy-600:#1c3c4f;--af-ink:#121416;--af-muted:#4a5861;--af-bg:#f7f8fa;--af-card:#fff;--af-border:#e6eaee;--space-0:0;--space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.5rem;--space-6:2rem;--space-7:2.5rem;--space-8:3rem}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--af-bg);color:var(--af-ink);font-family:"Georgia","Palatino Linotype","Times New Roman",serif;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-/* Original stylesheet restored from pre-refresh commit. */
+:root{
+  --af-navy:#0f2a3a;
+  --af-navy-600:#1c3c4f;
+  --af-ink:#121416;
+  --af-muted:#4a5861;
+  --af-bg:#f7f8fa;
+  --af-card:#ffffff;
+  --af-border:#e6eaee;
+  --space-0:0;--space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.5rem;--space-6:2rem;--space-7:2.5rem;--space-8:3rem
+}
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--af-bg);color:var(--af-ink);font-family:"Georgia","Palatino Linotype","Times New Roman",serif;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
