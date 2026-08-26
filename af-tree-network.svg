@@ -1,69 +1,68 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 360" role="img" aria-label="Reflexion als Zentrum des Alexander Forums mit den Arbeitsfeldern Resilienz, Polykrise, psychische Gesundheit, Prävention, digitale Öffentlichkeit und demokratischer Zusammenhalt">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 390" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Reflexion als Zentrum des Alexander Forums mit den Arbeitsfeldern Resilienz, Polykrise, psychische Gesundheit, Prävention, digitale Öffentlichkeit und demokratischer Zusammenhalt">
   <style>
-    .trunk,.branch,.twig{fill:none;stroke:#315567;stroke-linecap:round;stroke-linejoin:round;pathLength:1;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 8.5s cubic-bezier(.65,0,.35,1) infinite}
-    .trunk{stroke-width:1.9}.branch{stroke-width:1.45}.twig{stroke-width:1.1;stroke:#28495b}
-    .flow{fill:none;stroke:#9cc3da;stroke-width:1.8;stroke-linecap:round;pathLength:1;stroke-dasharray:.035 .11;stroke-dashoffset:0;opacity:0;animation:flow 8.5s ease-in-out infinite}
-    .node{fill:#0c1115;stroke:#9cc3da;stroke-width:1.4;r:4.2;opacity:0;animation:node 8.5s cubic-bezier(.65,0,.35,1) infinite}
-    .label{font-family:Inter,Arial,sans-serif;font-size:12px;letter-spacing:.075em;fill:#9fb1bc;opacity:0;animation:label 8.5s cubic-bezier(.65,0,.35,1) infinite}
-    .label.center{font-family:Georgia,serif;font-size:18px;letter-spacing:.02em;fill:#e8edf2;font-weight:700}
-    .leaf{fill:none;stroke:#315567;stroke-width:1.05;opacity:0;transform-box:fill-box;transform-origin:center;animation:leaf 8.5s ease-out infinite}
-    .d2{animation-delay:.2s}.d3{animation-delay:.4s}.d4{animation-delay:.6s}.d5{animation-delay:.8s}.d6{animation-delay:1s}
-    @keyframes draw{0%,9%{stroke-dashoffset:1;opacity:.2}31%,62%{stroke-dashoffset:0;opacity:1}82%,100%{stroke-dashoffset:1;opacity:.2}}
-    @keyframes flow{0%,27%{opacity:0;stroke-dashoffset:0}36%,61%{opacity:.8;stroke-dashoffset:-.34}68%,100%{opacity:0;stroke-dashoffset:-.34}}
-    @keyframes node{0%,11%{opacity:0;r:2}31%,62%{opacity:1;r:4.3}82%,100%{opacity:0;r:2}}
-    @keyframes label{0%,15%{opacity:0;transform:translateY(4px)}34%,62%{opacity:1;transform:translateY(0)}82%,100%{opacity:0;transform:translateY(-2px)}}
-    @keyframes leaf{0%,24%{opacity:0;transform:scale(.55) rotate(-8deg)}42%,63%{opacity:.75;transform:scale(1) rotate(0)}82%,100%{opacity:0;transform:scale(.8) rotate(4deg)}}
+    .trunk,.branch,.twig{fill:none;stroke:#315567;stroke-linecap:round;stroke-linejoin:round;pathLength:1;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 8.8s cubic-bezier(.65,0,.35,1) infinite}
+    .trunk{stroke-width:2.1}.branch{stroke-width:1.55}.twig{stroke-width:1.15;stroke:#28495b}
+    .flow{fill:none;stroke:#9cc3da;stroke-width:2;stroke-linecap:round;pathLength:1;stroke-dasharray:.035 .11;stroke-dashoffset:0;opacity:0;animation:flow 8.8s ease-in-out infinite}
+    .node{fill:#0c1115;stroke:#9cc3da;stroke-width:1.5;opacity:0;animation:node 8.8s cubic-bezier(.65,0,.35,1) infinite}
+    .label{font-family:Arial,Inter,sans-serif;font-size:16px;font-weight:500;letter-spacing:.055em;fill:#b4c1cb;opacity:0;animation:label 8.8s cubic-bezier(.65,0,.35,1) infinite}
+    .label.center{font-family:Georgia,'Times New Roman',serif;font-size:25px;font-weight:700;letter-spacing:.02em;fill:#e8edf2}
+    .leaf{fill:none;stroke:#315567;stroke-width:1.1;opacity:0;transform-box:fill-box;transform-origin:center;animation:leaf 8.8s ease-out infinite}
+    .d2{animation-delay:.18s}.d3{animation-delay:.36s}.d4{animation-delay:.54s}.d5{animation-delay:.72s}.d6{animation-delay:.90s}
+    @keyframes draw{0%,9%{stroke-dashoffset:1;opacity:.2}34%,63%{stroke-dashoffset:0;opacity:1}84%,100%{stroke-dashoffset:1;opacity:.2}}
+    @keyframes flow{0%,28%{opacity:0;stroke-dashoffset:0}37%,61%{opacity:.78;stroke-dashoffset:-.34}70%,100%{opacity:0;stroke-dashoffset:-.34}}
+    @keyframes node{0%,12%{opacity:0;r:2}34%,63%{opacity:1;r:4.8}84%,100%{opacity:0;r:2}}
+    @keyframes label{0%,15%{opacity:0;transform:translateY(5px)}36%,63%{opacity:1;transform:translateY(0)}84%,100%{opacity:0;transform:translateY(-2px)}}
+    @keyframes leaf{0%,27%{opacity:0;transform:scale(.55) rotate(-10deg)}43%,64%{opacity:.72;transform:scale(1) rotate(0)}84%,100%{opacity:0;transform:scale(.82) rotate(4deg)}}
     @media (prefers-reduced-motion:reduce){
       .trunk,.branch,.twig,.flow,.node,.label,.leaf{animation:none}
       .trunk,.branch,.twig{stroke-dashoffset:0;opacity:1}.flow{opacity:.45}.node,.label{opacity:1}.leaf{opacity:.65;transform:none}
     }
-    @media (max-width:700px){.label{font-size:9px}.label.center{font-size:15px}}
+    @media (max-width:760px){.label{font-size:11px}.label.center{font-size:19px}}
   </style>
 
   <!-- central trunk -->
-  <path class="trunk" d="M550 330 C549 285 551 235 550 190 C549 157 550 128 550 98"/>
+  <path class="trunk" d="M600 352 C599 300 601 248 600 200 C599 159 600 120 600 72"/>
 
-  <!-- six organic branches -->
-  <path class="branch" d="M550 147 C505 132 458 110 405 82 C359 58 315 46 272 47"/>
-  <path class="branch d2" d="M550 147 C595 132 642 110 695 82 C741 58 785 46 828 47"/>
-  <path class="branch d3" d="M550 170 C503 166 450 154 392 136 C345 121 303 120 266 135"/>
-  <path class="branch d4" d="M550 170 C597 166 650 154 708 136 C755 121 797 120 834 135"/>
-  <path class="branch d5" d="M550 191 C505 205 458 225 408 248 C360 271 319 278 284 270"/>
-  <path class="branch d6" d="M550 191 C595 205 642 225 692 248 C740 271 781 278 816 270"/>
+  <!-- six main branches - no crossings -->
+  <path class="branch" d="M600 155 C548 137 492 111 429 82 C374 56 326 47 276 52"/>
+  <path class="branch d2" d="M600 155 C652 137 708 111 771 82 C826 56 874 47 924 52"/>
+  <path class="branch d3" d="M600 185 C543 181 485 171 421 156 C365 143 317 142 270 158"/>
+  <path class="branch d4" d="M600 185 C657 181 715 171 779 156 C835 143 883 142 930 158"/>
+  <path class="branch d5" d="M600 215 C548 232 494 254 437 283 C382 310 330 319 282 309"/>
+  <path class="branch d6" d="M600 215 C652 232 706 254 763 283 C818 310 870 319 918 309"/>
 
-  <!-- smaller tree twigs -->
-  <path class="twig" d="M405 82 C387 69 373 57 361 43"/>
-  <path class="twig d2" d="M695 82 C713 69 727 57 739 43"/>
-  <path class="twig d3" d="M345 124 C330 105 318 93 303 86"/>
-  <path class="twig d4" d="M755 124 C770 105 782 93 797 86"/>
-  <path class="twig d5" d="M360 267 C343 248 329 238 313 231"/>
-  <path class="twig d6" d="M740 267 C757 248 771 238 787 231"/>
+  <!-- short secondary twigs -->
+  <path class="twig" d="M430 82 C408 68 391 54 379 38"/>
+  <path class="twig d2" d="M770 82 C792 68 809 54 821 38"/>
+  <path class="twig d3" d="M365 145 C345 126 330 113 310 105"/>
+  <path class="twig d4" d="M835 145 C855 126 870 113 890 105"/>
+  <path class="twig d5" d="M382 307 C359 291 342 280 321 273"/>
+  <path class="twig d6" d="M818 307 C841 291 858 280 879 273"/>
 
-  <!-- subtle flowing impulses -->
-  <path class="flow" d="M550 326 C549 282 551 229 550 190 C550 159 550 126 550 100"/>
-  <path class="flow" d="M550 147 C505 132 458 110 405 82 C359 58 315 46 272 47" style="animation-delay:1.35s"/>
-  <path class="flow" d="M550 170 C597 166 650 154 708 136 C755 121 797 120 834 135" style="animation-delay:2.5s"/>
+  <!-- restrained flowing impulses -->
+  <path class="flow" d="M600 348 C599 299 601 248 600 215 C599 180 600 121 600 74"/>
+  <path class="flow" d="M600 155 C548 137 492 111 429 82 C374 56 326 47 276 52" style="animation-delay:1.4s"/>
+  <path class="flow" d="M600 185 C657 181 715 171 779 156 C835 143 883 142 930 158" style="animation-delay:2.6s"/>
 
   <!-- central node and concept -->
-  <circle class="node" cx="550" cy="98" r="5.2"/>
-  <text class="label center" x="550" y="78" text-anchor="middle">REFLEXION</text>
+  <circle class="node" cx="600" cy="72" r="5.6"/>
+  <text class="label center" x="600" y="43" text-anchor="middle">REFLEXION</text>
 
   <!-- endpoint nodes -->
-  <circle class="node d2" cx="272" cy="47"/><circle class="node d2" cx="828" cy="47"/>
-  <circle class="node d3" cx="266" cy="135"/><circle class="node d4" cx="834" cy="135"/>
-  <circle class="node d5" cx="284" cy="270"/><circle class="node d6" cx="816" cy="270"/>
+  <circle class="node d2" cx="276" cy="52" r="4.8"/><circle class="node d2" cx="924" cy="52" r="4.8"/>
+  <circle class="node d3" cx="270" cy="158" r="4.8"/><circle class="node d4" cx="930" cy="158" r="4.8"/>
+  <circle class="node d5" cx="282" cy="309" r="4.8"/><circle class="node d6" cx="918" cy="309" r="4.8"/>
 
-  <!-- field labels -->
-  <text class="label d2" x="252" y="43" text-anchor="end">RESILIENZ</text>
-  <text class="label d2" x="848" y="43">POLYKRISE</text>
-  <text class="label d3" x="244" y="139" text-anchor="end">PSYCHISCHE GESUNDHEIT</text>
-  <text class="label d4" x="856" y="139">PRÄVENTION</text>
-  <text class="label d5" x="262" y="279" text-anchor="end">DIGITALE ÖFFENTLICHKEIT</text>
-  <text class="label d6" x="838" y="279">DEMOKRATISCHER ZUSAMMENHALT</text>
+  <!-- readable field labels -->
+  <text class="label d2" x="246" y="47" text-anchor="end">RESILIENZ</text>
+  <text class="label d2" x="954" y="47">POLYKRISE</text>
+  <text class="label d3" x="238" y="164" text-anchor="end">PSYCHISCHE GESUNDHEIT</text>
+  <text class="label d4" x="962" y="164">PRÄVENTION</text>
+  <text class="label d5" x="250" y="316" text-anchor="end">DIGITALE ÖFFENTLICHKEIT</text>
+  <text class="label d6" x="950" y="316">DEMOKRATISCHER ZUSAMMENHALT</text>
 
-  <!-- restrained leaf motifs -->
-  <path class="leaf" d="M535 86 C523 74 524 63 533 54 C542 65 543 77 535 86 Z"/>
-  <path class="leaf d2" d="M565 88 C577 76 587 75 595 82 C586 92 574 94 565 88 Z"/>
-  <path class="leaf d3" d="M296 112 C284 102 283 91 291 83 C301 92 303 103 296 112 Z"/>
-  <path class="leaf d4" d="M804 112 C816 102 817 91 809 83 C799 92 797 103 804 112 Z"/>
+  <!-- three restrained leaf motifs, attached to twigs -->
+  <path class="leaf" d="M384 49 C372 35 374 24 386 17 C395 30 394 41 384 49 Z"/>
+  <path class="leaf d2" d="M816 49 C828 35 826 24 814 17 C805 30 806 41 816 49 Z"/>
+  <path class="leaf d3" d="M330 120 C319 108 320 98 330 92 C339 103 339 113 330 120 Z"/>
 </svg>
