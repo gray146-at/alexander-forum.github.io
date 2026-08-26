@@ -82,6 +82,18 @@ blockquote{background:rgba(156,195,218,.06)!important;border-left-color:var(--af
   border-color:var(--af-navy)!important;
 }
 
+/* Animated dark logo replaces the former white logo on the homepage. */
+.logo{
+  content:url('./AF-Logo-Animation.svg');
+  width:min(760px,100%);
+  height:auto;
+  margin:0 auto 1.1rem;
+}
+.card > h1:first-of-type,
+.card > h1:first-of-type + .tag{
+  display:none;
+}
+
 /* The subtitle is text, not a pill. */
 .subclaim .tag,
 .tag{
@@ -94,6 +106,10 @@ blockquote{background:rgba(156,195,218,.06)!important;border-left-color:var(--af
   font-style:italic!important;
   font-weight:400!important;
   box-shadow:none!important;
+}
+
+@media (max-width:700px){
+  .logo{width:100%;margin-bottom:.7rem}
 }
 
 @media (max-width:900px){
