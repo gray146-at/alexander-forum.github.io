@@ -211,9 +211,18 @@
   // E-MAIL-SCHUTZ
   // Im HTML steht nur „name (at) domain“; hier wird der Link zusammengesetzt.
   // ============================================
+  // Nur diese Adressen werden zusammengesetzt; der Seitentext dient bloß als Schlüssel.
+  const POSTFAECHER = {
+    kontakt: ['kontakt', 'alexanderforum.org'],
+    research: ['research', 'alexanderforum.org']
+  };
+
   function assembleMailLinks() {
     document.querySelectorAll('[data-post-name][data-post-domain]').forEach(function(el) {
-      const address = el.getAttribute('data-post-name') + String.fromCharCode(64) + el.getAttribute('data-post-domain');
+      const schluessel = el.getAttribute('data-post-name');
+      const eintrag = Object.prototype.hasOwnProperty.call(POSTFAECHER, schluessel) ? POSTFAECHER[schluessel] : null;
+      if (!eintrag) return;
+      const address = eintrag[0] + String.fromCharCode(64) + eintrag[1];
       const a = document.createElement('a');
       a.href = 'mailto:' + address;
       a.textContent = address;
