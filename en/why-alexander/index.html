@@ -11,7 +11,7 @@
   <link rel="alternate" href="https://alexander.forum/en/why-alexander/" hreflang="en">
   <link rel="alternate" href="https://alexander.forum/warum-alexander/" hreflang="x-default">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#0f2a3a">
+  <meta name="theme-color" content="#002241">
   <meta name="description" content="The significance of the name Alexander for our forum – an attitude, not a personality cult. In-depth portraits of historical figures as sources of inspiration for resilience and reflection.">
   
   <!-- Open Graph -->
@@ -20,46 +20,32 @@
   <meta property="og:title" content="Why Alexander? | Alexander Forum">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
-  
-  <!-- Icons -->
-  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
-  
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="../../styles.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/source-serif-4-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/noto-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <header class="site-head" aria-label="Alexander Forum">
-    <nav class="mini-nav" aria-label="Main navigation">
-      <a href="/en/">Home</a>
-      <div class="nav-dropdown">
-        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
-          About
-          <span class="dropdown-arrow">▾</span>
-        </button>
-        <div class="nav-dropdown-menu" role="menu">
-          <a href="/en/about/" role="menuitem">About Us</a>
-          <a href="/en/why-alexander/" class="active" role="menuitem">Why Alexander?</a>
-        </div>
-      </div>
-      <a href="/en/#topics">Topics</a>
-      <a href="/en/#approach">Approach</a>
+<header class="kopf">
+  <div class="kopf-innen">
+    <a class="marke" href="/en/"><img src="/assets/af-logo.svg" alt="Alexander Forum für Reflexion &amp; Resilienz, home" width="1056" height="464"></a>
+    <nav class="hauptnav" aria-label="Main navigation">
       <a href="/en/publications/">Publications</a>
+      <a href="/en/#topics">Topics</a>
+      <a href="/en/about/">About the Forum</a>
+      <a href="/en/why-alexander/" aria-current="page">Why Alexander?</a>
       <a href="/en/#contact">Contact</a>
-      <a class="lang" href="/warum-alexander/" hreflang="de" aria-label="Auf Deutsch wechseln">DE</a>
+      <a class="lang" href="/warum-alexander/" hreflang="de" lang="de">Deutsch</a>
     </nav>
-    <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </header>
+  </div>
+</header>
 
   <main id="main" class="wrap">
     <section class="card">
-      <img class="logo" src="../../AF-Logo-final.svg" alt="Alexander Forum – Tree Signet" width="450" height="120" loading="eager">
 
       <h1>Why Alexander?</h1>
       <p class="tag">An Attitude, Not a Personality Cult</p>
@@ -82,9 +68,9 @@
       </div>
 
       <!-- TABLE OF CONTENTS -->
-      <nav aria-label="Table of contents" style="margin: 2.5rem 0 3rem; padding: 1.5rem; background: rgba(15,42,58,.04); border-radius: 10px; border-left: 4px solid var(--af-navy);">
-        <h2 style="margin-top: 0; font-size: 1.15rem;">Overview of Namesakes</h2>
-        <ul class="bullets" style="margin-bottom: 0;">
+      <nav aria-label="Table of contents">
+        <h2>Overview of Namesakes</h2>
+        <ul class="bullets">
           <li><a href="#alexander-great">Alexander the Great – Strategy & Adaptability</a></li>
           <li><a href="#hypatia">Hypatia of Alexandria – Education as Beacon</a></li>
           <li><a href="#david-neel">Alexandra David-Néel – Courage at the Edges</a></li>
@@ -97,7 +83,7 @@
 
       <!-- ========== ALEXANDER THE GREAT ========== -->
       <article id="alexander-great" class="portrait-deep">
-        <img class="cover" src="../../img/alexander-great.jpg" alt="Alexander the Great – Pompeii Mosaic (ca. 100 BC)" width="450" height="253" loading="eager" style="width: 100%; max-width: 450px; height: auto; border-radius: 10px; margin: 0 auto 1.5rem; display: block;">
+        <img class="cover" src="../../img/alexander-great.jpg" alt="Alexander the Great – Pompeii Mosaic (ca. 100 BC)" width="450" height="253" loading="eager">
         
         <div class="portrait-header">
           <h2>Alexander the Great</h2>
@@ -137,7 +123,7 @@
 
       <!-- ========== HYPATIA OF ALEXANDRIA ========== -->
       <article id="hypatia" class="portrait-deep">
-        <img class="cover" src="../../img/hypatia.jpg" alt="Hypatia of Alexandria" width="450" height="253" loading="lazy" style="width: 100%; max-width: 450px; height: auto; border-radius: 10px; margin: 0 auto 1.5rem; display: block;">
+        <img class="cover" src="../../img/hypatia.jpg" alt="Hypatia of Alexandria" width="450" height="253" loading="lazy">
         
         <div class="portrait-header">
           <h2>Hypatia of Alexandria</h2>
@@ -177,7 +163,7 @@
 
       <!-- ========== ALEXANDRA DAVID-NÉEL ========== -->
       <article id="david-neel" class="portrait-deep">
-        <img class="cover" src="../../img/david-neel.jpg" alt="Alexandra David-Néel in Tibetan clothing" width="450" height="253" loading="lazy" style="width: 100%; max-width: 450px; height: auto; border-radius: 10px; margin: 0 auto 1.5rem; display: block;">
+        <img class="cover" src="../../img/david-neel.jpg" alt="Alexandra David-Néel in Tibetan clothing" width="450" height="253" loading="lazy">
         
         <div class="portrait-header">
           <h2>Alexandra David-Néel</h2>
@@ -217,7 +203,7 @@
 
       <!-- ========== ALEXANDRA KOLLONTAI ========== -->
       <article id="kollontai" class="portrait-deep">
-        <img class="cover" src="../../img/kollontai.jpg" alt="Alexandra Kollontai" width="450" height="253" loading="lazy" style="width: 100%; max-width: 450px; height: auto; border-radius: 10px; margin: 0 auto 1.5rem; display: block;">
+        <img class="cover" src="../../img/kollontai.jpg" alt="Alexandra Kollontai" width="450" height="253" loading="lazy">
         
         <div class="portrait-header">
           <h2>Alexandra Kollontai</h2>
@@ -257,7 +243,7 @@
 
       <!-- ========== ALEXANDER SOLZHENITSYN ========== -->
       <article id="solzhenitsyn" class="portrait-deep">
-        <img class="cover" src="../../img/solschenizyn.jpg" alt="Alexander Solzhenitsyn" width="450" height="253" loading="lazy" style="width: 100%; max-width: 450px; height: auto; border-radius: 10px; margin: 0 auto 1.5rem; display: block;">
+        <img class="cover" src="../../img/solschenizyn.jpg" alt="Alexander Solzhenitsyn" width="450" height="253" loading="lazy">
         
         <div class="portrait-header">
           <h2>Alexander Solzhenitsyn</h2>
@@ -300,7 +286,7 @@
 
       <!-- ========== ALEXANDER FLEMING ========== -->
       <article id="fleming" class="portrait-deep">
-        <img class="cover" src="../../img/fleming.jpg" alt="Alexander Fleming in his laboratory" width="450" height="253" loading="lazy" style="width: 100%; max-width: 450px; height: auto; border-radius: 10px; margin: 0 auto 1.5rem; display: block;">
+        <img class="cover" src="../../img/fleming.jpg" alt="Alexander Fleming in his laboratory" width="450" height="253" loading="lazy">
         
         <div class="portrait-header">
           <h2>Alexander Fleming</h2>
@@ -343,7 +329,7 @@
 
       <!-- ========== ALEXANDER VON HUMBOLDT ========== -->
       <article id="humboldt" class="portrait-deep">
-        <img class="cover" src="../../img/humboldt.jpg" alt="Alexander von Humboldt" width="450" height="253" loading="lazy" style="width: 100%; max-width: 450px; height: auto; border-radius: 10px; margin: 0 auto 1.5rem; display: block;">
+        <img class="cover" src="../../img/humboldt.jpg" alt="Alexander von Humboldt" width="450" height="253" loading="lazy">
         
         <div class="portrait-header">
           <h2>Alexander von Humboldt</h2>
@@ -385,7 +371,7 @@
       </article>
 
       <!-- ========== CONCLUSION ========== -->
-      <section id="conclusion" style="margin-top: 4rem; padding-top: 2.5rem; border-top: 2px solid var(--af-border);">
+      <section id="conclusion">
         <h2>Conclusion: Alexander as Method</h2>
         <p class="lead">
           These seven figures show: <strong>Resilience has many faces.</strong> It emerges through education (Hypatia), courage (David-Néel), solidarity (Kollontai), truth (Solzhenitsyn), error culture (Fleming), systems thinking (Humboldt), and strategic adaptation (Alexander the Great). None of these figures is perfect – all have dark sides, blind spots, contradictions.
@@ -409,32 +395,30 @@
         </p>
       </section>
 
-      <div class="cta-row" style="margin-top: 3rem;">
+      <div class="cta-row">
         <a class="btn" href="/en/#topics">Our Topics</a>
         <a class="btn btn-secondary" href="/en/publications/">Publications</a>
         <a class="btn btn-secondary" href="/en/#contact">Get in Touch</a>
       </div>
 
     </section>
-
-    <footer class="foot">
-      <p>© 2025-2026 Alexander Forum for Reflection &amp; Resilience. All rights reserved.</p>
-      <nav class="foot-nav" aria-label="Footer navigation">
-        <a href="/en/">Home</a>
-        <span class="sep">·</span>
-        <a href="/en/about/">About</a>
-        <span class="sep">·</span>
-        <a href="/en/publications/">Publications</a>
-        <span class="sep">·</span>
-        <a href="/en/resilience/">Resilience Dossier</a>
-        <span class="sep">·</span>
-        <a href="/en/era-of-simultaneity/">Era of Simultaneity</a>
-        <span class="sep">·</span>
-        <a href="/en/#contact">Contact</a>
-      </nav>
-    </footer>
   </main>
 
-  <script src="../../scripts.js"></script>
+<footer class="fuss">
+  <div class="fuss-innen">
+    <div class="fuss-marke"><img src="/assets/af-logo-weiss.svg" alt="Alexander Forum für Reflexion &amp; Resilienz" width="1056" height="464"><p>Vienna</p></div>
+    <nav class="foot-nav" aria-label="Footer navigation">
+      <a href="/en/publications/">Publications</a>
+      <a href="/en/about/">About the Forum</a>
+      <a href="/en/why-alexander/">Why Alexander?</a>
+      <a href="/en/#contact">Contact</a>
+      <a href="/en/imprint/">Imprint</a>
+      <a href="/en/privacy/">Privacy policy</a>
+    </nav>
+    <p class="fuss-klein">Publications under CC BY-NC-SA 4.0 unless stated otherwise. © 2025–2026 Alexander Forum für Reflexion &amp; Resilienz.</p>
+  </div>
+</footer>
+
+  <script src="/scripts.js" defer></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
   <link rel="alternate" href="https://alexander.forum/en/publications/" hreflang="en">
   <link rel="alternate" href="https://alexander.forum/publikationen/" hreflang="x-default">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#0f2a3a">
+  <meta name="theme-color" content="#002241">
   <meta name="description" content="Publications of the Alexander Forum: Foundation Dossiers and Policy Briefs – analyses on resilience, the polycrisis, and societal transformation.">
   <meta property="og:site_name" content="Alexander Forum">
   <meta property="og:url" content="https://alexander.forum/en/publications/">
@@ -18,175 +18,90 @@
   <meta property="og:description" content="Foundation Dossiers and Policy Briefs – analyses on resilience, the polycrisis, and social cohesion.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
-
-  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
-  <link rel="stylesheet" href="../../styles.css">
-
-  <style>
-    .publication-list {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;margin-top:1rem;}
-    .publication-item {border:1px solid rgba(255,255,255,0.12);padding:1.25rem;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.06);background:rgba(255,255,255,0.02);}
-    .publication-meta{display:flex;gap:.75rem;font-size:.95rem;opacity:.85;margin-bottom:.5rem;flex-wrap:wrap;}
-    .pub-type{background:rgba(255,255,255,0.06);padding:.2rem .5rem;border-radius:6px;}
-    .pub-tags{display:flex;gap:.5rem;margin:.75rem 0 1rem;flex-wrap:wrap;}
-    .tag-pill{font-size:.85rem;padding:.2rem .5rem;border-radius:999px;border:1px solid rgba(255,255,255,0.16);opacity:.9;}
-    .btn{display:inline-block;padding:.6rem 1rem;border-radius:8px;border:1px solid rgba(255,255,255,0.2);text-decoration:none;font-weight:600;}
-    .formats-muted{margin-top:2rem;padding:1rem;border:1px solid rgba(255,255,255,.12);border-radius:10px;background:rgba(255,255,255,.02);}
-  </style>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/source-serif-4-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/noto-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <header class="site-head" aria-label="Alexander Forum">
-    <nav class="mini-nav" aria-label="Main navigation">
-      <a href="/en/">Home</a>
-      <div class="nav-dropdown">
-        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
-          About
-          <span class="dropdown-arrow">▾</span>
-        </button>
-        <div class="nav-dropdown-menu" role="menu">
-          <a href="/en/about/" role="menuitem">About Us</a>
-          <a href="/en/why-alexander/" role="menuitem">Why Alexander?</a>
-        </div>
-      </div>
+<header class="kopf">
+  <div class="kopf-innen">
+    <a class="marke" href="/en/"><img src="/assets/af-logo.svg" alt="Alexander Forum für Reflexion &amp; Resilienz, home" width="1056" height="464"></a>
+    <nav class="hauptnav" aria-label="Main navigation">
+      <a href="/en/publications/" aria-current="page">Publications</a>
       <a href="/en/#topics">Topics</a>
-      <a href="/en/publications/" class="active">Publications</a>
+      <a href="/en/about/">About the Forum</a>
+      <a href="/en/why-alexander/">Why Alexander?</a>
       <a href="/en/#contact">Contact</a>
-      <a class="lang" href="/publikationen/" hreflang="de" aria-label="Auf Deutsch wechseln">DE</a>
+      <a class="lang" href="/publikationen/" hreflang="de" lang="de">Deutsch</a>
     </nav>
-    <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
+  </div>
+</header>
 
   <main id="main" class="wrap">
-    <section class="card">
-      <h1>Publications</h1>
-      <figure style="margin:1.5rem auto 2rem;text-align:center;">
-        <img src="../../publikationen/%C3%84sthetik%20Logo%20mit%20%C3%84sten.png" alt="Alexander Forum tree illustration" style="display:block;width:100%;max-width:960px;height:auto;margin:0 auto;">
-      </figure>
-      <p class="lead">
-        Our <strong>Foundation Dossiers</strong> and <strong>Policy Briefs</strong> address key challenges 
-        of our time – connecting resilience research, social sciences, and practical governance.
-      </p>
-      <p>
-        We work evidence-based and transparently, publish in open formats, and aim to strengthen 
-        public understanding of complex systems. Each dossier provides structured analysis, while 
-        future <em>Policy Briefs</em> will offer concise, action-oriented insights.
-      </p>
+  <section class="card breit">
+    <h1>Publications</h1>
+    <p class="lead">Working papers record work in progress and are open for review. Foundation dossiers offer detailed, citable analysis. All publications are open access.</p>
 
-      <h2 id="current-publications">Current Publications</h2>
-      <div class="publication-list">
+    <h2 id="list">List of publications</h2>
+    <table class="register">
+      <thead><tr><th scope="col">Number</th><th scope="col">Title</th><th scope="col">Status</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="nr">WP 2026/1</td>
+          <td class="titel"><a href="/psyinfra-at/" hreflang="de" lang="de">Psychische Gesundheit als öffentliche Infrastruktur</a><span>Working paper, June 2026, in German. A proposal to treat mental health care in Austria as steerable public infrastructure, with cost logic and open questions for validation. One-pager, policy paper and appendix as PDF.</span></td>
+          <td class="stand">Draft 1.9, open for review</td>
+        </tr>
+        <tr>
+          <td class="nr">Dossier 2025/2</td>
+          <td class="titel"><a href="/en/era-of-simultaneity/">The Era of Simultaneity</a><span>Foundation dossier, November 2025. On polycrisis, institutional overload and digital fragmentation: why climate, democracy, technology, security and health crises can no longer be understood in isolation. Full text in German.</span></td>
+          <td class="stand">Version 1.0</td>
+        </tr>
+        <tr>
+          <td class="nr">Dossier 2025/1</td>
+          <td class="titel"><a href="/en/resilience/">Resilience: Interdisciplinary Analysis and Future Competence</a><span>Foundation dossier, October 2025. Why resilience is part of the Forum’s name and how it can be strengthened: from early attachment to organisational culture, from neuroplasticity to community resilience.</span></td>
+          <td class="stand">Version 1.1</td>
+        </tr>
+      </tbody>
+    </table>
 
-        <!-- Dossier I: Resilience -->
-        <article class="publication-item">
-          <div class="publication-meta">
-            <span class="pub-type">Foundation Dossier</span>
-            <span class="pub-date">October 2025</span>
-          </div>
-          <h3>Resilience – Interdisciplinary Analysis and Future Competence</h3>
-          <p class="pub-teaser">
-            Why resilience lies at the heart of our work – and how it can be strengthened:
-            from early attachment to organizational culture, from neuroplasticity to community resilience.
-          </p>
-          <div class="pub-tags">
-            <span class="tag-pill">Resilience</span>
-            <span class="tag-pill">Psychology</span>
-            <span class="tag-pill">Systems Theory</span>
-          </div>
-          <a class="btn" href="/en/resilience/">To the Dossier</a>
-        </article>
+    <h2 id="formats">Formats</h2>
+    <dl class="zweispaltig">
+      <div><dt>Working papers</dt><dd>Drafts in progress, open for professional, institutional or public review. Version numbers show the current state; feedback goes into the next version.</dd></div>
+      <div><dt>Foundation dossiers</dt><dd>Detailed analyses of more than 20,000 words, with sources, as web pages and PDF.</dd></div>
+      <div><dt>Policy briefs</dt><dd>Planned: 3,000 to 5,000 words, concise and focused on implementation.</dd></div>
+      <div><dt>Numbering</dt><dd>Each series is counted per year, for example “AF Working Paper 2026/1” or “AF Dossier 2025/2”.</dd></div>
+    </dl>
 
-        <!-- Dossier II: Era of Simultaneity -->
-        <article class="publication-item">
-          <div class="publication-meta">
-            <span class="pub-type">Foundation Dossier</span>
-            <span class="pub-date">November 2025</span>
-          </div>
-          <h3>The Era of Simultaneity</h3>
-          <p class="pub-teaser">
-            On the logic of multiple crises and the limits of adaptation: why crises today reinforce each other – 
-            and why transformation, not mere adaptation, is required. <em>(Currently available in German only.)</em>
-          </p>
-          <div class="pub-tags">
-            <span class="tag-pill">Polycrisis</span>
-            <span class="tag-pill">Structures &amp; Institutions</span>
-            <span class="tag-pill">Transformation</span>
-          </div>
-          <a class="btn" href="/en/era-of-simultaneity/">To the Dossier</a>
-        </article>
+    <h2 id="licence">Licence and citation</h2>
+    <p>All publications are released under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">CC BY-NC-SA 4.0</a> unless stated otherwise: you may share and adapt them with attribution for non-commercial purposes, with adaptations under the same licence.</p>
+    <div class="zitieren">
+      <h3>Suggested citation</h3>
+      <p>Alexander Forum für Reflexion &amp; Resilienz (2025): Resilience: Interdisciplinary Analysis and Future Competence. AF Dossier 2025/1, version 1.1. Vienna. https://alexander.forum/en/resilience/</p>
+    </div>
+    <p class="fineprint">Please mark working drafts as such and do not cite them as final studies.</p>
+  </section>
+</main>
 
-      </div>
+<footer class="fuss">
+  <div class="fuss-innen">
+    <div class="fuss-marke"><img src="/assets/af-logo-weiss.svg" alt="Alexander Forum für Reflexion &amp; Resilienz" width="1056" height="464"><p>Vienna</p></div>
+    <nav class="foot-nav" aria-label="Footer navigation">
+      <a href="/en/publications/">Publications</a>
+      <a href="/en/about/">About the Forum</a>
+      <a href="/en/why-alexander/">Why Alexander?</a>
+      <a href="/en/#contact">Contact</a>
+      <a href="/en/imprint/">Imprint</a>
+      <a href="/en/privacy/">Privacy policy</a>
+    </nav>
+    <p class="fuss-klein">Publications under CC BY-NC-SA 4.0 unless stated otherwise. © 2025–2026 Alexander Forum für Reflexion &amp; Resilienz.</p>
+  </div>
+</footer>
 
-      <!-- Our Formats Section -->
-      <section id="formats" class="formats-muted">
-        <h2>Our Formats</h2>
-        
-        <h3>Foundation Dossiers</h3>
-        <p>
-          Comprehensive, long-form analyses (20,000+ words) that establish our conceptual framework 
-          and provide in-depth examinations of core themes. These are peer-reviewed, extensively 
-          sourced, and designed for researchers, policymakers, and practitioners seeking thorough 
-          understanding of complex resilience challenges.
-        </p>
-        <p><strong>Characteristics:</strong></p>
-        <ul class="bullets">
-          <li>Long-term perspective with historical context</li>
-          <li>Interdisciplinary synthesis across psychology, sociology, political science, and systems theory</li>
-          <li>Extensive bibliography and citation apparatus</li>
-          <li>Open access (Creative Commons licensing)</li>
-          <li>Available as structured web pages and downloadable PDFs</li>
-        </ul>
-
-        <h3>Policy Briefs</h3>
-        <p>
-          Concise, actionable documents (3,000–5,000 words) that translate research insights into 
-          practical recommendations. Policy Briefs target decision-makers in government, civil society, 
-          and private sector organizations who need evidence-based guidance without extensive academic 
-          apparatus.
-        </p>
-        <p><strong>Characteristics:</strong></p>
-        <ul class="bullets">
-          <li>Clear problem definition and context</li>
-          <li>Evidence-based analysis of policy options</li>
-          <li>Specific, implementable recommendations</li>
-          <li>Executive summary for quick reference</li>
-          <li>Available as PDF with accessible formatting</li>
-        </ul>
-
-        <h3>Licensing & Citation</h3>
-        <p>
-          All publications are released under <strong>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 
-          International (CC BY-NC-SA 4.0)</strong> unless otherwise noted. You may share and adapt our work 
-          with appropriate attribution for non-commercial purposes.
-        </p>
-        <p>
-          <strong>How to cite:</strong> Alexander Forum for Reflection & Resilience (Year). <em>Title of Publication</em>. 
-          Vienna. Available at: https://alexander.forum/[publication-path]
-        </p>
-      </section>
-
-    </section>
-
-    <footer class="foot">
-      <p>© 2025-2026 Alexander Forum for Reflection &amp; Resilience. All rights reserved.</p>
-      <nav class="foot-nav" aria-label="Footer navigation">
-        <a href="/en/">Home</a>
-        <span class="sep">·</span>
-        <a href="/en/about/">About</a>
-        <span class="sep">·</span>
-        <a href="/en/publications/">Publications</a>
-        <span class="sep">·</span>
-        <a href="/en/resilience/">Resilience Dossier</a>
-        <span class="sep">·</span>
-        <a href="/en/era-of-simultaneity/">Era of Simultaneity</a>
-        <span class="sep">·</span>
-        <a href="/en/#contact">Contact</a>
-      </nav>
-    </footer>
-  </main>
-
-  <script src="../../scripts.js"></script>
+  <script src="/scripts.js" defer></script>
 </body>
 </html>

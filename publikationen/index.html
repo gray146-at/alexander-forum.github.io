@@ -10,7 +10,7 @@
   <link rel="alternate" href="https://alexander.forum/en/publications/" hreflang="en">
   <link rel="alternate" href="https://alexander.forum/publikationen/" hreflang="x-default">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#0f2a3a">
+  <meta name="theme-color" content="#002241">
   <meta name="description" content="Publikationen des Alexander Forums: Working Papers, Grundlagendossiers und Policy Briefs – Analysen zu Resilienz, psychischer Gesundheit, Polykrise und gesellschaftlicher Transformation.">
   <meta property="og:site_name" content="Alexander Forum">
   <meta property="og:url" content="https://alexander.forum/publikationen/">
@@ -18,161 +18,90 @@
   <meta property="og:description" content="Working Papers, Grundlagendossiers und Policy Briefs – Analysen zu Resilienz, psychischer Gesundheit, Polykrise und gesellschaftlichem Zusammenhalt.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_AT">
-
-  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-  <link rel="stylesheet" href="../styles.css">
-
-  <style>
-    .publication-list {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;margin-top:1rem;}
-    .publication-item {border:1px solid rgba(255,255,255,0.12);padding:1.25rem;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.06);background:rgba(255,255,255,0.02);}
-    .publication-item.featured{border-color:rgba(156,195,218,.42);background:rgba(156,195,218,.055);}
-    .publication-meta{display:flex;gap:.75rem;font-size:.95rem;opacity:.85;margin-bottom:.5rem;flex-wrap:wrap;}
-    .pub-type{background:rgba(255,255,255,0.06);padding:.2rem .5rem;border-radius:6px;}
-    .pub-tags{display:flex;gap:.5rem;margin:.75rem 0 1rem;flex-wrap:wrap;}
-    .tag-pill{font-size:.85rem;padding:.2rem .5rem;border-radius:999px;border:1px solid rgba(255,255,255,0.16);opacity:.9;}
-    .btn{display:inline-block;padding:.6rem 1rem;border-radius:8px;border:1px solid rgba(255,255,255,0.2);text-decoration:none;font-weight:600;}
-    .formats-muted{margin-top:2rem;padding:1rem;border:1px solid rgba(255,255,255,.12);border-radius:10px;background:rgba(255,255,255,.02);}
-    .publications-key-visual{display:block;width:min(100%,960px);height:auto;margin:0 auto 2rem;border-radius:0;}
-  </style>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/source-serif-4-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/noto-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <a class="skip" href="#main">Zum Inhalt springen</a>
 
-  <header class="site-head" aria-label="Alexander Forum">
-    <nav class="mini-nav" aria-label="Hauptnavigation">
-      <a href="/">Start</a>
-      <div class="nav-dropdown">
-        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
-          Über uns
-          <span class="dropdown-arrow">▾</span>
-        </button>
-        <div class="nav-dropdown-menu" role="menu">
-          <a href="/ueber-uns/" role="menuitem">Über uns</a>
-          <a href="/warum-alexander/" role="menuitem">Warum Alexander?</a>
-        </div>
-      </div>
+<header class="kopf">
+  <div class="kopf-innen">
+    <a class="marke" href="/"><img src="/assets/af-logo.svg" alt="Alexander Forum für Reflexion &amp; Resilienz, Startseite" width="1056" height="464"></a>
+    <nav class="hauptnav" aria-label="Hauptnavigation">
+      <a href="/publikationen/" aria-current="page">Publikationen</a>
       <a href="/#themen">Themen</a>
-      <a href="/publikationen/" class="active">Publikationen</a>
+      <a href="/ueber-uns/">Über das Forum</a>
+      <a href="/warum-alexander/">Warum Alexander?</a>
       <a href="/#kontakt">Kontakt</a>
-      <a class="lang" href="/en/publications/" hreflang="en" aria-label="Switch to English">EN</a>
+      <a class="lang" href="/en/publications/" hreflang="en" lang="en">English</a>
     </nav>
-    <button class="mobile-menu-toggle" aria-label="Menü öffnen" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
+  </div>
+</header>
 
   <main id="main" class="wrap">
-    <section class="card">
-      <img class="publications-key-visual" src="./Ästhetik Logo mit Ästen.png" alt="Abstrakter Baum des Alexander Forums" loading="eager">
-      <h1>Publikationen</h1>
-      <p class="lead">
-        Unsere <strong>Working Papers</strong>, <strong>Grundlagendossiers</strong> und <strong>Policy Briefs</strong> beleuchten zentrale Zukunftsthemen
-        interdisziplinär – mit Fokus auf Resilienz, Polykrise, psychische Gesundheit und gesellschaftliche Transformation.
-      </p>
-      <p>
-        Wir arbeiten evidenzbasiert und transparent, veröffentlichen offen zugänglich und stärken
-        das Verständnis für komplexe Systeme. Working Papers markieren laufende Arbeitsstände;
-        Dossiers bieten strukturierte Analysen; künftige <em>Policy Briefs</em> liefern kompakte, umsetzungsorientierte Empfehlungen.
-      </p>
+  <section class="card breit">
+    <h1>Publikationen</h1>
+    <p class="lead">Working Papers markieren laufende Arbeitsstände und sind zur Gegenlese offen. Grundlagendossiers bieten ausführliche, zitierfähige Analysen. Alle Publikationen sind offen zugänglich.</p>
 
-      <h2 id="aktuelle-publikationen">Aktuelle Publikationen</h2>
+    <h2 id="verzeichnis">Verzeichnis</h2>
+    <table class="register">
+      <thead><tr><th scope="col">Nummer</th><th scope="col">Titel</th><th scope="col">Stand</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="nr">WP 2026/1</td>
+          <td class="titel"><a href="/psyinfra-at/">Psychische Gesundheit als öffentliche Infrastruktur</a><span>Working Paper, Juni 2026. Ein Vorschlag, psychische Versorgung in Österreich als steuerbare öffentliche Infrastruktur zu denken, mit Rechenlogik und Validierungsbedarf. One-Pager, Policy-Paper und Appendix als PDF.</span></td>
+          <td class="stand">Arbeitsfassung 1.9, offen zur Gegenlese</td>
+        </tr>
+        <tr>
+          <td class="nr">Dossier 2025/2</td>
+          <td class="titel"><a href="/gleichzeitigkeit/">Die Ära der Gleichzeitigkeit</a><span>Grundlagendossier, November 2025. Über Polykrise, institutionelle Überforderung und digitale Fragmentierung: warum Klima-, Demokratie-, Technologie-, Sicherheits- und Gesundheitskrisen nicht mehr getrennt verstanden werden können.</span></td>
+          <td class="stand">Fassung 1.0</td>
+        </tr>
+        <tr>
+          <td class="nr">Dossier 2025/1</td>
+          <td class="titel"><a href="/resilienz/">Resilienz: Interdisziplinäre Analyse und Zukunftskompetenz</a><span>Grundlagendossier, Oktober 2025. Warum Resilienz Namensbestandteil des Forums ist und wie sie gefördert werden kann: von kindlicher Bindung bis Organisationskultur, von Neuroplastizität bis Community-Resilienz.</span></td>
+          <td class="stand">Fassung 1.1</td>
+        </tr>
+      </tbody>
+    </table>
 
-      <div class="publication-list">
+    <h2 id="formate">Formate</h2>
+    <dl class="zweispaltig">
+      <div><dt>Working Papers</dt><dd>Laufende Arbeitsfassungen zur fachlichen, institutionellen oder öffentlichen Gegenlese. Fassungsnummern zeigen den Stand; Rückmeldungen fließen in die nächste Fassung ein.</dd></div>
+      <div><dt>Grundlagendossiers</dt><dd>Ausführliche Analysen mit über 20.000 Wörtern, mit Quellen, als Webseite und PDF.</dd></div>
+      <div><dt>Policy Briefs</dt><dd>Geplant: 3.000 bis 5.000 Wörter, kompakt und umsetzungsorientiert.</dd></div>
+      <div><dt>Nummerierung</dt><dd>Jede Reihe wird pro Jahr gezählt, etwa „AF Working Paper 2026/1“ oder „AF Dossier 2025/2“.</dd></div>
+    </dl>
 
-        <!-- Working Paper: PsyInfra-AT -->
-        <article class="publication-item featured">
-          <div class="publication-meta">
-            <span class="pub-type">Working Paper / Policy-Paper</span>
-            <span class="pub-date">Juni 2026</span>
-          </div>
-          <h3>Psychische Gesundheit als öffentliche Infrastruktur</h3>
-          <p class="pub-teaser">
-            Arbeitsfassung zur fachlichen, institutionellen und politischen Gegenlese: ein Vorschlag, psychische Versorgung in Österreich als steuerbare öffentliche Infrastruktur zu denken - mit Clearing, Sachleistung bei krankheitswertigem Bedarf, Nachsorge, Wiedereingliederung, Prävention, Rechenlogik und Validierungsbedarf.
-          </p>
-          <div class="pub-tags">
-            <span class="tag-pill">Psychische Gesundheit</span>
-            <span class="tag-pill">Policy</span>
-            <span class="tag-pill">Österreich</span>
-            <span class="tag-pill">Versorgungssystem</span>
-            <span class="tag-pill">Prävention</span>
-          </div>
-          <a class="btn" href="/psyinfra-at/">Zum Working Paper</a>
-        </article>
+    <h2 id="lizenz">Lizenz und Zitieren</h2>
+    <p>Alle Publikationen erscheinen unter <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de" rel="license">CC BY-NC-SA 4.0</a>, sofern nicht anders angegeben: Sie dürfen sie mit Namensnennung und für nicht kommerzielle Zwecke teilen und bearbeiten, Bearbeitungen unter derselben Lizenz.</p>
+    <div class="zitieren">
+      <h3>Zitiervorschlag</h3>
+      <p>Alexander Forum für Reflexion &amp; Resilienz (2026): Psychische Gesundheit als öffentliche Infrastruktur. AF Working Paper 2026/1, Arbeitsfassung 1.9. Wien. https://alexander.forum/psyinfra-at/</p>
+    </div>
+    <p class="fineprint">Arbeitsfassungen bitte als solche kennzeichnen und nicht als finale Studie zitieren.</p>
+  </section>
+</main>
 
-        <!-- Dossier I: Resilienz -->
-        <article class="publication-item">
-          <div class="publication-meta">
-            <span class="pub-type">Grundlagendossier</span>
-            <span class="pub-date">Oktober 2025</span>
-          </div>
-          <h3>Resilienz – Interdisziplinäre Analyse und Zukunftskompetenz</h3>
-          <p class="pub-teaser">
-            Warum Resilienz unser Namensbestandteil ist – und wie sie praktisch gefördert werden kann:
-            von kindlicher Bindung bis Organisationskultur, von Neuroplastizität bis Community-Resilienz.
-          </p>
-          <div class="pub-tags">
-            <span class="tag-pill">Resilienz</span>
-            <span class="tag-pill">Psychologie</span>
-            <span class="tag-pill">Systemtheorie</span>
-          </div>
-          <a class="btn" href="/resilienz/">Zum Dossier</a>
-        </article>
+<footer class="fuss">
+  <div class="fuss-innen">
+    <div class="fuss-marke"><img src="/assets/af-logo-weiss.svg" alt="Alexander Forum für Reflexion &amp; Resilienz" width="1056" height="464"><p>Wien</p></div>
+    <nav class="foot-nav" aria-label="Fußnavigation">
+      <a href="/publikationen/">Publikationen</a>
+      <a href="/ueber-uns/">Über das Forum</a>
+      <a href="/warum-alexander/">Warum Alexander?</a>
+      <a href="/#kontakt">Kontakt</a>
+      <a href="/impressum/">Impressum</a>
+      <a href="/datenschutz/">Datenschutz</a>
+    </nav>
+    <p class="fuss-klein">Publikationen unter CC BY-NC-SA 4.0, sofern nicht anders angegeben. © 2025–2026 Alexander Forum für Reflexion &amp; Resilienz.</p>
+  </div>
+</footer>
 
-        <!-- Dossier II: Ära der Gleichzeitigkeit -->
-        <article class="publication-item">
-          <div class="publication-meta">
-            <span class="pub-type">Grundlagendossier</span>
-            <span class="pub-date">November 2025</span>
-          </div>
-          <h3>Die Ära der Gleichzeitigkeit</h3>
-          <p class="pub-teaser">
-            Über Polykrise, institutionelle Überforderung und digitale Fragmentierung: warum Klima-,
-            Demokratie-, Technologie-, Sicherheits- und Gesundheitskrisen heute nicht mehr getrennt
-            verstanden werden können.
-          </p>
-          <div class="pub-tags">
-            <span class="tag-pill">Polykrise</span>
-            <span class="tag-pill">Institutionen</span>
-            <span class="tag-pill">Digitale Öffentlichkeit</span>
-            <span class="tag-pill">Transformation</span>
-          </div>
-          <a class="btn" href="/gleichzeitigkeit/">Zum Dossier</a>
-        </article>
-
-      </div>
-
-      <!-- Unsere Formate -->
-      <section id="formate" class="formats-muted">
-        <h2>Unsere Formate</h2>
-        <ul>
-          <li><strong>Working Papers:</strong> laufende Arbeitsfassungen zur fachlichen, institutionellen oder öffentlichen Gegenlese.</li>
-          <li><strong>Dossiers &amp; Reports:</strong> 20.000+ Wörter, Langfristperspektive, zitierfähig, Open Access (PDF).</li>
-          <li><strong>Policy Briefs:</strong> 3.000–5.000 Wörter, kompakt, umsetzungsorientiert, evidenzbasiert (PDF).</li>
-        </ul>
-        <p>Alle Veröffentlichungen erscheinen unter <strong>Creative Commons</strong> (CC BY-NC-SA 4.0), sofern nicht anders angegeben, und dürfen mit Namensnennung geteilt werden.</p>
-      </section>
-
-    </section>
-
-    <footer class="foot">
-      <p>Website: © 2025-2026 Alexander Forum für Reflexion &amp; Resilienz. Publikationen gemäß jeweiliger Lizenz.</p>
-      <nav class="foot-nav" aria-label="Footer-Navigation">
-        <a href="/">Start</a>
-        <span class="sep">·</span>
-        <a href="/ueber-uns/">Über uns</a>
-        <span class="sep">·</span>
-        <a href="/publikationen/">Publikationen</a>
-        <span class="sep">·</span>
-        <a href="/resilienz/">Resilienz-Dossier</a>
-        <span class="sep">·</span>
-        <a href="/gleichzeitigkeit/">Gleichzeitigkeit-Dossier</a>
-        <span class="sep">·</span>
-        <a href="/#kontakt">Kontakt</a>
-      </nav>
-    </footer>
-  </main>
-
-  <script src="../scripts.js"></script>
+  <script src="/scripts.js" defer></script>
 </body>
 </html>

@@ -11,7 +11,7 @@
   <link rel="alternate" href="https://alexander.forum/en/why-alexander/" hreflang="en">
   <link rel="alternate" href="https://alexander.forum/warum-alexander/" hreflang="x-default">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#0f2a3a">
+  <meta name="theme-color" content="#002241">
   <meta name="description" content="Die Bedeutung des Namens Alexander für unser Forum – eine Haltung, kein Personenkult. Tiefenporträts historischer Persönlichkeiten als Inspirationsquellen für Resilienz und Reflexion.">
   
   <!-- Open Graph -->
@@ -20,46 +20,32 @@
   <meta property="og:title" content="Warum Alexander? | Alexander Forum">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_AT">
-  
-  <!-- Icons -->
-  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-  
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/source-serif-4-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/noto-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <a class="skip" href="#main">Zum Inhalt springen</a>
 
-  <header class="site-head" aria-label="Alexander Forum">
-    <nav class="mini-nav" aria-label="Hauptnavigation">
-      <a href="/">Start</a>
-      <div class="nav-dropdown">
-        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
-          Über uns
-          <span class="dropdown-arrow">▾</span>
-        </button>
-        <div class="nav-dropdown-menu" role="menu">
-          <a href="/ueber-uns/" role="menuitem">Über uns</a>
-          <a href="/warum-alexander/" class="active" role="menuitem">Warum Alexander?</a>
-        </div>
-      </div>
-      <a href="/#themen">Themen</a>
-      <a href="/#arbeitsweise">Arbeitsweise</a>
+<header class="kopf">
+  <div class="kopf-innen">
+    <a class="marke" href="/"><img src="/assets/af-logo.svg" alt="Alexander Forum für Reflexion &amp; Resilienz, Startseite" width="1056" height="464"></a>
+    <nav class="hauptnav" aria-label="Hauptnavigation">
       <a href="/publikationen/">Publikationen</a>
+      <a href="/#themen">Themen</a>
+      <a href="/ueber-uns/">Über das Forum</a>
+      <a href="/warum-alexander/" aria-current="page">Warum Alexander?</a>
       <a href="/#kontakt">Kontakt</a>
-      <a class="lang" href="/en/why-alexander/" hreflang="en" aria-label="Switch to English">EN</a>
+      <a class="lang" href="/en/why-alexander/" hreflang="en" lang="en">English</a>
     </nav>
-    <button class="mobile-menu-toggle" aria-label="Menü öffnen" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </header>
+  </div>
+</header>
 
   <main id="main" class="wrap">
     <section class="card">
-      <img class="logo" src="../AF-Logo-final.svg" alt="Alexander Forum – Baum-Signet" width="450" height="120" loading="eager">
 
       <h1>Warum Alexander?</h1>
       <p class="tag">Eine Haltung, kein Personenkult</p>
@@ -82,9 +68,9 @@
       </div>
 
       <!-- INHALTSVERZEICHNIS -->
-      <nav aria-label="Inhaltsverzeichnis" style="margin: 2.5rem 0 3rem; padding: 1.5rem; background: rgba(15,42,58,.04); border-radius: 10px; border-left: 4px solid var(--af-navy);">
-        <h2 style="margin-top: 0; font-size: 1.15rem;">Übersicht der Namensvorbilder</h2>
-        <ul class="bullets" style="margin-bottom: 0;">
+      <nav aria-label="Inhaltsverzeichnis">
+        <h2>Übersicht der Namensvorbilder</h2>
+        <ul class="bullets">
           <li><a href="#alexander-great">Alexander der Große – Strategie & Anpassungsfähigkeit</a></li>
           <li><a href="#hypatia">Hypatia von Alexandria – Bildung als Leuchtturm</a></li>
           <li><a href="#david-neel">Alexandra David-Néel – Mut an den Rändern</a></li>
@@ -385,7 +371,7 @@
       </article>
 
       <!-- ========== FAZIT ========== -->
-      <section id="fazit" style="margin-top: 4rem; padding-top: 2.5rem; border-top: 2px solid var(--af-border);">
+      <section id="fazit">
         <h2>Fazit: Alexander als Methode</h2>
         <p class="lead">
           Diese sieben Persönlichkeiten zeigen: <strong>Resilienz hat viele Gesichter.</strong> Sie entsteht durch Bildung (Hypatia), Mut (David-Néel), Solidarität (Kollontai), Wahrheit (Solschenizyn), Fehlerkultur (Fleming), Systemdenken (Humboldt) und strategische Anpassung (Alexander der Große). Keine dieser Figuren ist perfekt – alle haben Schattenseiten, blinde Flecken, Widersprüche.
@@ -409,32 +395,30 @@
         </p>
       </section>
 
-      <div class="cta-row" style="margin-top: 3rem;">
+      <div class="cta-row">
         <a class="btn" href="/#themen">Unsere Themenfelder</a>
         <a class="btn btn-secondary" href="/publikationen/">Publikationen</a>
         <a class="btn btn-secondary" href="/#kontakt">Kontakt aufnehmen</a>
       </div>
 
     </section>
-
-    <footer class="foot">
-      <p>© 2025-2026 Alexander Forum für Reflexion &amp; Resilienz. Alle Rechte vorbehalten.</p>
-      <nav class="foot-nav" aria-label="Footer-Navigation">
-        <a href="/">Start</a>
-        <span class="sep">·</span>
-        <a href="/ueber-uns/">Über uns</a>
-        <span class="sep">·</span>
-        <a href="/publikationen/">Publikationen</a>
-        <span class="sep">·</span>
-        <a href="/resilienz/">Resilienz-Dossier</a>
-        <span class="sep">·</span>
-        <a href="/gleichzeitigkeit/">Gleichzeitigkeit-Dossier</a>
-        <span class="sep">·</span>
-        <a href="/#kontakt">Kontakt</a>
-      </nav>
-    </footer>
   </main>
 
-  <script src="../scripts.js"></script>
+<footer class="fuss">
+  <div class="fuss-innen">
+    <div class="fuss-marke"><img src="/assets/af-logo-weiss.svg" alt="Alexander Forum für Reflexion &amp; Resilienz" width="1056" height="464"><p>Wien</p></div>
+    <nav class="foot-nav" aria-label="Fußnavigation">
+      <a href="/publikationen/">Publikationen</a>
+      <a href="/ueber-uns/">Über das Forum</a>
+      <a href="/warum-alexander/">Warum Alexander?</a>
+      <a href="/#kontakt">Kontakt</a>
+      <a href="/impressum/">Impressum</a>
+      <a href="/datenschutz/">Datenschutz</a>
+    </nav>
+    <p class="fuss-klein">Publikationen unter CC BY-NC-SA 4.0, sofern nicht anders angegeben. © 2025–2026 Alexander Forum für Reflexion &amp; Resilienz.</p>
+  </div>
+</footer>
+
+  <script src="/scripts.js" defer></script>
 </body>
 </html>

@@ -1,125 +1,556 @@
-/* Alexander Forum – default dark theme */
-@import url('./styles-base.css');
+/* Alexander Forum für Reflexion & Resilienz
+   Ein Stylesheet für alle Seiten (DE/EN). Hell, Navy aus dem Logo (#002241).
+   Schriften: Source Serif 4 (Überschriften, Lesetext), Noto Sans (Gebrauchstext,
+   gemeinsam mit widerstandskraft.link und dorianrammer.at), Courier Prime nur für
+   Kennungen, Fassungen, Daten und Dateiangaben (wie „forum“ im Logo). */
+
+@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:400 700;font-display:swap;src:url('/assets/fonts/source-serif-4-latin-var.woff2') format('woff2')}
+@font-face{font-family:'Source Serif 4';font-style:italic;font-weight:400 700;font-display:swap;src:url('/assets/fonts/source-serif-4-latin-italic-var.woff2') format('woff2')}
+@font-face{font-family:'Noto Sans';font-style:normal;font-weight:400 600;font-stretch:100%;font-display:swap;src:url('/assets/fonts/noto-sans-latin-var.woff2') format('woff2')}
+@font-face{font-family:'Courier Prime';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/courier-prime-latin-400.woff2') format('woff2')}
+@font-face{font-family:'Courier Prime';font-style:normal;font-weight:700;font-display:swap;src:url('/assets/fonts/courier-prime-latin-700.woff2') format('woff2')}
 
 :root{
-  --af-bg:#0c1115;
-  --af-card:#0f1419;
-  --af-border:#1c2730;
-  --af-ink:#e8edf2;
-  --af-muted:#9fb1bc;
-  --af-navy:#9cc3da;
-  --af-navy-600:#c1d9e6;
+  --grund:#ffffff;
+  --flaeche:#f4f6f8;
+  --tinte:#14181c;
+  --grau:#56616b;
+  --linie:#dde3e8;
+  --navy:#002241;
+  --navy-hell:#e8eef4;
+  --gruen:#1f5a3c;
+  --gelb:#7a5a00;
+  --maxw:1120px;
+  --lesebreite:46rem;
+  --rand:40px;
+  --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --sans:'Noto Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'Courier Prime','Courier New',monospace;
 }
 
-html,body{
-  background:var(--af-bg)!important;
-  color:var(--af-ink)!important;
+*{box-sizing:border-box}
+
+html{
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+  scroll-behavior:smooth;
+  scroll-padding-top:24px;
 }
 
-.site-head{
-  background:var(--af-bg)!important;
-}
-.site-head.scrolled{
-  border-bottom-color:var(--af-border)!important;
-  box-shadow:0 2px 8px rgba(0,0,0,.3)!important;
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
 }
 
-.card,
-.dossier-card,
-.inspiration-card,
-.format-card,
-.publication-item,
-.modal-content,
-.nav-dropdown-menu,
-.mini-nav{
-  background:var(--af-card)!important;
-  color:var(--af-ink)!important;
+body{
+  margin:0;
+  background:var(--grund);
+  color:var(--tinte);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  hyphens:auto;
+  hyphenate-limit-chars:10 4 4;
 }
 
-.btn{
-  background:#c1d9e6!important;
-  color:#0c1115!important;
+::selection{background:var(--navy);color:#fff}
+
+a{
+  color:var(--navy);
+  text-decoration-thickness:1px;
+  text-underline-offset:.22em;
 }
-.btn:hover{background:#d3e4ee!important}
+
+a:hover{text-decoration-thickness:2px}
+
+a:focus-visible,
+button:focus-visible{
+  outline:2px solid var(--navy);
+  outline-offset:3px;
+}
+
+h1,h2,h3,h4{
+  font-family:var(--serif);
+  font-weight:600;
+  color:var(--navy);
+  line-height:1.25;
+  hyphens:manual;
+  text-wrap:balance;
+}
+
+h1{font-size:clamp(32px,4.2vw,48px);line-height:1.15;margin:0 0 24px}
+h2{font-size:28px;margin:48px 0 14px}
+h3{font-size:22px;margin:32px 0 10px}
+h4{font-size:18px;margin:20px 0 8px}
+
+p{margin:0 0 16px;text-wrap:pretty}
+
+ul,ol{margin:0 0 18px;padding-left:1.3em}
+li{margin-bottom:6px}
+
+img{max-width:100%;height:auto}
+
+blockquote{
+  margin:24px 0;
+  font-family:var(--serif);
+  font-size:21px;
+  line-height:1.5;
+}
+
+hr{border:0;border-top:1px solid var(--linie);margin:40px 0}
+
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+.skip{
+  position:absolute;left:var(--rand);top:-100px;z-index:10;
+  padding:8px 12px;background:var(--navy);color:#fff;font-size:15px;
+}
+.skip:focus{top:12px}
+
+.kennung{font-family:var(--mono);font-size:15px;color:var(--grau)}
+
+.wrap{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:0 var(--rand);
+}
+
+
+/* ---------- Kopf ---------- */
+
+.kopf{
+  border-top:6px solid var(--navy);
+  border-bottom:1px solid var(--linie);
+  background:var(--grund);
+}
+
+.kopf-innen{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:18px var(--rand);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px 32px;
+  flex-wrap:wrap;
+}
+
+.kopf .marke{display:block;line-height:0}
+.kopf .marke img{display:block;height:58px;width:auto}
+
+.hauptnav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 26px;
+  font-size:15px;
+}
+
+.hauptnav a{
+  color:var(--tinte);
+  text-decoration:none;
+}
+
+.hauptnav a:hover,
+.hauptnav a[aria-current="page"]{
+  color:var(--navy);
+  text-decoration:underline;
+}
+
+
+/* ---------- Inhalt allgemein ---------- */
+
+main{display:block}
+
+main.wrap{padding-top:56px;padding-bottom:72px}
+
+/* Lesespalte für Text-Seiten (Dossiers, Impressum, Datenschutz …) */
+.card{max-width:var(--lesebreite)}
+.card > h1:first-child,
+.card > .pub-hero:first-child h1{margin-top:0}
+
+.lead{font-size:19px;line-height:1.55}
+.fineprint,.small,.status-note{font-size:15px;color:var(--grau)}
+.tagline,.subclaim{font-family:var(--serif);font-size:20px;color:var(--grau);margin:-8px 0 24px}
+.meta{font-size:15px;color:var(--grau)}
+
+.bullets{padding-left:1.2em}
+.bullets li{margin-bottom:8px}
+
+/* Knöpfe und Links als Handlungen: schlicht, ohne Rundung */
+.btn,
 .btn-secondary{
-  background:transparent!important;
-  color:var(--af-ink)!important;
-  border-color:var(--af-muted)!important;
-}
-.btn-secondary:hover{background:#182029!important}
-
-.nav-dropdown-menu{
-  border-color:#2a3640!important;
-  box-shadow:0 4px 12px rgba(0,0,0,.4)!important;
-}
-.nav-dropdown-menu a:hover{background:rgba(156,195,218,.12)!important}
-
-.infobox{background:rgba(156,195,218,.1)!important;border-color:#2a3640!important}
-.infobox.success{background:rgba(47,133,90,.12)!important}
-.infobox.warn{background:rgba(183,121,31,.12)!important}
-.infobox.note{background:rgba(49,130,206,.12)!important}
-
-.dossier-card{border-color:#2a3640!important;box-shadow:none!important}
-.dossier-card::before{background:linear-gradient(90deg,#9cc3da 0%,#c1d9e6 100%)!important}
-
-.inspiration-card{border-color:#2a3640!important;box-shadow:none!important}
-.inspiration-card:hover{border-color:#3a4a59!important}
-.cover-placeholder{background:linear-gradient(135deg,#1c3c4f 0%,#2a4a5f 100%)!important}
-
-.modal-overlay{background:rgba(0,0,0,.72)!important}
-.modal-content{border-color:#2a3640!important;box-shadow:0 20px 60px rgba(0,0,0,.45)!important}
-.modal-close{background:var(--af-card)!important;color:var(--af-muted)!important}
-
-a,.bullets a{color:var(--af-navy)!important}
-a:hover,.bullets a:hover{color:#cfe3ee!important}
-
-blockquote{background:rgba(156,195,218,.06)!important;border-left-color:var(--af-navy)!important}
-.mobile-menu-toggle span{background:var(--af-ink)!important}
-
-.skip:focus{
-  background:var(--af-card)!important;
-  color:var(--af-ink)!important;
-  border-color:var(--af-navy)!important;
+  display:inline-block;
+  padding:9px 16px;
+  border:1px solid var(--navy);
+  background:var(--navy);
+  color:#fff;
+  font-family:var(--sans);
+  font-size:15px;
+  font-weight:500;
+  text-decoration:none;
+  line-height:1.3;
 }
 
-/* Animated dark logo replaces the former white logo on the homepage. */
-.logo{
-  content:url('./AF-Logo-Animation.svg');
-  width:min(760px,100%);
+.btn:hover{background:#0b3560;text-decoration:none}
+
+.btn-secondary,
+.btn.btn-secondary{
+  background:transparent;
+  color:var(--navy);
+}
+
+.btn-secondary:hover,
+.btn.btn-secondary:hover{background:var(--navy-hell)}
+
+.cta-row,.btn-row,.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 12px;
+  margin:20px 0 24px;
+}
+
+/* Schlagwörter: als ruhige Textzeile statt Kästchen */
+.tags,.tag-row,.pub-tags,.project-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0;
+  margin:10px 0 18px;
+  font-size:14px;
+  color:var(--grau);
+}
+
+.tag,.tag-pill,.pill,.project-meta span{
+  padding:0;
+  border:0;
+  background:none;
+  font-size:14px;
+  color:var(--grau);
+  text-transform:none;
+  letter-spacing:0;
+}
+
+.tags > * + *::before,
+.tag-row > * + *::before,
+.pub-tags > * + *::before,
+.project-meta > * + *::before{
+  content:"·";
+  margin:0 8px;
+  color:var(--grau);
+}
+
+.eyebrow,.project-kicker{
+  font-family:var(--mono);
+  font-size:15px;
+  color:var(--grau);
+  text-transform:none;
+  letter-spacing:0;
+  margin:0 0 6px;
+}
+
+/* Kästen: volle feine Linie, kein Seitenstreifen, keine Rundung */
+.infobox,.note-box,.tldr,.abstract,.key-theses,.project-status,.formats-muted,.contact{
+  border:1px solid var(--linie);
+  background:var(--flaeche);
+  padding:18px 22px;
+  margin:24px 0;
+  border-radius:0;
+}
+
+.infobox > :last-child,.note-box > :last-child,.tldr > :last-child,.abstract > :last-child,
+.key-theses > :last-child,.project-status > :last-child,.formats-muted > :last-child,.contact > :last-child{margin-bottom:0}
+
+.infobox h4,.tldr h4,.note-box h4{margin-top:0;font-size:17px}
+.infobox.success{background:#f2f7f4;border-color:#cfe1d6}
+.infobox.warn{background:#fbf8ef;border-color:#eadfbf}
+.infobox.note{background:var(--flaeche)}
+
+.key-theses h2,.abstract h2,.formats-muted h2{margin-top:0;font-size:22px}
+
+/* Raster (Matrix, Thesen, Downloads) */
+.matrix,.thesis-grid,.download-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:0 28px;
+  margin:20px 0 28px;
+  padding:0;
+  list-style:none;
+}
+
+.matrix-item,.thesis-grid li,.download-card{
+  border:0;
+  border-top:1px solid var(--linie);
+  background:none;
+  padding:14px 0 8px;
+  border-radius:0;
+  margin:0;
+}
+
+.matrix-item h4,.download-card h3{margin-top:0}
+.thesis-grid strong{display:block;font-family:var(--serif);font-size:18px;color:var(--navy);margin-bottom:4px}
+.thesis-grid span{display:block;font-size:16px;color:var(--grau)}
+
+/* Kapitel-Navigation in Dossiers: Inhaltsverzeichnis */
+.chapter-nav{
+  border-top:1px solid var(--navy);
+  border-bottom:1px solid var(--linie);
+  padding:14px 0 10px;
+  margin:28px 0 40px;
+  background:none;
+}
+
+.chapter-nav h3{margin:0 0 8px;font-size:18px}
+.chapter-nav ol{margin:0;padding-left:1.4em;columns:2;column-gap:32px;font-size:16px}
+.chapter-nav li{break-inside:avoid}
+.chapter-nav a{color:var(--tinte);text-decoration:none}
+.chapter-nav a:hover{color:var(--navy);text-decoration:underline}
+
+.chapter{
+  scroll-margin-top:24px;
+  padding:8px 0 24px;
+  border-bottom:1px solid var(--linie);
+  margin-bottom:24px;
+}
+.chapter:last-child{border-bottom:0}
+.chapter h2{margin-top:16px}
+
+/* Kopf einer Publikationsseite: Titelblatt */
+.pub-hero,
+.titelblatt{
+  border:1px solid var(--navy);
+  padding:28px 32px 26px;
+  margin:0 0 32px;
+}
+
+.pub-hero h1,.titelblatt h1{font-size:clamp(28px,3.4vw,38px);margin:0 0 10px}
+
+.titelblatt-kopf{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:6px 16px;
+  padding-bottom:12px;
+  margin-bottom:18px;
+  border-bottom:1px solid var(--linie);
+}
+
+.pub-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0;
+  font-family:var(--mono);
+  font-size:15px;
+  color:var(--grau);
+  margin:0 0 12px;
+}
+
+.pub-meta > * + *::before{content:"·";margin:0 8px}
+
+.zitieren{
+  margin:28px 0;
+  padding:16px 20px;
+  border:1px solid var(--linie);
+  background:var(--flaeche);
+}
+
+.zitieren h2,.zitieren h3{margin:0 0 8px;font-size:18px}
+.zitieren p{font-family:var(--mono);font-size:15px;line-height:1.5;margin:0;color:var(--tinte)}
+
+.license{font-size:15px;color:var(--grau)}
+
+/* Dateien */
+.dateien{list-style:none;margin:0 0 22px;padding:0;border-top:1px solid var(--linie)}
+.dateien li{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--linie);margin:0}
+.dateien a{font-weight:500}
+.dateien .groesse{font-family:var(--mono);font-size:14px;color:var(--grau);white-space:nowrap}
+.dateien .erklaerung{grid-column:1/-1;font-size:15px;color:var(--grau);margin-top:-4px}
+
+
+/* ---------- Startseite und Übersichten ---------- */
+
+.einstieg{padding:64px 0 56px}
+.einstieg h1{max-width:19em;margin-bottom:24px}
+.einstieg p{max-width:38em;font-size:18px}
+.einstieg .grundsatz{font-size:15px;color:var(--grau);margin-top:20px}
+
+.abschnitt{border-top:1px solid var(--linie);padding:52px 0 60px}
+.abschnitt > .wrap{display:grid;grid-template-columns:3fr 9fr;gap:40px}
+.abschnitt > .wrap > h2{margin:0;font-size:26px}
+.abschnitt .spalte > :first-child{margin-top:0}
+.abschnitt .spalte > :last-child{margin-bottom:0}
+.lesetext p{max-width:40em}
+
+/* Publikationsverzeichnis */
+.register{width:100%;border-collapse:collapse;font-size:16px}
+.register th{text-align:left;font-weight:500;font-size:14px;color:var(--grau);padding:0 16px 10px 0;border-bottom:1px solid var(--navy)}
+.register td{padding:14px 16px 14px 0;border-bottom:1px solid var(--linie);vertical-align:baseline}
+.register .nr{font-family:var(--mono);font-size:15px;color:var(--grau);white-space:nowrap}
+.register .titel a{font-family:var(--serif);font-size:19px;color:var(--tinte);text-decoration:none}
+.register .titel a:hover{color:var(--navy);text-decoration:underline}
+.register .titel span{display:block;font-size:15px;color:var(--grau);margin-top:2px}
+.register .stand{font-size:14px;color:var(--grau)}
+.unter{margin-top:18px;font-size:15px}
+
+/* Themen, Offene Punkte */
+.zweispaltig{display:grid;grid-template-columns:1fr 1fr;gap:24px 40px;margin:0}
+.zweispaltig > div{border-top:1px solid var(--linie);padding-top:14px}
+.zweispaltig dt,.zweispaltig strong{display:block;font-family:var(--serif);font-size:20px;font-weight:600;color:var(--navy);margin-bottom:4px}
+.zweispaltig dd{margin:0;color:var(--grau);font-size:16px}
+.zweispaltig p{margin:0;color:var(--grau);font-size:16px}
+
+.grundsaetze{list-style:none;margin:0;padding:0;font-family:var(--serif);font-size:21px;line-height:1.5}
+.grundsaetze li{padding:12px 0;border-bottom:1px solid var(--linie);margin:0}
+.grundsaetze li:first-child{border-top:1px solid var(--linie)}
+
+.person{display:grid;grid-template-columns:150px 1fr;gap:28px;align-items:start}
+.person img{display:block;width:150px;aspect-ratio:4/5;object-fit:cover;object-position:50% 15%}
+.person h3{margin:0 0 2px;font-size:22px}
+.person .rolle{font-size:15px;color:var(--grau);margin:0 0 12px}
+.person p{max-width:38em}
+
+/* Alte Teaser-Klassen (Publikationen) */
+.publication-list,.pub-grid{display:block;margin:0}
+.publication-item,.pub-card{border:0;border-top:1px solid var(--linie);padding:18px 0;background:none;border-radius:0;box-shadow:none}
+.publication-meta{font-family:var(--mono);font-size:15px;color:var(--grau);display:flex;flex-wrap:wrap;gap:0 12px}
+.pub-type,.pub-date{background:none;padding:0}
+
+
+/* ---------- Namensvorbilder („Warum Alexander?“) ---------- */
+
+.inspirations-grid{display:block}
+.inspiration-card{border:0;background:none;padding:0;margin:0 0 24px}
+
+.portrait-deep{
+  border-top:1px solid var(--navy);
+  padding-top:28px;
+  margin-top:56px;
+}
+
+.portrait-deep:first-of-type{margin-top:32px}
+
+.portrait-header h2,.portrait-header h3{margin:0 0 4px}
+.portrait-header .tagline{font-family:var(--serif);font-style:italic;font-size:19px;margin:0 0 4px;color:var(--grau)}
+.portrait-header .meta{font-family:var(--mono);font-size:15px}
+
+.cover{
+  display:block;
+  width:100%;
+  max-width:420px;
   height:auto;
-  margin:0 auto 1.1rem;
-}
-.card > h1:first-of-type,
-.card > h1:first-of-type + .tag{
-  display:none;
-}
-
-/* The subtitle is text, not a pill. */
-.subclaim .tag,
-.tag{
-  background:transparent!important;
-  border:0!important;
-  border-radius:0!important;
-  padding:0!important;
-  color:var(--af-muted)!important;
-  font-size:.95rem!important;
-  font-style:italic!important;
-  font-weight:400!important;
-  box-shadow:none!important;
+  aspect-ratio:16/10;
+  object-fit:cover;
+  margin:8px 0 20px;
+  border:0;
+  border-radius:0;
+  filter:grayscale(1) contrast(1.05);
 }
 
-@media (max-width:700px){
-  .logo{width:100%;margin-bottom:.7rem}
+.short,.teaser{color:var(--grau)}
+
+
+/* ---------- Fuß ---------- */
+
+.fuss{
+  background:var(--navy);
+  color:#dfe7ee;
+  font-size:15px;
 }
 
-@media (max-width:900px){
-  .mini-nav{
-    background:var(--af-card)!important;
-    border-left-color:var(--af-border)!important;
-    box-shadow:-4px 0 12px rgba(0,0,0,.4)!important;
-  }
+.fuss a{color:#fff}
+
+.fuss-innen{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:44px var(--rand) 36px;
+  display:grid;
+  grid-template-columns:5fr 7fr;
+  gap:28px 40px;
+}
+
+.fuss-marke img{display:block;height:64px;width:auto;margin-bottom:12px}
+.fuss-marke p{margin:0}
+
+.foot-nav{display:flex;flex-wrap:wrap;gap:8px 24px;align-content:start}
+.foot-nav .sep{display:none}
+.foot-nav a{text-decoration:none}
+.foot-nav a:hover{text-decoration:underline}
+
+.fuss-klein{
+  grid-column:1/-1;
+  margin:0;
+  padding-top:16px;
+  border-top:1px solid rgba(255,255,255,.2);
+  font-size:14px;
+  color:#b9c7d4;
+}
+
+
+/* ---------- Einwilligungsbanner (aus scripts.js) ---------- */
+
+#af-consent-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:100;display:flex;justify-content:center;pointer-events:none}
+.af-consent-box{width:min(720px,100%);background:#fff;color:var(--tinte);border:1px solid var(--navy);border-top-width:4px;padding:16px 18px;pointer-events:auto;font-family:var(--sans);box-shadow:0 12px 32px rgba(0,34,65,.18)}
+.af-consent-box p{margin:0 0 12px;font-size:15px;line-height:1.5}
+.af-consent-actions{display:flex;flex-wrap:wrap;gap:10px}
+.af-consent-actions button{min-height:42px;cursor:pointer;border:1px solid var(--navy);padding:8px 14px;font-family:inherit;font-size:15px;font-weight:500}
+#af-consent-accept{background:var(--navy);color:#fff}
+#af-consent-decline{background:#fff;color:var(--navy)}
+
+
+/* ---------- Schmal ---------- */
+
+@media (max-width:860px){
+
+  :root{--rand:22px}
+
+  body{font-size:16.5px}
+
+  .kopf .marke img{height:46px}
+  .kopf-innen{padding-top:14px;padding-bottom:14px}
+  .hauptnav{gap:4px 18px}
+
+  main.wrap{padding-top:36px;padding-bottom:48px}
+
+  .einstieg{padding:40px 0 40px}
+  .abschnitt{padding:40px 0 44px}
+  .abschnitt > .wrap{grid-template-columns:1fr;gap:20px}
+
+  .pub-hero,.titelblatt{padding:20px 18px}
+
+  .register thead{display:none}
+  .register,.register tbody,.register tr,.register td{display:block}
+  .register tr{padding:12px 0;border-bottom:1px solid var(--linie)}
+  .register td{border:0;padding:2px 0}
+
+  .zweispaltig{grid-template-columns:1fr}
+  .chapter-nav ol{columns:1}
+
+  .person{grid-template-columns:96px 1fr;gap:18px}
+  .person img{width:96px}
+
+  .fuss-innen{grid-template-columns:1fr}
+
+  .af-consent-actions button{width:100%}
 }
 
 @media print{
-  body{background:#fff!important;color:#000!important}
+  .kopf,.fuss,#af-consent-banner,.skip{display:none}
+  body{font-size:11pt}
+  a{color:inherit;text-decoration:none}
 }
+
+/* ---------- Ergänzungen Startseite ---------- */
+
+.titelblatt .titel-gross{font-size:clamp(26px,3vw,32px);line-height:1.2;margin:0 0 8px}
+.titelblatt .titel-gross a{color:inherit;text-decoration:none}
+.titelblatt .titel-gross a:hover{text-decoration:underline}
+.titelblatt .autor{font-size:15px;color:var(--grau);margin:0 0 20px}
+.titelblatt blockquote{margin:0 0 22px}
+.titelblatt p{max-width:40em}
+.titelblatt > :last-child{margin-bottom:0}
+.person + .zweispaltig{margin-top:32px}
+.card.breit{max-width:none}
+.card.breit > p,.card.breit > .zitieren{max-width:var(--lesebreite)}
+.zitieren p,.lesetext,.card p,.card li{overflow-wrap:break-word}
+.zitieren p{overflow-wrap:anywhere}
