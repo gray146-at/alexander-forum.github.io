@@ -7,15 +7,15 @@
   <meta name="robots" content="noindex,follow">
   <meta name="theme-color" content="#0f2a3a">
   <style>
-    :root{ --navy:#0f2a3a; --ink:#121416; --bg:#f7f8fa; --border:#e6eaee; }
+    :root{ --navy:#002241; --ink:#121416; --bg:#f7f8fa; --border:#e6eaee; }
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:#fff;color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+    html,body{height:100%;margin:0;background:#fff;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
     .bar{display:flex;gap:.5rem;align-items:center;justify-content:space-between;padding:.5rem .75rem;border-bottom:1px solid var(--border);background:var(--bg)}
     .left{display:flex;gap:.5rem;align-items:center}
     .brand{font-weight:700;color:var(--navy);font-size:1rem;margin-left:.25rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:60vw}
-    .btn{display:inline-block;text-decoration:none;border:1px solid var(--border);padding:.45rem .7rem;border-radius:8px;min-height:40px;line-height:1;color:var(--navy);background:#fff}
+    .btn{display:inline-block;text-decoration:none;border:1px solid var(--border);padding:.45rem .7rem;min-height:40px;line-height:1;color:var(--navy);background:#fff}
     .btn.primary{background:var(--navy);color:#fff;border-color:rgba(0,0,0,.06)}
-    .btn:hover{background:#f0f3f5}.btn.primary:hover{background:#1c3c4f}
+    .btn:hover{background:#f0f3f5}.btn.primary:hover{background:#0b3560}
     .frame{width:100%;height:calc(100vh - 57px);border:0;display:block;background:#fff}
     @media (max-width:600px){ .brand{display:none} .frame{height:calc(100vh - 54px)} }
   </style>
@@ -62,14 +62,11 @@
       const t = i18n[lang] || i18n.de;
 
       // File validation (same-origin only)
+      // Nur PDFs dieser Website: „//andere-seite.at/…“ oder „https://…“ fremder Herkunft werden abgewiesen.
       let file = '';
       try{
-        if(raw.startsWith('/')) file = raw;
-        else if(!raw.startsWith('http')) file = '/' + raw.replace(/^\.?\//,'');
-        else {
-          const u = new URL(raw, location.origin);
-          if(u.origin === location.origin) file = u.pathname + u.search + u.hash;
-        }
+        const u = new URL(raw, location.origin);
+        if(u.origin === location.origin && /^\/[A-Za-z0-9._\/%-]+\.pdf$/.test(u.pathname)) file = u.pathname;
       }catch(e){}
 
       // Set title

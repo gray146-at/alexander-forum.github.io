@@ -8,7 +8,7 @@
   <!-- SEO & Meta -->
   <link rel="canonical" href="https://alexander.forum/en/">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <meta name="theme-color" content="#0f2a3a">
+  <meta name="theme-color" content="#002241">
   <meta name="description" content="Independent Think &amp; Do Tank from Vienna for resilience, polycrisis, societal analysis, prevention and democratic cohesion.">
   <meta name="keywords" content="resilience, think tank Vienna, polycrisis, Alexander Forum, Dorian Rammer, societal analysis, systems resilience, mental health, social cohesion">
   <meta name="author" content="Alexander Forum for Reflection & Resilience">
@@ -23,13 +23,6 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="en_US">
-
-  <!-- Icons -->
-  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="../styles.css">
 
   <!-- hreflang -->
   <link rel="alternate" href="https://alexander.forum/" hreflang="de">
@@ -66,11 +59,9 @@
         "addressLocality": "Vienna",
         "addressCountry": "AT"
       },
-      "email": "kontakt@alexanderforum.org",
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "General Inquiries",
-        "email": "kontakt@alexanderforum.org",
         "areaServed": "AT",
         "availableLanguage": ["de", "en"]
       },
@@ -104,226 +95,167 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-
-  <style>
-    /* Small helper styles for homepage teasers */
-    .pub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;margin-top:.75rem}
-    .pub-card{border:1px solid rgba(255,255,255,0.12);padding:1.25rem;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.06);background:rgba(255,255,255,0.02)}
-    .pub-meta{display:flex;gap:.6rem;flex-wrap:wrap;opacity:.85;font-size:.95rem;margin-bottom:.5rem}
-    .pill{background:rgba(255,255,255,0.06);padding:.2rem .5rem;border-radius:6px}
-    .tags{display:flex;gap:.5rem;flex-wrap:wrap;margin:.75rem 0 1rem}
-    .tag{font-size:.85rem;padding:.2rem .5rem;border-radius:999px;border:1px solid rgba(255,255,255,.16);opacity:.9}
-    .cta-row{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem}
-    .btn{display:inline-block;padding:.6rem 1rem;border-radius:8px;border:1px solid rgba(255,255,255,0.2);text-decoration:none;font-weight:600}
-    .section-head{display:flex;align-items:baseline;gap:.75rem;flex-wrap:wrap}
-    .section-head .more{margin-left:auto}
-
-    /* Small addition for an institutional tone */
-    .fineprint{opacity:.85;font-size:.98rem}
-  </style>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/source-serif-4-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/noto-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <header class="site-head" aria-label="Alexander Forum">
-    <nav class="mini-nav" aria-label="Main navigation">
-      <a href="/en/">Home</a>
-      <div class="nav-dropdown">
-        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
-          About
-          <span class="dropdown-arrow">▾</span>
-        </button>
-        <div class="nav-dropdown-menu" role="menu">
-          <a href="/en/about/" role="menuitem">About Us</a>
-          <a href="/en/why-alexander/" role="menuitem">Why Alexander?</a>
-        </div>
-      </div>
-      <a href="/en/#topics">Topics</a>
+<header class="kopf">
+  <div class="kopf-innen">
+    <a class="marke" href="/en/"><img src="/assets/af-logo.svg" alt="Alexander Forum für Reflexion &amp; Resilienz, home" width="1056" height="464"></a>
+    <nav class="hauptnav" aria-label="Main navigation">
       <a href="/en/publications/">Publications</a>
+      <a href="/en/#topics">Topics</a>
+      <a href="/en/about/">About the Forum</a>
+      <a href="/en/why-alexander/">Why Alexander?</a>
       <a href="/en/#contact">Contact</a>
-      <a class="lang" href="/" hreflang="de" aria-label="Auf Deutsch wechseln">DE</a>
+      <a class="lang" href="/" hreflang="de" lang="de">Deutsch</a>
     </nav>
-    <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
+  </div>
+</header>
 
-  <main id="main" class="wrap">
-    <section class="card">
-      <img class="logo" src="../AF-Logo-final.svg" alt="Alexander Forum – tree signet" width="450" height="120" loading="eager">
+  <main id="main">
 
-      <h1>ALEXANDER FORUM</h1>
-      <p class="tag">for Reflection &amp; Resilience</p>
-      <p class="subclaim">For collective &amp; individual resilience — and bold future shaping.</p>
+<section class="einstieg">
+  <div class="wrap">
+    <h1>The Alexander Forum studies how societies and people come through crises.</h1>
+    <p>An independent, not-for-profit think &amp; do tank based in Vienna, founded in 2025 by Dorian Rammer. The Forum publishes working papers and dossiers on resilience, polycrisis, mental health and the digital public sphere: open access, with sources, and open for review.</p>
+    <p class="grundsatz">Where evidence is uncertain, we say so.</p>
+  </div>
+</section>
 
-      <h2 id="mission">Our Mission</h2>
-      <p class="lead">
-        The <strong>Alexander Forum for Reflection &amp; Resilience</strong> is an independent, non-profit
-        <em>Think&nbsp;&amp;&nbsp;Do&nbsp;Tank</em> based in Vienna.
-        We connect societal observation, strategic thinking, and practical experience
-        to open new perspectives on change, crises, and cohesion.
-      </p>
-      <p>
-        We see <strong>resilience</strong> as a shared task across politics, science, culture, and society.
-        Societal and personal crises are intertwined:
-        those under pressure can contribute less — and unresolved tensions weaken the whole.
-      </p>
-
-      <!-- NEW: short methodology / working style block -->
-      <h2 id="how-we-work" style="margin-top:1.75rem">How we work</h2>
-      <p>
-        We work interdisciplinarily, close to sources, and with a clear commitment to language.
-        Our analyses aim to name not only <em>what</em> is being debated,
-        but also <em>what is being overlooked</em>.
-      </p>
-      <p class="fineprint">
-        Where evidence is uncertain, we say so. Where debates turn too quickly moral,
-        we try to make the underlying mechanics visible. For us, reflection is not a safe distance —
-        it is a prerequisite for responsible action.
-      </p>
-
-      <!-- Publications teaser -->
-      <div class="section-head" style="margin-top:2rem">
-        <h2 id="publications">Current Publications</h2>
-        <a class="more btn" href="/en/publications/" aria-label="View all publications">View all</a>
-      </div>
-
-      <div class="pub-grid" aria-label="Publications teaser">
-        <!-- Resilience dossier -->
-        <article class="pub-card">
-          <div class="pub-meta">
-            <span class="pill">Foundation Dossier</span>
-            <span>October 2025</span>
-            <span class="pill">CC BY-NC 4.0</span>
-          </div>
-          <h3>Resilience – Interdisciplinary Analysis and Future Competence</h3>
-          <p>
-            Why resilience sits at our core — and how it can be strengthened in practice:
-            from early attachment to organizational culture, from neuroplasticity to community resilience.
-          </p>
-          <div class="tags">
-            <span class="tag">Resilience</span><span class="tag">Psychology</span><span class="tag">Systems Theory</span>
-          </div>
-          <div class="cta-row">
-            <a class="btn" href="/en/resilience/">To the Dossier</a>
-            <a class="btn" href="/viewer/index.html?file=/downloads/AF_Resilienz_Grundlagendossier_PUBLIC_v1.1.pdf&title=Resilience%20Foundation%20Dossier&return=/en/#publications">View PDF</a>
-          </div>
-        </article>
-
-        <!-- Era of simultaneity dossier -->
-        <article class="pub-card">
-          <div class="pub-meta">
-            <span class="pill">Foundation Dossier</span>
-            <span>November 2025</span>
-            <span class="pill">CC BY-NC-SA 4.0</span>
-          </div>
-          <h3>The Era of Simultaneity</h3>
-          <p>
-            On the logic of multiple crises and the limits of adaptation: why crises reinforce one another today —
-            and why transformation beyond adaptation is required.
-            <em>(Currently available in German only.)</em>
-          </p>
-          <div class="tags">
-            <span class="tag">Polycrisis</span><span class="tag">Structures &amp; Institutions</span><span class="tag">Transformation</span>
-          </div>
-          <div class="cta-row">
-            <a class="btn" href="/en/era-of-simultaneity/">To the Dossier</a>
-            <a class="btn" href="/viewer/index.html?file=/gleichzeitigkeit/AF_Die_Aera_der_Gleichzeitigkeit.pdf&title=The%20Era%20of%20Simultaneity%20(DE)&return=/en/#publications">View German PDF</a>
-          </div>
-        </article>
-      </div>
-
-      <!-- ===================== TOPICS ===================== -->
-      <h2 id="topics" style="margin-top:2.25rem">Topics</h2>
-      <p>
-        Our approach is <strong>interdisciplinary</strong> — from climate and conflict
-        to technology and security, as well as psychology and medicine.
-        We mark uncertainty transparently and publish analyses,
-        briefings and reports that offer orientation, surface blind spots, and inspire solutions.
-      </p>
-      <ul class="bullets">
-        <li><strong>Resilience &amp; Societal Stress Tests</strong><br>Between adaptation, exhaustion, and renewal.</li>
-        <li><strong>Information &amp; Trust</strong><br>Communication, fear, polarization, and responsibility in the digital age.</li>
-        <li><strong>Technology &amp; Risk</strong><br>How progress reshapes stability and security.</li>
-        <li><strong>Identity &amp; Cohesion</strong><br>Belonging, trauma, and what holds communities together.</li>
-      </ul>
-
-      <!-- NEW: compact “formats” signal -->
-      <h2 id="formats" style="margin-top:2.25rem">Formats</h2>
-      <p>
-        Our work takes shape as essays, analyses, and dossiers.
-        In addition, we develop <strong>briefings</strong> and <strong>workshops</strong> on a selective basis
-        when organizations need orientation, context, or a trauma-informed lens on complex situations.
-      </p>
-
-      <!-- ===================== NAME INSPIRATIONS (short) ===================== -->
-      <section id="name" aria-label="Why Alexander?" style="margin: 3rem 0;">
-        <header>
-          <h2>Why “Alexander”?</h2>
-          <p class="teaser" style="max-width: 680px; margin: .5rem auto 1.5rem;">
-            The name is a program — a <strong>stance, not hero worship</strong>.
-            We look to historical lives for patterns of resilience, reflection, and responsibility.
-          </p>
-        </header>
-
-        <div class="inspirations-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-          <article class="inspiration-card" role="listitem">
-            <img class="cover" src="/img/alexander-great.jpg" alt="Alexander the Great – Pompeii mosaic" width="640" height="360" loading="lazy">
-            <div class="body">
-              <h3>Alexander the Great</h3>
-              <p class="tagline">Strategy &amp; Adaptability</p>
-              <p class="short">
-                Military leader and state builder of extraordinary impact — and ambivalences.
-                Lesson: leadership under uncertainty requires speed and translation — always checked by ethics.
-              </p>
-              <a class="btn btn-secondary" href="/en/why-alexander/">More</a>
-            </div>
-          </article>
-
-          <article class="inspiration-card" role="listitem">
-            <img class="cover" src="/img/hypatia.jpg" alt="Hypatia of Alexandria" width="640" height="360" loading="lazy">
-            <div class="body">
-              <h3>Hypatia of Alexandria</h3>
-              <p class="tagline">Education as a Lighthouse</p>
-              <p class="short">
-                Philosopher and teacher in late antique Alexandria.
-                Education and knowledge transmission build cultural resilience:
-                critical thinking, dialogue, and the craft of reason.
-              </p>
-              <a class="btn btn-secondary" href="/en/why-alexander/">More</a>
-            </div>
-          </article>
+<section class="abschnitt" aria-labelledby="current">
+  <div class="wrap">
+    <h2 id="current">Current work</h2>
+    <div class="spalte">
+      <article class="titelblatt">
+        <div class="titelblatt-kopf">
+          <span class="kennung">AF Working Paper 2026/1</span>
+          <span class="kennung">Draft 1.9 · June 2026</span>
         </div>
-      </section>
+        <h3 class="titel-gross"><a href="/psyinfra-at/" hreflang="de" lang="de">Psychische Gesundheit als öffentliche Infrastruktur</a></h3>
+        <p class="autor">Mental health as public infrastructure. Concept and editing: Dorian Rammer. Working draft in German, not to be cited as a final study.</p>
+        <blockquote lang="de">„Der Status quo ist nicht billig. Er ist nur schlecht verbucht.“</blockquote>
+        <p>The status quo is not cheap; it is merely badly accounted for. The paper proposes treating mental health care in Austria as steerable public infrastructure: with clinical assessment, care as a benefit in kind where there is a clinical need, psychotherapy, clinical-psychological treatment, aftercare, reintegration and prevention. Its figures are model corridors that still need checking.</p>
+        <ul class="dateien">
+          <li><a href="/downloads/psyinfra-at/PsyInfra-AT_One-Pager_v1.9.pdf" hreflang="de">One-pager (German)</a><span class="groesse">PDF · 90 KB</span></li>
+          <li><a href="/downloads/psyinfra-at/PsyInfra-AT_Policy-Paper_v1.9.pdf" hreflang="de">Policy paper (German)</a><span class="groesse">PDF · 500 KB</span></li>
+          <li><a href="/downloads/psyinfra-at/PsyInfra-AT_Appendix_Methoden_Evidenz_v1.9.pdf" hreflang="de">Appendix: methods and evidence (German)</a><span class="groesse">PDF · 649 KB</span></li>
+        </ul>
+        <p class="fineprint">Review welcome: feedback on model logic, assumptions, cost corridors and sources to <span data-post-name="research" data-post-domain="alexanderforum.org">research (at) alexanderforum.org</span>.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-      <!-- ===================== CONTACT ===================== -->
-      <h2 id="contact">Contact</h2>
-      <p>For cooperation, briefings, or events, write to us:</p>
-      <div class="contact">
-        <a class="btn" href="mailto:kontakt@alexanderforum.org">kontakt@alexanderforum.org</a>
+<section class="abschnitt" aria-labelledby="publications">
+  <div class="wrap">
+    <h2 id="publications">Publications</h2>
+    <div class="spalte">
+      <table class="register">
+        <thead><tr><th scope="col">Number</th><th scope="col">Title</th><th scope="col">Status</th></tr></thead>
+        <tbody>
+          <tr><td class="nr">WP 2026/1</td><td class="titel"><a href="/psyinfra-at/" hreflang="de" lang="de">Psychische Gesundheit als öffentliche Infrastruktur</a><span>Working paper, June 2026, in German</span></td><td class="stand">Draft 1.9, open for review</td></tr>
+          <tr><td class="nr">Dossier 2025/2</td><td class="titel"><a href="/en/era-of-simultaneity/">The Era of Simultaneity</a><span>Foundation dossier, November 2025, full text in German</span></td><td class="stand">Version 1.0, CC BY-NC-SA 4.0</td></tr>
+          <tr><td class="nr">Dossier 2025/1</td><td class="titel"><a href="/en/resilience/">Resilience: Interdisciplinary Analysis and Future Competence</a><span>Foundation dossier, October 2025</span></td><td class="stand">Version 1.1, CC BY-NC 4.0</td></tr>
+        </tbody>
+      </table>
+      <p class="unter">Open access, licence per publication. <a href="/en/publications/">All publications</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" aria-labelledby="reflection-and-resilience">
+  <div class="wrap">
+    <h2 id="reflection-and-resilience">Why reflection and resilience belong together</h2>
+    <div class="spalte lesetext">
+      <p>We see resilience as a shared task across politics, science, culture and society. Societal and personal crises are intertwined: those under pressure can contribute less, and unresolved tensions weaken the whole.</p>
+      <p>Crises do not arise only from external events. They also arise from patterns of interpretation, blind spots, institutional routines and concepts that no longer hold. For us, reflection therefore does not mean withdrawal but clarification: examining connections, seeing side effects, tolerating ambivalence, sharpening language and making assumptions visible.</p>
+      <p>This clarification matters all the more in a climate of constant acceleration. Digital overload, algorithmic feeds, short-video formats, outrage loops and fast reward systems are changing how information is sought, absorbed and judged. Attention becomes a scarce resource; orientation becomes a task for society.</p>
+      <p>Where people, institutions and public debate are already under pressure, platform logics can deepen fractures instead of bridging them. Polarisation, numbness, crisis fatigue and the loss of a shared sense of reality are therefore not only individual problems but questions of democratic and social resilience.</p>
+      <p>Resilience begins where reflection becomes practical. It does not mean mere adaptation to overload, but the ability to recognise strain earlier, mobilise resources and change structures so that people, organisations and democratic culture remain able to act.</p>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" aria-labelledby="topics">
+  <div class="wrap">
+    <h2 id="topics">Topics</h2>
+    <dl class="zweispaltig">
+      <div><dt>Resilience</dt><dd>What keeps people and societies able to act, and what strengthens their capacity to withstand.</dd></div>
+      <div><dt>Polycrisis</dt><dd>How multiple crises, acceleration and uncertainty interact.</dd></div>
+      <div><dt>Mental health and prevention</dt><dd>Psychosocial care, addiction prevention, public health and social infrastructure.</dd></div>
+      <div><dt>Digital public sphere</dt><dd>How platforms change attention, debate and a shared understanding of reality.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="abschnitt" aria-labelledby="how-we-work">
+  <div class="wrap">
+    <h2 id="how-we-work">How we work</h2>
+    <ul class="grundsaetze">
+      <li>Interdisciplinary, close to the sources and with a clear commitment to language.</li>
+      <li>We aim to name not only what is being debated, but also what is being overlooked.</li>
+      <li>Where debates turn moral too quickly, we try to make the underlying mechanics visible.</li>
+      <li>For us, reflection is not a safe distance but a precondition for acting responsibly.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="abschnitt" aria-labelledby="who">
+  <div class="wrap">
+    <h2 id="who">Who is behind it</h2>
+    <div class="spalte">
+      <div class="person">
+        <img src="/assets/dorian-rammer.jpg" alt="Dorian Rammer, black-and-white portrait" width="400" height="500" loading="lazy">
+        <div>
+          <h3>Dorian Rammer</h3>
+          <p class="rolle">Founder and director</p>
+          <p>Born in 1996, based in Vienna. Background in politics, emergency medical services and communications, with three years of training in early childhood education. Writer and speaker on mental health, addiction and societal crises.</p>
+          <p><a href="/en/about/">About the Forum</a> · <a href="https://dorianrammer.at/en/">dorianrammer.at</a></p>
+        </div>
       </div>
-    </section>
+      <div class="zweispaltig">
+        <div><strong>Advisory board</strong><p>Being set up. We are looking for experts in psychology, political science, sociology, medicine, philosophy and related fields.</p></div>
+        <div><strong>Review and guest contributions</strong><p>Welcome, from experts, practitioners and people with lived experience of crisis.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===================== FOOTER ===================== -->
-    <footer class="foot">
-      <p>© 2025-2026 Alexander Forum for Reflection &amp; Resilience. All rights reserved.</p>
-      <nav class="foot-nav" aria-label="Footer navigation">
-        <a href="/en/">Home</a>
-        <span class="sep">·</span>
-        <a href="/en/about/">About</a>
-        <span class="sep">·</span>
-        <a href="/en/publications/">Publications</a>
-        <span class="sep">·</span>
-        <a href="/en/resilience/">Resilience Dossier</a>
-        <span class="sep">·</span>
-        <a href="/en/era-of-simultaneity/">Era of Simultaneity</a>
-        <span class="sep">·</span>
-        <a href="/en/#contact">Contact</a>
-      </nav>
-    </footer>
-  </main>
+<section class="abschnitt" aria-labelledby="contact">
+  <div class="wrap">
+    <h2 id="contact">Contact</h2>
+    <div class="spalte">
+      <p>For professional exchange, cooperation, review and questions: <span data-post-name="kontakt" data-post-domain="alexanderforum.org">kontakt (at) alexanderforum.org</span></p>
+      <p class="fineprint">Feedback on working drafts and offers of guest contributions are welcome at <span data-post-name="research" data-post-domain="alexanderforum.org">research (at) alexanderforum.org</span>.</p>
+    </div>
+  </div>
+</section>
 
-  <script src="../scripts.js"></script>
+</main>
+
+<footer class="fuss">
+  <div class="fuss-innen">
+    <div class="fuss-marke"><img src="/assets/af-logo-weiss.svg" alt="Alexander Forum für Reflexion &amp; Resilienz" width="1056" height="464"><p>Vienna</p></div>
+    <nav class="foot-nav" aria-label="Footer navigation">
+      <a href="/en/publications/">Publications</a>
+      <a href="/en/about/">About the Forum</a>
+      <a href="/en/why-alexander/">Why Alexander?</a>
+      <a href="/en/#contact">Contact</a>
+      <a href="/en/imprint/">Imprint</a>
+      <a href="/en/privacy/">Privacy policy</a>
+    </nav>
+    <p class="fuss-klein">Licences as stated in each publication. © 2025–2026 Alexander Forum für Reflexion &amp; Resilienz.</p>
+  </div>
+</footer>
+
+  <script src="/scripts.js" defer></script>
 
   <!-- privacy-first analytics -->
   <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>

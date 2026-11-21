@@ -11,7 +11,7 @@
   <link rel="alternate" href="https://alexander.forum/en/about/" hreflang="en">
   <link rel="alternate" href="https://alexander.forum/ueber-uns/" hreflang="x-default">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#0f2a3a">
+  <meta name="theme-color" content="#002241">
   <meta name="description" content="Das Alexander Forum wurde 2025 von Dorian Rammer in Wien gegründet. Wir sind ein unabhängiger Think & Do Tank für gesellschaftliche Reflexion und Resilienz.">
   
   <!-- Open Graph -->
@@ -21,13 +21,6 @@
   <meta property="og:description" content="Team, Arbeitsweise und Netzwerk des Alexander Forums für Reflexion & Resilienz.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_AT">
-  
-  <!-- Icons -->
-  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-  
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="../styles.css">
 
   <!-- Schema.org Markup -->
   <script type="application/ld+json">
@@ -64,11 +57,9 @@
         "addressLocality": "Wien",
         "addressCountry": "AT"
       },
-      "email": "kontakt@alexanderforum.org",
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "General Inquiries",
-        "email": "kontakt@alexanderforum.org",
         "areaServed": "AT",
         "availableLanguage": ["de", "en"]
       },
@@ -108,143 +99,96 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/source-serif-4-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/noto-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <a class="skip" href="#main">Zum Inhalt springen</a>
 
-  <header class="site-head" aria-label="Alexander Forum">
-    <nav class="mini-nav" aria-label="Hauptnavigation">
-      <a href="/">Start</a>
-      <div class="nav-dropdown">
-        <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
-          Über uns
-          <span class="dropdown-arrow">▾</span>
-        </button>
-        <div class="nav-dropdown-menu" role="menu">
-          <a href="/ueber-uns/" class="active" role="menuitem">Über uns</a>
-          <a href="/warum-alexander/" role="menuitem">Warum Alexander?</a>
-        </div>
-      </div>
-      <a href="/#themen">Themen</a>
+<header class="kopf">
+  <div class="kopf-innen">
+    <a class="marke" href="/"><img src="/assets/af-logo.svg" alt="Alexander Forum für Reflexion &amp; Resilienz, Startseite" width="1056" height="464"></a>
+    <nav class="hauptnav" aria-label="Hauptnavigation">
       <a href="/publikationen/">Publikationen</a>
+      <a href="/#themen">Themen</a>
+      <a href="/ueber-uns/" aria-current="page">Über das Forum</a>
+      <a href="/warum-alexander/">Warum Alexander?</a>
       <a href="/#kontakt">Kontakt</a>
-      <a class="lang" href="/en/about/" hreflang="en" aria-label="Switch to English">EN</a>
+      <a class="lang" href="/en/about/" hreflang="en" lang="en">English</a>
     </nav>
-    <button class="mobile-menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </header>
+  </div>
+</header>
 
   <main id="main" class="wrap">
-    <section class="card">
-      <img class="logo" src="../AF-Logo-final.svg" alt="Alexander Forum – Baum-Signet" width="450" height="120" loading="eager">
+  <article class="card">
+    <h1>Über das Forum</h1>
+    <p class="lead">Das Alexander Forum für Reflexion &amp; Resilienz wurde 2025 von Dorian Rammer in Wien gegründet. Es ist ein unabhängiger, nicht gewinnorientierter Think &amp; Do Tank, der gesellschaftliche Krisen und persönliche Belastungen als zusammenhängende Phänomene begreift.</p>
 
-      <h1>Über uns</h1>
-      <p class="tag">Das Alexander Forum für Reflexion & Resilienz</p>
+    <h2 id="stand">Wo das Forum steht</h2>
+    <p>Das Forum ist jung. Es wird derzeit von seinem Gründer geleitet, ein Beirat ist im Aufbau, Arbeitsfassungen sind zur Gegenlese offen. Langfristig soll daraus ein Institut für Analyse, Reflexion und konkrete Resilienzarbeit werden, offen für Kooperationen, Beiträge und gemeinsame Weiterentwicklung.</p>
+    <p class="fineprint">Rechtlich ist das Forum derzeit ein Projekt seines Gründers; ein Verein ist im Entstehen. Angaben nach Mediengesetz im <a href="/impressum/">Impressum</a>.</p>
 
-      <p class="lead">
-        Das <strong>Alexander Forum für Reflexion & Resilienz</strong> wurde 2025 von Dorian Rammer in Wien gegründet. Wir sind ein unabhängiger, gemeinnütziger Think & Do Tank, der gesellschaftliche Krisen und persönliche Belastungen als zusammenhängende Phänomene begreift.
-      </p>
+    <h2 id="ansatz">Unser Ansatz</h2>
+    <p>Wir leben in einer Zeit multipler Überlastungen: Klimakrise, geopolitische Spannungen, digitale Desorientierung, soziale Fragmentierung. Gleichzeitig steigen psychische Belastungen, Einsamkeit, Erschöpfung. Diese beiden Ebenen, das Gesellschaftliche und das Persönliche, sind miteinander verwoben: Wer unter Druck steht, kann weniger zur Gemeinschaft beitragen. Ungelöste gesellschaftliche Spannungen schwächen jeden Einzelnen.</p>
+    <p>Resilienz verstehen wir deshalb nicht als individuelles „Durchhalten“, sondern als gemeinsame Gestaltungsaufgabe. Es geht darum, Bedingungen zu schaffen, unter denen Menschen und Gemeinschaften nicht nur überleben, sondern gedeihen können.</p>
+    <p>Ein besonderer Fokus liegt für uns auf der Frage, wie Regeln, Institutionen und öffentliche Narrative mit der Zeit gehen. Dass etwas etabliert ist, bedeutet nicht automatisch, dass es weiterhin gut wirkt. Wir verstehen Kritik daher als Teil demokratischer Wartung: präzise, evidenzorientiert und mit Blick auf Nebenfolgen. Resilienz entsteht nicht nur im Individuum, sondern auch in Systemen, die lernfähig bleiben.</p>
 
-      <h2>Unser Ansatz</h2>
-      <p>
-        Wir leben in einer Zeit multipler Überlastungen: Klimakrise, geopolitische Spannungen, digitale Desorientierung, soziale Fragmentierung. Gleichzeitig steigen psychische Belastungen, Einsamkeit, Erschöpfung. Diese beiden Ebenen – das Gesellschaftliche und das Persönliche – sind miteinander verwoben: Wer unter Druck steht, kann weniger zur Gemeinschaft beitragen. Ungelöste gesellschaftliche Spannungen schwächen jeden Einzelnen.
-      </p>
-      <p>
-        Resilienz verstehen wir deshalb nicht als individuelles „Durchhalten", sondern als gemeinsame Gestaltungsaufgabe. Es geht darum, Bedingungen zu schaffen, unter denen Menschen und Gemeinschaften nicht nur überleben, sondern gedeihen können.
-      </p>
-      <p>
-        Ein besonderer Fokus liegt für uns auf der Frage, wie Regeln, Institutionen und öffentliche Narrative mit der Zeit gehen. Dass etwas etabliert ist, bedeutet nicht automatisch, dass es weiterhin gut wirkt. Wir verstehen Kritik daher als Teil demokratischer Wartung: präzise, evidenzorientiert und mit Blick auf Nebenfolgen. Resilienz entsteht nicht nur im Individuum, sondern auch in Systemen, die lernfähig bleiben.
-      </p>
+    <h2 id="arbeitsweise">Unsere Arbeitsweise</h2>
+    <p>Wir setzen auf intellektuelle Tiefe, schriftliche Präzision und interdisziplinäre Synthese. Unsere Arbeit verbindet Psychologie, Politikwissenschaft, Soziologie, Medizin, Geschichte und Philosophie. Wir benennen Unsicherheiten transparent, arbeiten mit Quellen und suchen nach Perspektiven, die in der Tagesdebatte untergehen.</p>
+    <p>Wir fördern Reflexion statt Reizüberflutung und einen Dialog, der Widersprüche aushält und verschiedene Perspektiven ernst nimmt. Dabei achten wir bewusst auf die Grenze zwischen verständlicher Verdichtung und schädlicher Verzerrung, insbesondere dort, wo öffentliche Erzählungen reale politische und institutionelle Folgen erzeugen.</p>
+    <p>Unsere Arbeit soll praxisnah bleiben: in Analysen und Working Papers und künftig auch in Briefings und Workshops, die Austausch ermöglichen und Resilienz als gemeinsame Haltung stärken.</p>
 
-      <h2>Unsere Arbeitsweise</h2>
-      <p>
-        Wir setzen auf intellektuelle Tiefe, schriftliche Präzision und interdisziplinäre Synthese. Unsere Arbeit verbindet Psychologie, Politikwissenschaft, Soziologie, Medizin, Geschichte und Philosophie. Wir benennen Unsicherheiten transparent, arbeiten mit Quellen und suchen nach Perspektiven, die in der Tagesdebatte untergehen.
-      </p>
-      <p>
-        Wir fördern <strong>Reflexion statt Reizüberflutung</strong> und einen Dialog, der Widersprüche aushält und verschiedene Perspektiven ernst nimmt. Das Forum lädt zum Diskurs ein und sucht nach Wegen, wie konstruktives Denken zu gemeinsamem Handeln werden kann. Dabei achten wir bewusst auf die Grenze zwischen verständlicher Verdichtung und schädlicher Verzerrung – insbesondere dort, wo öffentliche Erzählungen reale politische und institutionelle Folgen erzeugen.
-      </p>
-      <p>
-        Unsere Arbeit bleibt praxisnah: in Essays und Analysen, in <strong>Briefings</strong> für Organisationen und in <strong>Workshops</strong>, die Austausch ermöglichen und Resilienz als gemeinsame Haltung stärken.
-      </p>
+    <h2 id="grundsaetze">Leitprinzipien</h2>
+    <ul class="bullets">
+      <li><strong>Kontext vor Reflex:</strong> Wir fragen nicht nur, was geschieht, sondern wie Menschen und Systeme an ihre Bruchstellen geraten.</li>
+      <li><strong>Verantwortung ohne Entmenschlichung:</strong> Erklärungen ersetzen keine Grenzen, aber sie verbessern Prävention.</li>
+      <li><strong>Proportionalität:</strong> Wir achten auf das Verhältnis von Problem, Maßnahme und unbeabsichtigten Nebenwirkungen.</li>
+      <li><strong>Transparenz:</strong> Wir markieren Unsicherheiten, statt sie zu überspielen.</li>
+      <li><strong>Interdisziplinarität:</strong> Psychologie, Politik, Medizin und Sozialwissenschaften werden bewusst zusammen gelesen.</li>
+    </ul>
 
-      <h3>Leitprinzipien &amp; Qualitätsstandards</h3>
-      <p>
-        Wir arbeiten entlang klarer Grundsätze, um Komplexität nicht zu verkürzen, sondern handhabbar zu machen:
-      </p>
-      <ul>
-        <li><strong>Kontext vor Reflex:</strong> Wir fragen nicht nur, was geschieht, sondern wie Menschen und Systeme an ihre Bruchstellen geraten.</li>
-        <li><strong>Verantwortung ohne Entmenschlichung:</strong> Erklärungen ersetzen keine Grenzen, aber sie verbessern Prävention.</li>
-        <li><strong>Proportionalität:</strong> Wir achten auf das Verhältnis von Problem, Maßnahme und unbeabsichtigten Nebenwirkungen.</li>
-        <li><strong>Transparenz:</strong> Wir markieren Unsicherheiten, statt sie zu überspielen.</li>
-        <li><strong>Interdisziplinarität:</strong> Psychologie, Politik, Medizin und Sozialwissenschaften werden bewusst zusammen gelesen.</li>
-      </ul>
-
-      <h2>Team</h2>
-      
-      <h3>Dorian Rammer – Gründer &amp; Leiter</h3>
-      <p>
-        Geboren 1996, lebt in Wien. Beruflicher Hintergrund in Politik, Rettungsdienst und Kommunikation; zusätzlich drei Jahre formale Ausbildung in der Elementarpädagogik (BAKIP). Autor, Essayist und Sprecher zu psychischer Gesundheit, Sucht und gesellschaftlichen Krisenphänomenen; u. a. in ORF <em>Thema</em> 2025 vorgestellt (Reichweite ca. 550.000).
-      </p>
-      <p>
-        Dorian arbeitet an der Schnittstelle von Politik, psychosozialer Praxis und gesellschaftlicher Analyse. Seine Perspektive verbindet persönliche Krisenerfahrung mit empirischen Erkenntnissen – nicht als Illustration, sondern als analytischer Zugang zu systemischen Dynamiken: Wie entsteht Resilienz? Was brauchen Menschen, um Krisen zu bewältigen? Wo versagen Systeme – und wie lassen sie sich verbessern?
-      </p>
-      <p>
-        Methodisch prägt seine Arbeit ein trauma- und präventionsinformierter Blick auf Verantwortung, Kontext und Systembedingungen – mit besonderer Sensibilität für die Risiken öffentlicher Vereinfachung.
-      </p>
-      <p>
-        <strong>Thematische Schwerpunkte:</strong> Zwischenmenschliche Dynamiken, Trauma, Sucht, Identität, Zivilcourage, gesellschaftlicher Zusammenhalt.
-      </p>
-      <p>
-        → Persönliche Website: <a href="https://www.dorianrammer.at" target="_blank" rel="noopener">www.dorianrammer.at</a><br>
-        → Kontakt: <a href="mailto:kontakt@alexanderforum.org">kontakt@alexanderforum.org</a>
-      </p>
-
-      <h2>Beirat</h2>
-      <p>
-        <em>Im Aufbau.</em> Wir suchen Expert*innen aus Psychologie, Politikwissenschaft, Soziologie, Medizin, Philosophie und verwandten Feldern. Der Beirat berät bei der thematischen Ausrichtung, gibt Feedback zu Publikationen und erweitert das Netzwerk. Zeitaufwand: 2–3 Treffen pro Jahr, keine Bezahlung, aber Sichtbarkeit auf der Website und weiteren Medien sowie Einbindung in die Programmentwicklung.
-      </p>
-      <p>
-        <strong>Interesse?</strong> Schreiben Sie an: <a href="mailto:kontakt@alexanderforum.org">kontakt@alexanderforum.org</a>
-      </p>
-
-      <h2>Forschungsteam &amp; Netzwerk</h2>
-      <p>
-        Das Alexander Forum arbeitet interdisziplinär und netzwerkbasiert. Beiträge fließen ein aus unterschiedlichen Fachrichtungen sowie von Peer-Expert*innen mit Krisenerfahrung. Unser Netzwerk umfasst Betroffene, Fachkräfte aus der Praxis und politische Akteur*innen. Dieser Austausch verbindet wissenschaftliche, soziale und praktische Dimensionen zu einem gemeinsamen Diskursraum.
-      </p>
-
-      <h2>Gastbeiträge &amp; Kooperationen</h2>
-      <p>
-        Wir verstehen uns als Plattform für verschiedene Perspektiven und freuen uns über Gastbeiträge von Expert*innen, Praktiker*innen und Betroffenen. Wenn Sie einen Text beisteuern möchten (Essay, Analyse, Erfahrungsbericht), kontaktieren Sie uns: <a href="mailto:research@alexanderforum.org">research@alexanderforum.org</a>
-      </p>
-
-      <div class="cta-row">
-        <a class="btn" href="/#kontakt">Kontakt aufnehmen</a>
-        <a class="btn btn-secondary" href="/">Zur Startseite</a>
+    <h2 id="team">Leitung</h2>
+    <div class="person">
+      <img src="/assets/dorian-rammer.jpg" alt="Dorian Rammer, Schwarzweißporträt" width="400" height="500">
+      <div>
+        <h3>Dorian Rammer</h3>
+        <p class="rolle">Gründer und Leiter</p>
+        <p>Geboren 1996, lebt in Wien. Beruflicher Hintergrund in Politik, Rettungsdienst und Kommunikation; dazu drei Jahre formale Ausbildung in der Elementarpädagogik (BAKIP). Autor, Essayist und Sprecher zu psychischer Gesundheit, Sucht und gesellschaftlichen Krisenphänomenen; unter anderem 2025 in ORF Thema vorgestellt (Reichweite ca. 550.000).</p>
+        <p>Dorian arbeitet an der Schnittstelle von Politik, psychosozialer Praxis und gesellschaftlicher Analyse. Seine Perspektive verbindet persönliche Krisenerfahrung mit empirischen Erkenntnissen, nicht als Illustration, sondern als analytischer Zugang zu systemischen Dynamiken: Wie entsteht Resilienz? Was brauchen Menschen, um Krisen zu bewältigen? Wo versagen Systeme, und wie lassen sie sich verbessern?</p>
+        <p>Schwerpunkte: zwischenmenschliche Dynamiken, Trauma, Sucht, Identität, Zivilcourage, gesellschaftlicher Zusammenhalt.</p>
+        <p><a href="https://dorianrammer.at/">dorianrammer.at</a></p>
       </div>
+    </div>
 
-    </section>
+    <h2 id="beirat">Beirat</h2>
+    <p>Im Aufbau. Wir suchen Fachleute aus Psychologie, Politikwissenschaft, Soziologie, Medizin, Philosophie und verwandten Feldern. Der Beirat berät bei der thematischen Ausrichtung und gibt Rückmeldung zu Publikationen. Zeitaufwand: zwei bis drei Treffen im Jahr, ehrenamtlich, mit Nennung auf der Website und Einbindung in die Programmentwicklung.</p>
+    <p>Interesse? <span data-post-name="kontakt" data-post-domain="alexanderforum.org">kontakt (at) alexanderforum.org</span></p>
 
-    <footer class="foot">
-      <p>© 2025-2026 Alexander Forum für Reflexion &amp; Resilienz. Alle Rechte vorbehalten.</p>
-      <nav class="foot-nav" aria-label="Footer-Navigation">
-        <a href="/">Start</a>
-        <span class="sep">·</span>
-        <a href="/ueber-uns/">Über uns</a>
-        <span class="sep">·</span>
-        <a href="/publikationen/">Publikationen</a>
-        <span class="sep">·</span>
-        <a href="/resilienz/">Resilienz-Dossier</a>
-        <span class="sep">·</span>
-        <a href="/gleichzeitigkeit/">Gleichzeitigkeit-Dossier</a>
-        <span class="sep">·</span>
-        <a href="/#kontakt">Kontakt</a>
-      </nav>
-    </footer>
-  </main>
+    <h2 id="mitwirkung">Mitwirkung</h2>
+    <p>Das Forum ist offen für Gegenlese von Arbeitsfassungen, für Gastbeiträge (Essay, Analyse, Erfahrungsbericht) und für Kooperationen, mit Fachleuten, Praktiker*innen und Menschen mit eigener Krisenerfahrung.</p>
+    <p>Kontakt: <span data-post-name="research" data-post-domain="alexanderforum.org">research (at) alexanderforum.org</span></p>
+  </article>
+</main>
 
-  <script src="../scripts.js"></script>
+<footer class="fuss">
+  <div class="fuss-innen">
+    <div class="fuss-marke"><img src="/assets/af-logo-weiss.svg" alt="Alexander Forum für Reflexion &amp; Resilienz" width="1056" height="464"><p>Wien</p></div>
+    <nav class="foot-nav" aria-label="Fußnavigation">
+      <a href="/publikationen/">Publikationen</a>
+      <a href="/ueber-uns/">Über das Forum</a>
+      <a href="/warum-alexander/">Warum Alexander?</a>
+      <a href="/#kontakt">Kontakt</a>
+      <a href="/impressum/">Impressum</a>
+      <a href="/datenschutz/">Datenschutz</a>
+    </nav>
+    <p class="fuss-klein">Lizenzen siehe die jeweilige Publikation. © 2025–2026 Alexander Forum für Reflexion &amp; Resilienz.</p>
+  </div>
+</footer>
+
+  <script src="/scripts.js" defer></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
   <!-- SEO & Meta -->
   <link rel="canonical" href="https://alexander.forum/impulse/">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#0f2a3a">
+  <meta name="theme-color" content="#002241">
   <meta name="description" content="Impulse vom Alexander Forum – kurze Essays, Notizen & Hinweise.">
 
   <!-- Open Graph -->
@@ -19,44 +19,33 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_AT">
 
-  <!-- Icons -->
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
   <!-- Stylesheet (global) -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/source-serif-4-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/noto-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <a class="skip" href="#main">Zum Inhalt springen</a>
 
-  <!-- ===== SITE HEADER (identisch zu deinen Seiten) ===== -->
-  <header class="site-head" aria-label="Alexander Forum">
-    <nav class="mini-nav" aria-label="Hauptnavigation">
-      <a href="/">Start</a>
-      <div class="nav-dropdown">
-        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
-          Über uns
-          <span class="dropdown-arrow">▾</span>
-        </button>
-        <div class="nav-dropdown-menu" role="menu">
-          <a href="/ueber-uns/" role="menuitem">Über uns</a>
-          <a href="/warum-alexander/" role="menuitem">Warum Alexander?</a>
-        </div>
-      </div>
-      <a href="/#themen">Themen</a>
-      <a href="/#arbeitsweise">Arbeitsweise</a>
+<header class="kopf">
+  <div class="kopf-innen">
+    <a class="marke" href="/"><img src="/assets/af-logo.svg" alt="Alexander Forum für Reflexion &amp; Resilienz, Startseite" width="1056" height="464"></a>
+    <nav class="hauptnav" aria-label="Hauptnavigation">
       <a href="/publikationen/">Publikationen</a>
+      <a href="/#themen">Themen</a>
+      <a href="/ueber-uns/">Über das Forum</a>
+      <a href="/warum-alexander/">Warum Alexander?</a>
       <a href="/#kontakt">Kontakt</a>
-      <a class="lang" href="/en/" hreflang="en" aria-label="Switch to English">EN</a>
+      <a class="lang" href="/en/" hreflang="en" lang="en">English</a>
     </nav>
-    <button class="mobile-menu-toggle" aria-label="Menü öffnen" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
+  </div>
+</header>
 
   <main id="main" class="wrap">
     <section class="card">
-      <img class="logo" src="/AF-Logo-final.svg" alt="Alexander Forum – Baum-Signet" width="450" height="120" loading="eager">
 
       <h1>Impulse</h1>
       <p class="tag">Kurze Essays, Notizen & Hinweise</p>
@@ -69,16 +58,27 @@
         <p>Beiträge werden geladen …</p>
       </div>
 
-      <div class="cta-row" style="margin-top: 1rem;">
+      <div class="cta-row">
         <a class="btn" href="https://alexanderforum.substack.com/archive" target="_blank" rel="noopener">Alle Beiträge (Archiv)</a>
         <a class="btn btn-secondary" href="https://alexanderforum.substack.com/subscribe" target="_blank" rel="noopener">Newsletter abonnieren</a>
       </div>
     </section>
-
-    <footer class="foot">
-      <p>© 2025-2026 Alexander Forum für Reflexion & Resilienz. Alle Rechte vorbehalten.</p>
-    </footer>
   </main>
+
+<footer class="fuss">
+  <div class="fuss-innen">
+    <div class="fuss-marke"><img src="/assets/af-logo-weiss.svg" alt="Alexander Forum für Reflexion &amp; Resilienz" width="1056" height="464"><p>Wien</p></div>
+    <nav class="foot-nav" aria-label="Fußnavigation">
+      <a href="/publikationen/">Publikationen</a>
+      <a href="/ueber-uns/">Über das Forum</a>
+      <a href="/warum-alexander/">Warum Alexander?</a>
+      <a href="/#kontakt">Kontakt</a>
+      <a href="/impressum/">Impressum</a>
+      <a href="/datenschutz/">Datenschutz</a>
+    </nav>
+    <p class="fuss-klein">Lizenzen siehe die jeweilige Publikation. © 2025–2026 Alexander Forum für Reflexion &amp; Resilienz.</p>
+  </div>
+</footer>
 
   <!-- ===== JS: Feed laden + Mobile-Menü + Dropdown ===== -->
   <script>
@@ -168,7 +168,7 @@
   </script>
 
   <noscript>
-    <p style="text-align:center;margin:1rem 0">
+    <p>
       JavaScript ist deaktiviert. <a href="https://alexanderforum.substack.com/archive" target="_blank" rel="noopener">Zum Impulse-Archiv</a>.
     </p>
   </noscript>

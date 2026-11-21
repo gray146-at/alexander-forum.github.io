@@ -10,7 +10,7 @@
   <link rel="alternate" href="https://alexander.forum/en/resilience/" hreflang="en">
   <link rel="alternate" href="https://alexander.forum/resilienz/" hreflang="x-default">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#0f2a3a">
+  <meta name="theme-color" content="#002241">
 
   <meta name="description" content="Interdisciplinary foundation dossier on resilience: from neurobiological foundations to psychological development and societal transformation.">
 
@@ -19,9 +19,6 @@
   <meta property="og:title" content="Resilience Dossier – Alexander Forum">
   <meta property="og:description" content="Resilience as learnable resistance: biological, psychological, social, systemic.">
   <meta property="og:type" content="article">
-
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/styles.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -71,168 +68,35 @@
   }
 }
   </script>
-
-  <style>
-    /* Resilience-specific additions */
-    .chapter-nav{
-      position:sticky;
-      top:5rem;
-      background:var(--af-card);
-      border:1px solid var(--af-border);
-      border-radius:12px;
-      padding:1rem 1.1rem;
-      margin-bottom:var(--space-5);
-      box-shadow:0 4px 12px rgba(15,42,58,.06);
-      z-index:50;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
-    @supports not (backdrop-filter: blur(8px)) {
-      .chapter-nav {
-        background: var(--af-card);
-      }
-    }
-    .chapter-nav h3{
-      margin:.15rem 0 .5rem;
-      font-size:1.05rem;
-      color:var(--af-navy);
-    }
-    .chapter-nav ol{
-      margin:0;
-      padding-left:1.2rem;
-      font-size:.95rem;
-      line-height:1.8;
-    }
-    .chapter-nav a{
-      color:var(--af-ink);
-      text-decoration:none;
-      transition:color .2s;
-    }
-    .chapter-nav a:hover{
-      color:var(--af-navy);
-      text-decoration:underline;
-    }
-    .chapter-nav a.active{
-      font-weight:700;
-      color:var(--af-navy);
-    }
-
-    .chapter{
-      scroll-margin-top:6rem;
-      margin-bottom:var(--space-7);
-      padding:var(--space-5) 0;
-      border-bottom:1px solid var(--af-border);
-    }
-    .chapter:last-child{
-      border-bottom:none;
-    }
-    .chapter h2{
-      margin-top:0;
-    }
-
-    .matrix{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
-      gap:1rem;
-      margin:var(--space-5) 0;
-    }
-    .matrix-item{
-      border:1px solid var(--af-border);
-      border-radius:10px;
-      padding:.85rem 1rem;
-      background:rgba(15,42,58,.02);
-      transition:background .2s, border-color .2s;
-    }
-    .matrix-item:hover{
-      background:rgba(15,42,58,.04);
-      border-color:var(--af-navy);
-    }
-    .matrix-item h4{
-      margin:0 0 .4rem;
-      font-size:1rem;
-      color:var(--af-navy);
-    }
-    .matrix-item p{
-      margin:0;
-      font-size:.9rem;
-      color:var(--af-muted);
-    }
-
-    .tldr{
-      background:rgba(49,130,206,.06);
-      border-left:4px solid #3182ce;
-      border-radius:10px;
-      padding:1rem 1.1rem;
-      margin:var(--space-5) 0;
-    }
-    .tldr h4{
-      margin:0 0 .5rem;
-      font-size:1.05rem;
-      color:#3182ce;
-    }
-
-    @media (prefers-color-scheme: dark){
-      .chapter-nav{
-        box-shadow:none;
-        background:var(--af-card);
-        border-color:#2a3640;
-      }
-      .matrix-item{
-        background:rgba(156,195,218,.05);
-      }
-      .matrix-item:hover{
-        background:rgba(156,195,218,.1);
-        border-color:#9cc3da;
-      }
-      .tldr{
-        background:rgba(49,130,206,.12);
-      }
-    }
-
-    @media (max-width:900px){
-      .chapter-nav{
-        position:relative;
-        top:auto;
-      }
-      .chapter{
-        scroll-margin-top:2rem;
-      }
-    }
-  </style>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/source-serif-4-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/noto-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <header class="site-head" aria-label="Alexander Forum">
-    <nav class="mini-nav" aria-label="Main navigation">
-      <a href="/en/">Home</a>
-      <div class="nav-dropdown">
-        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
-          About
-          <span class="dropdown-arrow">▾</span>
-        </button>
-        <div class="nav-dropdown-menu" role="menu">
-          <a href="/en/about/" role="menuitem">About Us</a>
-          <a href="/en/why-alexander/" role="menuitem">Why Alexander?</a>
-        </div>
-      </div>
-      <a href="/en/#topics">Topics</a>
-      <a href="/en/#approach">Approach</a>
+<header class="kopf">
+  <div class="kopf-innen">
+    <a class="marke" href="/en/"><img src="/assets/af-logo.svg" alt="Alexander Forum für Reflexion &amp; Resilienz, home" width="1056" height="464"></a>
+    <nav class="hauptnav" aria-label="Main navigation">
       <a href="/en/publications/">Publications</a>
+      <a href="/en/#topics">Topics</a>
+      <a href="/en/about/">About the Forum</a>
+      <a href="/en/why-alexander/">Why Alexander?</a>
       <a href="/en/#contact">Contact</a>
-      <a class="lang" href="/resilienz/" hreflang="de" aria-label="Auf Deutsch wechseln">DE</a>
+      <a class="lang" href="/resilienz/" hreflang="de" lang="de">Deutsch</a>
     </nav>
-    <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </header>
+  </div>
+</header>
 
   <main id="main" class="wrap">
     <article class="card stack stack--md">
       <h1>Resilience – Interdisciplinary Analysis and Future Competency</h1>
-      <p class="tag">Foundation Dossier by the Alexander Forum for Reflection & Resilience</p>
+      <p class="pub-meta"><span>AF Dossier 2025/1</span><span>Version 1.1</span><span>October 2025</span></p>
+      <p class="meta">Foundation dossier of the Alexander Forum für Reflexion &amp; Resilienz</p>
 
       <div class="tldr">
         <h4>TL;DR – Key Takeaways</h4>
@@ -307,19 +171,19 @@
 
         <div class="matrix">
           <div class="matrix-item">
-            <h4>🧠 Neurobiological</h4>
+            <h4>Neurobiological</h4>
             <p>HPA axis, neuroplasticity, inflammation markers, prefrontal regulation</p>
           </div>
           <div class="matrix-item">
-            <h4>💭 Psychological</h4>
+            <h4>Psychological</h4>
             <p>Self-efficacy, optimism, cognitive flexibility, emotion regulation</p>
           </div>
           <div class="matrix-item">
-            <h4>👥 Social</h4>
+            <h4>Social</h4>
             <p>Attachment, networks, community support, institutional stability</p>
           </div>
           <div class="matrix-item">
-            <h4>🌍 Systemic</h4>
+            <h4>Systemic</h4>
             <p>Organizational culture, infrastructures, governance, cultural context</p>
           </div>
         </div>
@@ -477,19 +341,19 @@
 
         <div class="matrix">
           <div class="matrix-item">
-            <h4>📚 For Schools</h4>
+            <h4>For Schools</h4>
             <p>Media education: not just technical skills, but also self-regulation and critical thinking</p>
           </div>
           <div class="matrix-item">
-            <h4>🏢 For Organizations</h4>
+            <h4>For Organizations</h4>
             <p>Digital detox policies, clear communication boundaries, hybrid work models</p>
           </div>
           <div class="matrix-item">
-            <h4>👤 For Individuals</h4>
+            <h4>For Individuals</h4>
             <p>Conscious design of digital routines, maintaining analog social spaces</p>
           </div>
           <div class="matrix-item">
-            <h4>🌐 Virtual Communities</h4>
+            <h4>Virtual Communities</h4>
             <p>Online self-help, digital therapy, access to support in isolated life situations</p>
           </div>
         </div>
@@ -648,19 +512,19 @@
         <h3>Core Fields of Action</h3>
         <div class="matrix">
           <div class="matrix-item">
-            <h4>🎓 Transform Education</h4>
+            <h4>Transform Education</h4>
             <p>Integrate resilience as cross-cutting competency in curricula</p>
           </div>
           <div class="matrix-item">
-            <h4>💼 Shape Work Life</h4>
+            <h4>Shape Work Life</h4>
             <p>Corporate resilience promotion as organizational development</p>
           </div>
           <div class="matrix-item">
-            <h4>💻 Digital Resilience Literacy</h4>
+            <h4>Digital Resilience Literacy</h4>
             <p>Critical handling of algorithms, hybrid social spaces</p>
           </div>
           <div class="matrix-item">
-            <h4>🤝 Strengthen Vulnerable Groups</h4>
+            <h4>Strengthen Vulnerable Groups</h4>
             <p>Culturally sensitive resilience programs (children, refugees)</p>
           </div>
         </div>
@@ -678,7 +542,7 @@
           <li><strong>Culturally sensitive globalization</strong> – local, culturally appropriate responses</li>
         </ol>
 
-        <div class="tldr" style="margin-top:var(--space-6);">
+        <div class="tldr">
           <h4>Conclusion: Structure Beats Storm</h4>
           <p>
             Resilience is more than a psychological concept – it is a <strong>strategic 
@@ -695,11 +559,11 @@
       </section>
 
       <!-- SOURCES & DOWNLOADS -->
-      <section id="sources" class="chapter" style="border-bottom:none;">
+      <section id="sources" class="chapter">
         <h2>Sources & Further Materials</h2>
         
         <h3>Core Scientific Foundations</h3>
-        <ul class="bullets" style="font-size:.95rem;">
+        <ul class="bullets">
           <li>Antonovsky, A. (1987). <em>Unraveling the Mystery of Health: How People Manage Stress and Stay Well.</em> Jossey-Bass.</li>
           <li>Bonanno, G. A. (2004). Loss, trauma, and human resilience. <em>American Psychologist, 59</em>(1), 20–28.</li>
           <li>Southwick, S. M., et al. (2014). Resilience definitions, theory, and challenges. <em>European Journal of Psychotraumatology, 5</em>, 25338.</li>
@@ -724,40 +588,40 @@
           </a>
         </div>
 
-        <p class="license" style="margin-top:var(--space-5);">
+        <p class="license">
           <strong>License:</strong> CC BY-NC 4.0 (non-commercial) · 
           <strong>Citation:</strong> Alexander Forum for Reflection & Resilience (2025). 
           <em>Resilience – Interdisciplinary Analysis and Future Competency.</em> Vienna. Version 1.1.
         </p>
 
-        <div class="contact" style="margin-top:var(--space-6);">
-          <a class="btn" href="mailto:research@alexanderforum.org?subject=Inquiry%20Resilience%20Dossier">
-            Get in Touch
-          </a>
+        <div class="contact">
+          <span data-post-name="research" data-post-domain="alexanderforum.org">research (at) alexanderforum.org</span>
         </div>
       </section>
+      <div class="zitieren">
+        <h2>Suggested citation</h2>
+        <p>Alexander Forum für Reflexion &amp; Resilienz (2025): Resilience: Interdisciplinary Analysis and Future Competence. AF Dossier 2025/1, version 1.1. Vienna. https://alexander.forum/en/resilience/</p>
+      </div>
 
     </article>
-
-    <footer class="foot">
-      <p>© 2025-2026 Alexander Forum for Reflection &amp; Resilience. All rights reserved.</p>
-      <nav class="foot-nav" aria-label="Footer navigation">
-        <a href="/en/">Home</a>
-        <span class="sep">·</span>
-        <a href="/en/about/">About</a>
-        <span class="sep">·</span>
-        <a href="/en/publications/">Publications</a>
-        <span class="sep">·</span>
-        <a href="/en/resilience/">Resilience Dossier</a>
-        <span class="sep">·</span>
-        <a href="/en/era-of-simultaneity/">Era of Simultaneity</a>
-        <span class="sep">·</span>
-        <a href="/en/#contact">Contact</a>
-      </nav>
-    </footer>
   </main>
 
-  <script src="/scripts.js"></script>
+<footer class="fuss">
+  <div class="fuss-innen">
+    <div class="fuss-marke"><img src="/assets/af-logo-weiss.svg" alt="Alexander Forum für Reflexion &amp; Resilienz" width="1056" height="464"><p>Vienna</p></div>
+    <nav class="foot-nav" aria-label="Footer navigation">
+      <a href="/en/publications/">Publications</a>
+      <a href="/en/about/">About the Forum</a>
+      <a href="/en/why-alexander/">Why Alexander?</a>
+      <a href="/en/#contact">Contact</a>
+      <a href="/en/imprint/">Imprint</a>
+      <a href="/en/privacy/">Privacy policy</a>
+    </nav>
+    <p class="fuss-klein">Licences as stated in each publication. © 2025–2026 Alexander Forum für Reflexion &amp; Resilienz.</p>
+  </div>
+</footer>
+
+  <script src="/scripts.js" defer></script>
   <script>
     // Active chapter highlighting on scroll
     document.addEventListener('DOMContentLoaded', function() {

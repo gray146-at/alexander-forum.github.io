@@ -3,20 +3,57 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Seite nicht gefunden – Alexander Forum</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#002241">
+  <title>Seite nicht gefunden | Alexander Forum</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/source-serif-4-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/noto-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <main class="wrap">
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<header class="kopf">
+  <div class="kopf-innen">
+    <a class="marke" href="/"><img src="/assets/af-logo.svg" alt="Alexander Forum für Reflexion &amp; Resilienz, Startseite" width="1056" height="464"></a>
+    <nav class="hauptnav" aria-label="Hauptnavigation">
+      <a href="/publikationen/">Publikationen</a>
+      <a href="/#themen">Themen</a>
+      <a href="/ueber-uns/">Über das Forum</a>
+      <a href="/warum-alexander/">Warum Alexander?</a>
+      <a href="/#kontakt">Kontakt</a>
+      <a class="lang" href="/en/" hreflang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
     <section class="card">
-      <h1>404 – Seite nicht gefunden</h1>
-      <p>Die aufgerufene Seite existiert nicht oder nicht mehr.</p>
-      <div class="contact" style="margin-top:.5rem">
-        <a class="btn" href="/">Zur Startseite</a>
-        <a class="btn btn-secondary" href="mailto:kontakt@alexanderforum.org?subject=Fehlende%20Seite">Fehlende Seite melden</a>
-      </div>
+      <h1>Seite nicht gefunden</h1>
+      <p>Die aufgerufene Seite existiert nicht oder nicht mehr. Vielleicht hilft das Publikationsverzeichnis weiter.</p>
+      <div class="cta-row"><a class="btn" href="/">Zur Startseite</a><a class="btn btn-secondary" href="/publikationen/">Publikationen</a></div>
+      <p class="fineprint">Fehlt etwas, das es geben sollte? Hinweise an <span data-post-name="kontakt" data-post-domain="alexanderforum.org">kontakt (at) alexanderforum.org</span>.</p>
     </section>
-  </main>
-  <script src="/scripts.js"></script>
+</main>
+
+<footer class="fuss">
+  <div class="fuss-innen">
+    <div class="fuss-marke"><img src="/assets/af-logo-weiss.svg" alt="Alexander Forum für Reflexion &amp; Resilienz" width="1056" height="464"><p>Wien</p></div>
+    <nav class="foot-nav" aria-label="Fußnavigation">
+      <a href="/publikationen/">Publikationen</a>
+      <a href="/ueber-uns/">Über das Forum</a>
+      <a href="/warum-alexander/">Warum Alexander?</a>
+      <a href="/#kontakt">Kontakt</a>
+      <a href="/impressum/">Impressum</a>
+      <a href="/datenschutz/">Datenschutz</a>
+    </nav>
+    <p class="fuss-klein">Lizenzen siehe die jeweilige Publikation. © 2025–2026 Alexander Forum für Reflexion &amp; Resilienz.</p>
+  </div>
+</footer>
+
+<script src="/scripts.js" defer></script>
 </body>
 </html>

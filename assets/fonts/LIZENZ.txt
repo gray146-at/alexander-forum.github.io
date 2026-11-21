@@ -1,0 +1,15 @@
+Schriften auf alexander.forum (lokal ausgeliefert, nicht über Google Fonts)
+
+Source Serif 4 (variable, Latin-Untermenge, aufrecht und kursiv)
+Copyright 2014–2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.
+
+Noto Sans (variable, Latin-Untermenge)
+Copyright 2022 The Noto Project Authors (https://github.com/notofonts/latin-greek-cyrillic)
+
+Courier Prime (Regular, Bold, Latin-Untermenge)
+Copyright 2015 The Courier Prime Project Authors (https://github.com/quoteunquoteapps/CourierPrime)
+
+Alle drei Schriften stehen unter der SIL Open Font License, Version 1.1:
+https://openfontlicense.org/open-font-license-official-text/
+
+Bezogen am 21. November 2026 über fonts.gstatic.com (Source Serif 4 v15, Noto Sans v42, Courier Prime v11).
