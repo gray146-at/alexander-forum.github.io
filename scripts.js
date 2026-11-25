@@ -70,23 +70,21 @@
     banner.innerHTML = isEnglish ? `
       <div class="af-consent-box">
         <p>
-          For our statistics, optional website analytics are helpful: they show which content is useful and where we can improve the site.
-          If you agree, usage data such as page views, clicks and sessions may be processed.
+          May we use Microsoft Clarity to measure how this site is used? It sets cookies. You can change this at any time under “Privacy settings”. <a href="/en/privacy/">Privacy</a>
         </p>
         <div class="af-consent-actions">
-          <button type="button" id="af-consent-accept">Allow optional statistics</button>
-          <button type="button" id="af-consent-decline">Continue without statistics</button>
+          <button type="button" id="af-consent-accept">Allow</button>
+          <button type="button" id="af-consent-decline">Decline</button>
         </div>
       </div>
     ` : `
       <div class="af-consent-box">
         <p>
-          Für unsere Statistik ist eine optionale Website-Analyse hilfreich: Sie zeigt uns, welche Inhalte nützlich sind und wo wir die Seite verbessern können.
-          Wenn Sie zustimmen, können Nutzungsdaten wie Seitenaufrufe, Klicks und Sitzungen verarbeitet werden.
+          Dürfen wir mit Microsoft Clarity messen, wie diese Seite genutzt wird? Dabei werden Cookies gesetzt. Sie können das jederzeit unter „Datenschutz-Einstellungen“ ändern. <a href="/datenschutz/">Datenschutz</a>
         </p>
         <div class="af-consent-actions">
-          <button type="button" id="af-consent-accept">Optionale Statistik erlauben</button>
-          <button type="button" id="af-consent-decline">Ohne Statistik fortfahren</button>
+          <button type="button" id="af-consent-accept">Zulassen</button>
+          <button type="button" id="af-consent-decline">Ablehnen</button>
         </div>
       </div>
     `;
