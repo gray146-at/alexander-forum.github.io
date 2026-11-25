@@ -497,7 +497,8 @@ main.wrap{padding-top:56px;padding-bottom:72px}
 .af-consent-actions{display:flex;flex-wrap:wrap;gap:10px}
 .af-consent-actions button{min-height:42px;cursor:pointer;border:1px solid var(--navy);padding:8px 14px;font-family:inherit;font-size:15px;font-weight:500}
 #af-consent-accept{background:var(--navy);color:#fff}
-#af-consent-decline{background:#fff;color:var(--navy)}
+#af-consent-decline{background:var(--navy);color:#fff} /* beide Knöpfe gleich, kein Schubsen zur Zustimmung (25.11.2026) */
+.af-consent-box a{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
 
 
 /* ---------- Schmal ---------- */
